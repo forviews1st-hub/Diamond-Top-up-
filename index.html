@@ -78,8 +78,9 @@
     .pulse-text .card-name { color: #f5d76e; font-weight: 700; }
     .pulse-meta { font-size: 10px; color: #888; margin-top: 3px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
     .pulse-balance { color: #22c55e; font-weight: 800; }
-    .pulse-card-thumb { width: 42px; height: 26px; border-radius: 4px; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.5); border: 1px solid rgba(212,175,55,0.6); background-size: cover; background-position: center; position: relative; }
-    @media (max-width: 480px) { .pulse-feed { padding: 12px 14px; } .pulse-item { padding: 8px 10px; gap: 8px; } .pulse-text { font-size: 11px; } .pulse-card-thumb { width: 34px; height: 20px; } .live-pill { font-size: 9.5px; padding: 3px 9px; } .pulse-subtitle { font-size: 10px; letter-spacing: 1.4px; } }
+    .pulse-card-thumb { width: 44px; height: 44px; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, rgba(79,172,254,0.1), rgba(0,0,0,0.3)); border: 1px solid rgba(212,175,55,0.4); padding: 3px; overflow: hidden; }
+    .pulse-card-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
+    @media (max-width: 480px) { .pulse-feed { padding: 12px 14px; } .pulse-item { padding: 8px 10px; gap: 8px; } .pulse-text { font-size: 11px; } .pulse-card-thumb { width: 36px; height: 36px; } .live-pill { font-size: 9.5px; padding: 3px 9px; } .pulse-subtitle { font-size: 10px; letter-spacing: 1.4px; } }
     .trusted-by-row { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 0 20px; padding: 12px 18px; background: linear-gradient(160deg, rgba(212,175,55,0.06) 0%, rgba(212,175,55,0.02) 100%); border: 1px solid rgba(212,175,55,0.2); border-radius: 14px; flex-wrap: wrap; }
     .trusted-by-avatars { display: flex; align-items: center; }
     .trusted-by-avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #0d0d0d; margin-left: -10px; overflow: hidden; box-shadow: 0 0 0 1.5px rgba(212,175,55,0.5), 0 2px 6px rgba(0,0,0,0.5); background: #1a1a1a; flex-shrink: 0; }
@@ -97,41 +98,43 @@
     .product-trust-row .ptr-item .ptr-icon { font-size: 14px; filter: drop-shadow(0 0 6px rgba(212,175,55,0.4)); }
     .product-trust-row .ptr-divider { color: #333; font-size: 10px; }
     @media (max-width: 600px) { .product-trust-row { gap: 8px 14px; padding: 12px 12px; } .product-trust-row .ptr-item { font-size: 10px; gap: 4px; } .product-trust-row .ptr-divider { display: none; } .product-trust-row .ptr-icon { font-size: 12px; } }
-    .product-grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-bottom: 40px; scroll-margin-top: 90px; }
-    @media (min-width: 600px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
-    @media (min-width: 1000px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
-    .grid-card { background: linear-gradient(160deg, #131313 0%, #0d0d0d 100%); border: 1px solid rgba(212, 175, 55, 0.22); border-radius: 22px; padding: 18px; display: flex; flex-direction: column; gap: 12px; cursor: pointer; transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
-    .grid-card:hover { border-color: rgba(212, 175, 55, 0.55); transform: translateY(-4px); box-shadow: 0 20px 45px rgba(0,0,0,0.7), 0 0 25px rgba(212,175,55,0.15); }
+    .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 40px; scroll-margin-top: 90px; }
+    @media (min-width: 600px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+    @media (min-width: 1000px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; } }
+    .grid-card { background: linear-gradient(160deg, #131313 0%, #0d0d0d 100%); border: 1px solid rgba(212, 175, 55, 0.22); border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+    .grid-card:hover { border-color: rgba(212, 175, 55, 0.55); transform: translateY(-3px); box-shadow: 0 20px 45px rgba(0,0,0,0.7), 0 0 25px rgba(212,175,55,0.15); }
     .grid-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(212,175,55,0.06), transparent 60%); pointer-events: none; opacity: 0; transition: opacity 0.4s ease; }
     .grid-card:hover::before { opacity: 1; }
-    .card-bottom-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 10px; }
-    .live-viewers-badge { display: inline-flex; align-items: center; gap: 5px; padding: 6px 10px; border-radius: 20px; background: linear-gradient(135deg, rgba(239,68,68,0.18) 0%, rgba(239,68,68,0.06) 100%); border: 1px solid rgba(239,68,68,0.45); font-size: 10.5px; font-weight: 800; letter-spacing: 0.3px; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.3); pointer-events: none; user-select: none; white-space: nowrap; }
-    .live-viewers-badge .eye { font-size: 10px; line-height: 1; }
-    .live-viewers-badge .live-pulse-dot { width: 5px; height: 5px; border-radius: 50%; background: #ef4444; animation: liveDotBlink 1.4s ease-in-out infinite; }
+    @media (min-width: 600px) { .grid-card { border-radius: 22px; padding: 18px; gap: 12px; } }
+    .card-bottom-row { display: flex; justify-content: space-between; align-items: center; gap: 5px; margin-top: 6px; flex-wrap: wrap; }
+    .live-viewers-badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; border-radius: 20px; background: linear-gradient(135deg, rgba(239,68,68,0.18) 0%, rgba(239,68,68,0.06) 100%); border: 1px solid rgba(239,68,68,0.45); font-size: 9px; font-weight: 800; letter-spacing: 0.2px; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.3); pointer-events: none; user-select: none; white-space: nowrap; }
+    .live-viewers-badge .eye { font-size: 9px; line-height: 1; }
+    .live-viewers-badge .live-pulse-dot { width: 4px; height: 4px; border-radius: 50%; background: #ef4444; animation: liveDotBlink 1.4s ease-in-out infinite; }
     .live-viewers-badge .vcount { color: #f5d76e; font-weight: 900; font-variant-numeric: tabular-nums; transition: transform 0.25s ease; }
     .live-viewers-badge .vcount.bump { transform: scale(1.18); }
-    .live-viewers-badge .viewing-text { color: #ccc; font-weight: 600; font-size: 10px; }
-    @media (max-width: 500px) { .live-viewers-badge { font-size: 9px; padding: 4px 7px; } .live-viewers-badge .viewing-text { font-size: 9px; } }
-    .countdown-strip { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 6px 10px; margin-bottom: 10px; border-radius: 10px; background: linear-gradient(90deg, rgba(239,68,68,0.16) 0%, rgba(245,158,11,0.16) 100%); border: 1px solid rgba(239,68,68,0.4); font-size: 10.5px; font-weight: 800; color: #fecaca; letter-spacing: 0.4px; text-transform: uppercase; }
-    .countdown-strip .cd-icon { font-size: 11px; }
-    .countdown-strip .cd-time { font-variant-numeric: tabular-nums; color: #fff; background: rgba(0,0,0,0.4); padding: 2px 8px; border-radius: 6px; font-weight: 900; letter-spacing: 1px; border: 1px solid rgba(239,68,68,0.5); }
+    .live-viewers-badge .viewing-text { color: #ccc; font-weight: 600; font-size: 8.5px; }
+    @media (min-width: 600px) { .live-viewers-badge { font-size: 10.5px; padding: 6px 10px; gap: 5px; } .live-viewers-badge .eye { font-size: 10px; } .live-viewers-badge .viewing-text { font-size: 10px; } .live-viewers-badge .live-pulse-dot { width: 5px; height: 5px; } }
+    .countdown-strip { display: flex; align-items: center; justify-content: center; gap: 4px; padding: 4px 6px; margin-bottom: 6px; border-radius: 8px; background: linear-gradient(90deg, rgba(239,68,68,0.16) 0%, rgba(245,158,11,0.16) 100%); border: 1px solid rgba(239,68,68,0.4); font-size: 8px; font-weight: 800; color: #fecaca; letter-spacing: 0.2px; text-transform: uppercase; }
+    .countdown-strip .cd-icon { font-size: 9px; }
+    .countdown-strip .cd-time { font-variant-numeric: tabular-nums; color: #fff; background: rgba(0,0,0,0.4); padding: 1px 5px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; border: 1px solid rgba(239,68,68,0.5); font-size: 9px; }
     .countdown-strip.expiring { animation: cdPulse 1.5s ease-in-out infinite; }
     @keyframes cdPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.5); } 50% { box-shadow: 0 0 0 4px rgba(239,68,68,0); } }
-    .diamond-showcase { position: relative; aspect-ratio: 1.4 / 1; border-radius: 18px; background: linear-gradient(160deg, #131313 0%, #0d0d0d 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 14px 34px rgba(0,0,0,0.7), 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 0 0 1px rgba(255,255,255,0.04); padding: 22px 16px; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
-    .grid-card:hover .diamond-showcase { transform: translateY(-4px) scale(1.01); }
-    .diamond-glow { position: absolute; inset: 0; opacity: 0.55; filter: blur(45px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; }
+    @media (min-width: 600px) { .countdown-strip { font-size: 10.5px; padding: 6px 10px; gap: 6px; margin-bottom: 10px; } .countdown-strip .cd-icon { font-size: 11px; } .countdown-strip .cd-time { font-size: 11px; padding: 2px 8px; } }
+    .diamond-showcase { position: relative; aspect-ratio: 1.35 / 1; border-radius: 14px; background: linear-gradient(160deg, #131313 0%, #0d0d0d 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 0 0 1px rgba(255,255,255,0.04); padding: 10px 8px; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .grid-card:hover .diamond-showcase { transform: translateY(-3px) scale(1.01); }
+    .diamond-glow { position: absolute; inset: 0; opacity: 0.55; filter: blur(30px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; }
     @keyframes glowPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.7; } }
-    .chest-image { max-height: 130px; max-width: 85%; width: auto; height: auto; object-fit: contain; z-index: 3; position: relative; filter: drop-shadow(0 8px 24px rgba(79,172,254,0.45)) drop-shadow(0 0 40px var(--accent, #4facfe)); animation: chestFloat 3.5s ease-in-out infinite; }
-    @keyframes chestFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.03); } }
-    .diamond-qty { font-size: 42px; font-weight: 900; letter-spacing: -1.8px; background: linear-gradient(135deg, #fff 0%, var(--accent, #4facfe) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; z-index: 3; line-height: 1; margin-top: 6px; text-shadow: 0 0 30px var(--accent); }
-    .diamond-label { font-size: 11px; font-weight: 800; letter-spacing: 4.5px; color: #999; margin-top: 4px; z-index: 3; }
-    .diamond-bonus-pill { display: inline-block; padding: 5px 14px; border-radius: 20px; background: linear-gradient(135deg, rgba(34,197,94,0.18), rgba(34,197,94,0.05)); border: 1px solid rgba(34,197,94,0.5); color: #22c55e; font-size: 10.5px; font-weight: 900; letter-spacing: 1.2px; margin-top: 10px; z-index: 3; box-shadow: 0 0 12px rgba(34,197,94,0.25); animation: bonusPulse 2s ease-in-out infinite; }
-    @keyframes bonusPulse { 0%, 100% { box-shadow: 0 0 12px rgba(34,197,94,0.25); } 50% { box-shadow: 0 0 20px rgba(34,197,94,0.5); } }
+    .chest-image { max-height: 80px; max-width: 80%; width: auto; height: auto; object-fit: contain; z-index: 3; position: relative; filter: drop-shadow(0 6px 16px rgba(79,172,254,0.45)) drop-shadow(0 0 25px var(--accent, #4facfe)); animation: chestFloat 3.5s ease-in-out infinite; }
+    @keyframes chestFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-6px) scale(1.03); } }
+    .diamond-qty { font-size: 24px; font-weight: 900; letter-spacing: -1px; background: linear-gradient(135deg, #fff 0%, var(--accent, #4facfe) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; z-index: 3; line-height: 1; margin-top: 4px; text-shadow: 0 0 20px var(--accent); }
+    .diamond-label { font-size: 8px; font-weight: 800; letter-spacing: 3px; color: #999; margin-top: 2px; z-index: 3; }
+    @media (min-width: 600px) { .diamond-showcase { aspect-ratio: 1.4 / 1; padding: 22px 16px; border-radius: 18px; } .chest-image { max-height: 130px; } .diamond-qty { font-size: 42px; letter-spacing: -1.8px; margin-top: 6px; } .diamond-label { font-size: 11px; letter-spacing: 4.5px; margin-top: 4px; } }
     .diamond-sparkle { position: absolute; color: #fff; opacity: 0; z-index: 4; animation: sparkleAnim 3s ease-in-out infinite; text-shadow: 0 0 10px var(--accent, #4facfe); pointer-events: none; }
-    .diamond-sparkle.sparkle-1 { top: 18%; left: 14%; font-size: 14px; animation-delay: 0s; }
-    .diamond-sparkle.sparkle-2 { top: 28%; right: 16%; font-size: 10px; animation-delay: 1s; }
-    .diamond-sparkle.sparkle-3 { bottom: 22%; left: 20%; font-size: 12px; animation-delay: 2s; }
-    .diamond-sparkle.sparkle-4 { bottom: 30%; right: 22%; font-size: 8px; animation-delay: 1.5s; }
+    .diamond-sparkle.sparkle-1 { top: 18%; left: 14%; font-size: 10px; animation-delay: 0s; }
+    .diamond-sparkle.sparkle-2 { top: 28%; right: 16%; font-size: 8px; animation-delay: 1s; }
+    .diamond-sparkle.sparkle-3 { bottom: 22%; left: 20%; font-size: 9px; animation-delay: 2s; }
+    .diamond-sparkle.sparkle-4 { bottom: 30%; right: 22%; font-size: 6px; animation-delay: 1.5s; }
+    @media (min-width: 600px) { .diamond-sparkle.sparkle-1 { font-size: 14px; } .diamond-sparkle.sparkle-2 { font-size: 10px; } .diamond-sparkle.sparkle-3 { font-size: 12px; } .diamond-sparkle.sparkle-4 { font-size: 8px; } }
     @keyframes sparkleAnim { 0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); } 50% { opacity: 1; transform: scale(1.3) rotate(180deg); } }
     .diamond-showcase.modal-diamond { aspect-ratio: 1.3 / 1; padding: 30px 20px; }
     .diamond-showcase.modal-diamond .chest-image { max-height: 190px; }
@@ -141,37 +144,35 @@
     .diamond-showcase.mini-diamond .chest-image { max-height: 70px; }
     .diamond-showcase.mini-diamond .diamond-qty { font-size: 24px; letter-spacing: -1px; }
     .diamond-showcase.mini-diamond .diamond-label { font-size: 8px; letter-spacing: 3px; }
-    .diamond-showcase.mini-diamond .diamond-bonus-pill { font-size: 8px; padding: 3px 9px; }
     .diamond-showcase.mini-diamond .diamond-sparkle { display: none; }
-    @media (max-width: 400px) { .diamond-showcase .chest-image { max-height: 105px; } .diamond-showcase .diamond-qty { font-size: 34px; } }
-    .cc-balance-badge { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 2px; padding: 6px 12px; border-radius: 12px; background: linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(34,197,94,0.04) 100%); border: 1.5px solid rgba(34,197,94,0.35); width: fit-content; margin: 0; box-shadow: 0 4px 20px rgba(34,197,94,0.15), 0 0 24px rgba(34,197,94,0.08), inset 0 1px 0 rgba(255,255,255,0.05); position: relative; overflow: hidden; }
+    @media (max-width: 400px) { .diamond-showcase .chest-image { max-height: 68px; } .diamond-showcase .diamond-qty { font-size: 22px; } }
+    .cc-balance-badge { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 1px; padding: 4px 8px; border-radius: 10px; background: linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(34,197,94,0.04) 100%); border: 1.2px solid rgba(34,197,94,0.35); width: fit-content; margin: 0; box-shadow: 0 4px 16px rgba(34,197,94,0.15), inset 0 1px 0 rgba(255,255,255,0.05); position: relative; overflow: hidden; }
     .cc-balance-badge::before { content: ''; position: absolute; top: -50%; left: -60%; width: 40%; height: 200%; background: linear-gradient(115deg, transparent, rgba(34,197,94,0.22), transparent); transform: rotate(20deg); animation: balanceShimmer 3.5s ease-in-out infinite; pointer-events: none; }
     @keyframes balanceShimmer { 0% { left: -60%; } 50% { left: 130%; } 100% { left: -60%; } }
-    .cc-balance-label { display: flex; align-items: center; justify-content: flex-end; gap: 5px; font-size: 8px; font-weight: 800; letter-spacing: 2px; color: #22c55e; text-transform: uppercase; opacity: 0.9; line-height: 1; position: relative; z-index: 1; }
-    .cc-balance-emoji { font-size: 10px; line-height: 1; }
-    .cc-balance-value { font-size: 13px; font-weight: 900; letter-spacing: 0.3px; background: linear-gradient(135deg, #4ade80 0%, #22c55e 60%, #16a34a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; position: relative; z-index: 1; }
-    .gc-info { display: flex; flex-direction: column; gap: 6px; }
-    .gc-name { font-size: 16px; font-weight: 800; color: #fff; letter-spacing: -0.2px; line-height: 1.3; }
-    .gc-tagline { font-size: 12px; color: #888; font-weight: 500; letter-spacing: 0.2px; }
-    .gc-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
-    .gc-rating { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.3px; color: #aaa; }
-    .gc-price { font-size: 18px; font-weight: 800; color: #22c55e; letter-spacing: -0.3px; text-shadow: 0 0 12px rgba(34,197,94,0.2); }
-    .gc-material { font-size: 10px; color: #666; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
-    .gc-actions { display: flex; margin-top: 6px; }
-    .gc-buy-btn { flex: 1; background: linear-gradient(135deg, #f5d76e 0%, #d4af37 55%, #b8941f 100%); color: #1a1408; border: none; border-radius: 22px; padding: 12px; font-size: 13px; font-weight: 800; letter-spacing: 0.5px; cursor: pointer; font-family: inherit; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(212,175,55,0.3); position: relative; overflow: hidden; }
+    .cc-balance-label { display: flex; align-items: center; justify-content: flex-end; gap: 3px; font-size: 6.5px; font-weight: 800; letter-spacing: 1.2px; color: #22c55e; text-transform: uppercase; opacity: 0.9; line-height: 1; position: relative; z-index: 1; }
+    .cc-balance-emoji { font-size: 8px; line-height: 1; }
+    .cc-balance-value { font-size: 10px; font-weight: 900; letter-spacing: 0.2px; background: linear-gradient(135deg, #4ade80 0%, #22c55e 60%, #16a34a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; position: relative; z-index: 1; }
+    @media (min-width: 600px) { .cc-balance-badge { gap: 2px; padding: 6px 12px; border-radius: 12px; } .cc-balance-label { font-size: 8px; letter-spacing: 2px; gap: 5px; } .cc-balance-emoji { font-size: 10px; } .cc-balance-value { font-size: 13px; letter-spacing: 0.3px; } }
+    .gc-info { display: flex; flex-direction: column; gap: 4px; }
+    .gc-name { font-size: 12px; font-weight: 800; color: #fff; letter-spacing: -0.2px; line-height: 1.25; }
+    .gc-tagline { font-size: 9.5px; color: #888; font-weight: 500; letter-spacing: 0.2px; display: none; }
+    .gc-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 2px; gap: 4px; flex-wrap: wrap; }
+    .gc-rating { display: flex; align-items: center; gap: 3px; font-size: 10px; font-weight: 700; letter-spacing: 0.2px; color: #aaa; }
+    .gc-price { font-size: 14px; font-weight: 800; color: #22c55e; letter-spacing: -0.3px; text-shadow: 0 0 12px rgba(34,197,94,0.2); }
+    .gc-material { font-size: 8px; color: #666; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; }
+    @media (min-width: 600px) { .gc-info { gap: 6px; } .gc-name { font-size: 16px; } .gc-tagline { font-size: 12px; display: block; } .gc-meta { margin-top: 4px; gap: 6px; } .gc-rating { font-size: 12px; gap: 6px; } .gc-price { font-size: 18px; } .gc-material { font-size: 10px; letter-spacing: 1.5px; } }
+    .gc-actions { display: flex; margin-top: 4px; }
+    .gc-buy-btn { flex: 1; background: linear-gradient(135deg, #f5d76e 0%, #d4af37 55%, #b8941f 100%); color: #1a1408; border: none; border-radius: 16px; padding: 8px; font-size: 11px; font-weight: 800; letter-spacing: 0.3px; cursor: pointer; font-family: inherit; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(212,175,55,0.3); position: relative; overflow: hidden; }
     .gc-buy-btn::before { content: ''; position: absolute; top: -50%; left: -60%; width: 40%; height: 200%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.4), transparent); transform: rotate(20deg); transition: left 0.7s ease; }
     .gc-buy-btn:hover::before { left: 130%; }
-    .gc-buy-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(212,175,55,0.5); background: linear-gradient(135deg, #ffdf7a 0%, #d4af37 55%, #b8941f 100%); }
-    .stock-progress { display: flex; flex-direction: column; gap: 6px; padding: 10px 12px; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); border-radius: 12px; margin-top: 4px; }
-    .stock-progress-top { display: flex; justify-content: space-between; align-items: center; font-size: 10px; font-weight: 800; }
-    .stock-progress-top .stock-left { color: #ef4444; letter-spacing: 0.2px; }
-    .stock-progress-top .stock-percent { color: #d4af37; letter-spacing: 0.3px; }
-    .stock-bar-track { height: 5px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; position: relative; }
-    .stock-bar-fill { height: 100%; background: linear-gradient(90deg, #ef4444, #f59e0b); border-radius: 3px; transition: width 1.5s ease; box-shadow: 0 0 8px rgba(239,68,68,0.5); }
-    .trending-badge { display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); color: #fff; font-size: 9px; font-weight: 900; letter-spacing: 1px; padding: 3px 8px; border-radius: 6px; margin-bottom: 4px; box-shadow: 0 2px 8px rgba(239,68,68,0.4); text-transform: uppercase; width: fit-content; }
-    .rating-stars { position: relative; display: inline-block; font-size: 12px; letter-spacing: 1.5px; line-height: 1; font-family: Arial, sans-serif; }
+    .gc-buy-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(212,175,55,0.5); }
+    @media (min-width: 600px) { .gc-actions { margin-top: 6px; } .gc-buy-btn { border-radius: 22px; padding: 12px; font-size: 13px; letter-spacing: 0.5px; } }
+    .trending-badge { display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); color: #fff; font-size: 7.5px; font-weight: 900; letter-spacing: 0.7px; padding: 2px 6px; border-radius: 5px; margin-bottom: 2px; box-shadow: 0 2px 8px rgba(239,68,68,0.4); text-transform: uppercase; width: fit-content; }
+    @media (min-width: 600px) { .trending-badge { font-size: 9px; letter-spacing: 1px; padding: 3px 8px; border-radius: 6px; margin-bottom: 4px; } }
+    .rating-stars { position: relative; display: inline-block; font-size: 10px; letter-spacing: 1px; line-height: 1; font-family: Arial, sans-serif; }
     .rating-stars .stars-bg { color: #333; }
     .rating-stars .stars-fill { color: #d4af37; position: absolute; top: 0; left: 0; overflow: hidden; white-space: nowrap; }
+    @media (min-width: 600px) { .rating-stars { font-size: 12px; letter-spacing: 1.5px; } }
     .reviews-section { margin-bottom: 40px; scroll-margin-top: 90px; }
     .reviews-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
     .reviews-header .heading-row { margin-bottom: 0; }
@@ -213,7 +214,7 @@
     .review-helpful .helpful-count, .review-more-btn .more-count { color: #fff; font-weight: 800; margin-left: 1px; }
     .review-helpful.active .helpful-count { color: #d4af37; }
     .review-helpful .helpful-icon { font-size: 11px; line-height: 1; }
-    .review-seller-reply { background: linear-gradient(135deg, rgba(212,175,55,0.12) 0%, rgba(212,175,55,0.03) 100%); border-left: 3px solid rgba(212,175,55,0.75); padding: 10px 14px; border-radius: 8px; font-size: 12px; color: #e8e8e8; margin-top: 4px; line-height: 1.6; box-shadow: 0 0 14px rgba(212,175,55,0.18), inset 0 1px 0 rgba(212,175,55,0.2), inset 0 0 12px rgba(212,175,55,0.05); position: relative; }
+    .review-seller-reply { background: linear-gradient(135deg, rgba(212,175,55,0.12) 0%, rgba(212,175,55,0.03) 100%); border-left: 3px solid rgba(212,175,55,0.75); padding: 10px 14px; border-radius: 8px; font-size: 12px; color: #e8e8e8; margin-top: 4px; line-height: 1.6; box-shadow: 0 0 14px rgba(212,175,55,0.18), inset 0 1px 0 rgba(212,175,55,0.2); position: relative; }
     .review-seller-reply::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent); }
     .review-seller-reply strong { color: #f5d76e; font-weight: 800; font-size: 10px; display: block; margin-bottom: 4px; letter-spacing: 0.9px; text-transform: uppercase; text-shadow: 0 0 8px rgba(212,175,55,0.5); }
     .load-more-reviews-wrapper { display: flex; justify-content: center; margin-top: 24px; padding: 4px 0 8px; }
@@ -912,14 +913,14 @@
       if (mapKeys.length > 1000) { var newMap = {}; var recent = mapKeys.slice(-500); for (var j = 0; j < recent.length; j++) newMap[recent[j]] = map[recent[j]]; map = newMap; }
       saveNameAvatarMap(map); return chosen;
     }
-    /* ===== AVATAR FIX — jsDelivr CDN (no rate limit) ===== */
+    /* ===== AVATAR FETCH — jsDelivr Data API (No Rate Limit) ===== */
     function fetchAvatarsFromGitHub(callback) {
       try { var cached = localStorage.getItem('diamond_avatars_list'); var cachedTime = localStorage.getItem('diamond_avatars_time'); if (cached && cachedTime && (Date.now() - parseInt(cachedTime)) < 604800000) { var parsed = JSON.parse(cached); if (Array.isArray(parsed) && parsed.length > 0) { avatarCache.list = parsed; avatarCache.loaded = true; if (callback) callback(parsed); return; } } } catch(e) {}
-      fetch('https://api.github.com/repos/forviews1st-hub/Diamond-Top-up/contents/avatars')
+      fetch('https://data.jsdelivr.com/v1/packages/gh/forviews1st-hub/Diamond-Top-up@main/flat')
         .then(function(r) { return r.json(); })
         .then(function(data) {
-          if (!Array.isArray(data)) throw new Error('Invalid response');
-          var images = data.filter(function(item) { return item.type === 'file' && /\.(jpg|jpeg|png|webp)$/i.test(item.name); }).map(function(item) { return 'https://cdn.jsdelivr.net/gh/forviews1st-hub/Diamond-Top-up@main/avatars/' + item.name; });
+          if (!data || !Array.isArray(data.files)) throw new Error('Invalid response');
+          var images = data.files.filter(function(f) { return /^\/avatars\/.+\.(jpg|jpeg|png|webp)$/i.test(f.name); }).map(function(f) { return 'https://cdn.jsdelivr.net/gh/forviews1st-hub/Diamond-Top-up@main/avatars/' + f.name.replace('/avatars/', ''); });
           avatarCache.list = images; avatarCache.loaded = true;
           try { localStorage.setItem('diamond_avatars_list', JSON.stringify(images)); localStorage.setItem('diamond_avatars_time', Date.now().toString()); } catch(e) {}
           if (callback) callback(images);
@@ -1070,11 +1071,6 @@
       var tbEl = document.getElementById('trustedByCount'); if (tbEl) tbEl.textContent = '+' + buyers.toLocaleString('en-IN') + ' buyers';
       var whyEl = document.getElementById('whyTrustBuyers'); if (whyEl) whyEl.textContent = buyers.toLocaleString('en-IN') + '+';
     }
-    function updateStockUI(designId, state) {
-      var stockLeftEl = document.querySelector('.stock-left[data-id="' + designId + '"]'); if (stockLeftEl) stockLeftEl.textContent = '🔥 Only ' + state.stock + ' left in stock!';
-      var percentEl = document.querySelector('.stock-percent[data-id="' + designId + '"]'); if (percentEl) { var p = Math.round((state.sold / state.total) * 100); percentEl.textContent = p + '% Sold'; }
-      var barEl = document.querySelector('.stock-bar-fill[data-id="' + designId + '"]'); if (barEl) { var p2 = Math.round((state.sold / state.total) * 100); barEl.style.width = p2 + '%'; }
-    }
     function renderTrustedByRow() {
       var avatarsEl = document.getElementById('trustedByAvatars'); if (!avatarsEl) return; avatarsEl.innerHTML = '';
       for (var i = 0; i < 5; i++) { var avatar = getRandomAvatarUrl(); var div = document.createElement('div'); div.className = 'trusted-by-avatar'; div.innerHTML = buildAvatarImg(avatar, String.fromCharCode(65 + i), false); avatarsEl.appendChild(div); }
@@ -1102,8 +1098,6 @@
       var trendingId = ''; var lowestStock = Infinity;
       designs.forEach(function(d, idx) { var s = getCardState(d, idx); if (s.stock >= 3 && s.stock < lowestStock) { lowestStock = s.stock; trendingId = d.id; } });
       designs.forEach(function(design, idx) {
-        var state = getCardState(design, idx);
-        var stockLeft = state.stock; var soldPercent = Math.round((state.sold / state.total) * 100);
         var viewerBase = viewerState[design.id] ? viewerState[design.id].current : 50;
         var card = document.createElement('div'); card.className = 'grid-card'; card.setAttribute('data-id', design.id);
         var badgeHTML = (design.id === trendingId) ? '<div class="trending-badge">🔥 Trending</div>' : '';
@@ -1115,12 +1109,10 @@
           diamondShowcaseHTML(design) +
           '<div class="card-bottom-row"><div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="live-pulse-dot"></span><span class="eye">👁</span><span class="vcount">' + viewerBase + '</span><span class="viewing-text">viewing now</span></div>' + bonusBadgeHTML + '</div>' +
           '<div class="gc-info">' + badgeHTML + '<div class="gc-name">' + design.name + '</div><div class="gc-tagline">' + design.tagline + '</div><div class="gc-material">' + design.material + '</div><div class="gc-meta"><span class="gc-rating">' + renderStars(design.rating) + '<span>' + design.rating.replace('⭐ ', '') + '</span></span><span class="gc-price">' + design.price + '</span></div>' +
-          '<div class="stock-progress"><div class="stock-progress-top"><span class="stock-left" data-id="' + design.id + '">🔥 Only ' + stockLeft + ' left in stock!</span><span class="stock-percent" data-id="' + design.id + '">' + soldPercent + '% Sold</span></div><div class="stock-bar-track"><div class="stock-bar-fill" data-id="' + design.id + '" style="width:0%" data-fill="' + soldPercent + '"></div></div></div>' +
           '<div class="gc-actions"><button class="gc-buy-btn" data-action="buy">Buy Now</button></div></div>';
         grid.appendChild(card);
       });
       attachGridEvents();
-      setTimeout(function() { document.querySelectorAll('.stock-bar-fill').forEach(function(bar) { bar.style.width = bar.getAttribute('data-fill') + '%'; }); }, 300);
     }
     function loadHelpfulStates() { try { var raw = localStorage.getItem('diamond_helpful_states'); if (raw) { var p = JSON.parse(raw); if (p && typeof p === 'object') return p; } } catch(e) {} return {}; }
     function saveHelpfulStates(obj) { try { localStorage.setItem('diamond_helpful_states', JSON.stringify(obj)); } catch(e) {} }
@@ -1214,7 +1206,7 @@
       currentPendingOrder.transactionId = txnId; clearInterval(qrTimerInterval); document.getElementById('paymentOverlay').style.display = 'none'; document.body.classList.remove('modal-open'); showToast('Payment confirmed!', 'success');
       recordUserPurchase(currentPendingOrder.designId); renderHeroCounters();
       var _ud = designs.find(function(d) { return d.id === currentPendingOrder.designId; });
-      if (_ud) { var _ui = designs.indexOf(_ud); updateStockUI(_ud.id, getCardState(_ud, _ui)); }
+      if (_ud) { }
       updateTrendingBadge(); showSuccessModal(currentPendingOrder); playOrderSound(); setTimeout(function() { triggerUserOwnNotification(); }, 1500);
     }
     function triggerUserOwnNotification() {
@@ -1268,7 +1260,6 @@
       var fullName = fn + ' ' + ln;
       return { name: fullName, initials: fn.charAt(0) + ln.charAt(0), city: city, avatar: getAvatarForName(fullName) };
     }
-    function getCardThumbStyle(design) { return 'background: ' + design.gradient + ';'; }
     function formatTimeAgo(timestamp) {
       var diffMs = Date.now() - timestamp; var diffSec = Math.floor(diffMs / 1000);
       if (diffSec < 60) return 'Just now';
@@ -1279,15 +1270,17 @@
       var diffYears = Math.floor(diffMonths / 12); return diffYears + (diffYears === 1 ? ' year ago' : ' years ago');
     }
     function createPulseItemHTML(buyer, design, timestamp) {
-      var thumbStyle = getCardThumbStyle(design); var timeStr = formatTimeAgo(timestamp); var avatarUrl = buyer.avatar || getAvatarForName(buyer.name); var cityText = buyer.city ? (' from ' + escapeHtml(buyer.city)) : ''; var priceShown = buyer.price || design.price;
-      return '<div class="pulse-item" data-timestamp="' + timestamp + '"><div class="pulse-avatar-wrap"><div class="pulse-avatar">' + buildAvatarImg(avatarUrl, buyer.name, false) + '</div><div class="pulse-check">✓</div></div><div class="pulse-content"><div class="pulse-text"><strong>' + escapeHtml(buyer.name) + '</strong>' + cityText + ' just bought <span class="card-name">' + escapeHtml(design.name) + '</span> for <span style="color:#22c55e; font-weight:800;">' + escapeHtml(priceShown) + '</span></div><div class="pulse-meta"><span class="pulse-balance">💎 Instant Delivery</span> &bull; <span class="pulse-time-text">' + escapeHtml(timeStr) + '</span></div></div><div class="pulse-card-thumb" style="' + thumbStyle + '"></div></div>';
+      var timeStr = formatTimeAgo(timestamp); var avatarUrl = buyer.avatar || getAvatarForName(buyer.name); var cityText = buyer.city ? (' from ' + escapeHtml(buyer.city)) : ''; var priceShown = buyer.price || design.price;
+      var chestSrc = 'chests/chest-' + design.qty + '.png';
+      return '<div class="pulse-item" data-timestamp="' + timestamp + '"><div class="pulse-avatar-wrap"><div class="pulse-avatar">' + buildAvatarImg(avatarUrl, buyer.name, false) + '</div><div class="pulse-check">✓</div></div><div class="pulse-content"><div class="pulse-text"><strong>' + escapeHtml(buyer.name) + '</strong>' + cityText + ' just bought <span class="card-name">' + escapeHtml(design.name) + '</span> for <span style="color:#22c55e; font-weight:800;">' + escapeHtml(priceShown) + '</span></div><div class="pulse-meta"><span class="pulse-balance">💎 Instant Delivery</span> &bull; <span class="pulse-time-text">' + escapeHtml(timeStr) + '</span></div></div><div class="pulse-card-thumb"><img src="' + chestSrc + '" alt="" onerror="this.style.display=\'none\'"></div></div>';
     }
     function addLiveNotification(buyer, design, timestamp) {
       var existing = notifContainer.querySelectorAll('.live-notif, .review-notif, .welcome-back-toast');
       while (existing.length >= 3) { existing[0].remove(); existing = notifContainer.querySelectorAll('.live-notif, .review-notif, .welcome-back-toast'); }
       var nameParts = String(buyer.name || '').trim().split(/\s+/).filter(function(p) { return p.length > 0; }); var displayName = nameParts.length > 1 ? nameParts[0] + ' ' + nameParts[1].charAt(0) + '.' : (nameParts[0] || 'Someone'); var timeStr = formatTimeAgo(timestamp); var avatarUrl = buyer.avatar || getAvatarForName(buyer.name); var cityText = buyer.city ? (' from ' + escapeHtml(buyer.city)) : ''; var priceShown = buyer.price || design.price;
+      var chestSrc = 'chests/chest-' + design.qty + '.png';
       var notif = document.createElement('div'); notif.className = 'live-notif';
-      notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="notif-card-badge">💎 Diamond Top-Up</div><div class="notif-row"><div class="notif-avatar">' + buildAvatarImg(avatarUrl, buyer.name, false) + '</div><div class="notif-content"><strong>' + escapeHtml(displayName) + cityText + '</strong>bought <span style="color:#f5d76e; font-weight:700;">' + escapeHtml(design.name) + '</span> for <span style="color:#22c55e; font-weight:800;">' + escapeHtml(priceShown) + '</span><span class="notif-time">🕐 ' + escapeHtml(timeStr) + '</span></div></div>';
+      notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="notif-card-badge">💎 Diamond Top-Up</div><div class="notif-row"><div class="notif-avatar">' + buildAvatarImg(avatarUrl, buyer.name, false) + '</div><div class="notif-content"><strong>' + escapeHtml(displayName) + cityText + '</strong>bought <span style="color:#f5d76e; font-weight:700;">' + escapeHtml(design.name) + '</span> for <span style="color:#22c55e; font-weight:800;">' + escapeHtml(priceShown) + '</span><span class="notif-time">🕐 ' + escapeHtml(timeStr) + '</span></div><div style="width:38px;height:38px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(79,172,254,0.08);border:1px solid rgba(212,175,55,0.35);padding:2px;overflow:hidden;"><img src="' + chestSrc + '" style="width:100%;height:100%;object-fit:contain;" onerror="this.style.display=\'none\'"></div></div>';
       notifContainer.appendChild(notif);
       var closeBtn = notif.querySelector('.notif-close-btn'); if (closeBtn) closeBtn.addEventListener('click', function(e) { e.stopPropagation(); notif.remove(); });
       setTimeout(function() { notif.remove(); }, 10500);
@@ -1324,7 +1317,7 @@
         }
       }
       _lastNotifiedMinute = currentMinute;
-      if (shownAny) { renderHeroCounters(); designs.forEach(function(d, idx) { var state = getCardState(d, idx); updateStockUI(d.id, state); }); updateTrendingBadge(); }
+      if (shownAny) { renderHeroCounters(); updateTrendingBadge(); }
     }
     setInterval(purchaseTick, 15000);
     function updateNotificationTimes() {
