@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Card Seller | Premium Credit Cards</title>
+  <title>Diamond Top-up | Free Fire Diamonds</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -77,11 +77,8 @@
     .pulse-text strong { color: #fff; font-weight: 700; }
     .pulse-text .card-name { color: #f5d76e; font-weight: 700; }
     .pulse-meta { font-size: 10px; color: #888; margin-top: 3px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-    .pulse-price { color: #22c55e; font-weight: 800; }
     .pulse-balance { color: #22c55e; font-weight: 800; }
     .pulse-card-thumb { width: 42px; height: 26px; border-radius: 4px; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.5); border: 1px solid rgba(212,175,55,0.6); background-size: cover; background-position: center; position: relative; }
-    .pulse-card-thumb::before { content: ''; position: absolute; top: 4px; left: 4px; width: 6px; height: 4px; border-radius: 1px; background: #f7e7a1; opacity: 0.8; }
-    .pulse-card-thumb.visa-thumb::before { display: none; }
     @media (max-width: 480px) { .pulse-feed { padding: 12px 14px; } .pulse-item { padding: 8px 10px; gap: 8px; } .pulse-text { font-size: 11px; } .pulse-card-thumb { width: 34px; height: 20px; } .live-pill { font-size: 9.5px; padding: 3px 9px; } .pulse-subtitle { font-size: 10px; letter-spacing: 1.4px; } }
     .trusted-by-row { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 0 20px; padding: 12px 18px; background: linear-gradient(160deg, rgba(212,175,55,0.06) 0%, rgba(212,175,55,0.02) 100%); border: 1px solid rgba(212,175,55,0.2); border-radius: 14px; flex-wrap: wrap; }
     .trusted-by-avatars { display: flex; align-items: center; }
@@ -107,7 +104,6 @@
     .grid-card:hover { border-color: rgba(212, 175, 55, 0.55); transform: translateY(-4px); box-shadow: 0 20px 45px rgba(0,0,0,0.7), 0 0 25px rgba(212,175,55,0.15); }
     .grid-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(212,175,55,0.06), transparent 60%); pointer-events: none; opacity: 0; transition: opacity 0.4s ease; }
     .grid-card:hover::before { opacity: 1; }
-    .cc-preview-wrap { position: relative; }
     .card-bottom-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 10px; }
     .live-viewers-badge { display: inline-flex; align-items: center; gap: 5px; padding: 6px 10px; border-radius: 20px; background: linear-gradient(135deg, rgba(239,68,68,0.18) 0%, rgba(239,68,68,0.06) 100%); border: 1px solid rgba(239,68,68,0.45); font-size: 10.5px; font-weight: 800; letter-spacing: 0.3px; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.3); pointer-events: none; user-select: none; white-space: nowrap; }
     .live-viewers-badge .eye { font-size: 10px; line-height: 1; }
@@ -121,115 +117,33 @@
     .countdown-strip .cd-time { font-variant-numeric: tabular-nums; color: #fff; background: rgba(0,0,0,0.4); padding: 2px 8px; border-radius: 6px; font-weight: 900; letter-spacing: 1px; border: 1px solid rgba(239,68,68,0.5); }
     .countdown-strip.expiring { animation: cdPulse 1.5s ease-in-out infinite; }
     @keyframes cdPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.5); } 50% { box-shadow: 0 0 0 4px rgba(239,68,68,0); } }
-    .cc-preview { position: relative; aspect-ratio: 1.586 / 1; border-radius: 14px; overflow: hidden; box-shadow: 0 14px 34px rgba(0,0,0,0.7), 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.06); transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); transform-style: preserve-3d; will-change: transform; }
-    .grid-card:hover .cc-preview { transform: perspective(900px) rotateX(6deg) rotateY(-6deg) scale(1.015); }
-    .cc-face { position: absolute; inset: 0; border-radius: 14px; padding: 12px 14px; color: #fff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
-    .cc-front { z-index: 2; }
-    .cc-back { transform: rotateY(180deg); z-index: 1; }
-    .cc-front::before, .cc-back::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background-image: repeating-linear-gradient(45deg, transparent 0 9px, rgba(255,255,255,0.022) 9px 10px), repeating-linear-gradient(-45deg, transparent 0 12px, rgba(255,255,255,0.015) 12px 13px), repeating-linear-gradient(0deg, transparent 0 18px, rgba(255,255,255,0.012) 18px 19px); pointer-events: none; z-index: 0; }
-    .cc-glow { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; opacity: 0.85; z-index: 1; }
-    .cc-sheen { position: absolute; top: -50%; left: -30%; width: 60%; height: 200%; background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%); transform: rotate(20deg); pointer-events: none; transition: left 0.7s ease; z-index: 1; }
-    .grid-card:hover .cc-sheen { left: 120%; }
-    .cc-preview.finish-matte .cc-sheen { display: none; }
-    .cc-preview.finish-gloss .cc-sheen { background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,0.35) 50%, transparent 75%); width: 70%; }
-    .cc-preview.finish-gold::after { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 38%, rgba(212,175,55,0.28) 50%, transparent 62%); pointer-events: none; z-index: 3; animation: goldShimmer 3s ease-in-out infinite; border-radius: 14px; }
-    @keyframes goldShimmer { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
-    .cc-preview.finish-holo { box-shadow: 0 14px 34px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,0,255,0.35), 0 0 22px rgba(255,0,255,0.22), 0 0 35px rgba(0,255,255,0.18); }
-    .cc-preview.finish-satin .cc-sheen { background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.13) 50%, transparent 65%); }
-    .cc-preview.finish-carbon::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px); background-size: 5px 5px; pointer-events: none; z-index: 3; border-radius: 14px; }
-    .cc-top { display: flex; justify-content: space-between; align-items: flex-start; z-index: 2; position: relative; }
-    .cc-bank-row { display: flex; flex-direction: row; align-items: center; gap: 7px; z-index: 2; }
-    .cc-bank-icon { width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 900; color: #fff; flex-shrink: 0; text-shadow: 0 1px 1px rgba(0,0,0,0.5); box-shadow: inset 0 0 4px rgba(255,255,255,0.15); }
-    .cc-bank-info { display: flex; flex-direction: column; gap: 1px; }
-    .cc-bank { font-size: 10.5px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,0.55); line-height: 1; }
-    .cc-bank-type { font-size: 6.5px; font-weight: 700; letter-spacing: 1.8px; opacity: 0.85; text-transform: uppercase; color: #fff; line-height: 1; margin-top: 2px; }
-    .cc-contactless { display: flex; align-items: center; flex-shrink: 0; opacity: 0.9; }
-    .cc-contactless-icon { width: 14px; height: 14px; position: relative; }
-    .cc-contactless-icon::before, .cc-contactless-icon::after { content: ''; position: absolute; border: 1.5px solid rgba(255,255,255,0.85); border-radius: 50%; border-left-color: transparent; border-bottom-color: transparent; border-top-color: transparent; }
-    .cc-contactless-icon::before { width: 8px; height: 8px; top: 3px; left: 3px; transform: rotate(45deg); }
-    .cc-contactless-icon::after { width: 13px; height: 13px; top: 0.5px; left: 0.5px; transform: rotate(45deg); }
-    .cc-chip { width: 32px; height: 24px; border-radius: 5px; background: linear-gradient(135deg, #f7e7a1 0%, #d4af37 35%, #b8941f 60%, #f5d76e 100%); position: relative; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -1px 0 rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.45); z-index: 2; margin-top: 4px; align-self: flex-start; }
-    .cc-chip::before { content: ''; position: absolute; inset: 2.5px; border-radius: 3px; border: 0.5px solid rgba(0,0,0,0.4); background-image: linear-gradient(to bottom, transparent 31%, rgba(0,0,0,0.42) 31%, rgba(0,0,0,0.42) 34%, transparent 34%), linear-gradient(to bottom, transparent 64%, rgba(0,0,0,0.42) 64%, rgba(0,0,0,0.42) 67%, transparent 67%), linear-gradient(to right, transparent 47%, rgba(0,0,0,0.42) 47%, rgba(0,0,0,0.42) 53%, transparent 53%); }
-    .cc-visa { position: relative; font-family: 'Inter', sans-serif; font-weight: 900; font-style: italic; font-size: 11px; letter-spacing: -0.4px; color: #1A1F71; background: #ffffff; padding: 3px 8px 4px; border-radius: 4px; transform: skewX(-10deg); align-self: flex-end; line-height: 1; margin-bottom: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.4); display: inline-block; }
-    .cc-visa::after { content: ''; position: absolute; bottom: 1.5px; left: 5px; right: 5px; height: 1.6px; background: linear-gradient(90deg, #f7b600, #ffcc00, #f79e1b); border-radius: 1px; opacity: 0.95; }
-    .cc-number { font-size: 13px; letter-spacing: 2.4px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; color: #f2f2f2; text-shadow: -0.5px -0.5px 0 rgba(255,255,255,0.28), 0.5px 0.5px 1px rgba(0,0,0,0.8), 0 0 8px rgba(255,255,255,0.06); z-index: 2; position: relative; }
-    .cc-bottom { display: flex; justify-content: space-between; align-items: flex-end; z-index: 2; position: relative; gap: 6px; }
-    .cc-label { font-size: 6px; letter-spacing: 1.2px; opacity: 0.7; margin-bottom: 2px; text-transform: uppercase; font-weight: 700; line-height: 1.05; }
-    .cc-value { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; text-shadow: 0 1px 1px rgba(0,0,0,0.6); }
-    .cc-holder { display: flex; flex-direction: column; min-width: 0; }
-    .cc-valid { display: flex; flex-direction: column; align-items: flex-start; }
-    .cc-brand { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
-    .cc-holo-sticker { width: 20px; height: 20px; border-radius: 50%; background: conic-gradient(from 45deg, #ff0080, #ffcc00, #00ffcc, #00b7ff, #a200ff, #ff0080); display: flex; align-items: center; justify-content: center; padding: 2.5px; box-shadow: 0 0 8px rgba(255,255,255,0.35), inset 0 0 4px rgba(255,255,255,0.45); opacity: 0.96; }
-    .cc-holo-sticker svg { width: 100%; height: 100%; filter: drop-shadow(0 1px 1px rgba(0,0,0,0.65)); display: block; }
-    .cc-tier-wm { position: absolute; right: -6px; bottom: 6px; font-size: 32px; font-weight: 900; font-style: italic; letter-spacing: 1.5px; color: rgba(255,255,255,0.055); z-index: 1; pointer-events: none; transform: rotate(-8deg); white-space: nowrap; user-select: none; text-transform: uppercase; }
-    .cc-stripe { position: absolute; top: 13%; left: 0; right: 0; height: 20%; background: linear-gradient(180deg, #000 0%, #1a1a1a 100%); z-index: 2; }
-    .cc-back-content { position: absolute; bottom: 12px; left: 14px; right: 14px; z-index: 2; }
-    .cc-sig-row { display: flex; align-items: center; gap: 6px; }
-    .cc-sig-strip { flex: 1; height: 22px; background: repeating-linear-gradient(45deg, #efefef 0 6px, #dcdcdc 6px 12px); border-radius: 3px; display: flex; align-items: center; padding: 0 8px; }
-    .cc-sig-strip-text { font-size: 8px; color: #333; font-style: italic; font-weight: 600; opacity: 0.5; }
-    .cc-cvv { background: #fff; color: #111; font-size: 10px; font-weight: 800; padding: 3px 7px; border-radius: 3px; letter-spacing: 1px; }
-    .cc-face.cc-front.cc-amex-gold { padding: 0 !important; background: transparent !important; overflow: hidden; display: block !important; }
-    .cc-face.cc-front.cc-amex-gold img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; display: block; filter: blur(15px); opacity: 0.4; transition: filter 0.8s ease, opacity 0.8s ease; }
-    .cc-face.cc-front.cc-amex-gold img.loaded { filter: blur(0); opacity: 1; }
-    .cc-face.cc-back.cc-amex-gold-back { padding: 0; color: #1a1408; display: block; position: relative; overflow: hidden; background: radial-gradient(ellipse at 25% 15%, rgba(255, 248, 220, 0.55) 0%, transparent 45%), radial-gradient(ellipse at 80% 90%, rgba(120, 85, 15, 0.5) 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(240, 200, 90, 0.35) 0%, transparent 60%), linear-gradient(135deg, #d4af37 0%, #f5d76e 25%, #e8c960 45%, #b8941f 75%, #d4af37 100%); text-shadow: 0 0.5px 0 rgba(255, 245, 200, 0.7); }
-    .cc-face.cc-back.cc-amex-gold-back::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background-image: repeating-radial-gradient(circle at 20% 30%, transparent 0 6px, rgba(255, 235, 150, 0.09) 6px 7px), repeating-radial-gradient(circle at 70% 70%, transparent 0 8px, rgba(120, 85, 15, 0.07) 8px 9px), repeating-linear-gradient(0deg, transparent 0 4px, rgba(255, 240, 170, 0.05) 4px 5px); pointer-events: none; z-index: 0; }
-    .amex-back-frame { position: absolute; inset: 7px; border: 1.4px solid rgba(26, 20, 8, 0.85); border-radius: 9px; pointer-events: none; z-index: 10; box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.55), 0 0 0 0.5px rgba(26, 20, 8, 0.4); }
-    .amex-back-frame::before { content: ''; position: absolute; inset: 2.5px; border: 0.7px solid rgba(26, 20, 8, 0.5); border-radius: 7px; }
-    .amex-back-frame::after { content: ''; position: absolute; inset: -3px; border: 0.6px solid rgba(26, 20, 8, 0.55); border-radius: 11px; }
-    .amex-back-content { position: relative; z-index: 3; padding: 8% 7% 7%; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; }
-    .amex-back-top-strip { display: flex; justify-content: space-between; align-items: center; font-size: 4.2px; font-weight: 800; color: rgba(26, 20, 8, 0.9); letter-spacing: 0.15px; padding: 0 1px; margin-bottom: 5px; line-height: 1; }
-    .amex-back-top-strip .amex-top-right { font-weight: 900; letter-spacing: 0.6px; font-size: 4.8px; }
-    .amex-back-magstripe { width: 100%; height: 20%; min-height: 18px; background: linear-gradient(180deg, #000 0%, #0d0d0d 45%, #000 100%); box-shadow: 0 2px 5px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.95); margin-bottom: 7px; border-radius: 1px; position: relative; }
-    .amex-back-magstripe::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%); pointer-events: none; }
-    .amex-back-sig-labels { display: flex; justify-content: space-between; align-items: center; font-size: 3.8px; font-weight: 900; color: #1a1408; letter-spacing: 0.35px; margin-bottom: 3px; padding: 0 1px; text-transform: uppercase; }
-    .amex-back-sig-area { display: flex; align-items: flex-start; gap: 4px; margin-bottom: 7px; }
-    .amex-back-sig-strip { flex: 1; height: 20px; background: linear-gradient(180deg, #eef3f8 0%, #d5e0ea 100%); border-radius: 2px; border: none; box-shadow: none; position: relative; overflow: hidden; }
-    .amex-back-sig-strip::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(135deg, rgba(160, 185, 210, 0.18) 0 3px, transparent 3px 7px); pointer-events: none; }
-    .amex-back-cvv-box { display: flex; flex-direction: column; align-items: center; gap: 0.5px; flex-shrink: 0; }
-    .amex-back-cvv-num { background: #ffffff; color: #111; font-size: 7.5px; font-weight: 700; padding: 2.5px 6px; border-radius: 1.5px; letter-spacing: 1.2px; border: 0.4px solid rgba(26, 20, 8, 0.28); min-width: 22px; text-align: center; line-height: 1; box-shadow: inset 0 1px 2px rgba(0,0,0,0.05); }
-    .amex-back-cvv-label { font-size: 3.3px; font-weight: 800; color: #1a1408; letter-spacing: 0.5px; text-transform: uppercase; }
-    .amex-back-cs-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 4px; margin-bottom: auto; }
-    .amex-back-cs-info { font-size: 4px; color: #1a1408; line-height: 1.5; font-weight: 700; letter-spacing: 0.1px; padding: 0 1px; }
-    .amex-back-cs-info div { white-space: nowrap; }
-    .amex-back-nontransferable { font-size: 3.8px; font-weight: 900; color: #1a1408; letter-spacing: 0.3px; text-transform: uppercase; flex-shrink: 0; padding-top: 0px; text-align: right; }
-    .amex-back-bottom { display: flex; align-items: flex-end; gap: 4px; margin-top: 6px; }
-    .amex-back-logo { background: #006FCF; color: #ffffff; padding: 2.5px 3px; border-radius: 1px; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1; font-family: 'Inter', sans-serif; flex-shrink: 0; box-shadow: 0 1px 2px rgba(0,0,0,0.3); position: relative; min-width: 22px; }
-    .amex-back-logo span { display: block; text-align: center; font-weight: 900; letter-spacing: 0.3px; }
-    .amex-back-logo .amex-logo-line1 { font-size: 3.8px; }
-    .amex-back-logo .amex-logo-line2 { font-size: 3.8px; letter-spacing: 0.5px; margin-top: 0.5px; }
-    .amex-back-logo::after { content: '®'; position: absolute; bottom: -2px; right: -2px; font-size: 2.5px; color: #1a1408; background: #d4af37; border-radius: 50%; width: 3.5px; height: 3.5px; display: flex; align-items: center; justify-content: center; font-weight: 700; }
-    .amex-back-legal { flex: 1; font-size: 3px; color: rgba(26, 20, 8, 0.82); line-height: 1.4; font-weight: 600; letter-spacing: 0.05px; text-align: left; }
-    .modal-card-inner .amex-back-frame { inset: 11px; border-width: 1.7px; border-radius: 11px; }
-    .modal-card-inner .amex-back-frame::before { inset: 3.5px; border-width: 0.9px; border-radius: 8px; }
-    .modal-card-inner .amex-back-frame::after { inset: -4px; border-width: 0.8px; border-radius: 14px; }
-    .modal-card-inner .amex-back-content { padding: 8% 7% 7%; }
-    .modal-card-inner .amex-back-top-strip { font-size: 5.5px; margin-bottom: 5px; }
-    .modal-card-inner .amex-back-top-strip .amex-top-right { font-size: 6.5px; }
-    .modal-card-inner .amex-back-magstripe { height: 20%; min-height: 30px; margin-bottom: 8px; }
-    .modal-card-inner .amex-back-sig-labels { font-size: 5px; margin-bottom: 3px; }
-    .modal-card-inner .amex-back-sig-strip { height: 32px; border: none; box-shadow: none; }
-    .modal-card-inner .amex-back-cvv-num { font-size: 10px; padding: 4px 10px; min-width: 32px; }
-    .modal-card-inner .amex-back-cvv-label { font-size: 4.5px; }
-    .modal-card-inner .amex-back-cs-info { font-size: 5px; }
-    .modal-card-inner .amex-back-nontransferable { font-size: 4.5px; }
-    .modal-card-inner .amex-back-logo { padding: 3.5px 4.5px; min-width: 32px; }
-    .modal-card-inner .amex-back-logo .amex-logo-line1,
-    .modal-card-inner .amex-back-logo .amex-logo-line2 { font-size: 5px; }
-    .modal-card-inner .amex-back-logo::after { font-size: 3.5px; width: 5px; height: 5px; bottom: -3px; right: -3px; }
-    .modal-card-inner .amex-back-legal { font-size: 4px; }
-    .mini-card-preview .amex-back-frame { inset: 6px; }
-    .mini-card-preview .amex-back-top-strip { font-size: 3.2px; }
-    .mini-card-preview .amex-back-top-strip .amex-top-right { font-size: 3.8px; }
-    .mini-card-preview .amex-back-sig-labels { font-size: 3px; }
-    .mini-card-preview .amex-back-sig-strip { height: 15px; border: none; box-shadow: none; }
-    .mini-card-preview .amex-back-cvv-num { font-size: 5px; padding: 1.5px 4px; min-width: 16px; }
-    .mini-card-preview .amex-back-cvv-label { font-size: 2.5px; }
-    .mini-card-preview .amex-back-cs-info { font-size: 3px; }
-    .mini-card-preview .amex-back-nontransferable { font-size: 2.8px; }
-    .mini-card-preview .amex-back-logo { padding: 2px 2.5px; min-width: 16px; }
-    .mini-card-preview .amex-back-logo .amex-logo-line1,
-    .mini-card-preview .amex-back-logo .amex-logo-line2 { font-size: 3.2px; }
-    .mini-card-preview .amex-back-legal { font-size: 2.4px; }
+    .diamond-showcase { position: relative; aspect-ratio: 1.4 / 1; border-radius: 18px; background: linear-gradient(160deg, #131313 0%, #0d0d0d 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 14px 34px rgba(0,0,0,0.7), 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 0 0 1px rgba(255,255,255,0.04); padding: 22px 16px; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .grid-card:hover .diamond-showcase { transform: translateY(-4px) scale(1.01); }
+    .diamond-glow { position: absolute; inset: 0; opacity: 0.55; filter: blur(45px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; }
+    @keyframes glowPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.7; } }
+    .diamond-icon-big { font-size: 92px; line-height: 1; position: relative; z-index: 3; filter: drop-shadow(0 0 18px var(--accent, #4facfe)) drop-shadow(0 0 40px var(--accent, #4facfe)); animation: diamondFloat 3s ease-in-out infinite; }
+    @keyframes diamondFloat { 0%, 100% { transform: translateY(0) rotate(-3deg) scale(1); } 50% { transform: translateY(-10px) rotate(3deg) scale(1.05); } }
+    .diamond-qty { font-size: 42px; font-weight: 900; letter-spacing: -1.8px; background: linear-gradient(135deg, #fff 0%, var(--accent, #4facfe) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; z-index: 3; line-height: 1; margin-top: 4px; text-shadow: 0 0 30px var(--accent); }
+    .diamond-label { font-size: 11px; font-weight: 800; letter-spacing: 4.5px; color: #999; margin-top: 4px; z-index: 3; }
+    .diamond-bonus-pill { display: inline-block; padding: 5px 14px; border-radius: 20px; background: linear-gradient(135deg, rgba(34,197,94,0.18), rgba(34,197,94,0.05)); border: 1px solid rgba(34,197,94,0.5); color: #22c55e; font-size: 10.5px; font-weight: 900; letter-spacing: 1.2px; margin-top: 10px; z-index: 3; box-shadow: 0 0 12px rgba(34,197,94,0.25); animation: bonusPulse 2s ease-in-out infinite; }
+    @keyframes bonusPulse { 0%, 100% { box-shadow: 0 0 12px rgba(34,197,94,0.25); } 50% { box-shadow: 0 0 20px rgba(34,197,94,0.5); } }
+    .diamond-sparkle { position: absolute; color: #fff; opacity: 0; z-index: 4; animation: sparkleAnim 3s ease-in-out infinite; text-shadow: 0 0 10px var(--accent, #4facfe); pointer-events: none; }
+    .diamond-sparkle.sparkle-1 { top: 18%; left: 14%; font-size: 14px; animation-delay: 0s; }
+    .diamond-sparkle.sparkle-2 { top: 28%; right: 16%; font-size: 10px; animation-delay: 1s; }
+    .diamond-sparkle.sparkle-3 { bottom: 22%; left: 20%; font-size: 12px; animation-delay: 2s; }
+    .diamond-sparkle.sparkle-4 { bottom: 30%; right: 22%; font-size: 8px; animation-delay: 1.5s; }
+    @keyframes sparkleAnim { 0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); } 50% { opacity: 1; transform: scale(1.3) rotate(180deg); } }
+    .diamond-showcase.modal-diamond { aspect-ratio: 1.3 / 1; padding: 30px 20px; }
+    .diamond-showcase.modal-diamond .diamond-icon-big { font-size: 130px; }
+    .diamond-showcase.modal-diamond .diamond-qty { font-size: 56px; }
+    .diamond-showcase.modal-diamond .diamond-label { font-size: 13px; letter-spacing: 5px; }
+    .diamond-showcase.mini-diamond { aspect-ratio: 1.5 / 1; padding: 14px 12px; }
+    .diamond-showcase.mini-diamond .diamond-icon-big { font-size: 54px; }
+    .diamond-showcase.mini-diamond .diamond-qty { font-size: 24px; letter-spacing: -1px; }
+    .diamond-showcase.mini-diamond .diamond-label { font-size: 8px; letter-spacing: 3px; }
+    .diamond-showcase.mini-diamond .diamond-bonus-pill { font-size: 8px; padding: 3px 9px; }
+    .diamond-showcase.mini-diamond .diamond-sparkle { display: none; }
+    @media (max-width: 400px) { .diamond-showcase .diamond-icon-big { font-size: 76px; } .diamond-showcase .diamond-qty { font-size: 34px; } }
     .cc-balance-badge { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 2px; padding: 6px 12px; border-radius: 12px; background: linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(34,197,94,0.04) 100%); border: 1.5px solid rgba(34,197,94,0.35); width: fit-content; margin: 0; box-shadow: 0 4px 20px rgba(34,197,94,0.15), 0 0 24px rgba(34,197,94,0.08), inset 0 1px 0 rgba(255,255,255,0.05); position: relative; overflow: hidden; }
     .cc-balance-badge::before { content: ''; position: absolute; top: -50%; left: -60%; width: 40%; height: 200%; background: linear-gradient(115deg, transparent, rgba(34,197,94,0.22), transparent); transform: rotate(20deg); animation: balanceShimmer 3.5s ease-in-out infinite; pointer-events: none; }
     @keyframes balanceShimmer { 0% { left: -60%; } 50% { left: 130%; } 100% { left: -60%; } }
@@ -400,22 +314,7 @@
     .modal-close { position: absolute; top: 14px; right: 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(212,175,55,0.15); border-radius: 50%; width: 34px; height: 34px; font-size: 16px; cursor: pointer; color: #aaa; z-index: 10; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
     .modal-close:hover { background: #d4af37; color: #1a1408; border-color: #d4af37; }
     .modal-body { padding: 24px; }
-    .modal-card-wrap { perspective: 1200px; width: 100%; aspect-ratio: 1.586 / 1; cursor: pointer; margin-bottom: 12px; position: relative; }
-    .modal-card-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-    .modal-card-wrap.flipped .modal-card-inner { transform: rotateY(180deg); }
-    .modal-card-inner .cc-face { border-radius: 16px; padding: 16px 20px; box-shadow: 0 24px 50px rgba(0,0,0,0.75), 0 4px 10px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.5); }
-    .modal-card-inner .cc-face.cc-back.cc-amex-gold-back { padding: 0; }
-    .modal-card-inner .cc-number { font-size: 16px; letter-spacing: 3px; }
-    .modal-card-inner .cc-bank { font-size: 13px; letter-spacing: 2.5px; }
-    .modal-card-inner .cc-bank-type { font-size: 8px; letter-spacing: 2px; }
-    .modal-card-inner .cc-bank-icon { width: 22px; height: 22px; font-size: 11px; }
-    .modal-card-inner .cc-chip { width: 38px; height: 28px; }
-    .modal-card-inner .cc-label { font-size: 7px; }
-    .modal-card-inner .cc-value { font-size: 12px; }
-    .modal-card-inner .cc-visa { font-size: 15px; padding: 4px 10px 5px; border-radius: 5px; }
-    .modal-card-inner .cc-holo-sticker { width: 26px; height: 26px; padding: 3px; }
-    .modal-card-inner .cc-tier-wm { font-size: 42px; }
-    .flip-hint { text-align: center; font-size: 11px; color: #666; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 20px; user-select: none; }
+    .modal-card-wrap { width: 100%; margin-bottom: 12px; position: relative; }
     .modal-title { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.4px; margin-bottom: 6px; text-align: center; }
     .modal-tagline { font-size: 12px; color: #888; text-align: center; margin-bottom: 16px; letter-spacing: 0.3px; }
     .modal-price-block { text-align: center; margin-bottom: 24px; padding: 16px 0; border-top: 1px solid rgba(212,175,55,0.15); border-bottom: 1px solid rgba(212,175,55,0.15); }
@@ -450,37 +349,8 @@
     .regenerate-qr-btn::before { content: ''; position: absolute; top: -50%; left: -60%; width: 40%; height: 200%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.4), transparent); transform: rotate(20deg); transition: left 0.7s ease; }
     .regenerate-qr-btn:hover::before { left: 130%; }
     .regenerate-qr-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(212,175,55,0.55); }
-    .mini-card-preview { position: relative; width: 100%; aspect-ratio: 1.586 / 1; border-radius: 12px; margin-bottom: 14px; cursor: pointer; perspective: 1200px; transition: transform 0.4s ease; }
-    .mini-card-preview:hover { transform: translateY(-2px); }
-    .mini-card-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-    .mini-card-preview.flipped .mini-card-inner { transform: rotateY(180deg); }
-    .mini-card-preview .cc-face { border-radius: 12px; padding: 10px 12px; box-shadow: 0 14px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.4); position: absolute; inset: 0; backface-visibility: hidden; }
-    .mini-card-preview .cc-face.cc-back { transform: rotateY(180deg); }
-    .mini-card-preview .cc-face.cc-back.cc-amex-gold-back { padding: 0; }
-    .mini-card-preview .cc-number { font-size: 12px; letter-spacing: 2.2px; }
-    .mini-card-preview .cc-bank { font-size: 10px; letter-spacing: 2px; }
-    .mini-card-preview .cc-bank-type { font-size: 6px; letter-spacing: 1.6px; }
-    .mini-card-preview .cc-bank-icon { width: 17px; height: 17px; font-size: 8px; }
-    .mini-card-preview .cc-chip { width: 30px; height: 22px; }
-    .mini-card-preview .cc-label { font-size: 5.5px; }
-    .mini-card-preview .cc-value { font-size: 9px; letter-spacing: 1px; }
-    .mini-card-preview .cc-visa { font-size: 10px; padding: 3px 7px 4px; border-radius: 3px; }
-    .mini-card-preview .cc-holo-sticker { width: 18px; height: 18px; padding: 2px; }
-    .mini-card-preview .cc-tier-wm { font-size: 28px; }
-    .mini-card-preview.compact { max-width: 220px; margin: 0 auto 12px; }
-    .mini-card-preview.compact .cc-number { font-size: 9px; letter-spacing: 1.5px; }
-    .mini-card-preview.compact .cc-bank { font-size: 8px; letter-spacing: 1.5px; }
-    .mini-card-preview.compact .cc-bank-type { font-size: 5px; letter-spacing: 1.2px; }
-    .mini-card-preview.compact .cc-bank-icon { width: 14px; height: 14px; font-size: 7px; }
-    .mini-card-preview.compact .cc-chip { width: 24px; height: 18px; }
-    .mini-card-preview.compact .cc-label { font-size: 4.5px; }
-    .mini-card-preview.compact .cc-value { font-size: 7.5px; letter-spacing: 0.8px; }
-    .mini-card-preview.compact .cc-visa { font-size: 8px; padding: 2px 5px 2.5px; border-radius: 2.5px; }
-    .mini-card-preview.compact .cc-holo-sticker { width: 14px; height: 14px; padding: 1.5px; }
-    .mini-card-preview.compact .cc-tier-wm { font-size: 22px; }
-    .mini-card-preview.compact .cc-contactless-icon { width: 10px; height: 10px; }
-    .mini-card-preview.compact .cc-contactless-icon::before { width: 6px; height: 6px; top: 2px; left: 2px; }
-    .mini-card-preview.compact .cc-contactless-icon::after { width: 9px; height: 9px; top: 0.5px; left: 0.5px; }
+    .mini-card-preview { position: relative; width: 100%; margin-bottom: 14px; }
+    .mini-card-preview.compact { max-width: 260px; margin: 0 auto 12px; }
     .section-divider { display: flex; align-items: center; gap: 8px; margin: 12px 0 8px; }
     .section-divider span { font-size: 9px; font-weight: 800; letter-spacing: 2px; color: #8a7231; white-space: nowrap; }
     .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.25), transparent); }
@@ -511,8 +381,7 @@
     .profile-hint-box { background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.25); padding: 10px 14px; border-radius: 10px; margin-bottom: 14px; font-size: 11px; color: #ccc; line-height: 1.5; }
     .profile-hint-box strong { color: #f5d76e; }
     .profile-saved-card { text-align: center; padding: 8px 4px 4px; }
-    .profile-saved-avatar { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 14px; border: 3px solid rgba(212,175,55,0.55); overflow: hidden; background: #1a1a1a; box-shadow: 0 0 24px rgba(212,175,55,0.35); }
-    .profile-saved-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .profile-saved-avatar { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 14px; border: 3px solid rgba(212,175,55,0.55); overflow: hidden; background: #1a1a1a; box-shadow: 0 0 24px rgba(212,175,55,0.35); display: flex; align-items: center; justify-content: center; font-size: 42px; }
     .profile-saved-name { font-size: 20px; font-weight: 800; color: #fff; letter-spacing: -0.3px; margin-bottom: 16px; }
     .profile-saved-info { display: flex; flex-direction: column; gap: 10px; background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.2); border-radius: 14px; padding: 14px 16px; margin-bottom: 18px; }
     .profile-info-row { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #ddd; font-weight: 500; text-align: left; }
@@ -579,8 +448,8 @@
   <header class="site-header">
     <div class="site-header-inner">
       <div class="site-brand">
-        <span class="site-brand-icon">💳</span>
-        <span class="site-brand-name">Card Seller <span class="verified-logo-tick" title="Verified Seller"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#0095F6" d="M12 0.5l2.19 1.99 2.86-.31 1.19 2.62 2.71 1.02-.31 2.86L22.7 11l-2.06 2.32.31 2.86-2.71 1.02-1.19 2.62-2.86-.31L12 21.5l-2.19-1.99-2.86.31-1.19-2.62-2.71-1.02.31-2.86L1.3 11l2.06-2.32-.31-2.86 2.71-1.02 1.19-2.62 2.86.31L12 0.5z"/><path fill="#fff" d="M10.86 14.79l-3.4-3.4 1.5-1.5 1.9 1.9 5.18-5.18 1.5 1.5-6.68 6.68z"/></svg></span></span>
+        <span class="site-brand-icon">💎</span>
+        <span class="site-brand-name">Diamond Top-up <span class="verified-logo-tick" title="Verified Seller"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#0095F6" d="M12 0.5l2.19 1.99 2.86-.31 1.19 2.62 2.71 1.02-.31 2.86L22.7 11l-2.06 2.32.31 2.86-2.71 1.02-1.19 2.62-2.86-.31L12 21.5l-2.19-1.99-2.86.31-1.19-2.62-2.71-1.02.31-2.86L1.3 11l2.06-2.32-.31-2.86 2.71-1.02 1.19-2.62 2.86.31L12 0.5z"/><path fill="#fff" d="M10.86 14.79l-3.4-3.4 1.5-1.5 1.9 1.9 5.18-5.18 1.5 1.5-6.68 6.68z"/></svg></span></span>
       </div>
       <button class="profile-btn" id="profileBtn" type="button">
         <span class="profile-icon">👤</span>
@@ -591,30 +460,30 @@
 
   <main>
     <section class="hero-text-section">
-      <div class="hero-eyebrow">✨ Selling Credit Cards ✨</div>
-      <h1 class="hero-headline">Swipe In Style.<span class="gold-line">Own The Moment.</span></h1>
-      <p class="hero-sub">Unlock exclusive high-balance credit cards tailored for the elite. Experience massive spending limits and premium luxury that speaks for your success.</p>
+      <div class="hero-eyebrow">✨ Free Fire Diamond Top-up ✨</div>
+      <h1 class="hero-headline">Power Up Fast.<span class="gold-line">Dominate The Game.</span></h1>
+      <p class="hero-sub">Get your Free Fire diamonds instantly at the best rates. 100% safe, lightning-fast delivery, and trusted by thousands of gamers across India.</p>
       <div class="hero-trust">
-        <span><span class="trust-emoji">💳</span> Credit Card's</span>
+        <span><span class="trust-emoji">💎</span> Free Fire Diamonds</span>
         <span class="trust-dot">•</span>
         <span><span class="trust-emoji">⚡</span> Instant Delivery</span>
         <span class="trust-dot">•</span>
-        <span><span class="trust-emoji">💎</span> High Budget Card's</span>
+        <span><span class="trust-emoji">🔥</span> Best Rates</span>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><span class="stat-number" id="heroSoldCount">0</span><span class="stat-label">Cards Sold</span></div>
-        <div class="hero-stat"><span class="stat-number" id="heroBuyersCount">0</span><span class="stat-label">Happy Buyers</span></div>
+        <div class="hero-stat"><span class="stat-number" id="heroSoldCount">0</span><span class="stat-label">Top-Ups Done</span></div>
+        <div class="hero-stat"><span class="stat-number" id="heroBuyersCount">0</span><span class="stat-label">Happy Gamers</span></div>
         <div class="hero-stat"><span class="stat-number" id="heroRating">4.9</span><span class="stat-label">Avg Rating</span></div>
       </div>
-      <button class="hero-cta-btn" id="heroCtaBtn">Buy Card's <span class="shop-arrow">→</span></button>
+      <button class="hero-cta-btn" id="heroCtaBtn">Buy Diamonds <span class="shop-arrow">→</span></button>
     </section>
 
     <section class="why-trust-section">
       <h2>Why Trust Us?</h2>
-      <p class="why-trust-sub">Thousands choose us every month for a reason</p>
+      <p class="why-trust-sub">Thousands of gamers top-up here every day</p>
       <div class="trust-features">
-        <div class="trust-feature-card"><div class="tf-icon">🎯</div><div class="tf-label" id="whyTrustBuyers">10,000+</div><div class="tf-value">Happy Customers</div></div>
-        <div class="trust-feature-card"><div class="tf-icon">✅</div><div class="tf-label">100% Verified</div><div class="tf-value">Genuine Cards</div></div>
+        <div class="trust-feature-card"><div class="tf-icon">🎮</div><div class="tf-label" id="whyTrustBuyers">10,000+</div><div class="tf-value">Happy Gamers</div></div>
+        <div class="trust-feature-card"><div class="tf-icon">✅</div><div class="tf-label">100% Verified</div><div class="tf-value">Genuine Top-Ups</div></div>
         <div class="trust-feature-card"><div class="tf-icon">⚡</div><div class="tf-label">60 Seconds</div><div class="tf-value">Instant Delivery</div></div>
         <div class="trust-feature-card"><div class="tf-icon">🔒</div><div class="tf-label">100% Secure</div><div class="tf-value">Encrypted Payment</div></div>
       </div>
@@ -624,7 +493,7 @@
       <div class="pulse-header">
         <div class="pulse-title">
           <span class="live-pill"><span class="live-pill-dot"></span>LIVE</span>
-          <span class="pulse-subtitle">• RECENT PURCHASES</span>
+          <span class="pulse-subtitle">• RECENT TOP-UPS</span>
         </div>
       </div>
       <div class="pulse-list" id="pulseList"></div>
@@ -635,7 +504,7 @@
       <div class="trusted-by-text"><strong id="trustedByCount">+9,935 buyers</strong> trust us</div>
     </div>
 
-    <div class="heading-row"><h1>Buy Card's</h1><p>Tap any card to flip & see details</p></div>
+    <div class="heading-row"><h1>Buy Diamonds</h1><p>Choose your package and top-up instantly</p></div>
 
     <div class="product-trust-row">
       <span class="ptr-item"><span class="ptr-icon">🔒</span> SSL Secured</span>
@@ -646,14 +515,14 @@
       <span class="ptr-divider">·</span>
       <span class="ptr-item"><span class="ptr-icon">✓</span> Verified Seller</span>
       <span class="ptr-divider">·</span>
-      <span class="ptr-item"><span class="ptr-icon">💯</span> Genuine Cards</span>
+      <span class="ptr-item"><span class="ptr-icon">💯</span> Genuine Top-Ups</span>
     </div>
 
     <div class="product-grid" id="productGrid"></div>
 
     <section class="reviews-section">
       <div class="reviews-header">
-        <div class="heading-row"><h1>Trusted by Thousands</h1><p>What our customers say after buying</p></div>
+        <div class="heading-row"><h1>Trusted by Thousands</h1><p>What our customers say after top-up</p></div>
         <button class="write-review-btn" id="writeReviewBtn">✍️ Write a Review</button>
       </div>
       <div class="reviews-grid" id="reviewsGrid"></div>
@@ -673,9 +542,9 @@
       <span class="footer-divider">·</span>
       <a href="#" id="termsLink">Terms of Service</a>
       <span class="footer-divider">·</span>
-      <a href="mailto:Support@Cardsaller.com">Contact</a>
+      <a href="mailto:Support@diamondtopup.com">Contact</a>
     </div>
-    <div class="copyright">© 2026 Card Seller. All rights reserved.</div>
+    <div class="copyright">© 2026 Diamond Top-up. All rights reserved.</div>
   </footer>
 
   <div class="modal-overlay" id="profileOverlay">
@@ -684,41 +553,34 @@
       <div class="modal-body">
         <div class="checkout-header">
           <span class="checkout-eyebrow">YOUR PROFILE</span>
-          <h3 class="checkout-title" id="profileModalTitle">Save Your Details</h3>
-          <p class="checkout-subtitle" id="profileModalSubtitle">Save once, order faster next time</p>
+          <h3 class="checkout-title" id="profileModalTitle">Save Your UID</h3>
+          <p class="checkout-subtitle" id="profileModalSubtitle">Save once, top-up faster next time</p>
         </div>
         <div id="profileSavedView" style="display:none;">
           <div class="profile-saved-card">
             <span class="profile-saved-badge">✅ Profile Saved</span>
-            <div class="profile-saved-avatar"><img id="profileSavedAvatar" src="" alt="Profile"></div>
+            <div class="profile-saved-avatar">🎮</div>
             <div class="profile-saved-name" id="profileSavedName">—</div>
             <div class="profile-saved-info">
-              <div class="profile-info-row" id="profileSavedPhoneRow"><span class="info-icon">📱</span><span class="info-text" id="profileSavedPhone">—</span></div>
-              <div class="profile-info-row" id="profileSavedCityRow"><span class="info-icon">📍</span><span class="info-text" id="profileSavedCity">—</span></div>
+              <div class="profile-info-row" id="profileSavedUidRow"><span class="info-icon">🎮</span><span class="info-text" id="profileSavedUid">—</span></div>
             </div>
-            <button type="button" class="profile-edit-btn" id="profileEditBtn">✏️ Edit Profile</button>
-            <button type="button" class="profile-clear-btn" id="profileClearBtn2">Clear Saved Profile</button>
+            <button type="button" class="profile-edit-btn" id="profileEditBtn">✏️ Edit UID</button>
+            <button type="button" class="profile-clear-btn" id="profileClearBtn2">Clear Saved UID</button>
           </div>
         </div>
         <div id="profileFormView">
-          <div class="profile-hint-box"><strong>💡 Tip:</strong> Save your details here to auto-fill the order form when you buy a card. Optional — you can also fill manually.</div>
+          <div class="profile-hint-box"><strong>💡 Tip:</strong> Save your Free Fire UID here to auto-fill the order form when you top-up. Optional — you can also fill manually.</div>
           <form id="profileForm">
             <div class="review-form-group">
-              <label>Your Photo (Optional)</label>
-              <div class="photo-upload-row">
-                <div class="photo-upload-area" id="profilePhotoUploadArea">
-                  <span class="plus-icon" id="profilePhotoPlusIcon">+</span>
-                  <button type="button" class="photo-remove-btn" id="profilePhotoRemoveBtn" title="Remove photo">×</button>
-                </div>
-                <div class="photo-upload-hint"><span class="primary">Add your photo</span><span class="secondary">Shows in your purchase notification</span></div>
-              </div>
-              <input type="file" id="profilePhotoInput" accept="image/*" style="display: none;" />
+              <label>In-Game Name (Optional)</label>
+              <input type="text" id="profileName" placeholder="e.g. ProGamer99" maxlength="20" />
             </div>
-            <div class="review-form-group"><label>Full Name</label><input type="text" id="profileName" placeholder="e.g. Rahul Sharma" required maxlength="30" /></div>
-            <div class="review-form-group"><label>Your City (Optional)</label><input type="text" id="profileCity" placeholder="e.g. Mumbai" maxlength="20" /></div>
-            <div class="review-form-group"><label>WhatsApp Number</label><input type="tel" id="profilePhone" placeholder="+91 98765 43210" required /></div>
-            <button type="submit" class="order-btn-premium"><span>💾</span> Save Profile</button>
-            <button type="button" class="profile-clear-btn" id="profileClearBtn" style="display:none;">Clear Saved Profile</button>
+            <div class="review-form-group">
+              <label>Free Fire UID</label>
+              <input type="text" id="profileUid" placeholder="e.g. 1234567890" required maxlength="15" inputmode="numeric" />
+            </div>
+            <button type="submit" class="order-btn-premium"><span>💾</span> Save UID</button>
+            <button type="button" class="profile-clear-btn" id="profileClearBtn" style="display:none;">Clear Saved UID</button>
           </form>
         </div>
       </div>
@@ -729,11 +591,10 @@
     <div class="modal">
       <button class="modal-close" id="productClose">&times;</button>
       <div class="modal-body">
-        <div class="modal-card-wrap" id="modalCardWrap"><div class="modal-card-inner" id="modalCardInner"></div></div>
-        <div class="flip-hint">↻ Tap card to flip</div>
-        <h3 class="modal-title" id="modalName">Card</h3>
+        <div class="modal-card-wrap" id="modalCardWrap"></div>
+        <h3 class="modal-title" id="modalName">Package</h3>
         <p class="modal-tagline" id="modalTagline">Tagline</p>
-        <div class="modal-price-block"><div class="modal-price" id="modalPrice">₹425</div><div class="modal-rating" id="modalRating"></div></div>
+        <div class="modal-price-block"><div class="modal-price" id="modalPrice">₹0</div><div class="modal-rating" id="modalRating"></div></div>
         <div class="qty-row"><button id="qtyMinus">−</button><span id="qtyValue">1</span><button id="qtyPlus">+</button></div>
         <button class="modal-buy-btn" id="modalBuyBtn">⚡ Buy Now</button>
       </div>
@@ -747,20 +608,19 @@
         <div class="checkout-header">
           <span class="checkout-eyebrow">CHECKOUT</span>
           <h3 class="checkout-title">Complete Your Order</h3>
-          <p class="checkout-subtitle">Just 2 details and you're done</p>
+          <p class="checkout-subtitle">Enter your Free Fire UID to continue</p>
           <div class="reserved-timer" id="reservedTimer">⏳ Reserved for 10:00</div>
         </div>
         <div class="mini-card-preview compact" id="miniCardPreview"></div>
         <div class="order-summary-card compact-summary">
-          <div class="summary-row"><span class="summary-label">Card</span><span class="summary-value" id="summaryDesign">—</span></div>
+          <div class="summary-row"><span class="summary-label">Package</span><span class="summary-value" id="summaryDesign">—</span></div>
           <div class="summary-row"><span class="summary-label">Quantity</span><span class="summary-value" id="summaryQty">1</span></div>
           <div class="summary-divider"></div>
           <div class="summary-row total-row"><span class="summary-label-total">TOTAL</span><span class="summary-value-total" id="summaryTotal">₹0</span></div>
         </div>
         <form class="order-form" id="orderForm">
-          <div class="field-group"><label>Full Name</label><input type="text" id="orderName" placeholder="John Smith" required /></div>
-          <div class="field-group"><label>WhatsApp Number</label><input type="tel" id="orderPhone" placeholder="+91 98765 43210" required /></div>
-          <button type="submit" class="order-btn-premium"><span>💳</span> Proceed to Payment</button>
+          <div class="field-group"><label>Free Fire UID</label><input type="text" id="orderUid" placeholder="Enter your Free Fire UID" required maxlength="15" inputmode="numeric" autocomplete="off" /></div>
+          <button type="submit" class="order-btn-premium"><span>💎</span> Proceed to Payment</button>
           <div class="trust-badges"><span>🔒 Secure</span><span class="dot">·</span><span>⚡ Fast</span><span class="dot">·</span><span>✓ Genuine</span></div>
         </form>
       </div>
@@ -817,10 +677,10 @@
           <div class="review-form-group"><label>Your Name</label><input type="text" id="reviewName" placeholder="e.g. Arjun Singh" required maxlength="30" /></div>
           <div class="review-form-group"><label>Your City</label><input type="text" id="reviewLocation" placeholder="e.g. Mumbai" required maxlength="20" /></div>
           <div class="review-form-group">
-            <label>Which Card Did You Buy?</label>
+            <label>Which Package Did You Buy?</label>
             <select id="reviewCard" required>
-              <option value="">-- Select Card --</option>
-              <option>American Express Gold</option><option>Metro Signature</option><option>Sunrise Elite</option><option>Pacific Infinite</option><option>Liberty Reserve</option>
+              <option value="">-- Select Package --</option>
+              <option>100 Diamonds</option><option>310 Diamonds</option><option>520 Diamonds</option><option>1060 Diamonds</option><option>2180 Diamonds</option>
             </select>
           </div>
           <div class="review-form-group">
@@ -883,9 +743,9 @@
       <div class="success-checkmark">
         <svg viewBox="0 0 52 52" style="width:100%; height:100%;"><circle class="success-checkmark-circle" cx="26" cy="26" r="25" fill="none" /><path class="success-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
       </div>
-      <div class="success-title">Order Placed Successfully</div>
-      <div class="success-message">Thank you! We'll contact you shortly to confirm your order.</div>
-      <div class="success-tracking"><span class="st-dot"></span><span>Your card details will be sent within 30 seconds</span></div>
+      <div class="success-title">Top-Up Successful</div>
+      <div class="success-message">Thank you! Your diamonds will be credited shortly.</div>
+      <div class="success-tracking"><span class="st-dot"></span><span>Diamonds will be added within 30 seconds</span></div>
       <div class="success-order-details" id="successOrderDetails" style="display:none;"></div>
       <button class="success-btn" id="successCloseBtn">Continue Shopping</button>
     </div>
@@ -896,10 +756,6 @@
   <div class="live-notif-container" id="liveNotifContainer"></div>
 
   <script>
-    /* =========================================================
-       DETERMINISTIC TIME-BASED ORGANIC SYSTEM — MASTER STREAM (v6 FINAL)
-       FIX: Buyer names deterministic (same time = same name on all devices)
-       ========================================================= */
     var REFERENCE_TIME = new Date('2026-06-01T00:00:00Z').getTime();
     var STREAM_REFERENCE_TIME = Date.now() - (3 * 60 * 60 * 1000);
     function pseudoRandom(seed) { var x = Math.sin(seed) * 10000; return x - Math.floor(x); }
@@ -963,7 +819,7 @@
       var userCount = reviewsData.filter(function(r) { return r.isUserSubmitted; }).length;
       return base + total + userCount;
     }
-    var USER_REVIEWS_KEY = 'cardseller_user_reviews';
+    var USER_REVIEWS_KEY = 'diamond_user_reviews';
     function loadUserReviewsFromStorage() { try { var raw = localStorage.getItem(USER_REVIEWS_KEY); if (raw) { var arr = JSON.parse(raw); if (Array.isArray(arr)) return arr; } } catch(e) {} return []; }
     function saveUserReviewsToStorage() { try { var userOnly = reviewsData.filter(function(r) { return r.isUserSubmitted; }); var limited = userOnly.slice(-20); localStorage.setItem(USER_REVIEWS_KEY, JSON.stringify(limited)); } catch(e) {} }
     function compressImage(dataURL, maxSize, quality, callback) {
@@ -972,35 +828,26 @@
       img.onerror = function() { callback(dataURL); }; img.src = dataURL;
     }
     function formatReviewTime(review) { if (review.isUserSubmitted && review.submittedAt) return formatTimeAgo(review.submittedAt); return review.time || 'Just now'; }
-    var PROFILE_KEY = 'cardseller_profile';
-    var profileData = { name: '', city: '', phone: '', photo: null };
-    var profilePhotoDataURL = null;
-    function loadProfileFromStorage() { try { var raw = localStorage.getItem(PROFILE_KEY); if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') { profileData = { name: parsed.name || '', city: parsed.city || '', phone: parsed.phone || '', photo: parsed.photo || null }; return true; } } } catch(e) {} return false; }
+    var PROFILE_KEY = 'diamond_profile';
+    var profileData = { name: '', uid: '' };
+    function loadProfileFromStorage() { try { var raw = localStorage.getItem(PROFILE_KEY); if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') { profileData = { name: parsed.name || '', uid: parsed.uid || '' }; return true; } } } catch(e) {} return false; }
     function saveProfileToStorage() { try { localStorage.setItem(PROFILE_KEY, JSON.stringify(profileData)); } catch(e) {} }
-    function hasProfile() { return !!(profileData.name || profileData.phone); }
+    function hasProfile() { return !!(profileData.uid); }
     function updateProfileButtonUI() {
       var btn = document.getElementById('profileBtn'); var label = document.getElementById('profileBtnLabel'); if (!btn) return;
       if (hasProfile()) { btn.classList.add('saved'); if (label) { var fn = profileData.name ? profileData.name.trim().split(/\s+/)[0] : ''; label.textContent = fn ? ('Hi, ' + fn) : 'Saved'; } }
       else { btn.classList.remove('saved'); if (label) label.textContent = 'Profile'; }
     }
-    function resetProfilePhotoUpload() {
-      profilePhotoDataURL = null; var area = document.getElementById('profilePhotoUploadArea'); var plusIcon = document.getElementById('profilePhotoPlusIcon');
-      if (area) { area.classList.remove('has-photo'); var oldImg = area.querySelector('img'); if (oldImg) oldImg.remove(); } if (plusIcon) plusIcon.style.display = '';
-    }
     function showProfileSavedView() {
       document.getElementById('profileSavedView').style.display = 'block'; document.getElementById('profileFormView').style.display = 'none';
-      document.getElementById('profileModalTitle').textContent = 'Your Profile'; document.getElementById('profileModalSubtitle').textContent = 'Order faster with saved details';
-      var avatarImg = document.getElementById('profileSavedAvatar'); avatarImg.src = profileData.photo ? profileData.photo : getInitialsAvatarSVG(profileData.name || 'User', false);
-      document.getElementById('profileSavedName').textContent = profileData.name || '—';
-      var phoneRow = document.getElementById('profileSavedPhoneRow'); if (profileData.phone) { phoneRow.style.display = 'flex'; document.getElementById('profileSavedPhone').textContent = profileData.phone; } else phoneRow.style.display = 'none';
-      var cityRow = document.getElementById('profileSavedCityRow'); if (profileData.city) { cityRow.style.display = 'flex'; document.getElementById('profileSavedCity').textContent = profileData.city; } else cityRow.style.display = 'none';
+      document.getElementById('profileModalTitle').textContent = 'Your Profile'; document.getElementById('profileModalSubtitle').textContent = 'Order faster with saved UID';
+      document.getElementById('profileSavedName').textContent = profileData.name || 'Free Fire Player';
+      var uidRow = document.getElementById('profileSavedUidRow'); if (profileData.uid) { uidRow.style.display = 'flex'; document.getElementById('profileSavedUid').textContent = profileData.uid; } else uidRow.style.display = 'none';
     }
     function showProfileFormView() {
       document.getElementById('profileSavedView').style.display = 'none'; document.getElementById('profileFormView').style.display = 'block';
-      document.getElementById('profileModalTitle').textContent = 'Save Your Details'; document.getElementById('profileModalSubtitle').textContent = 'Save once, order faster next time';
-      document.getElementById('profileName').value = profileData.name || ''; document.getElementById('profileCity').value = profileData.city || ''; document.getElementById('profilePhone').value = profileData.phone || '';
-      resetProfilePhotoUpload();
-      if (profileData.photo) { profilePhotoDataURL = profileData.photo; var area = document.getElementById('profilePhotoUploadArea'); var plusIcon = document.getElementById('profilePhotoPlusIcon'); if (area) { area.classList.add('has-photo'); if (plusIcon) plusIcon.style.display = 'none'; var img = document.createElement('img'); img.src = profileData.photo; area.insertBefore(img, area.firstChild); } }
+      document.getElementById('profileModalTitle').textContent = 'Save Your UID'; document.getElementById('profileModalSubtitle').textContent = 'Save once, top-up faster next time';
+      document.getElementById('profileName').value = profileData.name || ''; document.getElementById('profileUid').value = profileData.uid || '';
       document.getElementById('profileClearBtn').style.display = hasProfile() ? 'block' : 'none';
     }
     function openProfileModal() { var overlay = document.getElementById('profileOverlay'); if (hasProfile()) showProfileSavedView(); else showProfileFormView(); overlay.style.display = 'flex'; document.body.classList.add('modal-open'); }
@@ -1010,52 +857,35 @@
     document.getElementById('profileOverlay').addEventListener('click', function(e) { if (e.target === this) closeProfileModal(); });
     document.getElementById('profileEditBtn').addEventListener('click', showProfileFormView);
     document.getElementById('profileClearBtn2').addEventListener('click', function() { document.getElementById('profileClearBtn').click(); });
-    (function() {
-      var area = document.getElementById('profilePhotoUploadArea'); var input = document.getElementById('profilePhotoInput'); var plusIcon = document.getElementById('profilePhotoPlusIcon'); var removeBtn = document.getElementById('profilePhotoRemoveBtn');
-      area.addEventListener('click', function(e) { if (e.target === removeBtn || e.target.closest('.photo-remove-btn')) return; input.click(); });
-      input.addEventListener('change', function(e) {
-        var file = e.target.files && e.target.files[0]; if (!file) return;
-        if (!file.type.startsWith('image/')) { alert('Please select an image file.', {title: 'Invalid File Type', icon: '📷'}); return; }
-        if (file.size > 5 * 1024 * 1024) { alert('Image size should be less than 5MB.', {title: 'File Too Large', icon: '📦'}); return; }
-        var reader = new FileReader();
-        reader.onload = function(ev) { profilePhotoDataURL = ev.target.result; area.classList.add('has-photo'); plusIcon.style.display = 'none'; var oldImg = area.querySelector('img'); if (oldImg) oldImg.remove(); var img = document.createElement('img'); img.src = profilePhotoDataURL; area.insertBefore(img, area.firstChild); };
-        reader.readAsDataURL(file);
-      });
-      removeBtn.addEventListener('click', function(e) { e.stopPropagation(); resetProfilePhotoUpload(); input.value = ''; });
-    })();
     document.getElementById('profileForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      var name = document.getElementById('profileName').value.trim(); var city = document.getElementById('profileCity').value.trim(); var phone = document.getElementById('profilePhone').value.trim();
-      var nameRegex = /^[a-zA-Z\s.\-']{3,}$/;
-      if (!nameRegex.test(name)) { alert('Please enter a valid full name (minimum 3 letters).', {title: 'Invalid Name', icon: '⚠️'}); return; }
-      if (!isValidIndianPhone(phone)) { alert('Please enter a valid WhatsApp number (10 digits, starting with 6-9).', {title: 'Invalid WhatsApp Number', icon: '📱'}); return; }
-      profileData.name = name; profileData.city = city; profileData.phone = phone; profileData.photo = profilePhotoDataURL || null;
+      var name = document.getElementById('profileName').value.trim(); var uid = document.getElementById('profileUid').value.trim();
+      if (!isValidUID(uid)) { alert('Please enter a valid Free Fire UID (8-12 digits).', {title: 'Invalid UID', icon: '🎮'}); return; }
+      profileData.name = name; profileData.uid = uid;
       saveProfileToStorage(); updateProfileButtonUI(); showProfileSavedView(); showToast('Profile saved!', 'success');
     });
     document.getElementById('profileClearBtn').addEventListener('click', function() {
       var overlay = document.createElement('div'); overlay.className = 'custom-alert-overlay';
       var box = document.createElement('div'); box.className = 'custom-alert-box';
-      box.innerHTML = '<div class="custom-alert-icon">🗑️</div><div class="custom-alert-title">Clear Profile?</div><div class="custom-alert-message">Your saved details will be removed.</div><button class="custom-alert-btn secondary" id="clearCancel">Cancel</button><button class="custom-alert-btn" id="clearConfirm">Clear</button>';
+      box.innerHTML = '<div class="custom-alert-icon">🗑️</div><div class="custom-alert-title">Clear Profile?</div><div class="custom-alert-message">Your saved UID will be removed.</div><button class="custom-alert-btn secondary" id="clearCancel">Cancel</button><button class="custom-alert-btn" id="clearConfirm">Clear</button>';
       overlay.appendChild(box); document.body.appendChild(overlay);
       document.getElementById('clearCancel').addEventListener('click', function() { overlay.remove(); });
       document.getElementById('clearConfirm').addEventListener('click', function() {
-        profileData = { name: '', city: '', phone: '', photo: null }; profilePhotoDataURL = null;
+        profileData = { name: '', uid: '' };
         try { localStorage.removeItem(PROFILE_KEY); } catch(e) {}
-        resetProfilePhotoUpload(); document.getElementById('profileName').value = ''; document.getElementById('profileCity').value = ''; document.getElementById('profilePhone').value = '';
+        document.getElementById('profileName').value = ''; document.getElementById('profileUid').value = '';
         document.getElementById('profileClearBtn').style.display = 'none'; updateProfileButtonUI(); overlay.remove();
         document.getElementById('profileSavedView').style.display = 'none'; document.getElementById('profileFormView').style.display = 'block';
-        document.getElementById('profileModalTitle').textContent = 'Save Your Details'; document.getElementById('profileModalSubtitle').textContent = 'Save once, order faster next time';
+        document.getElementById('profileModalTitle').textContent = 'Save Your UID'; document.getElementById('profileModalSubtitle').textContent = 'Save once, top-up faster next time';
         showToast('Profile cleared', 'info');
       });
       overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
     });
-    document.getElementById('profilePhone').addEventListener('input', function() { this.value = this.value.replace(/[^\d+\-\s]/g, ''); });
-    function isValidIndianPhone(input) {
-      var digits = String(input || '').replace(/\D/g, '');
-      if (digits.length === 13 && digits.indexOf('91') === 0) digits = digits.slice(2);
-      else if (digits.length === 12 && digits.indexOf('91') === 0) digits = digits.slice(2);
-      else if (digits.length === 11 && digits.charAt(0) === '0') digits = digits.slice(1);
-      return /^[6789]\d{9}$/.test(digits);
+    document.getElementById('profileUid').addEventListener('input', function() { this.value = this.value.replace(/\D/g, ''); });
+    document.getElementById('orderUid').addEventListener('input', function() { this.value = this.value.replace(/\D/g, ''); });
+    function isValidUID(uid) {
+      var digits = String(uid || '').replace(/\D/g, '');
+      return /^\d{8,12}$/.test(digits);
     }
     function getInitialsAvatarSVG(name, isYouTuber) {
       var initials = String(name || 'U').split(' ').map(function(n){return (n[0]||'');}).join('').substring(0,2).toUpperCase();
@@ -1064,11 +894,10 @@
       return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
     }
     var avatarCache = { list: [], loaded: false };
-    function loadUsedAvatars() { try { var raw = localStorage.getItem('cardseller_used_avatars'); if (raw) { var parsed = JSON.parse(raw); if (Array.isArray(parsed)) return parsed; } } catch(e) {} return []; }
-    function saveUsedAvatars(arr) { try { localStorage.setItem('cardseller_used_avatars', JSON.stringify(arr)); } catch(e) {} }
-    function loadNameAvatarMap() { try { var raw = localStorage.getItem('cardseller_name_avatar_map'); if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') return parsed; } } catch(e) {} return {}; }
-    function saveNameAvatarMap(map) { try { localStorage.setItem('cardseller_name_avatar_map', JSON.stringify(map)); } catch(e) {} }
-    /* DETERMINISTIC FIX: uses name hash instead of Math.random() */
+    function loadUsedAvatars() { try { var raw = localStorage.getItem('diamond_used_avatars'); if (raw) { var parsed = JSON.parse(raw); if (Array.isArray(parsed)) return parsed; } } catch(e) {} return []; }
+    function saveUsedAvatars(arr) { try { localStorage.setItem('diamond_used_avatars', JSON.stringify(arr)); } catch(e) {} }
+    function loadNameAvatarMap() { try { var raw = localStorage.getItem('diamond_name_avatar_map'); if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') return parsed; } } catch(e) {} return {}; }
+    function saveNameAvatarMap(map) { try { localStorage.setItem('diamond_name_avatar_map', JSON.stringify(map)); } catch(e) {} }
     function assignAvatarToName(name) {
       if (!avatarCache.list || avatarCache.list.length === 0) return null;
       var key = String(name || 'anonymous').trim(); var map = loadNameAvatarMap();
@@ -1084,14 +913,14 @@
       saveNameAvatarMap(map); return chosen;
     }
     function fetchAvatarsFromGitHub(callback) {
-      try { var cached = localStorage.getItem('cardseller_avatars_list'); var cachedTime = localStorage.getItem('cardseller_avatars_time'); if (cached && cachedTime && (Date.now() - parseInt(cachedTime)) < 86400000) { var parsed = JSON.parse(cached); if (Array.isArray(parsed) && parsed.length > 0) { avatarCache.list = parsed; avatarCache.loaded = true; if (callback) callback(parsed); return; } } } catch(e) {}
-      fetch('https://api.github.com/repos/forviews1st-hub/Credit-Dizain/contents/avatars')
+      try { var cached = localStorage.getItem('diamond_avatars_list'); var cachedTime = localStorage.getItem('diamond_avatars_time'); if (cached && cachedTime && (Date.now() - parseInt(cachedTime)) < 86400000) { var parsed = JSON.parse(cached); if (Array.isArray(parsed) && parsed.length > 0) { avatarCache.list = parsed; avatarCache.loaded = true; if (callback) callback(parsed); return; } } } catch(e) {}
+      fetch('https://api.github.com/repos/forviews1st-hub/Diamond-Top-up/contents/avatars')
         .then(function(r) { return r.json(); })
         .then(function(data) {
           if (!Array.isArray(data)) throw new Error('Invalid response');
           var images = data.filter(function(item) { return item.type === 'file' && /\.(jpg|jpeg|png|webp)$/i.test(item.name); }).map(function(item) { return item.download_url; });
           avatarCache.list = images; avatarCache.loaded = true;
-          try { localStorage.setItem('cardseller_avatars_list', JSON.stringify(images)); localStorage.setItem('cardseller_avatars_time', Date.now().toString()); } catch(e) {}
+          try { localStorage.setItem('diamond_avatars_list', JSON.stringify(images)); localStorage.setItem('diamond_avatars_time', Date.now().toString()); } catch(e) {}
           if (callback) callback(images);
         })
         .catch(function(err) { console.warn('Avatar fetch failed:', err); avatarCache.loaded = true; if (callback) callback([]); });
@@ -1134,24 +963,24 @@
       };
     })();
     var designs = [
-      { id: 'amex_gold', brand: 'amex', name: 'American Express Gold', bank: 'AMERICAN EXPRESS', bankInitial: 'AE', cardType: 'GOLD', debitCredit: 'CREDIT', cardNumber: '3759 876543 21001', expiry: '06 / 28', cvv: '8172', balance: '1 - 1.5 lakh', defaultName: 'C F FROST', tagline: 'The world in your wallet', gradient: 'linear-gradient(135deg, #d4af37 0%, #f5d76e 25%, #e8c960 45%, #b8941f 75%, #d4af37 100%)', accent: '#d4af37', price: '₹899', rating: '⭐ 5.0', material: 'Gold Foil', stockPercent: 92, viewerWeight: 1.6 },
-      { id: 'd6', brand: 'visa', name: 'Metro Signature', bank: 'METRO CITY BANK', bankInitial: 'M', cardType: 'SIGNATURE', debitCredit: 'CREDIT', cardNumber: '4733 4455 1234 6789', expiry: '05 / 28', cvv: '394', balance: '45k - 55k', defaultName: 'ROBERT JONES', tagline: 'Urban prestige, delivered', gradient: 'linear-gradient(135deg, #12002e 0%, #3d0066 25%, #ff006e 65%, #00d4ff 100%)', accent: '#ff006e', price: '₹199', rating: '⭐ 4.9', material: 'Holographic', stockPercent: 78, viewerWeight: 0.8 },
-      { id: 'd8', brand: 'visa', name: 'Sunrise Elite', bank: 'SUNRISE BANK', bankInitial: 'S', cardType: 'ELITE', debitCredit: 'CREDIT', cardNumber: '4072 5566 7788 8901', expiry: '07 / 27', cvv: '149', balance: '60k - 65k', defaultName: 'PATRICIA DAVIS', tagline: 'Where luxury meets dawn', gradient: 'linear-gradient(135deg, #7c2d12 0%, #dc2626 50%, #f59e0b 100%)', accent: '#f59e0b', price: '₹399', rating: '⭐ 4.8', material: 'Gloss Finish', stockPercent: 85, viewerWeight: 1.1 },
-      { id: 'd3', brand: 'visa', name: 'Pacific Infinite', bank: 'PACIFIC COAST', bankInitial: 'P', cardType: 'INFINITE', debitCredit: 'CREDIT', cardNumber: '4916 2347 8901 3456', expiry: '03 / 28', cvv: '265', balance: '70k - 88k', defaultName: 'DAVID WILLIAMS', tagline: 'Ocean-inspired elegance', gradient: 'linear-gradient(135deg, #002b4d 0%, #005c99 50%, #00b4d8 100%)', accent: '#00b4d8', price: '₹425', rating: '⭐ 4.8', material: 'Gloss Finish', stockPercent: 71, viewerWeight: 0.9 },
-      { id: 'd7', brand: 'visa', name: 'Liberty Reserve', bank: 'LIBERTY NATIONAL', bankInitial: 'L', cardType: 'INFINITE', debitCredit: 'CREDIT', cardNumber: '4488 1122 3344 7890', expiry: '02 / 29', cvv: '867', balance: '80k - 95k', defaultName: 'WILLIAM GARCIA', tagline: 'Freedom in every swipe', gradient: 'linear-gradient(135deg, #022c22 0%, #064e3b 50%, #10b981 100%)', accent: '#10b981', price: '₹547', rating: '⭐ 4.7', material: 'Matte Finish', stockPercent: 88, viewerWeight: 1.3 }
+      { id: 'd100', name: '100 Diamonds', qty: 100, bonus: 0, price: '₹80', tagline: 'Perfect starter pack', accent: '#4facfe', gradient: 'linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #4facfe 100%)', material: 'Starter Pack', stockPercent: 92, viewerWeight: 0.7, rating: '⭐ 4.9' },
+      { id: 'd310', name: '310 Diamonds', qty: 310, bonus: 0, price: '₹240', tagline: 'Great value for regulars', accent: '#a855f7', gradient: 'linear-gradient(135deg, #1a0a2e 0%, #3d1a6e 50%, #a855f7 100%)', material: 'Popular Pack', stockPercent: 85, viewerWeight: 1.2, rating: '⭐ 4.9' },
+      { id: 'd520', name: '520 Diamonds', qty: 520, bonus: 50, price: '₹400', tagline: 'Best seller with bonus', accent: '#f59e0b', gradient: 'linear-gradient(135deg, #2d0a0a 0%, #7c2d12 50%, #f59e0b 100%)', material: 'Value Pack', stockPercent: 78, viewerWeight: 1.6, rating: '⭐ 5.0' },
+      { id: 'd1060', name: '1060 Diamonds', qty: 1060, bonus: 100, price: '₹800', tagline: 'For serious gamers', accent: '#10b981', gradient: 'linear-gradient(135deg, #0a2e1a 0%, #064e3b 50%, #10b981 100%)', material: 'Pro Pack', stockPercent: 71, viewerWeight: 1.0, rating: '⭐ 4.8' },
+      { id: 'd2180', name: '2180 Diamonds', qty: 2180, bonus: 250, price: '₹1600', tagline: 'Ultimate value pack', accent: '#ec4899', gradient: 'linear-gradient(135deg, #2e0a2e 0%, #6b1d6b 50%, #ec4899 100%)', material: 'Elite Pack', stockPercent: 88, viewerWeight: 1.3, rating: '⭐ 4.9' }
     ];
     var reviewsData = [
-      { name: 'Total Gaming', avatar: 'reviews/youtuber1.png', location: 'Gujarat', time: '9 days ago', purchased: 'All 5 Cards', comment: 'Hello Gamers! Ajju Bhai here. Maine is seller se card liya hai, aur sach batau toh balance ekdum wahi mila jo bola gaya tha. Maine us balance se apne Free Fire ka top-up kiya aur sab kuch easily ho gaya. Agar aap log bhi high balance card dhundh rahe ho, toh bina tension ke try karo. Trust me, genuine hai! 🔥', rating: 4.5, helpful: 1247, moreCount: 8932, isYouTuber: true },
-      { name: 'Tonde Gamer', avatar: 'reviews/youtuber2.png', location: 'Nepal', time: '17 days ago', purchased: 'All 5 Cards', comment: 'Tonde Bhai here! Yaar, maine pehle socha tha ki online card lena risky hoga, lekin is seller ka card ekdum genuine nikla. Balance bhi high mila aur maine turant apne account mein diamond top-up kar liye. Ab main apne saare subscribers ko bhi bata raha hoon. Try karo, maza aayega! 😎', rating: 4.9, helpful: 2156, moreCount: 12480, isYouTuber: true },
-      { name: 'Gyan Gaming', avatar: 'reviews/youtuber3.png', location: 'Kolkata', time: '28 days ago', purchased: 'All 5 Cards', comment: 'GyanSujan here. Maine is seller se cards order karne se pehle thoda research kiya tha. Payment ke baad card details turant mil gayi, aur jo balance limit unhone bola tha, woh bilkul sahi nikli. Maine us balance se apne in-game purchases kiye, sab kuch smoothly ho gaya. Overall, main isko recommend karunga. Agar aap bhi high balance card dhundh rahe ho, toh yeh ek genuine option hai. 👍', rating: 4.1, helpful: 876, moreCount: 5432, isYouTuber: true },
-      { name: 'Lokesh Gamer', avatar: 'reviews/youtuber4.png', location: 'Hyderabad', time: '7 days ago', purchased: 'All 5 Cards', comment: 'Hello Guys! Lokesh Gamer here. Maine bhi is seller se card liya hai. Balance ekdum high mila, aur maine usi balance se apne account mein top-up kiya. Sab kuch instantly ho gaya. Agar aap ek trustworthy seller dhundh rahe ho jahan se aap high balance card le sako, toh yeh sahi jagah hai. Highly recommended! ✅', rating: 5, helpful: 1876, moreCount: 9543, isYouTuber: true },
-      { name: 'Sooneeta', avatar: 'reviews/youtuber5.png', location: 'Nepal', time: '21 days ago', purchased: 'All 5 Cards', comment: 'Hi Guys! Sooneeta here. Maine aur mere bhai ne dono ne is seller se cards order kiye. Dono baar balance bilkul sahi mila, aur humne us balance se apne games mein top-up kar liya. Price bhi reasonable hai. Delivery mein thoda time laga, lekin overall experience achha raha. Thank you! 😊', rating: 4.3, helpful: 654, moreCount: 3421, isYouTuber: true },
-      { name: 'Anjali Desai', avatar: 'reviews/review1.png', location: 'Delhi', time: '3 days ago', purchased: 'American Express Gold', comment: 'Payment karte hi turant WhatsApp par card aur uski saari details mil gayi. Bilkul real service hai 🔥', rating: 5, helpful: 47, moreCount: 1247 },
-      { name: 'Rohit Yadav', avatar: 'reviews/review2.png', location: 'Mumbai', time: '1 week ago', purchased: 'Metro Signature', comment: 'Card buy kiya, high balance mila aur usi balance se Free Fire mein monthly membership le li. Sab kuch instantly ho gaya! Bhai yeh toh mast hai 💯', rating: 5, helpful: 89, moreCount: 3891 },
-      { name: 'Rahul Sharma', avatar: 'reviews/review3.png', location: 'Bangalore', time: '2 weeks ago', purchased: 'Pacific Infinite', comment: 'Payment ke 1 minute ke andar card details WhatsApp par aa gayi. Genuine aur fast seller hai. Highly recommended ✅', rating: 5, helpful: 156, moreCount: 5788 },
-      { name: 'Pilu Tonde', avatar: 'reviews/review4.png', location: 'Pune', time: '1 month ago', purchased: 'Sunrise Elite', comment: 'Card ke balance se Free Fire mein weekly membership li. Achha hai par delivery mein thoda time laga. Baaki sab badhiya 👍', rating: 4, helpful: 23, moreCount: 654, sellerReply: 'Thanks Pilu bhai! Next order mein fast delivery ka promise 🙏' },
-      { name: 'Ramu Gamer', avatar: 'reviews/review5.png', location: 'Hyderabad', time: '2 months ago', purchased: 'Liberty Reserve', comment: 'Mene carding se Free Fire mein diamond top-up kiya aur successful bhi ho gaya. Card ka balance sab kuch easily kar deta hai. Paisa vasool 🔥🔥', rating: 5, helpful: 67, moreCount: 2135 },
-      { name: 'Karan Mehta', avatar: 'reviews/review6.png', location: 'Jaipur', time: '3 months ago', purchased: 'American Express Gold', comment: 'Card buy karne ke baad Free Fire mein Elite Pass aur diamond top-up kiya, sab kuch bina kisi problem ke ho gaya! Best seller 💯', rating: 5, helpful: 112, moreCount: 4230, sellerReply: 'Thanks Karan! Aapka support humesha 🙏' }
+      { name: 'Total Gaming', avatar: 'reviews/youtuber1.png', location: 'Gujarat', time: '9 days ago', purchased: 'All Packages', comment: 'Hello Gamers! Ajju Bhai here. Maine is seller se diamonds liye hain, aur sach batau toh diamonds ekdum wahi mile jo bola gaya tha. Maine usi se apna Free Fire ka Elite Pass aur top-up kiya. Agar aap log bhi high diamonds dhundh rahe ho, toh bina tension ke try karo. Trust me, genuine hai! 🔥', rating: 4.5, helpful: 1247, moreCount: 8932, isYouTuber: true },
+      { name: 'Tonde Gamer', avatar: 'reviews/youtuber2.png', location: 'Nepal', time: '17 days ago', purchased: 'All Packages', comment: 'Tonde Bhai here! Yaar, maine pehle socha tha ki online diamonds lena risky hoga, lekin is seller ka top-up ekdum genuine nikla. Diamonds bhi sahi mile aur maine turant apne account mein use kar liye. Ab main apne saare subscribers ko bhi bata raha hoon. Try karo, maza aayega! 😎', rating: 4.9, helpful: 2156, moreCount: 12480, isYouTuber: true },
+      { name: 'Gyan Gaming', avatar: 'reviews/youtuber3.png', location: 'Kolkata', time: '28 days ago', purchased: 'All Packages', comment: 'GyanSujan here. Maine is seller se top-up karne se pehle thoda research kiya tha. Payment ke baad diamonds turant mil gaye, aur jo quantity unhone boli thi, woh bilkul sahi nikli. Maine usi se apne in-game purchases kiye, sab kuch smoothly ho gaya. Overall, main isko recommend karunga. Agar aap bhi diamonds dhundh rahe ho, toh yeh ek genuine option hai. 👍', rating: 4.1, helpful: 876, moreCount: 5432, isYouTuber: true },
+      { name: 'Lokesh Gamer', avatar: 'reviews/youtuber4.png', location: 'Hyderabad', time: '7 days ago', purchased: 'All Packages', comment: 'Hello Guys! Lokesh Gamer here. Maine bhi is seller se diamonds liye hain. Diamonds ekdum sahi mile, aur maine usi se apne account mein top-up kiya. Sab kuch instantly ho gaya. Agar aap ek trustworthy seller dhundh rahe ho jahan se aap diamonds le sako, toh yeh sahi jagah hai. Highly recommended! ✅', rating: 5, helpful: 1876, moreCount: 9543, isYouTuber: true },
+      { name: 'Sooneeta', avatar: 'reviews/youtuber5.png', location: 'Nepal', time: '21 days ago', purchased: 'All Packages', comment: 'Hi Guys! Sooneeta here. Maine aur mere bhai ne dono ne is seller se diamonds order kiye. Dono baar diamonds bilkul sahi mile, aur humne usse apne accounts mein top-up kar liya. Price bhi reasonable hai. Delivery mein thoda time laga, lekin overall experience achha raha. Thank you! 😊', rating: 4.3, helpful: 654, moreCount: 3421, isYouTuber: true },
+      { name: 'Anjali Desai', avatar: 'reviews/review1.png', location: 'Delhi', time: '3 days ago', purchased: '520 Diamonds', comment: 'Payment karte hi turant diamonds mil gaye. Bilkul real service hai 🔥', rating: 5, helpful: 47, moreCount: 1247 },
+      { name: 'Rohit Yadav', avatar: 'reviews/review2.png', location: 'Mumbai', time: '1 week ago', purchased: '1060 Diamonds', comment: 'Diamonds buy kiye, sahi mile aur usi se Free Fire mein Elite Pass le liya. Sab kuch instantly ho gaya! Bhai yeh toh mast hai 💯', rating: 5, helpful: 89, moreCount: 3891 },
+      { name: 'Rahul Sharma', avatar: 'reviews/review3.png', location: 'Bangalore', time: '2 weeks ago', purchased: '310 Diamonds', comment: 'Payment ke 1 minute ke andar diamonds mil gaye. Genuine aur fast seller hai. Highly recommended ✅', rating: 5, helpful: 156, moreCount: 5788 },
+      { name: 'Pilu Tonde', avatar: 'reviews/review4.png', location: 'Pune', time: '1 month ago', purchased: '100 Diamonds', comment: 'Diamonds se Free Fire mein weekly membership li. Achha hai par delivery mein thoda time laga. Baaki sab badhiya 👍', rating: 4, helpful: 23, moreCount: 654, sellerReply: 'Thanks Pilu bhai! Next order mein fast delivery ka promise 🙏' },
+      { name: 'Ramu Gamer', avatar: 'reviews/review5.png', location: 'Hyderabad', time: '2 months ago', purchased: '2180 Diamonds', comment: 'Mene diamonds se Free Fire mein top-up kiya aur successful bhi ho gaya. Sab kuch easily ho gaya. Paisa vasool 🔥🔥', rating: 5, helpful: 67, moreCount: 2135 },
+      { name: 'Karan Mehta', avatar: 'reviews/review6.png', location: 'Jaipur', time: '3 months ago', purchased: '520 Diamonds', comment: 'Diamonds buy karne ke baad Free Fire mein Elite Pass aur top-up kiya, sab kuch bina kisi problem ke ho gaya! Best seller 💯', rating: 5, helpful: 112, moreCount: 4230, sellerReply: 'Thanks Karan! Aapka support humesha 🙏' }
     ];
     (function loadUserReviews() { var saved = loadUserReviewsFromStorage(); saved.forEach(function(r) { if (r && r.isUserSubmitted) reviewsData.push(r); }); })();
     function getCardState(design, idx) {
@@ -1174,7 +1003,7 @@
       });
     }
     var currentDesign = null; var currentQty = 1; var currentOrderDesign = null; var currentPendingOrder = null;
-    var isFlipped = false; var selectedRating = 0; var selectedPhotoDataURL = null;
+    var selectedRating = 0; var selectedPhotoDataURL = null;
     var qrTimerInterval = null; var qrTimeLeft = 300; var reservedTimerInterval = null;
     function showToast(message, type) {
       var container = document.getElementById('toastContainer'); var toast = document.createElement('div'); toast.className = 'toast ' + (type || '');
@@ -1182,28 +1011,20 @@
       toast.innerHTML = '<span class="toast-icon">' + icon + '</span><span>' + escapeHtml(message) + '</span>';
       container.appendChild(toast); setTimeout(function() { toast.remove(); }, 3000);
     }
-    function getFinishClass(material) {
-      var m = (material || '').toLowerCase();
-      if (m.indexOf('matte') !== -1) return 'finish-matte';
-      if (m.indexOf('gloss') !== -1) return 'finish-gloss';
-      if (m.indexOf('gold') !== -1) return 'finish-gold';
-      if (m.indexOf('holo') !== -1) return 'finish-holo';
-      if (m.indexOf('satin') !== -1) return 'finish-satin';
-      if (m.indexOf('carbon') !== -1) return 'finish-carbon';
-      return '';
-    }
     function renderStars(ratingStr) { var num = parseFloat((ratingStr || '').replace(/[^0-9.]/g, '')) || 0; var percent = (num / 5) * 100; return '<span class="rating-stars"><span class="stars-bg">★★★★★</span><span class="stars-fill" style="width:' + percent + '%">★★★★★</span></span>'; }
-    function maskCardNumber(cardNumber) { var digits = (cardNumber || '').replace(/\D/g, ''); if (digits.length === 15) return '•••• ••••• ' + digits.slice(-5); return '•••• •••• •••• ' + digits.slice(-4); }
-    function holoDoveSVG() { return '<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M6 23 Q12 14 20 16 Q23 11 29 13 Q27 18 33 18 Q30 26 22 27 Q14 28 6 23 Z" fill="#fff" opacity="0.95"/><circle cx="22" cy="17" r="0.7" fill="#000"/></svg>'; }
-    function amexFrontHTML(design, holderName) { return '<div class="cc-face cc-front cc-amex-gold"><img src="amex-gold.png" alt="American Express Gold" onload="this.classList.add(\'loaded\')" onerror="this.classList.add(\'loaded\')"></div>'; }
-    function amexBackHTML(design) { return '<div class="cc-face cc-back cc-amex-gold-back"><div class="amex-back-frame"></div><div class="amex-back-content"><div class="amex-back-top-strip"><span>U.S. Patent Nos. 6,339,688; 6,509,582</span><span class="amex-top-right">AMEX</span></div><div class="amex-back-magstripe"></div><div class="amex-back-sig-labels"><span>AUTHORIZED SIGNATURE</span><span>NOT VALID UNLESS SIGNED</span></div><div class="amex-back-sig-area"><div class="amex-back-sig-strip"></div><div class="amex-back-cvv-box"><div class="amex-back-cvv-num">' + design.cvv + '</div><div class="amex-back-cvv-label">CVV2</div></div></div><div class="amex-back-cs-row"><div class="amex-back-cs-info"><div>americanexpress.com</div></div><div class="amex-back-nontransferable">NOT TRANSFERABLE</div></div><div class="amex-back-bottom"><div class="amex-back-logo"><span class="amex-logo-line1">AMERICAN</span><span class="amex-logo-line2">EXPRESS</span></div><div class="amex-back-legal">This card is issued by American Express Banking Corp. © 2023.</div></div></div></div>'; }
-    function visaFrontHTML(design, holderName) {
-      return '<div class="cc-face cc-front" style="background:' + design.gradient + '"><div class="cc-glow" style="background: radial-gradient(circle at 78% 18%, ' + design.accent + '55, transparent 62%)"></div><div class="cc-sheen"></div><div class="cc-tier-wm">' + design.cardType + '</div><div class="cc-top"><div class="cc-bank-row"><div class="cc-bank-icon">' + design.bankInitial + '</div><div class="cc-bank-info"><div class="cc-bank">' + design.bank + '</div><div class="cc-bank-type">' + design.cardType + ' · ' + design.debitCredit + '</div></div></div><div class="cc-contactless"><div class="cc-contactless-icon"></div></div></div><div class="cc-chip"></div><div class="cc-number">' + maskCardNumber(design.cardNumber) + '</div><div class="cc-bottom"><div class="cc-holder"><div class="cc-label">CARD HOLDER</div><div class="cc-value">' + holderName + '</div></div><div class="cc-valid"><div class="cc-label">VALID<br/>THRU</div><div class="cc-value">' + design.expiry + '</div></div><div class="cc-brand"><div class="cc-holo-sticker">' + holoDoveSVG() + '</div><div class="cc-visa">VISA</div></div></div></div>';
-    }
-    function cardFrontHTML(design) { return design.brand === 'amex' ? amexFrontHTML(design, design.defaultName) : visaFrontHTML(design, design.defaultName); }
-    function cardBackHTML(design) {
-      if (design.brand === 'amex') return amexBackHTML(design);
-      return '<div class="cc-face cc-back" style="background:' + design.gradient + '"><div class="cc-glow" style="background: radial-gradient(circle at 20% 80%, ' + design.accent + '44, transparent 62%)"></div><div class="cc-stripe"></div><div class="cc-back-content"><div class="cc-sig-row"><div class="cc-sig-strip"><span class="cc-sig-strip-text">Authorized Signature</span></div><div class="cc-cvv">' + design.cvv + '</div></div></div></div>';
+    function diamondShowcaseHTML(design, extraClass) {
+      var bonusHTML = design.bonus > 0 ? '<div class="diamond-bonus-pill">🎁 +' + design.bonus + ' BONUS</div>' : '';
+      return '<div class="diamond-showcase ' + (extraClass || '') + '" style="--accent:' + design.accent + '">' +
+        '<div class="diamond-glow" style="background: radial-gradient(circle at 50% 50%, ' + design.accent + '99, transparent 65%)"></div>' +
+        '<div class="diamond-sparkle sparkle-1">✦</div>' +
+        '<div class="diamond-sparkle sparkle-2">✦</div>' +
+        '<div class="diamond-sparkle sparkle-3">✦</div>' +
+        '<div class="diamond-sparkle sparkle-4">✦</div>' +
+        '<div class="diamond-icon-big">💎</div>' +
+        '<div class="diamond-qty">' + design.qty + '</div>' +
+        '<div class="diamond-label">DIAMONDS</div>' +
+        bonusHTML +
+      '</div>';
     }
     var viewerState = {};
     function initViewerCounts() {
@@ -1259,16 +1080,16 @@
     }
     function initWelcomeBack() {
       try {
-        var VISITS_KEY = 'cardseller_visits'; var LAST_VISIT_KEY = 'cardseller_last_visit';
+        var VISITS_KEY = 'diamond_visits'; var LAST_VISIT_KEY = 'diamond_last_visit';
         var today = new Date().toDateString(); var visits = parseInt(localStorage.getItem(VISITS_KEY) || '0'); var lastVisit = localStorage.getItem(LAST_VISIT_KEY);
         if (lastVisit !== today) { visits += 1; localStorage.setItem(VISITS_KEY, visits.toString()); localStorage.setItem(LAST_VISIT_KEY, today); }
         setTimeout(function() {
           var container = document.getElementById('liveNotifContainer'); if (!container) return;
           var notif = document.createElement('div'); notif.className = 'welcome-back-toast'; var sub;
-          if (visits === 1) sub = 'Welcome to our store! Explore premium cards today.';
+          if (visits === 1) sub = 'Welcome to our store! Top-up diamonds instantly.';
           else if (visits === 2) sub = 'This is your 2nd visit. Thanks for coming back!';
           else sub = 'You have visited us ' + visits + ' times. We appreciate your loyalty!';
-          notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="wb-header">✨ Welcome Back ✨</div><div class="wb-body"><div class="wb-icon-wrap">👑</div><div class="wb-content"><div class="wb-title">Good to see you again!</div><div class="wb-sub">' + escapeHtml(sub) + '</div><span class="wb-badge">🎉 Priority Buyer Status</span></div></div>';
+          notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="wb-header">✨ Welcome Back ✨</div><div class="wb-body"><div class="wb-icon-wrap">💎</div><div class="wb-content"><div class="wb-title">Good to see you again!</div><div class="wb-sub">' + escapeHtml(sub) + '</div><span class="wb-badge">🎉 Priority Gamer Status</span></div></div>';
           container.appendChild(notif);
           var closeBtn = notif.querySelector('.notif-close-btn'); if (closeBtn) closeBtn.addEventListener('click', function(e) { e.stopPropagation(); notif.remove(); });
           setTimeout(function() { notif.remove(); }, 10500);
@@ -1280,15 +1101,18 @@
       var trendingId = ''; var lowestStock = Infinity;
       designs.forEach(function(d, idx) { var s = getCardState(d, idx); if (s.stock >= 3 && s.stock < lowestStock) { lowestStock = s.stock; trendingId = d.id; } });
       designs.forEach(function(design, idx) {
-        var state = getCardState(design, idx); var finishClass = design.brand === 'amex' ? '' : getFinishClass(design.material);
+        var state = getCardState(design, idx);
         var stockLeft = state.stock; var soldPercent = Math.round((state.sold / state.total) * 100);
         var viewerBase = viewerState[design.id] ? viewerState[design.id].current : 50;
         var card = document.createElement('div'); card.className = 'grid-card'; card.setAttribute('data-id', design.id);
         var badgeHTML = (design.id === trendingId) ? '<div class="trending-badge">🔥 Trending</div>' : '';
+        var bonusBadgeHTML = design.bonus > 0
+          ? '<div class="cc-balance-badge"><div class="cc-balance-label"><span class="cc-balance-emoji">🎁</span><span>Bonus</span></div><div class="cc-balance-value">+' + design.bonus + ' 💎</div></div>'
+          : '<div class="cc-balance-badge"><div class="cc-balance-label"><span class="cc-balance-emoji">⚡</span><span>Delivery</span></div><div class="cc-balance-value">Instant</div></div>';
         card.innerHTML =
           '<div class="countdown-strip" data-design-id="' + design.id + '"><span class="cd-icon">🔥</span><span>Offer ends:</span><span class="cd-time">--:--:--</span></div>' +
-          '<div class="cc-preview-wrap"><div class="cc-preview ' + finishClass + '">' + cardFrontHTML(design) + cardBackHTML(design) + '</div></div>' +
-          '<div class="card-bottom-row"><div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="live-pulse-dot"></span><span class="eye">👁</span><span class="vcount">' + viewerBase + '</span><span class="viewing-text">viewing now</span></div><div class="cc-balance-badge"><div class="cc-balance-label"><span class="cc-balance-emoji">💵</span><span>Balance</span></div><div class="cc-balance-value">' + design.balance + '</div></div></div>' +
+          diamondShowcaseHTML(design) +
+          '<div class="card-bottom-row"><div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="live-pulse-dot"></span><span class="eye">👁</span><span class="vcount">' + viewerBase + '</span><span class="viewing-text">viewing now</span></div>' + bonusBadgeHTML + '</div>' +
           '<div class="gc-info">' + badgeHTML + '<div class="gc-name">' + design.name + '</div><div class="gc-tagline">' + design.tagline + '</div><div class="gc-material">' + design.material + '</div><div class="gc-meta"><span class="gc-rating">' + renderStars(design.rating) + '<span>' + design.rating.replace('⭐ ', '') + '</span></span><span class="gc-price">' + design.price + '</span></div>' +
           '<div class="stock-progress"><div class="stock-progress-top"><span class="stock-left" data-id="' + design.id + '">🔥 Only ' + stockLeft + ' left in stock!</span><span class="stock-percent" data-id="' + design.id + '">' + soldPercent + '% Sold</span></div><div class="stock-bar-track"><div class="stock-bar-fill" data-id="' + design.id + '" style="width:0%" data-fill="' + soldPercent + '"></div></div></div>' +
           '<div class="gc-actions"><button class="gc-buy-btn" data-action="buy">Buy Now</button></div></div>';
@@ -1297,8 +1121,8 @@
       attachGridEvents();
       setTimeout(function() { document.querySelectorAll('.stock-bar-fill').forEach(function(bar) { bar.style.width = bar.getAttribute('data-fill') + '%'; }); }, 300);
     }
-    function loadHelpfulStates() { try { var raw = localStorage.getItem('cardseller_helpful_states'); if (raw) { var p = JSON.parse(raw); if (p && typeof p === 'object') return p; } } catch(e) {} return {}; }
-    function saveHelpfulStates(obj) { try { localStorage.setItem('cardseller_helpful_states', JSON.stringify(obj)); } catch(e) {} }
+    function loadHelpfulStates() { try { var raw = localStorage.getItem('diamond_helpful_states'); if (raw) { var p = JSON.parse(raw); if (p && typeof p === 'object') return p; } } catch(e) {} return {}; }
+    function saveHelpfulStates(obj) { try { localStorage.setItem('diamond_helpful_states', JSON.stringify(obj)); } catch(e) {} }
     function getReviewKey(review) { return (review.name || '') + '|' + (review.purchased || '') + '|' + (review.rating || '') + '|' + (review.submittedAt || ''); }
     function createReviewCardHTML(review, index) {
       var starsHTML = ''; for (var i = 0; i < 5; i++) starsHTML += (i < Math.round(review.rating)) ? '★' : '☆';
@@ -1312,7 +1136,7 @@
       var html =
         '<div class="review-header"><div class="review-avatar">' + avatarHTML + '</div><div class="review-info"><div class="review-name-row">' + nameInner + '</div></div></div>' +
         '<div class="review-meta"><span>📍 ' + escapeHtml(review.location) + '</span><span class="dot">·</span><span>🕐 ' + escapeHtml(timeDisplay) + '</span></div>' +
-        '<div class="review-purchased">🛍️ Bought <strong>' + escapeHtml(review.purchased) + '</strong></div>' +
+        '<div class="review-purchased">💎 Bought <strong>' + escapeHtml(review.purchased) + '</strong></div>' +
         '<div class="review-stars">' + starsHTML + '<span class="rating-num">' + review.rating.toFixed(1) + '</span></div>' +
         '<div class="review-text">' + escapeHtml(review.comment) + '</div>' +
         '<div class="review-actions">' +
@@ -1336,35 +1160,30 @@
       });
     }
     function openProductModal(design) {
-      currentDesign = design; currentQty = 1; isFlipped = false;
-      var finishClass = design.brand === 'amex' ? '' : getFinishClass(design.material);
-      var wrap = document.getElementById('modalCardWrap'); wrap.className = 'modal-card-wrap ' + finishClass;
-      var inner = document.getElementById('modalCardInner'); inner.innerHTML = cardFrontHTML(design) + cardBackHTML(design);
-      wrap.classList.remove('flipped'); document.getElementById('modalName').textContent = design.name; document.getElementById('modalTagline').textContent = design.tagline; document.getElementById('modalPrice').textContent = design.price;
+      currentDesign = design; currentQty = 1;
+      var wrap = document.getElementById('modalCardWrap'); wrap.innerHTML = diamondShowcaseHTML(design, 'modal-diamond');
+      document.getElementById('modalName').textContent = design.name; document.getElementById('modalTagline').textContent = design.tagline; document.getElementById('modalPrice').textContent = design.price;
       document.getElementById('modalRating').innerHTML = renderStars(design.rating) + '<span>' + design.rating.replace('⭐ ', '') + '</span>';
       document.getElementById('qtyValue').textContent = '1'; document.getElementById('productOverlay').style.display = 'flex'; document.body.classList.add('modal-open');
     }
     function placeOrderDirect() {
       if (!currentDesign) return;
-      currentOrderDesign = { name: currentDesign.name, price: currentDesign.price, qty: currentQty, material: currentDesign.material, id: currentDesign.id };
+      currentOrderDesign = { name: currentDesign.name, price: currentDesign.price, qty: currentQty, material: currentDesign.material, id: currentDesign.id, qtyDiamonds: currentDesign.qty, bonus: currentDesign.bonus };
       var previewEl = document.getElementById('miniCardPreview');
-      if (previewEl) { var finishClass = currentDesign.brand === 'amex' ? '' : getFinishClass(currentDesign.material); previewEl.className = 'mini-card-preview compact ' + finishClass; previewEl.innerHTML = '<div class="mini-card-inner">' + cardFrontHTML(currentDesign) + cardBackHTML(currentDesign) + '</div>'; previewEl.classList.remove('flipped'); }
+      if (previewEl) { previewEl.innerHTML = diamondShowcaseHTML(currentDesign, 'mini-diamond'); }
       var summaryDesignEl = document.getElementById('summaryDesign'); if (summaryDesignEl) summaryDesignEl.textContent = currentDesign.name;
       var summaryQtyEl = document.getElementById('summaryQty'); if (summaryQtyEl) summaryQtyEl.textContent = currentQty;
       var priceNum = parseFloat(currentDesign.price.replace(/[^0-9.]/g, '')) || 0; var total = Math.round(priceNum * currentQty);
       var summaryTotalEl = document.getElementById('summaryTotal'); if (summaryTotalEl) summaryTotalEl.textContent = '₹' + total;
-      if (hasProfile()) { document.getElementById('orderName').value = profileData.name || ''; document.getElementById('orderPhone').value = profileData.phone || ''; }
-      else { document.getElementById('orderName').value = ''; document.getElementById('orderPhone').value = ''; }
+      if (hasProfile()) { document.getElementById('orderUid').value = profileData.uid || ''; }
+      else { document.getElementById('orderUid').value = ''; }
       document.getElementById('productOverlay').style.display = 'none'; document.getElementById('orderOverlay').style.display = 'flex'; document.body.classList.add('modal-open'); startReservedTimer();
     }
     function placeOrderFromForm(e) {
       e.preventDefault();
-      var customerName = document.getElementById('orderName').value.trim(); var whatsapp = document.getElementById('orderPhone').value.trim();
-      var nameRegex = /^[a-zA-Z\s.\-']{3,}$/;
-      if (!nameRegex.test(customerName)) { alert('Please enter a valid full name (minimum 3 letters).', {title: 'Invalid Name', icon: '⚠️'}); return; }
-      if (!isValidIndianPhone(whatsapp)) { alert('Please enter a valid WhatsApp number (10 digits, starting with 6-9).', {title: 'Invalid WhatsApp Number', icon: '📱'}); return; }
-      var finalCity = profileData.city || ''; var finalPhoto = profileData.photo || null;
-      currentPendingOrder = { id: Date.now().toString(), designName: currentOrderDesign.name, price: currentOrderDesign.price, qty: currentOrderDesign.qty, material: currentOrderDesign.material, designId: currentOrderDesign.id, customerName: customerName, city: finalCity, whatsapp: whatsapp, timestamp: Date.now(), photoDataURL: finalPhoto };
+      var uid = document.getElementById('orderUid').value.trim();
+      if (!isValidUID(uid)) { alert('Please enter a valid Free Fire UID (8-12 digits).', {title: 'Invalid UID', icon: '🎮'}); return; }
+      currentPendingOrder = { id: Date.now().toString(), designName: currentOrderDesign.name, price: currentOrderDesign.price, qty: currentOrderDesign.qty, material: currentOrderDesign.material, designId: currentOrderDesign.id, uid: uid, timestamp: Date.now() };
       var priceNum = parseFloat(currentOrderDesign.price.replace(/[^0-9.]/g, '')) || 0; var total = Math.round(priceNum * currentOrderDesign.qty);
       document.getElementById('paymentAmount').textContent = '₹' + total; document.getElementById('paymentDesign').textContent = currentOrderDesign.name + ' × ' + currentOrderDesign.qty; document.getElementById('transactionId').value = '';
       document.getElementById('orderOverlay').style.display = 'none'; document.getElementById('paymentOverlay').style.display = 'flex'; document.body.classList.add('modal-open'); startQrTimer(); clearInterval(reservedTimerInterval);
@@ -1400,17 +1219,15 @@
     function triggerUserOwnNotification() {
       if (!currentPendingOrder) return;
       var design = designs.find(function(d) { return d.id === currentPendingOrder.designId; }); if (!design) design = designs[0];
-      var avatarUrl = currentPendingOrder.photoDataURL ? currentPendingOrder.photoDataURL : getInitialsAvatarSVG(currentPendingOrder.customerName, false);
-      var city = currentPendingOrder.city; if (!city) { city = cities[Math.floor(Math.random() * cities.length)]; }
-      var buyer = { name: currentPendingOrder.customerName, city: city, avatar: avatarUrl, price: currentPendingOrder.price };
+      var avatarUrl = getInitialsAvatarSVG(currentPendingOrder.uid || 'Player', false);
+      var buyer = { name: 'You', city: '', avatar: avatarUrl, price: currentPendingOrder.price };
       var timestamp = Date.now(); addLiveNotification(buyer, design, timestamp); addPulseItem(buyer, design, timestamp);
     }
     function showSuccessModal(order) {
       var modal = document.getElementById('successOverlay'); var detailsContainer = document.getElementById('successOrderDetails'); var html = '';
-      html += '<span>💳 ' + escapeHtml(order.designName) + ' × ' + order.qty + ' — ' + escapeHtml(order.price) + '</span>';
-      html += '<span>🎨 ' + escapeHtml(order.material) + '</span>';
+      html += '<span>💎 ' + escapeHtml(order.designName) + ' × ' + order.qty + ' — ' + escapeHtml(order.price) + '</span>';
       if (order.transactionId) html += '<span>✅ Txn ID: ' + escapeHtml(order.transactionId) + '</span>';
-      html += '<span>📱 WhatsApp: ' + escapeHtml(order.whatsapp) + '</span>';
+      html += '<span>🎮 Free Fire UID: ' + escapeHtml(order.uid) + '</span>';
       detailsContainer.innerHTML = html; detailsContainer.style.display = 'block'; modal.style.display = 'flex'; spawnConfetti();
     }
     function spawnConfetti() {
@@ -1423,9 +1240,8 @@
       try { var ctx = new (window.AudioContext || window.webkitAudioContext)(); var o1 = ctx.createOscillator(); var o2 = ctx.createOscillator(); var g = ctx.createGain(); o1.type = 'sine'; o1.frequency.setValueAtTime(880, ctx.currentTime); o2.type = 'sine'; o2.frequency.setValueAtTime(1320, ctx.currentTime + 0.1); g.gain.setValueAtTime(0.08, ctx.currentTime); g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.2); o1.connect(g); o2.connect(g); g.connect(ctx.destination); o1.start(); o2.start(ctx.currentTime + 0.1); o1.stop(ctx.currentTime + 1.2); o2.stop(ctx.currentTime + 1.2); } catch(e) {}
     }
     document.getElementById('heroCtaBtn').addEventListener('click', function() { document.getElementById('productGrid').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
-    document.getElementById('modalCardWrap').addEventListener('click', function() { this.classList.toggle('flipped'); isFlipped = this.classList.contains('flipped'); });
     document.getElementById('qtyMinus').addEventListener('click', function() { if (currentQty > 1) currentQty--; document.getElementById('qtyValue').textContent = currentQty; });
-    document.getElementById('qtyPlus').addEventListener('click', function() { if (currentQty < 10) { currentQty++; document.getElementById('qtyValue').textContent = currentQty; } else { showToast('Maximum 10 cards allowed per order', 'error'); } });
+    document.getElementById('qtyPlus').addEventListener('click', function() { if (currentQty < 10) { currentQty++; document.getElementById('qtyValue').textContent = currentQty; } else { showToast('Maximum 10 packs allowed per order', 'error'); } });
     document.getElementById('modalBuyBtn').addEventListener('click', placeOrderDirect);
     document.getElementById('productClose').addEventListener('click', function() { document.getElementById('productOverlay').style.display = 'none'; document.body.classList.remove('modal-open'); });
     document.getElementById('productOverlay').addEventListener('click', function(e) { if (e.target === this) { this.style.display = 'none'; document.body.classList.remove('modal-open'); } });
@@ -1437,14 +1253,12 @@
     document.getElementById('confirmPaymentBtn').addEventListener('click', confirmPayment);
     document.getElementById('transactionId').addEventListener('input', function() { this.value = this.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); });
     document.getElementById('regenerateQrBtn').addEventListener('click', function() { document.getElementById('transactionId').value = ''; startQrTimer(); showToast('New QR generated! You have 5 more minutes.', 'success'); });
-    document.getElementById('orderPhone').addEventListener('input', function() { this.value = this.value.replace(/[^\d+\-\s]/g, ''); });
     document.getElementById('successCloseBtn').addEventListener('click', function() { document.getElementById('successOverlay').style.display = 'none'; document.getElementById('confettiContainer').innerHTML = ''; });
     document.getElementById('successOverlay').addEventListener('click', function(e) { if (e.target === this) { this.style.display = 'none'; document.getElementById('confettiContainer').innerHTML = ''; } });
     var firstNames = ['Aarav', 'Vivaan', 'Aditya', 'Vihaan', 'Arjun', 'Sai', 'Reyansh', 'Ayaan', 'Krishna', 'Ishaan', 'Rohan', 'Karan', 'Rahul', 'Amit', 'Vikram', 'Raj', 'Suraj', 'Deepak', 'Manish', 'Ankit', 'Ravi', 'Sunil', 'Nikhil', 'Harsh', 'Yash', 'Dev', 'Kartik', 'Pranav', 'Rudra', 'Shaurya', 'Anjali', 'Priya', 'Sneha', 'Neha', 'Pooja', 'Riya', 'Simran', 'Kavita', 'Divya', 'Meera', 'Aditi', 'Nisha', 'Sakshi', 'Tanvi', 'Ishita', 'Aisha', 'Ananya', 'Diya', 'Kritika', 'Sanya'];
     var surnames = ['Sharma', 'Verma', 'Yadav', 'Patel', 'Khan', 'Singh', 'Gupta', 'Agarwal', 'Jain', 'Mehta', 'Shah', 'Reddy', 'Nair', 'Iyer', 'Rao', 'Kumar', 'Chauhan', 'Rathore', 'Mishra', 'Tiwari', 'Pandey', 'Joshi', 'Desai', 'Kapoor', 'Malhotra', 'Chopra', 'Sinha', 'Bose', 'Das', 'Roy', 'Thakur', 'Kaur', 'Saxena', 'Bansal', 'Garg', 'Ahuja', 'Khanna', 'Bhatia', 'Sethi', 'Dutta'];
     var cities = ['Delhi', 'Mumbai', 'Bangalore', 'Pune', 'Hyderabad', 'Jaipur', 'Chennai', 'Kolkata', 'Ahmedabad', 'Lucknow', 'Indore', 'Bhopal', 'Chandigarh', 'Surat', 'Nagpur', 'Varanasi', 'Ranchi', 'Patna', 'Kanpur', 'Coimbatore', 'Visakhapatnam', 'Goa', 'Agra', 'Amritsar', 'Dehradun', 'Noida', 'Gurgaon', 'Kochi', 'Mysore', 'Udaipur', 'Jodhpur', 'Raipur', 'Guwahati', 'Bhubaneswar', 'Ludhiana', 'Jalandhar', 'Nashik', 'Aurangabad', 'Vadodara', 'Rajkot'];
     var notifContainer = document.getElementById('liveNotifContainer');
-    /* DETERMINISTIC FIX: minuteSeed based buyer generation */
     function generatePulseBuyer(minuteSeed) {
       var fnIndex = Math.floor(pseudoRandom(minuteSeed * 997 + 1) * firstNames.length);
       var lnIndex = Math.floor(pseudoRandom(minuteSeed * 991 + 2) * surnames.length);
@@ -1453,7 +1267,7 @@
       var fullName = fn + ' ' + ln;
       return { name: fullName, initials: fn.charAt(0) + ln.charAt(0), city: city, avatar: getAvatarForName(fullName) };
     }
-    function getCardThumbStyle(design) { if (design.brand === 'amex') return "background-image: url('amex-gold.png'); background-size: cover; background-position: center;"; return "background: " + design.gradient + ";"; }
+    function getCardThumbStyle(design) { return 'background: ' + design.gradient + ';'; }
     function formatTimeAgo(timestamp) {
       var diffMs = Date.now() - timestamp; var diffSec = Math.floor(diffMs / 1000);
       if (diffSec < 60) return 'Just now';
@@ -1465,14 +1279,14 @@
     }
     function createPulseItemHTML(buyer, design, timestamp) {
       var thumbStyle = getCardThumbStyle(design); var timeStr = formatTimeAgo(timestamp); var avatarUrl = buyer.avatar || getAvatarForName(buyer.name); var cityText = buyer.city ? (' from ' + escapeHtml(buyer.city)) : ''; var priceShown = buyer.price || design.price;
-      return '<div class="pulse-item" data-timestamp="' + timestamp + '"><div class="pulse-avatar-wrap"><div class="pulse-avatar">' + buildAvatarImg(avatarUrl, buyer.name, false) + '</div><div class="pulse-check">✓</div></div><div class="pulse-content"><div class="pulse-text"><strong>' + escapeHtml(buyer.name) + '</strong>' + cityText + ' just bought <span class="card-name">' + escapeHtml(design.name) + '</span> for <span style="color:#22c55e; font-weight:800;">' + escapeHtml(priceShown) + '</span></div><div class="pulse-meta"><span class="pulse-balance">Balance: ' + escapeHtml(design.balance) + '</span> &bull; <span class="pulse-time-text">' + escapeHtml(timeStr) + '</span></div></div><div class="pulse-card-thumb" style="' + thumbStyle + '"></div></div>';
+      return '<div class="pulse-item" data-timestamp="' + timestamp + '"><div class="pulse-avatar-wrap"><div class="pulse-avatar">' + buildAvatarImg(avatarUrl, buyer.name, false) + '</div><div class="pulse-check">✓</div></div><div class="pulse-content"><div class="pulse-text"><strong>' + escapeHtml(buyer.name) + '</strong>' + cityText + ' just bought <span class="card-name">' + escapeHtml(design.name) + '</span> for <span style="color:#22c55e; font-weight:800;">' + escapeHtml(priceShown) + '</span></div><div class="pulse-meta"><span class="pulse-balance">💎 Instant Delivery</span> &bull; <span class="pulse-time-text">' + escapeHtml(timeStr) + '</span></div></div><div class="pulse-card-thumb" style="' + thumbStyle + '"></div></div>';
     }
     function addLiveNotification(buyer, design, timestamp) {
       var existing = notifContainer.querySelectorAll('.live-notif, .review-notif, .welcome-back-toast');
       while (existing.length >= 3) { existing[0].remove(); existing = notifContainer.querySelectorAll('.live-notif, .review-notif, .welcome-back-toast'); }
       var nameParts = String(buyer.name || '').trim().split(/\s+/).filter(function(p) { return p.length > 0; }); var displayName = nameParts.length > 1 ? nameParts[0] + ' ' + nameParts[1].charAt(0) + '.' : (nameParts[0] || 'Someone'); var timeStr = formatTimeAgo(timestamp); var avatarUrl = buyer.avatar || getAvatarForName(buyer.name); var cityText = buyer.city ? (' from ' + escapeHtml(buyer.city)) : ''; var priceShown = buyer.price || design.price;
       var notif = document.createElement('div'); notif.className = 'live-notif';
-      notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="notif-card-badge">💳 Card Purchased</div><div class="notif-row"><div class="notif-avatar">' + buildAvatarImg(avatarUrl, buyer.name, false) + '</div><div class="notif-content"><strong>' + escapeHtml(displayName) + cityText + '</strong>bought <span style="color:#f5d76e; font-weight:700;">' + escapeHtml(design.name) + '</span> for <span style="color:#22c55e; font-weight:800;">' + escapeHtml(priceShown) + '</span><span class="notif-time">🕐 ' + escapeHtml(timeStr) + '</span></div></div>';
+      notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="notif-card-badge">💎 Diamond Top-Up</div><div class="notif-row"><div class="notif-avatar">' + buildAvatarImg(avatarUrl, buyer.name, false) + '</div><div class="notif-content"><strong>' + escapeHtml(displayName) + cityText + '</strong>bought <span style="color:#f5d76e; font-weight:700;">' + escapeHtml(design.name) + '</span> for <span style="color:#22c55e; font-weight:800;">' + escapeHtml(priceShown) + '</span><span class="notif-time">🕐 ' + escapeHtml(timeStr) + '</span></div></div>';
       notifContainer.appendChild(notif);
       var closeBtn = notif.querySelector('.notif-close-btn'); if (closeBtn) closeBtn.addEventListener('click', function(e) { e.stopPropagation(); notif.remove(); });
       setTimeout(function() { notif.remove(); }, 10500);
@@ -1608,18 +1422,17 @@
       });
     }
     var legalData = {
-      privacy: { title: 'Privacy Policy', content: '<p>We value your privacy. Your personal details are only used to process your order and deliver your card. All transactions are 100% secure.</p>' },
-      terms: { title: 'Terms of Service', content: '<p>By placing an order, you agree to provide accurate contact details. Orders are processed after successful payment verification.</p>' }
+      privacy: { title: 'Privacy Policy', content: '<p>We value your privacy. Your Free Fire UID is only used to deliver your top-up. All transactions are 100% secure.</p>' },
+      terms: { title: 'Terms of Service', content: '<p>By placing an order, you agree to provide a valid Free Fire UID. Diamonds are credited after successful payment verification. All top-ups are non-refundable.</p>' }
     };
     document.getElementById('privacyLink').addEventListener('click', function(e) { e.preventDefault(); document.getElementById('legalTitle').textContent = legalData.privacy.title; document.getElementById('legalContent').innerHTML = legalData.privacy.content; document.getElementById('legalOverlay').style.display = 'flex'; document.body.classList.add('modal-open'); });
     document.getElementById('termsLink').addEventListener('click', function(e) { e.preventDefault(); document.getElementById('legalTitle').textContent = legalData.terms.title; document.getElementById('legalContent').innerHTML = legalData.terms.content; document.getElementById('legalOverlay').style.display = 'flex'; document.body.classList.add('modal-open'); });
     document.getElementById('legalClose').addEventListener('click', function() { document.getElementById('legalOverlay').style.display = 'none'; document.body.classList.remove('modal-open'); });
     document.getElementById('legalOverlay').addEventListener('click', function(e) { if (e.target === this) { this.style.display = 'none'; document.body.classList.remove('modal-open'); } });
-    document.getElementById('miniCardPreview').addEventListener('click', function() { this.classList.toggle('flipped'); });
     var idleTimer = null;
-    function resetIdleTimer() { clearTimeout(idleTimer); idleTimer = setTimeout(function() { showToast('Wait! 🔥 High balance cards are selling fast today. Don\'t miss out!', 'info'); }, 120000); }
+    function resetIdleTimer() { clearTimeout(idleTimer); idleTimer = setTimeout(function() { showToast('Wait! 🔥 Diamonds are selling fast today. Don\'t miss out!', 'info'); }, 120000); }
     document.addEventListener('mousemove', resetIdleTimer); document.addEventListener('keydown', resetIdleTimer); document.addEventListener('scroll', resetIdleTimer); resetIdleTimer();
-    document.addEventListener('mouseleave', function(e) { if (e.clientY < 0) { showToast('Wait! 🔥 Don\'t miss out on our high balance cards!', 'error'); } });
+    document.addEventListener('mouseleave', function(e) { if (e.clientY < 0) { showToast('Wait! 🔥 Don\'t miss out on our diamond deals!', 'error'); } });
     loadProfileFromStorage(); updateProfileButtonUI();
     fetchAvatarsFromGitHub(function() {
       preloadAllAvatars(); initViewerCounts();
