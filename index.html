@@ -879,10 +879,10 @@
       return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
     }
     var avatarCache = { list: [], loaded: false };
-    function loadUsedAvatars() { try { var raw = localStorage.getItem('diamond_used_avatars_v3'); if (raw) { var parsed = JSON.parse(raw); if (Array.isArray(parsed)) return parsed; } } catch(e) {} return []; }
-    function saveUsedAvatars(arr) { try { localStorage.setItem('diamond_used_avatars_v3', JSON.stringify(arr)); } catch(e) {} }
-    function loadNameAvatarMap() { try { var raw = localStorage.getItem('diamond_name_avatar_map_v3'); if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') return parsed; } } catch(e) {} return {}; }
-    function saveNameAvatarMap(map) { try { localStorage.setItem('diamond_name_avatar_map_v3', JSON.stringify(map)); } catch(e) {} }
+    function loadUsedAvatars() { try { var raw = localStorage.getItem('diamond_used_avatars_v4'); if (raw) { var parsed = JSON.parse(raw); if (Array.isArray(parsed)) return parsed; } } catch(e) {} return []; }
+    function saveUsedAvatars(arr) { try { localStorage.setItem('diamond_used_avatars_v4', JSON.stringify(arr)); } catch(e) {} }
+    function loadNameAvatarMap() { try { var raw = localStorage.getItem('diamond_name_avatar_map_v4'); if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') return parsed; } } catch(e) {} return {}; }
+    function saveNameAvatarMap(map) { try { localStorage.setItem('diamond_name_avatar_map_v4', JSON.stringify(map)); } catch(e) {} }
     function assignAvatarToName(name) {
       if (!avatarCache.list || avatarCache.list.length === 0) return null;
       var key = String(name || 'anonymous').trim(); var map = loadNameAvatarMap();
@@ -899,14 +899,14 @@
     }
     /* ===== AVATAR FETCH — GitHub API for filenames + raw.githubusercontent for images ===== */
     function fetchAvatarsFromGitHub(callback) {
-      try { var cached = localStorage.getItem('diamond_avatars_list_v3'); var cachedTime = localStorage.getItem('diamond_avatars_time_v3'); if (cached && cachedTime && (Date.now() - parseInt(cachedTime)) < 604800000) { var parsed = JSON.parse(cached); if (Array.isArray(parsed) && parsed.length > 0) { avatarCache.list = parsed; avatarCache.loaded = true; if (callback) callback(parsed); return; } } } catch(e) {}
-      fetch('https://api.github.com/repos/forviews1st-hub/Diamond-Top-up/contents/avatars')
+      try { var cached = localStorage.getItem('diamond_avatars_list_v4'); var cachedTime = localStorage.getItem('diamond_avatars_time_v4'); if (cached && cachedTime && (Date.now() - parseInt(cachedTime)) < 604800000) { var parsed = JSON.parse(cached); if (Array.isArray(parsed) && parsed.length > 0) { avatarCache.list = parsed; avatarCache.loaded = true; if (callback) callback(parsed); return; } } } catch(e) {}
+      fetch('https://api.github.com/repos/forviews1st-hub/Diamond-Top-up-/contents/avatars')
         .then(function(r) { return r.json(); })
         .then(function(data) {
           if (!Array.isArray(data)) throw new Error('Invalid response');
-          var images = data.filter(function(item) { return item.type === 'file' && /\.(jpg|jpeg|png|webp)$/i.test(item.name); }).map(function(item) { return 'https://raw.githubusercontent.com/forviews1st-hub/Diamond-Top-up/main/avatars/' + item.name; });
+          var images = data.filter(function(item) { return item.type === 'file' && /\.(jpg|jpeg|png|webp)$/i.test(item.name); }).map(function(item) { return 'https://raw.githubusercontent.com/forviews1st-hub/Diamond-Top-up-/main/avatars/' + item.name; });
           avatarCache.list = images; avatarCache.loaded = true;
-          try { localStorage.setItem('diamond_avatars_list_v3', JSON.stringify(images)); localStorage.setItem('diamond_avatars_time_v3', Date.now().toString()); } catch(e) {}
+          try { localStorage.setItem('diamond_avatars_list_v4', JSON.stringify(images)); localStorage.setItem('diamond_avatars_time_v4', Date.now().toString()); } catch(e) {}
           if (callback) callback(images);
         })
         .catch(function(err) { console.warn('Avatar fetch failed:', err); avatarCache.loaded = true; if (callback) callback([]); });
