@@ -46,16 +46,33 @@
     .hero-cta-btn:hover .shop-arrow { transform: translateX(4px); }
     @media (max-width: 700px) { .hero-text-section { padding: 32px 14px 30px; } .hero-headline { font-size: 38px; } .hero-eyebrow { font-size: 9px; letter-spacing: 2.5px; padding: 6px 14px; } .hero-sub { font-size: 14px; } .hero-trust { font-size: 11px; gap: 8px 10px; } .hero-cta-btn { padding: 13px 26px; font-size: 14px; } .hero-stats { gap: 16px; } .hero-stat .stat-number { font-size: 20px; } }
     @media (max-width: 400px) { .hero-headline { font-size: 32px; } .hero-sub { font-size: 13px; } }
-    .why-trust-section { margin: 20px 0 24px; padding: 28px 20px; background: linear-gradient(160deg, #131313 0%, #0d0d0d 100%); border: 1px solid rgba(212,175,55,0.2); border-radius: 22px; }
-    .why-trust-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 6px; background: linear-gradient(135deg, #f5d76e 0%, #d4af37 55%, #b8941f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.3px; }
-    .why-trust-section .why-trust-sub { text-align: center; font-size: 12px; color: #777; margin-bottom: 22px; letter-spacing: 0.3px; }
-    .trust-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    @media (min-width: 700px) { .trust-features { grid-template-columns: repeat(4, 1fr); } }
-    .trust-feature-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 16px 8px; background: rgba(212,175,55,0.04); border: 1px solid rgba(212,175,55,0.15); border-radius: 14px; transition: all 0.25s ease; }
-    .trust-feature-card:hover { border-color: rgba(212,175,55,0.55); background: rgba(212,175,55,0.08); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(212,175,55,0.12); }
-    .trust-feature-card .tf-icon { font-size: 26px; filter: drop-shadow(0 2px 6px rgba(212,175,55,0.35)); }
-    .trust-feature-card .tf-label { font-size: 11px; font-weight: 800; color: #ddd; letter-spacing: 0.3px; line-height: 1.3; }
-    .trust-feature-card .tf-value { font-size: 9.5px; color: #888; letter-spacing: 0.2px; margin-top: -2px; }
+    /* ============ WHY TRUST US — REDESIGNED ============ */
+    .why-trust-section { margin: 20px 0 24px; padding: 34px 20px 30px; background: linear-gradient(160deg, #131313 0%, #0d0d0d 100%); border: 1px solid rgba(212,175,55,0.22); border-radius: 22px; position: relative; overflow: hidden; }
+    .why-trust-section::before { content: ''; position: absolute; top: -60%; left: -30%; width: 70%; height: 200%; background: radial-gradient(circle, rgba(212,175,55,0.14), transparent 65%); pointer-events: none; animation: trustGlowA 8s ease-in-out infinite; }
+    .why-trust-section::after { content: ''; position: absolute; bottom: -60%; right: -30%; width: 70%; height: 200%; background: radial-gradient(circle, rgba(79,172,254,0.1), transparent 65%); pointer-events: none; animation: trustGlowB 10s ease-in-out infinite; }
+    @keyframes trustGlowA { 0%, 100% { transform: translate(0, 0); opacity: 0.7; } 50% { transform: translate(15%, 10%); opacity: 1; } }
+    @keyframes trustGlowB { 0%, 100% { transform: translate(0, 0); opacity: 0.6; } 50% { transform: translate(-15%, -10%); opacity: 1; } }
+    .why-trust-section h2 { position: relative; z-index: 1; font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 6px; background: linear-gradient(135deg, #f5d76e 0%, #d4af37 55%, #b8941f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.3px; }
+    .why-trust-section .why-trust-sub { position: relative; z-index: 1; text-align: center; font-size: 12px; color: #888; margin-bottom: 26px; letter-spacing: 0.4px; font-weight: 500; }
+    .trust-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; position: relative; z-index: 1; }
+    @media (min-width: 700px) { .trust-features { grid-template-columns: repeat(4, 1fr); gap: 14px; } }
+    .trust-feature-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 20px 10px 18px; background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; }
+    .trust-feature-card::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, var(--tf-accent, #d4af37) 0%, transparent 40%, transparent 60%, var(--tf-accent, #d4af37) 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.25; pointer-events: none; transition: opacity 0.3s ease; }
+    .trust-feature-card:hover { transform: translateY(-4px); background: linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); box-shadow: 0 14px 30px rgba(0,0,0,0.5), 0 0 24px var(--tf-shadow, rgba(212,175,55,0.25)); }
+    .trust-feature-card:hover::before { opacity: 0.8; }
+    .trust-feature-card .tf-icon-wrap { width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 70%), linear-gradient(135deg, var(--tf-bg-a, rgba(212,175,55,0.25)), var(--tf-bg-b, rgba(212,175,55,0.05))); border: 1.5px solid var(--tf-border, rgba(212,175,55,0.45)); box-shadow: 0 0 20px var(--tf-shadow, rgba(212,175,55,0.3)), inset 0 1px 0 rgba(255,255,255,0.15); transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; }
+    .trust-feature-card .tf-icon-wrap::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid var(--tf-border, rgba(212,175,55,0.25)); opacity: 0.5; animation: tfRingPulse 3s ease-in-out infinite; }
+    @keyframes tfRingPulse { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.12); opacity: 0; } }
+    .trust-feature-card:hover .tf-icon-wrap { transform: scale(1.1) rotate(-6deg); box-shadow: 0 0 30px var(--tf-shadow, rgba(212,175,55,0.6)), inset 0 1px 0 rgba(255,255,255,0.25); }
+    .trust-feature-card .tf-label { font-size: 17px; font-weight: 900; letter-spacing: -0.4px; line-height: 1.1; background: linear-gradient(135deg, #ffffff 0%, var(--tf-accent, #d4af37) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .trust-feature-card .tf-value { font-size: 9.5px; color: #888; letter-spacing: 0.8px; font-weight: 700; text-transform: uppercase; line-height: 1.2; }
+    @media (min-width: 500px) { .trust-feature-card .tf-label { font-size: 20px; } }
+    /* Card accent colors */
+    .trust-feature-card:nth-child(1) { --tf-accent: #4facfe; --tf-shadow: rgba(79,172,254,0.35); --tf-border: rgba(79,172,254,0.45); --tf-bg-a: rgba(79,172,254,0.28); --tf-bg-b: rgba(79,172,254,0.05); }
+    .trust-feature-card:nth-child(2) { --tf-accent: #22c55e; --tf-shadow: rgba(34,197,94,0.35); --tf-border: rgba(34,197,94,0.45); --tf-bg-a: rgba(34,197,94,0.28); --tf-bg-b: rgba(34,197,94,0.05); }
+    .trust-feature-card:nth-child(3) { --tf-accent: #f59e0b; --tf-shadow: rgba(245,158,11,0.35); --tf-border: rgba(245,158,11,0.45); --tf-bg-a: rgba(245,158,11,0.28); --tf-bg-b: rgba(245,158,11,0.05); }
+    .trust-feature-card:nth-child(4) { --tf-accent: #d4af37; --tf-shadow: rgba(212,175,55,0.4); --tf-border: rgba(212,175,55,0.5); --tf-bg-a: rgba(212,175,55,0.3); --tf-bg-b: rgba(212,175,55,0.06); }
+    /* ============ END WHY TRUST US ============ */
     .pulse-feed { margin: 0 0 24px; padding: 16px 20px; background: linear-gradient(160deg, #1c180e 0%, #0d0a05 100%); border: 1px solid rgba(212,175,55,0.5); border-radius: 18px; box-shadow: 0 4px 20px rgba(0,0,0,0.5), inset 0 1px 0 rgba(212,175,55,0.2); position: relative; overflow: hidden; }
     .pulse-feed::before { content: ''; position: absolute; top: -50%; left: -20%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%); pointer-events: none; }
     .pulse-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
@@ -93,11 +110,7 @@
     .heading-row h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; color: #fff; }
     .heading-row p { font-size: 13px; color: #777; margin-top: 4px; font-weight: 500; }
     @media (max-width:600px) { .heading-row h1 { font-size: 22px; } }
-    .product-trust-row { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px 22px; padding: 14px 20px; background: linear-gradient(160deg, #0f0f0f 0%, #0a0a0a 100%); border: 1px solid rgba(212,175,55,0.15); border-radius: 18px; margin: 4px 0 24px; }
-    .product-trust-row .ptr-item { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: #ccc; letter-spacing: 0.3px; }
-    .product-trust-row .ptr-item .ptr-icon { font-size: 14px; filter: drop-shadow(0 0 6px rgba(212,175,55,0.4)); }
-    .product-trust-row .ptr-divider { color: #333; font-size: 10px; }
-    @media (max-width: 600px) { .product-trust-row { gap: 8px 14px; padding: 12px 12px; } .product-trust-row .ptr-item { font-size: 10px; gap: 4px; } .product-trust-row .ptr-divider { display: none; } .product-trust-row .ptr-icon { font-size: 12px; } }
+    /* ============ PRODUCT GRID — 2x2 on mobile ============ */
     .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 40px; scroll-margin-top: 90px; }
     @media (min-width: 600px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
     @media (min-width: 1000px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; } }
@@ -114,21 +127,21 @@
     .live-viewers-badge .vcount.bump { transform: scale(1.18); }
     .live-viewers-badge .viewing-text { color: #ccc; font-weight: 600; font-size: 8.5px; }
     @media (min-width: 600px) { .live-viewers-badge { font-size: 10.5px; padding: 6px 10px; gap: 5px; } .live-viewers-badge .eye { font-size: 10px; } .live-viewers-badge .viewing-text { font-size: 10px; } .live-viewers-badge .live-pulse-dot { width: 5px; height: 5px; } }
-    .countdown-strip { display: flex; align-items: center; justify-content: center; gap: 4px; padding: 4px 6px; margin-bottom: 6px; border-radius: 8px; background: linear-gradient(90deg, rgba(239,68,68,0.16) 0%, rgba(245,158,11,0.16) 100%); border: 1px solid rgba(239,68,68,0.4); font-size: 8px; font-weight: 800; color: #fecaca; letter-spacing: 0.2px; text-transform: uppercase; }
-    .countdown-strip .cd-icon { font-size: 9px; }
-    .countdown-strip .cd-time { font-variant-numeric: tabular-nums; color: #fff; background: rgba(0,0,0,0.4); padding: 1px 5px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; border: 1px solid rgba(239,68,68,0.5); font-size: 9px; }
+    /* ============ COUNTDOWN — compact single line ============ */
+    .countdown-strip { display: flex; align-items: center; justify-content: center; gap: 5px; padding: 5px 8px; margin-bottom: 6px; border-radius: 8px; background: linear-gradient(90deg, rgba(239,68,68,0.16) 0%, rgba(245,158,11,0.16) 100%); border: 1px solid rgba(239,68,68,0.4); font-size: 10px; font-weight: 800; color: #fecaca; letter-spacing: 0.4px; white-space: nowrap; overflow: hidden; }
+    .countdown-strip .cd-icon { font-size: 10px; flex-shrink: 0; }
+    .countdown-strip .cd-time { font-variant-numeric: tabular-nums; color: #fff; font-weight: 900; letter-spacing: 0.8px; }
     .countdown-strip.expiring { animation: cdPulse 1.5s ease-in-out infinite; }
     @keyframes cdPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.5); } 50% { box-shadow: 0 0 0 4px rgba(239,68,68,0); } }
-    @media (min-width: 600px) { .countdown-strip { font-size: 10.5px; padding: 6px 10px; gap: 6px; margin-bottom: 10px; } .countdown-strip .cd-icon { font-size: 11px; } .countdown-strip .cd-time { font-size: 11px; padding: 2px 8px; } }
-    .diamond-showcase { position: relative; aspect-ratio: 1.35 / 1; border-radius: 14px; background: linear-gradient(160deg, #131313 0%, #0d0d0d 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 0 0 1px rgba(255,255,255,0.04); padding: 10px 8px; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
-    .grid-card:hover .diamond-showcase { transform: translateY(-3px) scale(1.01); }
-    .diamond-glow { position: absolute; inset: 0; opacity: 0.55; filter: blur(30px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; }
-    @keyframes glowPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.7; } }
-    .chest-image { max-height: 80px; max-width: 80%; width: auto; height: auto; object-fit: contain; z-index: 3; position: relative; filter: drop-shadow(0 6px 16px rgba(79,172,254,0.45)) drop-shadow(0 0 25px var(--accent, #4facfe)); animation: chestFloat 3.5s ease-in-out infinite; }
-    @keyframes chestFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-6px) scale(1.03); } }
-    .diamond-qty { font-size: 24px; font-weight: 900; letter-spacing: -1px; background: linear-gradient(135deg, #fff 0%, var(--accent, #4facfe) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; z-index: 3; line-height: 1; margin-top: 4px; text-shadow: 0 0 20px var(--accent); }
-    .diamond-label { font-size: 8px; font-weight: 800; letter-spacing: 3px; color: #999; margin-top: 2px; z-index: 3; }
-    @media (min-width: 600px) { .diamond-showcase { aspect-ratio: 1.4 / 1; padding: 22px 16px; border-radius: 18px; } .chest-image { max-height: 130px; } .diamond-qty { font-size: 42px; letter-spacing: -1.8px; margin-top: 6px; } .diamond-label { font-size: 11px; letter-spacing: 4.5px; margin-top: 4px; } }
+    @media (min-width: 600px) { .countdown-strip { font-size: 11px; padding: 6px 12px; gap: 6px; margin-bottom: 10px; } .countdown-strip .cd-icon { font-size: 12px; } }
+    /* ============ DIAMOND SHOWCASE — only image, big & centered ============ */
+    .diamond-showcase { position: relative; aspect-ratio: 1.2 / 1; border-radius: 14px; background: linear-gradient(160deg, #131313 0%, #0d0d0d 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 0 0 1px rgba(255,255,255,0.04); padding: 12px; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .grid-card:hover .diamond-showcase { transform: translateY(-3px) scale(1.02); }
+    .diamond-glow { position: absolute; inset: 0; opacity: 0.6; filter: blur(35px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; }
+    @keyframes glowPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.75; } }
+    .chest-image { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; z-index: 3; position: relative; filter: drop-shadow(0 8px 20px rgba(79,172,254,0.5)) drop-shadow(0 0 30px var(--accent, #4facfe)); animation: chestFloat 3.5s ease-in-out infinite; }
+    @keyframes chestFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-5px) scale(1.04); } }
+    @media (min-width: 600px) { .diamond-showcase { aspect-ratio: 1.25 / 1; padding: 20px; border-radius: 18px; } .chest-image { max-width: 90%; max-height: 90%; } }
     .diamond-sparkle { position: absolute; color: #fff; opacity: 0; z-index: 4; animation: sparkleAnim 3s ease-in-out infinite; text-shadow: 0 0 10px var(--accent, #4facfe); pointer-events: none; }
     .diamond-sparkle.sparkle-1 { top: 18%; left: 14%; font-size: 10px; animation-delay: 0s; }
     .diamond-sparkle.sparkle-2 { top: 28%; right: 16%; font-size: 8px; animation-delay: 1s; }
@@ -136,16 +149,11 @@
     .diamond-sparkle.sparkle-4 { bottom: 30%; right: 22%; font-size: 6px; animation-delay: 1.5s; }
     @media (min-width: 600px) { .diamond-sparkle.sparkle-1 { font-size: 14px; } .diamond-sparkle.sparkle-2 { font-size: 10px; } .diamond-sparkle.sparkle-3 { font-size: 12px; } .diamond-sparkle.sparkle-4 { font-size: 8px; } }
     @keyframes sparkleAnim { 0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); } 50% { opacity: 1; transform: scale(1.3) rotate(180deg); } }
-    .diamond-showcase.modal-diamond { aspect-ratio: 1.3 / 1; padding: 30px 20px; }
-    .diamond-showcase.modal-diamond .chest-image { max-height: 190px; }
-    .diamond-showcase.modal-diamond .diamond-qty { font-size: 56px; }
-    .diamond-showcase.modal-diamond .diamond-label { font-size: 13px; letter-spacing: 5px; }
-    .diamond-showcase.mini-diamond { aspect-ratio: 1.5 / 1; padding: 14px 12px; }
-    .diamond-showcase.mini-diamond .chest-image { max-height: 70px; }
-    .diamond-showcase.mini-diamond .diamond-qty { font-size: 24px; letter-spacing: -1px; }
-    .diamond-showcase.mini-diamond .diamond-label { font-size: 8px; letter-spacing: 3px; }
+    .diamond-showcase.modal-diamond { aspect-ratio: 1.2 / 1; padding: 34px; }
+    .diamond-showcase.modal-diamond .chest-image { max-width: 95%; max-height: 95%; }
+    .diamond-showcase.mini-diamond { aspect-ratio: 1.4 / 1; padding: 14px; }
+    .diamond-showcase.mini-diamond .chest-image { max-width: 85%; max-height: 85%; }
     .diamond-showcase.mini-diamond .diamond-sparkle { display: none; }
-    @media (max-width: 400px) { .diamond-showcase .chest-image { max-height: 68px; } .diamond-showcase .diamond-qty { font-size: 22px; } }
     .cc-balance-badge { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 1px; padding: 4px 8px; border-radius: 10px; background: linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(34,197,94,0.04) 100%); border: 1.2px solid rgba(34,197,94,0.35); width: fit-content; margin: 0; box-shadow: 0 4px 16px rgba(34,197,94,0.15), inset 0 1px 0 rgba(255,255,255,0.05); position: relative; overflow: hidden; }
     .cc-balance-badge::before { content: ''; position: absolute; top: -50%; left: -60%; width: 40%; height: 200%; background: linear-gradient(115deg, transparent, rgba(34,197,94,0.22), transparent); transform: rotate(20deg); animation: balanceShimmer 3.5s ease-in-out infinite; pointer-events: none; }
     @keyframes balanceShimmer { 0% { left: -60%; } 50% { left: 130%; } 100% { left: -60%; } }
@@ -156,11 +164,10 @@
     .gc-info { display: flex; flex-direction: column; gap: 4px; }
     .gc-name { font-size: 12px; font-weight: 800; color: #fff; letter-spacing: -0.2px; line-height: 1.25; }
     .gc-tagline { font-size: 9.5px; color: #888; font-weight: 500; letter-spacing: 0.2px; display: none; }
-    .gc-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 2px; gap: 4px; flex-wrap: wrap; }
-    .gc-rating { display: flex; align-items: center; gap: 3px; font-size: 10px; font-weight: 700; letter-spacing: 0.2px; color: #aaa; }
+    .gc-meta { display: flex; align-items: center; justify-content: flex-end; margin-top: 2px; gap: 4px; }
     .gc-price { font-size: 14px; font-weight: 800; color: #22c55e; letter-spacing: -0.3px; text-shadow: 0 0 12px rgba(34,197,94,0.2); }
     .gc-material { font-size: 8px; color: #666; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; }
-    @media (min-width: 600px) { .gc-info { gap: 6px; } .gc-name { font-size: 16px; } .gc-tagline { font-size: 12px; display: block; } .gc-meta { margin-top: 4px; gap: 6px; } .gc-rating { font-size: 12px; gap: 6px; } .gc-price { font-size: 18px; } .gc-material { font-size: 10px; letter-spacing: 1.5px; } }
+    @media (min-width: 600px) { .gc-info { gap: 6px; } .gc-name { font-size: 16px; } .gc-tagline { font-size: 12px; display: block; } .gc-meta { margin-top: 4px; gap: 6px; } .gc-price { font-size: 18px; } .gc-material { font-size: 10px; letter-spacing: 1.5px; } }
     .gc-actions { display: flex; margin-top: 4px; }
     .gc-buy-btn { flex: 1; background: linear-gradient(135deg, #f5d76e 0%, #d4af37 55%, #b8941f 100%); color: #1a1408; border: none; border-radius: 16px; padding: 8px; font-size: 11px; font-weight: 800; letter-spacing: 0.3px; cursor: pointer; font-family: inherit; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(212,175,55,0.3); position: relative; overflow: hidden; }
     .gc-buy-btn::before { content: ''; position: absolute; top: -50%; left: -60%; width: 40%; height: 200%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.4), transparent); transform: rotate(20deg); transition: left 0.7s ease; }
@@ -169,10 +176,7 @@
     @media (min-width: 600px) { .gc-actions { margin-top: 6px; } .gc-buy-btn { border-radius: 22px; padding: 12px; font-size: 13px; letter-spacing: 0.5px; } }
     .trending-badge { display: inline-block; background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); color: #fff; font-size: 7.5px; font-weight: 900; letter-spacing: 0.7px; padding: 2px 6px; border-radius: 5px; margin-bottom: 2px; box-shadow: 0 2px 8px rgba(239,68,68,0.4); text-transform: uppercase; width: fit-content; }
     @media (min-width: 600px) { .trending-badge { font-size: 9px; letter-spacing: 1px; padding: 3px 8px; border-radius: 6px; margin-bottom: 4px; } }
-    .rating-stars { position: relative; display: inline-block; font-size: 10px; letter-spacing: 1px; line-height: 1; font-family: Arial, sans-serif; }
-    .rating-stars .stars-bg { color: #333; }
-    .rating-stars .stars-fill { color: #d4af37; position: absolute; top: 0; left: 0; overflow: hidden; white-space: nowrap; }
-    @media (min-width: 600px) { .rating-stars { font-size: 12px; letter-spacing: 1.5px; } }
+    /* ============ REVIEWS ============ */
     .reviews-section { margin-bottom: 40px; scroll-margin-top: 90px; }
     .reviews-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
     .reviews-header .heading-row { margin-bottom: 0; }
@@ -200,8 +204,6 @@
     .review-meta .dot { color: #444; font-size: 12px; }
     .review-purchased { display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: #ccc; background: linear-gradient(135deg, rgba(212,175,55,0.12) 0%, rgba(212,175,55,0.04) 100%); border: 1px solid rgba(212,175,55,0.3); padding: 6px 12px; border-radius: 8px; width: fit-content; font-weight: 500; letter-spacing: 0.2px; }
     .review-purchased strong { color: #f5d76e; font-weight: 800; margin-left: 2px; }
-    .review-stars { color: #d4af37; font-size: 14px; letter-spacing: 2px; display: flex; align-items: center; gap: 6px; }
-    .review-stars .rating-num { font-size: 11px; color: #888; letter-spacing: 0.3px; font-weight: 600; }
     .review-text { font-size: 13px; color: #ffffff; line-height: 1.6; position: relative; padding-top: 6px; font-weight: 400; letter-spacing: 0.1px; }
     .review-text::before { content: '"'; font-size: 30px; color: rgba(212,175,55,0.25); position: absolute; top: -8px; left: -8px; font-family: serif; font-weight: 700; }
     .review-card.youtuber-card .review-text::before { color: rgba(29,155,240,0.3); }
@@ -254,6 +256,8 @@
     .live-notif .notif-content { font-size: 11px; color: #ccc; line-height: 1.4; flex: 1; min-width: 0; }
     .live-notif .notif-content strong { color: #fff; font-weight: 700; display: block; margin-bottom: 1px; }
     .live-notif .notif-content .notif-time { color: #22c55e; font-size: 10px; display: block; margin-top: 3px; font-weight: 600; letter-spacing: 0.2px; }
+    .live-notif .notif-chest { width: 38px; height: 38px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: rgba(79,172,254,0.08); border: 1px solid rgba(212,175,55,0.35); padding: 2px; overflow: hidden; }
+    .live-notif .notif-chest img { width: 100%; height: 100%; object-fit: contain; }
     @media (max-width: 480px) { .live-notif-container { left: 10px; right: 10px; top: 76px; max-width: none; } }
     .review-notif { display: flex; flex-direction: column; gap: 0; background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%); border: 1px solid rgba(29,155,240,0.45); border-radius: 14px; box-shadow: 0 10px 28px rgba(0,0,0,0.7), 0 0 20px rgba(29,155,240,0.12); animation: notifIn 0.4s ease, notifOut 0.4s ease 10.4s forwards; pointer-events: auto; overflow: hidden; }
     .review-notif .notif-card-badge { background: linear-gradient(135deg, #1d9bf0 0%, #0a7bc7 100%); }
@@ -294,10 +298,6 @@
     .photo-upload-hint { display: flex; flex-direction: column; gap: 3px; }
     .photo-upload-hint .primary { font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.2px; }
     .photo-upload-hint .secondary { font-size: 10px; color: #777; letter-spacing: 0.2px; }
-    .star-selector { display: flex; gap: 8px; align-items: center; padding: 4px 0; }
-    .star-selector .star-btn { font-size: 28px; color: #333; background: none; border: none; cursor: pointer; padding: 0; line-height: 1; transition: all 0.15s ease; font-family: Arial, sans-serif; }
-    .star-selector .star-btn:hover, .star-selector .star-btn.active { color: #d4af37; transform: scale(1.15); }
-    .star-selector-label { font-size: 11px; color: #888; margin-left: 8px; font-weight: 600; }
     .review-submit-btn { width: 100%; background: linear-gradient(135deg, #f5d76e 0%, #d4af37 55%, #b8941f 100%); color: #1a1408; border: none; border-radius: 26px; padding: 14px; font-size: 14px; font-weight: 800; letter-spacing: 0.6px; cursor: pointer; font-family: inherit; transition: all 0.25s ease; box-shadow: 0 6px 20px rgba(212,175,55,0.35); display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 4px; position: relative; overflow: hidden; }
     .review-submit-btn::before { content: ''; position: absolute; top: -50%; left: -60%; width: 40%; height: 200%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.4), transparent); transform: rotate(20deg); transition: left 0.7s ease; }
     .review-submit-btn:hover::before { left: 130%; }
@@ -319,8 +319,7 @@
     .modal-title { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.4px; margin-bottom: 6px; text-align: center; }
     .modal-tagline { font-size: 12px; color: #888; text-align: center; margin-bottom: 16px; letter-spacing: 0.3px; }
     .modal-price-block { text-align: center; margin-bottom: 24px; padding: 16px 0; border-top: 1px solid rgba(212,175,55,0.15); border-bottom: 1px solid rgba(212,175,55,0.15); }
-    .modal-price { font-size: 40px; font-weight: 900; letter-spacing: -2px; background: linear-gradient(135deg, #4ade80 0%, #22c55e 55%, #16a34a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin-bottom: 8px; }
-    .modal-rating { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: #aaa; padding: 4px 12px; border-radius: 20px; background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.25); }
+    .modal-price { font-size: 40px; font-weight: 900; letter-spacing: -2px; background: linear-gradient(135deg, #4ade80 0%, #22c55e 55%, #16a34a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
     .qty-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 18px; }
     .qty-row button { background: #1a1a1a; border: 1px solid #262626; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; font-weight: 700; cursor: pointer; color: #fff; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
     .qty-row button:hover { background: #d4af37; color: #1a1408; border-color: #d4af37; transform: scale(1.05); }
@@ -474,7 +473,6 @@
       <div class="hero-stats">
         <div class="hero-stat"><span class="stat-number" id="heroSoldCount">0</span><span class="stat-label">Top-Ups Done</span></div>
         <div class="hero-stat"><span class="stat-number" id="heroBuyersCount">0</span><span class="stat-label">Happy Gamers</span></div>
-        <div class="hero-stat"><span class="stat-number" id="heroRating">4.9</span><span class="stat-label">Avg Rating</span></div>
       </div>
       <button class="hero-cta-btn" id="heroCtaBtn">Buy Diamonds <span class="shop-arrow">→</span></button>
     </section>
@@ -483,10 +481,26 @@
       <h2>Why Trust Us?</h2>
       <p class="why-trust-sub">Thousands of gamers top-up here every day</p>
       <div class="trust-features">
-        <div class="trust-feature-card"><div class="tf-icon">🎮</div><div class="tf-label" id="whyTrustBuyers">10,000+</div><div class="tf-value">Happy Gamers</div></div>
-        <div class="trust-feature-card"><div class="tf-icon">✅</div><div class="tf-label">100% Verified</div><div class="tf-value">Genuine Top-Ups</div></div>
-        <div class="trust-feature-card"><div class="tf-icon">⚡</div><div class="tf-label">60 Seconds</div><div class="tf-value">Instant Delivery</div></div>
-        <div class="trust-feature-card"><div class="tf-icon">🔒</div><div class="tf-label">100% Secure</div><div class="tf-value">Encrypted Payment</div></div>
+        <div class="trust-feature-card">
+          <div class="tf-icon-wrap">🎮</div>
+          <div class="tf-label" id="whyTrustBuyers">10,000+</div>
+          <div class="tf-value">Happy Gamers</div>
+        </div>
+        <div class="trust-feature-card">
+          <div class="tf-icon-wrap">✅</div>
+          <div class="tf-label">100%</div>
+          <div class="tf-value">Verified Top-Ups</div>
+        </div>
+        <div class="trust-feature-card">
+          <div class="tf-icon-wrap">⚡</div>
+          <div class="tf-label">60 Sec</div>
+          <div class="tf-value">Instant Delivery</div>
+        </div>
+        <div class="trust-feature-card">
+          <div class="tf-icon-wrap">🔒</div>
+          <div class="tf-label">100%</div>
+          <div class="tf-value">Secure Payment</div>
+        </div>
       </div>
     </section>
 
@@ -506,18 +520,6 @@
     </div>
 
     <div class="heading-row"><h1>Buy Diamonds</h1><p>Choose your package and top-up instantly</p></div>
-
-    <div class="product-trust-row">
-      <span class="ptr-item"><span class="ptr-icon">🔒</span> SSL Secured</span>
-      <span class="ptr-divider">·</span>
-      <span class="ptr-item"><span class="ptr-icon">🛡️</span> 100% Safe</span>
-      <span class="ptr-divider">·</span>
-      <span class="ptr-item"><span class="ptr-icon">⚡</span> Instant Delivery</span>
-      <span class="ptr-divider">·</span>
-      <span class="ptr-item"><span class="ptr-icon">✓</span> Verified Seller</span>
-      <span class="ptr-divider">·</span>
-      <span class="ptr-item"><span class="ptr-icon">💯</span> Genuine Top-Ups</span>
-    </div>
 
     <div class="product-grid" id="productGrid"></div>
 
@@ -595,7 +597,7 @@
         <div class="modal-card-wrap" id="modalCardWrap"></div>
         <h3 class="modal-title" id="modalName">Package</h3>
         <p class="modal-tagline" id="modalTagline">Tagline</p>
-        <div class="modal-price-block"><div class="modal-price" id="modalPrice">₹0</div><div class="modal-rating" id="modalRating"></div></div>
+        <div class="modal-price-block"><div class="modal-price" id="modalPrice">₹0</div></div>
         <div class="qty-row"><button id="qtyMinus">−</button><span id="qtyValue">1</span><button id="qtyPlus">+</button></div>
         <button class="modal-buy-btn" id="modalBuyBtn">⚡ Buy Now</button>
       </div>
@@ -683,17 +685,6 @@
               <option value="">-- Select Package --</option>
               <option>100 Diamonds</option><option>310 Diamonds</option><option>520 Diamonds</option><option>1060 Diamonds</option><option>2180 Diamonds</option><option>5600 Diamonds</option>
             </select>
-          </div>
-          <div class="review-form-group">
-            <label>Your Rating</label>
-            <div class="star-selector" id="starSelector">
-              <button type="button" class="star-btn" data-star="1">★</button>
-              <button type="button" class="star-btn" data-star="2">★</button>
-              <button type="button" class="star-btn" data-star="3">★</button>
-              <button type="button" class="star-btn" data-star="4">★</button>
-              <button type="button" class="star-btn" data-star="5">★</button>
-              <span class="star-selector-label" id="starLabel">Select rating</span>
-            </div>
           </div>
           <div class="review-form-group"><label>Your Review</label><textarea id="reviewText" placeholder="Share your experience..." required maxlength="250"></textarea></div>
           <button type="submit" class="review-submit-btn"><span>✨</span> Submit Review</button>
@@ -913,14 +904,14 @@
       if (mapKeys.length > 1000) { var newMap = {}; var recent = mapKeys.slice(-500); for (var j = 0; j < recent.length; j++) newMap[recent[j]] = map[recent[j]]; map = newMap; }
       saveNameAvatarMap(map); return chosen;
     }
-    /* ===== AVATAR FETCH — jsDelivr Data API (No Rate Limit) ===== */
+    /* ===== AVATAR FETCH — GitHub API for filenames + jsDelivr CDN for images ===== */
     function fetchAvatarsFromGitHub(callback) {
       try { var cached = localStorage.getItem('diamond_avatars_list'); var cachedTime = localStorage.getItem('diamond_avatars_time'); if (cached && cachedTime && (Date.now() - parseInt(cachedTime)) < 604800000) { var parsed = JSON.parse(cached); if (Array.isArray(parsed) && parsed.length > 0) { avatarCache.list = parsed; avatarCache.loaded = true; if (callback) callback(parsed); return; } } } catch(e) {}
-      fetch('https://data.jsdelivr.com/v1/packages/gh/forviews1st-hub/Diamond-Top-up@main/flat')
+      fetch('https://api.github.com/repos/forviews1st-hub/Diamond-Top-up/contents/avatars')
         .then(function(r) { return r.json(); })
         .then(function(data) {
-          if (!data || !Array.isArray(data.files)) throw new Error('Invalid response');
-          var images = data.files.filter(function(f) { return /^\/avatars\/.+\.(jpg|jpeg|png|webp)$/i.test(f.name); }).map(function(f) { return 'https://cdn.jsdelivr.net/gh/forviews1st-hub/Diamond-Top-up@main/avatars/' + f.name.replace('/avatars/', ''); });
+          if (!Array.isArray(data)) throw new Error('Invalid response');
+          var images = data.filter(function(item) { return item.type === 'file' && /\.(jpg|jpeg|png|webp)$/i.test(item.name); }).map(function(item) { return 'https://cdn.jsdelivr.net/gh/forviews1st-hub/Diamond-Top-up@main/avatars/' + item.name; });
           avatarCache.list = images; avatarCache.loaded = true;
           try { localStorage.setItem('diamond_avatars_list', JSON.stringify(images)); localStorage.setItem('diamond_avatars_time', Date.now().toString()); } catch(e) {}
           if (callback) callback(images);
@@ -965,25 +956,25 @@
       };
     })();
     var designs = [
-      { id: 'd100', name: '100 Diamonds', qty: 100, bonus: 0, price: '₹80', tagline: 'Perfect starter pack', accent: '#4facfe', gradient: 'linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #4facfe 100%)', material: 'Starter Pack', stockPercent: 92, viewerWeight: 0.7, rating: '⭐ 4.9' },
-      { id: 'd310', name: '310 Diamonds', qty: 310, bonus: 0, price: '₹240', tagline: 'Great value for regulars', accent: '#a855f7', gradient: 'linear-gradient(135deg, #1a0a2e 0%, #3d1a6e 50%, #a855f7 100%)', material: 'Popular Pack', stockPercent: 85, viewerWeight: 1.2, rating: '⭐ 4.9' },
-      { id: 'd520', name: '520 Diamonds', qty: 520, bonus: 50, price: '₹400', tagline: 'Best seller with bonus', accent: '#f59e0b', gradient: 'linear-gradient(135deg, #2d0a0a 0%, #7c2d12 50%, #f59e0b 100%)', material: 'Value Pack', stockPercent: 78, viewerWeight: 1.6, rating: '⭐ 5.0' },
-      { id: 'd1060', name: '1060 Diamonds', qty: 1060, bonus: 100, price: '₹800', tagline: 'For serious gamers', accent: '#10b981', gradient: 'linear-gradient(135deg, #0a2e1a 0%, #064e3b 50%, #10b981 100%)', material: 'Pro Pack', stockPercent: 71, viewerWeight: 1.0, rating: '⭐ 4.8' },
-      { id: 'd2180', name: '2180 Diamonds', qty: 2180, bonus: 250, price: '₹1600', tagline: 'Ultimate value pack', accent: '#ec4899', gradient: 'linear-gradient(135deg, #2e0a2e 0%, #6b1d6b 50%, #ec4899 100%)', material: 'Elite Pack', stockPercent: 88, viewerWeight: 1.3, rating: '⭐ 4.9' },
-      { id: 'd5600', name: '5600 Diamonds', qty: 5600, bonus: 0, price: '₹2100', tagline: 'Mega pack for pros', accent: '#3b82f6', gradient: 'linear-gradient(135deg, #0a1f3d 0%, #1e40af 50%, #3b82f6 100%)', material: 'Mega Pack', stockPercent: 75, viewerWeight: 1.4, rating: '⭐ 5.0' }
+      { id: 'd100', name: '100 Diamonds', qty: 100, bonus: 0, price: '₹80', tagline: 'Perfect starter pack', accent: '#4facfe', gradient: 'linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #4facfe 100%)', material: 'Starter Pack', stockPercent: 92, viewerWeight: 0.7 },
+      { id: 'd310', name: '310 Diamonds', qty: 310, bonus: 0, price: '₹240', tagline: 'Great value for regulars', accent: '#a855f7', gradient: 'linear-gradient(135deg, #1a0a2e 0%, #3d1a6e 50%, #a855f7 100%)', material: 'Popular Pack', stockPercent: 85, viewerWeight: 1.2 },
+      { id: 'd520', name: '520 Diamonds', qty: 520, bonus: 50, price: '₹400', tagline: 'Best seller with bonus', accent: '#f59e0b', gradient: 'linear-gradient(135deg, #2d0a0a 0%, #7c2d12 50%, #f59e0b 100%)', material: 'Value Pack', stockPercent: 78, viewerWeight: 1.6 },
+      { id: 'd1060', name: '1060 Diamonds', qty: 1060, bonus: 100, price: '₹800', tagline: 'For serious gamers', accent: '#10b981', gradient: 'linear-gradient(135deg, #0a2e1a 0%, #064e3b 50%, #10b981 100%)', material: 'Pro Pack', stockPercent: 71, viewerWeight: 1.0 },
+      { id: 'd2180', name: '2180 Diamonds', qty: 2180, bonus: 250, price: '₹1600', tagline: 'Ultimate value pack', accent: '#ec4899', gradient: 'linear-gradient(135deg, #2e0a2e 0%, #6b1d6b 50%, #ec4899 100%)', material: 'Elite Pack', stockPercent: 88, viewerWeight: 1.3 },
+      { id: 'd5600', name: '5600 Diamonds', qty: 5600, bonus: 0, price: '₹2100', tagline: 'Mega pack for pros', accent: '#3b82f6', gradient: 'linear-gradient(135deg, #0a1f3d 0%, #1e40af 50%, #3b82f6 100%)', material: 'Mega Pack', stockPercent: 75, viewerWeight: 1.4 }
     ];
     var reviewsData = [
-      { name: 'Total Gaming', avatar: 'reviews/youtuber1.png', location: 'Gujarat', time: '9 days ago', purchased: 'All Packages', comment: 'Hello Gamers! Ajju Bhai here. Maine is seller se diamonds liye hain, aur sach batau toh diamonds ekdum wahi mile jo bola gaya tha. Maine usi se apna Free Fire ka Elite Pass aur top-up kiya. Agar aap log bhi high diamonds dhundh rahe ho, toh bina tension ke try karo. Trust me, genuine hai! 🔥', rating: 4.5, helpful: 1247, moreCount: 8932, isYouTuber: true },
-      { name: 'Tonde Gamer', avatar: 'reviews/youtuber2.png', location: 'Nepal', time: '17 days ago', purchased: 'All Packages', comment: 'Tonde Bhai here! Yaar, maine pehle socha tha ki online diamonds lena risky hoga, lekin is seller ka top-up ekdum genuine nikla. Diamonds bhi sahi mile aur maine turant apne account mein use kar liye. Ab main apne saare subscribers ko bhi bata raha hoon. Try karo, maza aayega! 😎', rating: 4.9, helpful: 2156, moreCount: 12480, isYouTuber: true },
-      { name: 'Gyan Gaming', avatar: 'reviews/youtuber3.png', location: 'Kolkata', time: '28 days ago', purchased: 'All Packages', comment: 'GyanSujan here. Maine is seller se top-up karne se pehle thoda research kiya tha. Payment ke baad diamonds turant mil gaye, aur jo quantity unhone boli thi, woh bilkul sahi nikli. Maine usi se apne in-game purchases kiye, sab kuch smoothly ho gaya. Overall, main isko recommend karunga. Agar aap bhi diamonds dhundh rahe ho, toh yeh ek genuine option hai. 👍', rating: 4.1, helpful: 876, moreCount: 5432, isYouTuber: true },
-      { name: 'Lokesh Gamer', avatar: 'reviews/youtuber4.png', location: 'Hyderabad', time: '7 days ago', purchased: 'All Packages', comment: 'Hello Guys! Lokesh Gamer here. Maine bhi is seller se diamonds liye hain. Diamonds ekdum sahi mile, aur maine usi se apne account mein top-up kiya. Sab kuch instantly ho gaya. Agar aap ek trustworthy seller dhundh rahe ho jahan se aap diamonds le sako, toh yeh sahi jagah hai. Highly recommended! ✅', rating: 5, helpful: 1876, moreCount: 9543, isYouTuber: true },
-      { name: 'Sooneeta', avatar: 'reviews/youtuber5.png', location: 'Nepal', time: '21 days ago', purchased: 'All Packages', comment: 'Hi Guys! Sooneeta here. Maine aur mere bhai ne dono ne is seller se diamonds order kiye. Dono baar diamonds bilkul sahi mile, aur humne usse apne accounts mein top-up kar liya. Price bhi reasonable hai. Delivery mein thoda time laga, lekin overall experience achha raha. Thank you! 😊', rating: 4.3, helpful: 654, moreCount: 3421, isYouTuber: true },
-      { name: 'Anjali Desai', avatar: 'reviews/review1.png', location: 'Delhi', time: '3 days ago', purchased: '520 Diamonds', comment: 'Payment karte hi turant diamonds mil gaye. Bilkul real service hai 🔥', rating: 5, helpful: 47, moreCount: 1247 },
-      { name: 'Rohit Yadav', avatar: 'reviews/review2.png', location: 'Mumbai', time: '1 week ago', purchased: '1060 Diamonds', comment: 'Diamonds buy kiye, sahi mile aur usi se Free Fire mein Elite Pass le liya. Sab kuch instantly ho gaya! Bhai yeh toh mast hai 💯', rating: 5, helpful: 89, moreCount: 3891 },
-      { name: 'Rahul Sharma', avatar: 'reviews/review3.png', location: 'Bangalore', time: '2 weeks ago', purchased: '310 Diamonds', comment: 'Payment ke 1 minute ke andar diamonds mil gaye. Genuine aur fast seller hai. Highly recommended ✅', rating: 5, helpful: 156, moreCount: 5788 },
-      { name: 'Pilu Tonde', avatar: 'reviews/review4.png', location: 'Pune', time: '1 month ago', purchased: '100 Diamonds', comment: 'Diamonds se Free Fire mein weekly membership li. Achha hai par delivery mein thoda time laga. Baaki sab badhiya 👍', rating: 4, helpful: 23, moreCount: 654, sellerReply: 'Thanks Pilu bhai! Next order mein fast delivery ka promise 🙏' },
-      { name: 'Ramu Gamer', avatar: 'reviews/review5.png', location: 'Hyderabad', time: '2 months ago', purchased: '2180 Diamonds', comment: 'Mene diamonds se Free Fire mein top-up kiya aur successful bhi ho gaya. Sab kuch easily ho gaya. Paisa vasool 🔥🔥', rating: 5, helpful: 67, moreCount: 2135 },
-      { name: 'Karan Mehta', avatar: 'reviews/review6.png', location: 'Jaipur', time: '3 months ago', purchased: '520 Diamonds', comment: 'Diamonds buy karne ke baad Free Fire mein Elite Pass aur top-up kiya, sab kuch bina kisi problem ke ho gaya! Best seller 💯', rating: 5, helpful: 112, moreCount: 4230, sellerReply: 'Thanks Karan! Aapka support humesha 🙏' }
+      { name: 'Total Gaming', avatar: 'reviews/youtuber1.png', location: 'Gujarat', time: '9 days ago', purchased: 'All Packages', comment: 'Hello Gamers! Ajju Bhai here. Maine is seller se diamonds liye hain, aur sach batau toh diamonds ekdum wahi mile jo bola gaya tha. Maine usi se apna Free Fire ka Elite Pass aur top-up kiya. Agar aap log bhi high diamonds dhundh rahe ho, toh bina tension ke try karo. Trust me, genuine hai! 🔥', helpful: 1247, moreCount: 8932, isYouTuber: true },
+      { name: 'Tonde Gamer', avatar: 'reviews/youtuber2.png', location: 'Nepal', time: '17 days ago', purchased: 'All Packages', comment: 'Tonde Bhai here! Yaar, maine pehle socha tha ki online diamonds lena risky hoga, lekin is seller ka top-up ekdum genuine nikla. Diamonds bhi sahi mile aur maine turant apne account mein use kar liye. Ab main apne saare subscribers ko bhi bata raha hoon. Try karo, maza aayega! 😎', helpful: 2156, moreCount: 12480, isYouTuber: true },
+      { name: 'Gyan Gaming', avatar: 'reviews/youtuber3.png', location: 'Kolkata', time: '28 days ago', purchased: 'All Packages', comment: 'GyanSujan here. Maine is seller se top-up karne se pehle thoda research kiya tha. Payment ke baad diamonds turant mil gaye, aur jo quantity unhone boli thi, woh bilkul sahi nikli. Maine usi se apne in-game purchases kiye, sab kuch smoothly ho gaya. Overall, main isko recommend karunga. Agar aap bhi diamonds dhundh rahe ho, toh yeh ek genuine option hai. 👍', helpful: 876, moreCount: 5432, isYouTuber: true },
+      { name: 'Lokesh Gamer', avatar: 'reviews/youtuber4.png', location: 'Hyderabad', time: '7 days ago', purchased: 'All Packages', comment: 'Hello Guys! Lokesh Gamer here. Maine bhi is seller se diamonds liye hain. Diamonds ekdum sahi mile, aur maine usi se apne account mein top-up kiya. Sab kuch instantly ho gaya. Agar aap ek trustworthy seller dhundh rahe ho jahan se aap diamonds le sako, toh yeh sahi jagah hai. Highly recommended! ✅', helpful: 1876, moreCount: 9543, isYouTuber: true },
+      { name: 'Sooneeta', avatar: 'reviews/youtuber5.png', location: 'Nepal', time: '21 days ago', purchased: 'All Packages', comment: 'Hi Guys! Sooneeta here. Maine aur mere bhai ne dono ne is seller se diamonds order kiye. Dono baar diamonds bilkul sahi mile, aur humne usse apne accounts mein top-up kar liya. Price bhi reasonable hai. Delivery mein thoda time laga, lekin overall experience achha raha. Thank you! 😊', helpful: 654, moreCount: 3421, isYouTuber: true },
+      { name: 'Anjali Desai', avatar: 'reviews/review1.png', location: 'Delhi', time: '3 days ago', purchased: '520 Diamonds', comment: 'Payment karte hi turant diamonds mil gaye. Bilkul real service hai 🔥', helpful: 47, moreCount: 1247 },
+      { name: 'Rohit Yadav', avatar: 'reviews/review2.png', location: 'Mumbai', time: '1 week ago', purchased: '1060 Diamonds', comment: 'Diamonds buy kiye, sahi mile aur usi se Free Fire mein Elite Pass le liya. Sab kuch instantly ho gaya! Bhai yeh toh mast hai 💯', helpful: 89, moreCount: 3891 },
+      { name: 'Rahul Sharma', avatar: 'reviews/review3.png', location: 'Bangalore', time: '2 weeks ago', purchased: '310 Diamonds', comment: 'Payment ke 1 minute ke andar diamonds mil gaye. Genuine aur fast seller hai. Highly recommended ✅', helpful: 156, moreCount: 5788 },
+      { name: 'Pilu Tonde', avatar: 'reviews/review4.png', location: 'Pune', time: '1 month ago', purchased: '100 Diamonds', comment: 'Diamonds se Free Fire mein weekly membership li. Achha hai par delivery mein thoda time laga. Baaki sab badhiya 👍', helpful: 23, moreCount: 654, sellerReply: 'Thanks Pilu bhai! Next order mein fast delivery ka promise 🙏' },
+      { name: 'Ramu Gamer', avatar: 'reviews/review5.png', location: 'Hyderabad', time: '2 months ago', purchased: '2180 Diamonds', comment: 'Mene diamonds se Free Fire mein top-up kiya aur successful bhi ho gaya. Sab kuch easily ho gaya. Paisa vasool 🔥🔥', helpful: 67, moreCount: 2135 },
+      { name: 'Karan Mehta', avatar: 'reviews/review6.png', location: 'Jaipur', time: '3 months ago', purchased: '520 Diamonds', comment: 'Diamonds buy karne ke baad Free Fire mein Elite Pass aur top-up kiya, sab kuch bina kisi problem ke ho gaya! Best seller 💯', helpful: 112, moreCount: 4230, sellerReply: 'Thanks Karan! Aapka support humesha 🙏' }
     ];
     (function loadUserReviews() { var saved = loadUserReviewsFromStorage(); saved.forEach(function(r) { if (r && r.isUserSubmitted) reviewsData.push(r); }); })();
     function getCardState(design, idx) {
@@ -1006,7 +997,7 @@
       });
     }
     var currentDesign = null; var currentQty = 1; var currentOrderDesign = null; var currentPendingOrder = null;
-    var selectedRating = 0; var selectedPhotoDataURL = null;
+    var selectedPhotoDataURL = null;
     var qrTimerInterval = null; var qrTimeLeft = 300; var reservedTimerInterval = null;
     function showToast(message, type) {
       var container = document.getElementById('toastContainer'); var toast = document.createElement('div'); toast.className = 'toast ' + (type || '');
@@ -1014,7 +1005,6 @@
       toast.innerHTML = '<span class="toast-icon">' + icon + '</span><span>' + escapeHtml(message) + '</span>';
       container.appendChild(toast); setTimeout(function() { toast.remove(); }, 3000);
     }
-    function renderStars(ratingStr) { var num = parseFloat((ratingStr || '').replace(/[^0-9.]/g, '')) || 0; var percent = (num / 5) * 100; return '<span class="rating-stars"><span class="stars-bg">★★★★★</span><span class="stars-fill" style="width:' + percent + '%">★★★★★</span></span>'; }
     function diamondShowcaseHTML(design, extraClass) {
       var chestSrc = 'chests/chest-' + design.qty + '.png';
       return '<div class="diamond-showcase ' + (extraClass || '') + '" style="--accent:' + design.accent + '">' +
@@ -1023,9 +1013,7 @@
         '<div class="diamond-sparkle sparkle-2">✦</div>' +
         '<div class="diamond-sparkle sparkle-3">✦</div>' +
         '<div class="diamond-sparkle sparkle-4">✦</div>' +
-        '<img class="chest-image" src="' + chestSrc + '" alt="' + design.qty + ' Diamonds Chest" loading="eager" onerror="this.style.display=\'none\'">' +
-        '<div class="diamond-qty">' + design.qty + '</div>' +
-        '<div class="diamond-label">DIAMONDS</div>' +
+        '<img class="chest-image" src="' + chestSrc + '" alt="' + design.qty + ' Diamonds" loading="eager" onerror="this.style.display=\'none\'">' +
       '</div>';
     }
     var viewerState = {};
@@ -1105,10 +1093,10 @@
           ? '<div class="cc-balance-badge"><div class="cc-balance-label"><span class="cc-balance-emoji">🎁</span><span>Bonus</span></div><div class="cc-balance-value">+' + design.bonus + ' 💎</div></div>'
           : '<div class="cc-balance-badge"><div class="cc-balance-label"><span class="cc-balance-emoji">⚡</span><span>Delivery</span></div><div class="cc-balance-value">Instant</div></div>';
         card.innerHTML =
-          '<div class="countdown-strip" data-design-id="' + design.id + '"><span class="cd-icon">🔥</span><span>Offer ends:</span><span class="cd-time">--:--:--</span></div>' +
+          '<div class="countdown-strip" data-design-id="' + design.id + '"><span class="cd-icon">🔥</span><span class="cd-time">--:--:--</span></div>' +
           diamondShowcaseHTML(design) +
           '<div class="card-bottom-row"><div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="live-pulse-dot"></span><span class="eye">👁</span><span class="vcount">' + viewerBase + '</span><span class="viewing-text">viewing now</span></div>' + bonusBadgeHTML + '</div>' +
-          '<div class="gc-info">' + badgeHTML + '<div class="gc-name">' + design.name + '</div><div class="gc-tagline">' + design.tagline + '</div><div class="gc-material">' + design.material + '</div><div class="gc-meta"><span class="gc-rating">' + renderStars(design.rating) + '<span>' + design.rating.replace('⭐ ', '') + '</span></span><span class="gc-price">' + design.price + '</span></div>' +
+          '<div class="gc-info">' + badgeHTML + '<div class="gc-name">' + design.name + '</div><div class="gc-tagline">' + design.tagline + '</div><div class="gc-material">' + design.material + '</div><div class="gc-meta"><span class="gc-price">' + design.price + '</span></div>' +
           '<div class="gc-actions"><button class="gc-buy-btn" data-action="buy">Buy Now</button></div></div>';
         grid.appendChild(card);
       });
@@ -1116,9 +1104,8 @@
     }
     function loadHelpfulStates() { try { var raw = localStorage.getItem('diamond_helpful_states'); if (raw) { var p = JSON.parse(raw); if (p && typeof p === 'object') return p; } } catch(e) {} return {}; }
     function saveHelpfulStates(obj) { try { localStorage.setItem('diamond_helpful_states', JSON.stringify(obj)); } catch(e) {} }
-    function getReviewKey(review) { return (review.name || '') + '|' + (review.purchased || '') + '|' + (review.rating || '') + '|' + (review.submittedAt || ''); }
+    function getReviewKey(review) { return (review.name || '') + '|' + (review.purchased || '') + '|' + (review.helpful || '') + '|' + (review.submittedAt || ''); }
     function createReviewCardHTML(review, index) {
-      var starsHTML = ''; for (var i = 0; i < 5; i++) starsHTML += (i < Math.round(review.rating)) ? '★' : '☆';
       var avatarHTML;
       if (review.avatar) { var fallback = getInitialsAvatarSVG(review.name, review.isYouTuber); var safeFallback = fallback.replace(/"/g, '&quot;'); avatarHTML = '<img src="' + review.avatar + '" alt="' + escapeHtml(review.name) + '" loading="lazy" data-fallback="' + safeFallback + '" onerror="this.onerror=null; this.src=this.getAttribute(\'data-fallback\');">'; }
       else { avatarHTML = '<img src="' + getInitialsAvatarSVG(review.name, review.isYouTuber) + '" alt="' + escapeHtml(review.name) + '">'; }
@@ -1130,7 +1117,6 @@
         '<div class="review-header"><div class="review-avatar">' + avatarHTML + '</div><div class="review-info"><div class="review-name-row">' + nameInner + '</div></div></div>' +
         '<div class="review-meta"><span>📍 ' + escapeHtml(review.location) + '</span><span class="dot">·</span><span>🕐 ' + escapeHtml(timeDisplay) + '</span></div>' +
         '<div class="review-purchased">💎 Bought <strong>' + escapeHtml(review.purchased) + '</strong></div>' +
-        '<div class="review-stars">' + starsHTML + '<span class="rating-num">' + review.rating.toFixed(1) + '</span></div>' +
         '<div class="review-text">' + escapeHtml(review.comment) + '</div>' +
         '<div class="review-actions">' +
           '<button class="review-helpful" type="button" data-review-key="' + escapeHtml(getReviewKey(review)) + '"><span class="helpful-icon">👍</span> Helpful <span class="helpful-count">' + helpfulDisplay.toLocaleString('en-IN') + '</span></button>' +
@@ -1156,7 +1142,6 @@
       currentDesign = design; currentQty = 1;
       var wrap = document.getElementById('modalCardWrap'); wrap.innerHTML = diamondShowcaseHTML(design, 'modal-diamond');
       document.getElementById('modalName').textContent = design.name; document.getElementById('modalTagline').textContent = design.tagline; document.getElementById('modalPrice').textContent = design.price;
-      document.getElementById('modalRating').innerHTML = renderStars(design.rating) + '<span>' + design.rating.replace('⭐ ', '') + '</span>';
       document.getElementById('qtyValue').textContent = '1'; document.getElementById('productOverlay').style.display = 'flex'; document.body.classList.add('modal-open');
     }
     function placeOrderDirect() {
@@ -1205,8 +1190,6 @@
       if (!txnRegex.test(txnId)) { alert('Invalid Transaction ID. It should be 8-22 alphanumeric characters.', {title: 'Invalid Transaction ID', icon: '🔒'}); return; }
       currentPendingOrder.transactionId = txnId; clearInterval(qrTimerInterval); document.getElementById('paymentOverlay').style.display = 'none'; document.body.classList.remove('modal-open'); showToast('Payment confirmed!', 'success');
       recordUserPurchase(currentPendingOrder.designId); renderHeroCounters();
-      var _ud = designs.find(function(d) { return d.id === currentPendingOrder.designId; });
-      if (_ud) { }
       updateTrendingBadge(); showSuccessModal(currentPendingOrder); playOrderSound(); setTimeout(function() { triggerUserOwnNotification(); }, 1500);
     }
     function triggerUserOwnNotification() {
@@ -1280,7 +1263,7 @@
       var nameParts = String(buyer.name || '').trim().split(/\s+/).filter(function(p) { return p.length > 0; }); var displayName = nameParts.length > 1 ? nameParts[0] + ' ' + nameParts[1].charAt(0) + '.' : (nameParts[0] || 'Someone'); var timeStr = formatTimeAgo(timestamp); var avatarUrl = buyer.avatar || getAvatarForName(buyer.name); var cityText = buyer.city ? (' from ' + escapeHtml(buyer.city)) : ''; var priceShown = buyer.price || design.price;
       var chestSrc = 'chests/chest-' + design.qty + '.png';
       var notif = document.createElement('div'); notif.className = 'live-notif';
-      notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="notif-card-badge">💎 Diamond Top-Up</div><div class="notif-row"><div class="notif-avatar">' + buildAvatarImg(avatarUrl, buyer.name, false) + '</div><div class="notif-content"><strong>' + escapeHtml(displayName) + cityText + '</strong>bought <span style="color:#f5d76e; font-weight:700;">' + escapeHtml(design.name) + '</span> for <span style="color:#22c55e; font-weight:800;">' + escapeHtml(priceShown) + '</span><span class="notif-time">🕐 ' + escapeHtml(timeStr) + '</span></div><div style="width:38px;height:38px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(79,172,254,0.08);border:1px solid rgba(212,175,55,0.35);padding:2px;overflow:hidden;"><img src="' + chestSrc + '" style="width:100%;height:100%;object-fit:contain;" onerror="this.style.display=\'none\'"></div></div>';
+      notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="notif-card-badge">💎 Diamond Top-Up</div><div class="notif-row"><div class="notif-avatar">' + buildAvatarImg(avatarUrl, buyer.name, false) + '</div><div class="notif-content"><strong>' + escapeHtml(displayName) + cityText + '</strong>bought <span style="color:#f5d76e; font-weight:700;">' + escapeHtml(design.name) + '</span> for <span style="color:#22c55e; font-weight:800;">' + escapeHtml(priceShown) + '</span><span class="notif-time">🕐 ' + escapeHtml(timeStr) + '</span></div><div class="notif-chest"><img src="' + chestSrc + '" alt="" onerror="this.style.display=\'none\'"></div></div>';
       notifContainer.appendChild(notif);
       var closeBtn = notif.querySelector('.notif-close-btn'); if (closeBtn) closeBtn.addEventListener('click', function(e) { e.stopPropagation(); notif.remove(); });
       setTimeout(function() { notif.remove(); }, 10500);
@@ -1288,9 +1271,9 @@
     function showReviewNotification(review) {
       var existing = notifContainer.querySelectorAll('.live-notif, .review-notif, .welcome-back-toast');
       while (existing.length >= 3) { existing[0].remove(); existing = notifContainer.querySelectorAll('.live-notif, .review-notif, .welcome-back-toast'); }
-      var nameParts = String(review.name || '').trim().split(/\s+/).filter(function(p) { return p.length > 0; }); var displayName = nameParts.length > 1 ? nameParts[0] + ' ' + nameParts[1].charAt(0) + '.' : (nameParts[0] || 'Someone'); var stars = ''; for (var i = 0; i < Math.round(review.rating); i++) stars += '⭐';
+      var nameParts = String(review.name || '').trim().split(/\s+/).filter(function(p) { return p.length > 0; }); var displayName = nameParts.length > 1 ? nameParts[0] + ' ' + nameParts[1].charAt(0) + '.' : (nameParts[0] || 'Someone');
       var notif = document.createElement('div'); notif.className = 'live-notif review-notif';
-      notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="notif-card-badge">⭐ New Review</div><div class="notif-row"><div class="notif-avatar" style="background:linear-gradient(135deg, rgba(29,155,240,0.3), rgba(29,155,240,0.08)); border-color:rgba(29,155,240,0.6);"><img src="' + getInitialsAvatarSVG(review.name, true) + '" alt="' + escapeHtml(review.name) + '"></div><div class="notif-content"><strong>' + escapeHtml(displayName) + ' just left a ' + stars + ' review!</strong>for ' + escapeHtml(review.purchased) + '<span class="notif-time">🕐 Just now</span></div></div>';
+      notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="notif-card-badge">⭐ New Review</div><div class="notif-row"><div class="notif-avatar" style="background:linear-gradient(135deg, rgba(29,155,240,0.3), rgba(29,155,240,0.08)); border-color:rgba(29,155,240,0.6);"><img src="' + getInitialsAvatarSVG(review.name, true) + '" alt="' + escapeHtml(review.name) + '"></div><div class="notif-content"><strong>' + escapeHtml(displayName) + ' just left a review!</strong>for ' + escapeHtml(review.purchased) + '<span class="notif-time">🕐 Just now</span></div></div>';
       notifContainer.appendChild(notif);
       var closeBtn = notif.querySelector('.notif-close-btn'); if (closeBtn) closeBtn.addEventListener('click', function(e) { e.stopPropagation(); notif.remove(); });
       setTimeout(function() { notif.remove(); }, 10500);
@@ -1368,8 +1351,8 @@
     }
     var photoUploadArea = document.getElementById('photoUploadArea'); var photoInput = document.getElementById('reviewPhotoInput'); var photoPlusIcon = document.getElementById('photoPlusIcon'); var photoRemoveBtn = document.getElementById('photoRemoveBtn');
     document.getElementById('writeReviewBtn').addEventListener('click', function() {
-      document.getElementById('reviewForm').reset(); selectedRating = 0; selectedPhotoDataURL = null; resetPhotoUpload(); updateStarDisplay();
-      document.getElementById('starLabel').textContent = 'Select rating'; document.getElementById('reviewOverlay').style.display = 'flex'; document.body.classList.add('modal-open');
+      document.getElementById('reviewForm').reset(); selectedPhotoDataURL = null; resetPhotoUpload();
+      document.getElementById('reviewOverlay').style.display = 'flex'; document.body.classList.add('modal-open');
     });
     document.getElementById('reviewClose').addEventListener('click', function() { document.getElementById('reviewOverlay').style.display = 'none'; document.body.classList.remove('modal-open'); });
     document.getElementById('reviewOverlay').addEventListener('click', function(e) { if (e.target === this) { this.style.display = 'none'; document.body.classList.remove('modal-open'); } });
@@ -1384,25 +1367,15 @@
     });
     photoRemoveBtn.addEventListener('click', function(e) { e.stopPropagation(); resetPhotoUpload(); photoInput.value = ''; });
     function resetPhotoUpload() { selectedPhotoDataURL = null; photoUploadArea.classList.remove('has-photo'); photoPlusIcon.style.display = ''; var oldImg = photoUploadArea.querySelector('img'); if (oldImg) oldImg.remove(); }
-    document.querySelectorAll('.star-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() { selectedRating = parseInt(this.getAttribute('data-star')); updateStarDisplay(); });
-      btn.addEventListener('mouseenter', function() { var hoverVal = parseInt(this.getAttribute('data-star')); document.querySelectorAll('.star-btn').forEach(function(b) { b.style.color = parseInt(b.getAttribute('data-star')) <= hoverVal ? '#d4af37' : '#333'; }); });
-      btn.addEventListener('mouseleave', function() { updateStarDisplay(); });
-    });
-    function updateStarDisplay() {
-      document.querySelectorAll('.star-btn').forEach(function(b) { var val = parseInt(b.getAttribute('data-star')); if (val <= selectedRating) { b.classList.add('active'); b.style.color = '#d4af37'; } else { b.classList.remove('active'); b.style.color = '#333'; } });
-      var labels = { 0: 'Select rating', 1: 'Poor 😞', 2: 'Fair 😐', 3: 'Good 🙂', 4: 'Very Good 😊', 5: 'Excellent! 🤩' };
-      document.getElementById('starLabel').textContent = labels[selectedRating] || 'Select rating';
-    }
     document.getElementById('reviewForm').addEventListener('submit', function(e) {
       e.preventDefault();
       var name = document.getElementById('reviewName').value.trim(); var location = document.getElementById('reviewLocation').value.trim(); var card = document.getElementById('reviewCard').value; var text = document.getElementById('reviewText').value.trim();
-      if (!name || !location || !card || !text || selectedRating === 0) { if (selectedRating === 0) alert('Please select a rating (1-5 stars).', {title: 'Rating Required', icon: '⭐'}); else alert('Please fill all the fields.', {title: 'Missing Information', icon: '📝'}); return; }
+      if (!name || !location || !card || !text) { alert('Please fill all the fields.', {title: 'Missing Information', icon: '📝'}); return; }
       var finalizeAndSave = function(finalPhotoDataURL) {
-        var newReview = { name: name, avatar: finalPhotoDataURL || null, location: location, time: 'Just now', purchased: card, comment: text, rating: selectedRating, helpful: 0, moreCount: 0, isUserSubmitted: true, submittedAt: Date.now() };
+        var newReview = { name: name, avatar: finalPhotoDataURL || null, location: location, time: 'Just now', purchased: card, comment: text, helpful: 0, moreCount: 0, isUserSubmitted: true, submittedAt: Date.now() };
         reviewsData.push(newReview); var grid = document.getElementById('reviewsGrid'); var result = createReviewCardHTML(newReview, reviewsData.length - 1); var card_el = document.createElement('div'); card_el.className = result.cardClass; card_el.innerHTML = result.html; grid.appendChild(card_el);
         attachMoreButtonEvents(); attachHelpfulButtonEvents(); saveUserReviewsToStorage(); var newCount = getReviewsCount(); loadMoreText.textContent = 'More + ' + newCount.toLocaleString('en-IN') + ' Reviews';
-        document.getElementById('reviewOverlay').style.display = 'none'; document.body.classList.remove('modal-open'); showToast('Thank you! Your review has been posted.', 'success'); showReviewNotification(newReview); document.getElementById('reviewForm').reset(); selectedRating = 0; selectedPhotoDataURL = null; resetPhotoUpload(); updateStarDisplay();
+        document.getElementById('reviewOverlay').style.display = 'none'; document.body.classList.remove('modal-open'); showToast('Thank you! Your review has been posted.', 'success'); showReviewNotification(newReview); document.getElementById('reviewForm').reset(); selectedPhotoDataURL = null; resetPhotoUpload();
         setTimeout(function() { document.getElementById('reviewsGrid').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 400);
       };
       if (selectedPhotoDataURL) { compressImage(selectedPhotoDataURL, 200, 0.7, function(compressed) { finalizeAndSave(compressed); }); } else { finalizeAndSave(null); }
