@@ -14,7 +14,7 @@
     :focus-visible { outline: 2px solid #FFC107; outline-offset: 3px; border-radius: 10px; }
     body { font-family: 'Poppins', sans-serif; background: #FDF6E3 url('images/bg.png') no-repeat center center fixed; background-size: cover; min-height: 100vh; color: #1A1A1A; overflow-x: hidden; -webkit-font-smoothing: antialiased; position: relative; }
     body::before { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,0.35); pointer-events: none; z-index: 0; }
-    h1, h2, h3, .site-brand-name, .hero-headline, .stat-number, .modal-price, .summary-value-total, .payment-total-amount, .more-stats-number, .trust-feature-card .tf-label, .gc-price, .gc-name, .review-name, .modal-title, .checkout-title, .pulse-subtitle, .gc-buy-btn, .hero-cta-btn, .modal-buy-btn, .order-btn-premium, .review-submit-btn, .success-btn, .custom-alert-btn, .load-more-reviews-btn, .qty-row span, .cc-balance-value { font-family: 'Baloo 2', 'Poppins', sans-serif; font-weight: 700; }
+    h1, h2, h3, .site-brand-name, .hero-headline, .stat-number, .modal-price, .summary-value-total, .payment-total-amount, .more-stats-number, .trust-feature-card .tf-label, .gc-price-chip, .gc-name, .review-name, .modal-title, .checkout-title, .pulse-subtitle, .gc-buy-btn, .hero-cta-btn, .modal-buy-btn, .order-btn-premium, .review-submit-btn, .success-btn, .custom-alert-btn, .load-more-reviews-btn, .qty-row span, .bonus-tag { font-family: 'Baloo 2', 'Poppins', sans-serif; font-weight: 700; }
 
     /* HEADER */
     .site-header { position: sticky; top: 0; z-index: 900; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border-radius: 0 0 26px 26px; box-shadow: 0 6px 20px rgba(255,152,0,0.25), 0 2px 0 rgba(199,122,0,0.35); margin: 0 12px 6px; }
@@ -116,69 +116,67 @@
     .heading-row p { font-size: 12.5px; color: #F0F0F0; margin-top: 5px; font-weight: 500; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
     @media (max-width:600px) { .heading-row h1 { font-size: 22px; } }
 
+    /* ====== PRODUCT GRID (updated) ====== */
     .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 36px; scroll-margin-top: 90px; }
     @media (min-width: 600px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
     @media (min-width: 1000px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
-    .grid-card { background: #FFFFFF; border: 2px solid #FDEEC8; border-radius: 22px; padding: 11px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; box-shadow: 0 4px 0 rgba(242,226,192,0.7), 0 8px 20px rgba(199,122,0,0.08); }
-    .grid-card:hover { transform: translateY(-3px); border-color: #FFD966; box-shadow: 0 8px 0 rgba(242,226,192,0.7), 0 14px 30px rgba(199,122,0,0.15); }
-    @media (min-width: 600px) { .grid-card { border-radius: 26px; padding: 16px; gap: 11px; } }
-    .card-bottom-row { display: flex; justify-content: space-between; align-items: center; gap: 5px; margin-top: 5px; flex-wrap: wrap; }
-    .live-viewers-badge { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 100px; background: #FFF6E0; border: none; font-size: 9.5px; font-weight: 700; letter-spacing: 0.2px; color: #8B5A00; box-shadow: 0 2px 5px rgba(255,152,0,0.15); pointer-events: none; user-select: none; white-space: nowrap; }
+
+    .grid-card { background: #FFFFFF; border: 2px solid #FDEEC8; border-radius: 22px; padding: 10px; display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; box-shadow: 0 5px 0 #E5D5B5, 0 10px 22px rgba(199,122,0,0.12); }
+    .grid-card:hover { transform: translateY(-3px); border-color: #FFD966; box-shadow: 0 8px 0 #E5D5B5, 0 16px 30px rgba(199,122,0,0.18); }
+    .grid-card:active { transform: translateY(2px); box-shadow: 0 2px 0 #E5D5B5, 0 5px 12px rgba(199,122,0,0.12); }
+    @media (min-width: 600px) { .grid-card { border-radius: 24px; padding: 14px; gap: 8px; } }
+
+    .diamond-showcase { position: relative; aspect-ratio: 1.4 / 1; border-radius: 16px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: inset 0 2px 0 rgba(255,255,255,0.9), inset 0 -3px 0 rgba(0,0,0,0.05); padding: 8px; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .grid-card:hover .diamond-showcase { transform: scale(1.03); }
+    .diamond-glow { position: absolute; inset: 0; opacity: 0.35; filter: blur(30px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; }
+    @keyframes glowPulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.5; } }
+    .chest-image { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; z-index: 3; position: relative; filter: drop-shadow(0 8px 14px rgba(0,0,0,0.15)); animation: chestFloat 3.5s ease-in-out infinite; }
+    @keyframes chestFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-4px) scale(1.03); } }
+    @media (min-width: 600px) { .diamond-showcase { aspect-ratio: 1.45 / 1; padding: 10px; border-radius: 18px; } .chest-image { max-width: 92%; max-height: 92%; } }
+    .diamond-sparkle { position: absolute; color: #FFFFFF; opacity: 0; z-index: 4; animation: sparkleAnim 3s ease-in-out infinite; pointer-events: none; text-shadow: 0 0 6px rgba(255,255,255,0.9); }
+    .diamond-sparkle.sparkle-1 { top: 18%; left: 14%; font-size: 10px; animation-delay: 0s; }
+    .diamond-sparkle.sparkle-2 { top: 28%; right: 16%; font-size: 8px; animation-delay: 1s; }
+    .diamond-sparkle.sparkle-3 { bottom: 22%; left: 20%; font-size: 9px; animation-delay: 2s; }
+    .diamond-sparkle.sparkle-4 { bottom: 30%; right: 22%; font-size: 6px; animation-delay: 1.5s; }
+    @keyframes sparkleAnim { 0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); } 50% { opacity: 1; transform: scale(1.2) rotate(180deg); } }
+
+    /* BONUS TAG overlay in showcase corner */
+    .bonus-tag { position: absolute; top: 8px; right: 8px; display: inline-flex; align-items: center; gap: 3px; padding: 4px 10px; border-radius: 100px; background: linear-gradient(180deg, #4ADE80 0%, #22C55E 100%); color: #FFFFFF; font-size: 9.5px; font-weight: 800; letter-spacing: 0.3px; box-shadow: 0 3px 0 #15803D, 0 5px 10px rgba(34,197,94,0.35); z-index: 5; font-family: 'Baloo 2', inherit; text-shadow: 0 1px 2px rgba(0,0,0,0.15); }
+    @media (min-width: 600px) { .bonus-tag { top: 10px; right: 10px; padding: 5px 12px; font-size: 10.5px; } }
+
+    .gc-info { display: flex; flex-direction: column; gap: 3px; }
+    .gc-name { font-size: 13px; font-weight: 800; color: #1A1A1A; letter-spacing: -0.2px; line-height: 1.3; }
+    @media (min-width: 600px) { .gc-info { gap: 5px; } .gc-name { font-size: 16px; } }
+
+    .card-bottom-row { display: flex; justify-content: space-between; align-items: center; gap: 6px; margin-top: 2px; }
+    .live-viewers-badge { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 100px; background: linear-gradient(180deg, #FFF3D6 0%, #FEE7B8 100%); border: none; font-size: 9.5px; font-weight: 700; letter-spacing: 0.2px; color: #8B5A00; box-shadow: 0 3px 0 #E5C88A, 0 4px 8px rgba(199,122,0,0.15); pointer-events: none; user-select: none; white-space: nowrap; }
     .live-viewers-badge .eye { font-size: 10px; line-height: 1; }
     .live-viewers-badge .live-pulse-dot { width: 5px; height: 5px; border-radius: 50%; background: #EF4444; animation: liveDotBlink 1.4s ease-in-out infinite; }
     .live-viewers-badge .vcount { color: #C77A00; font-weight: 900; font-variant-numeric: tabular-nums; transition: transform 0.25s ease; }
     .live-viewers-badge .vcount.bump { transform: scale(1.18); }
-    .live-viewers-badge .viewing-text { color: #8B5A00; font-weight: 600; font-size: 9px; }
-    @media (min-width: 600px) { .live-viewers-badge { font-size: 10.5px; padding: 6px 12px; gap: 5px; } .live-viewers-badge .eye { font-size: 11px; } .live-viewers-badge .viewing-text { font-size: 10px; } .live-viewers-badge .live-pulse-dot { width: 6px; height: 6px; } }
+    @media (min-width: 600px) { .live-viewers-badge { font-size: 10.5px; padding: 6px 12px; gap: 5px; } .live-viewers-badge .eye { font-size: 11px; } .live-viewers-badge .live-pulse-dot { width: 6px; height: 6px; } }
 
-    .countdown-strip { display: flex; align-items: center; justify-content: center; gap: 5px; padding: 7px 11px; margin-bottom: 7px; border-radius: 100px; background: linear-gradient(180deg, #FFF3D6 0%, #FEE7B8 100%); border: none; font-size: 10.5px; font-weight: 700; color: #8B5A00; letter-spacing: 0.2px; white-space: nowrap; overflow: hidden; box-shadow: inset 0 1px 0 rgba(255,255,255,0.7); }
-    .countdown-strip .cd-icon { font-size: 11px; flex-shrink: 0; }
-    .countdown-strip .cd-time { font-variant-numeric: tabular-nums; color: #C77A00; font-weight: 900; letter-spacing: 0.4px; font-family: 'Baloo 2', inherit; }
-    .countdown-strip.expiring { animation: cdPulse 1.5s ease-in-out infinite; }
-    @keyframes cdPulse { 0%, 100% { box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 0 0 0 rgba(239,68,68,0.4); } 50% { box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 0 0 5px rgba(239,68,68,0); } }
-    @media (min-width: 600px) { .countdown-strip { font-size: 11.5px; padding: 8px 14px; gap: 6px; margin-bottom: 10px; } .countdown-strip .cd-icon { font-size: 12px; } }
+    .gc-price-chip { display: inline-flex; align-items: center; justify-content: center; padding: 5px 12px; border-radius: 100px; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); color: #1A1A1A; font-size: 13px; font-weight: 800; letter-spacing: -0.3px; box-shadow: 0 3px 0 #C77A00, 0 5px 10px rgba(255,152,0,0.3); font-family: 'Baloo 2', inherit; line-height: 1; white-space: nowrap; }
+    @media (min-width: 600px) { .gc-price-chip { padding: 7px 16px; font-size: 16px; } }
 
-    .diamond-showcase { position: relative; aspect-ratio: 1.2 / 1; border-radius: 18px; background: linear-gradient(180deg, #FFFBF2 0%, #FDF0D5 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: inset 0 2px 0 rgba(255,255,255,0.9), inset 0 -2px 0 rgba(242,226,192,0.5); padding: 10px; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
-    .grid-card:hover .diamond-showcase { transform: scale(1.03); }
-    .diamond-glow { position: absolute; inset: 0; opacity: 0.4; filter: blur(36px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; }
-    @keyframes glowPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.55; } }
-    .chest-image { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; z-index: 3; position: relative; filter: drop-shadow(0 10px 18px rgba(255,152,0,0.35)); animation: chestFloat 3.5s ease-in-out infinite; }
-    @keyframes chestFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-5px) scale(1.03); } }
-    @media (min-width: 600px) { .diamond-showcase { aspect-ratio: 1.2 / 1; padding: 18px; border-radius: 22px; } .chest-image { max-width: 88%; max-height: 88%; } }
-    .diamond-sparkle { position: absolute; color: #FF9800; opacity: 0; z-index: 4; animation: sparkleAnim 3s ease-in-out infinite; pointer-events: none; }
-    .diamond-sparkle.sparkle-1 { top: 18%; left: 14%; font-size: 11px; animation-delay: 0s; }
-    .diamond-sparkle.sparkle-2 { top: 28%; right: 16%; font-size: 9px; animation-delay: 1s; }
-    .diamond-sparkle.sparkle-3 { bottom: 22%; left: 20%; font-size: 10px; animation-delay: 2s; }
-    .diamond-sparkle.sparkle-4 { bottom: 30%; right: 22%; font-size: 7px; animation-delay: 1.5s; }
-    @keyframes sparkleAnim { 0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); } 50% { opacity: 1; transform: scale(1.3) rotate(180deg); } }
+    .gc-actions { display: flex; margin-top: 4px; }
+    .gc-buy-btn { flex: 1; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); color: #1A1A1A; border: none; border-radius: 100px; padding: 10px; font-size: 12.5px; font-weight: 800; letter-spacing: 0.3px; cursor: pointer; font-family: 'Baloo 2', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 #C77A00, 0 7px 16px rgba(255,152,0,0.35), inset 0 1px 0 rgba(255,255,255,0.4); }
+    .gc-buy-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #C77A00, 0 10px 22px rgba(255,152,0,0.5), inset 0 1px 0 rgba(255,255,255,0.4); }
+    .gc-buy-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #C77A00, 0 3px 8px rgba(255,152,0,0.35), inset 0 1px 0 rgba(255,255,255,0.4); }
+    @media (min-width: 600px) { .gc-actions { margin-top: 6px; } .gc-buy-btn { padding: 12px; font-size: 14px; } }
+
+    .trending-badge { display: inline-block; background: linear-gradient(180deg, #F97316 0%, #EF4444 100%); color: #fff; font-size: 8px; font-weight: 800; letter-spacing: 0.6px; padding: 3px 9px; border-radius: 100px; margin-bottom: 3px; box-shadow: 0 3px 0 #991B1B, 0 4px 8px rgba(239,68,68,0.3); text-transform: uppercase; width: fit-content; font-family: 'Poppins', inherit; }
+    @media (min-width: 600px) { .trending-badge { font-size: 9.5px; padding: 4px 11px; margin-bottom: 5px; } }
+
+    /* keep old .countdown-strip, .gc-material, .gc-tagline, .gc-meta, .gc-price defined for safety, but not used in grid */
+    .countdown-strip, .gc-material, .gc-tagline, .gc-meta, .gc-price { display: none !important; }
+
+    /* ====== SHOWCASE for MODAL (bigger) ====== */
     .diamond-showcase.modal-diamond { aspect-ratio: 1.2 / 1; padding: 30px; border-radius: 22px; }
     .diamond-showcase.modal-diamond .chest-image { max-width: 92%; max-height: 92%; }
     .diamond-showcase.mini-diamond { aspect-ratio: 1.4 / 1; padding: 12px; border-radius: 18px; }
     .diamond-showcase.mini-diamond .chest-image { max-width: 82%; max-height: 82%; }
     .diamond-showcase.mini-diamond .diamond-sparkle { display: none; }
-
-    .cc-balance-badge { display: flex; flex-direction: row; align-items: center; gap: 3px; padding: 5px 11px; border-radius: 100px; background: linear-gradient(180deg, #DCFCE7 0%, #BBF7D0 100%); border: none; width: fit-content; margin: 0; box-shadow: 0 3px 0 #86EFAC, 0 5px 10px rgba(34,197,94,0.2); }
-    .cc-balance-label { display: inline-flex; align-items: center; gap: 2px; font-size: 7.5px; font-weight: 800; letter-spacing: 0.7px; color: #166534; text-transform: uppercase; line-height: 1; }
-    .cc-balance-emoji { font-size: 9px; line-height: 1; }
-    .cc-balance-value { font-size: 10.5px; font-weight: 800; color: #15803D; line-height: 1; }
-    @media (min-width: 600px) { .cc-balance-badge { padding: 7px 13px; gap: 4px; } .cc-balance-label { font-size: 8.5px; letter-spacing: 0.9px; } .cc-balance-emoji { font-size: 11px; } .cc-balance-value { font-size: 12.5px; } }
-
-    .gc-info { display: flex; flex-direction: column; gap: 3px; }
-    .gc-name { font-size: 13px; font-weight: 800; color: #1A1A1A; letter-spacing: -0.2px; line-height: 1.3; }
-    .gc-tagline { font-size: 9.5px; color: #8B7D65; font-weight: 500; display: none; }
-    .gc-meta { display: flex; align-items: center; justify-content: flex-end; margin-top: 3px; gap: 4px; }
-    .gc-price { font-size: 18px; font-weight: 800; color: #FF9800; letter-spacing: -0.3px; }
-    .gc-material { font-size: 8.5px; color: #B0A692; letter-spacing: 0.9px; text-transform: uppercase; font-weight: 700; }
-    @media (min-width: 600px) { .gc-info { gap: 5px; } .gc-name { font-size: 16px; } .gc-tagline { font-size: 11.5px; display: block; } .gc-meta { margin-top: 5px; gap: 5px; } .gc-price { font-size: 21px; } .gc-material { font-size: 10px; letter-spacing: 1.2px; } }
-
-    .gc-actions { display: flex; margin-top: 6px; }
-    .gc-buy-btn { flex: 1; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); color: #1A1A1A; border: none; border-radius: 100px; padding: 11px; font-size: 12.5px; font-weight: 800; letter-spacing: 0.3px; cursor: pointer; font-family: 'Baloo 2', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 #C77A00, 0 7px 16px rgba(255,152,0,0.35), inset 0 1px 0 rgba(255,255,255,0.4); }
-    .gc-buy-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #C77A00, 0 10px 22px rgba(255,152,0,0.5), inset 0 1px 0 rgba(255,255,255,0.4); }
-    .gc-buy-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #C77A00, 0 3px 8px rgba(255,152,0,0.35), inset 0 1px 0 rgba(255,255,255,0.4); }
-    @media (min-width: 600px) { .gc-actions { margin-top: 8px; } .gc-buy-btn { padding: 13px; font-size: 14px; } }
-
-    .trending-badge { display: inline-block; background: linear-gradient(180deg, #F97316 0%, #EF4444 100%); color: #fff; font-size: 8px; font-weight: 800; letter-spacing: 0.6px; padding: 3px 9px; border-radius: 100px; margin-bottom: 3px; box-shadow: 0 3px 0 #991B1B, 0 4px 8px rgba(239,68,68,0.3); text-transform: uppercase; width: fit-content; font-family: 'Poppins', inherit; }
-    @media (min-width: 600px) { .trending-badge { font-size: 9.5px; padding: 4px 11px; margin-bottom: 5px; } }
 
     .reviews-section { margin-bottom: 36px; scroll-margin-top: 90px; padding: 0 2px; }
     .reviews-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
@@ -489,26 +487,10 @@
       <h2>Why Trust Us?</h2>
       <p class="why-trust-sub">Thousands of gamers top-up here every day</p>
       <div class="trust-features">
-        <div class="trust-feature-card">
-          <div class="tf-icon-wrap">🎮</div>
-          <div class="tf-label" id="whyTrustBuyers">10,000+</div>
-          <div class="tf-value">Happy Gamers</div>
-        </div>
-        <div class="trust-feature-card">
-          <div class="tf-icon-wrap">✅</div>
-          <div class="tf-label">100%</div>
-          <div class="tf-value">Verified Top-Ups</div>
-        </div>
-        <div class="trust-feature-card">
-          <div class="tf-icon-wrap">⚡</div>
-          <div class="tf-label">60 Sec</div>
-          <div class="tf-value">Instant Delivery</div>
-        </div>
-        <div class="trust-feature-card">
-          <div class="tf-icon-wrap">🔒</div>
-          <div class="tf-label">100%</div>
-          <div class="tf-value">Secure Payment</div>
-        </div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap">🎮</div><div class="tf-label" id="whyTrustBuyers">10,000+</div><div class="tf-value">Happy Gamers</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap">✅</div><div class="tf-label">100%</div><div class="tf-value">Verified Top-Ups</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap">⚡</div><div class="tf-label">60 Sec</div><div class="tf-value">Instant Delivery</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap">🔒</div><div class="tf-label">100%</div><div class="tf-value">Secure Payment</div></div>
       </div>
     </section>
 
@@ -582,14 +564,8 @@
         <div id="profileFormView">
           <div class="profile-hint-box"><strong>💡 Tip:</strong> Save your Free Fire UID here to auto-fill the order form when you top-up. Optional — you can also fill manually.</div>
           <form id="profileForm">
-            <div class="review-form-group">
-              <label>In-Game Name (Optional)</label>
-              <input type="text" id="profileName" placeholder="e.g. ProGamer99" maxlength="20" />
-            </div>
-            <div class="review-form-group">
-              <label>Free Fire UID</label>
-              <input type="text" id="profileUid" placeholder="e.g. 1234567890" required maxlength="15" inputmode="numeric" />
-            </div>
+            <div class="review-form-group"><label>In-Game Name (Optional)</label><input type="text" id="profileName" placeholder="e.g. ProGamer99" maxlength="20" /></div>
+            <div class="review-form-group"><label>Free Fire UID</label><input type="text" id="profileUid" placeholder="e.g. 1234567890" required maxlength="15" inputmode="numeric" /></div>
             <button type="submit" class="order-btn-premium"><span>💾</span> Save UID</button>
             <button type="button" class="profile-clear-btn" id="profileClearBtn" style="display:none;">Clear Saved UID</button>
           </form>
@@ -891,10 +867,10 @@
       return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
     }
     var avatarCache = { list: [], loaded: false };
-    function loadUsedAvatars() { try { var raw = localStorage.getItem('diamond_used_avatars_v9'); if (raw) { var parsed = JSON.parse(raw); if (Array.isArray(parsed)) return parsed; } } catch(e) {} return []; }
-    function saveUsedAvatars(arr) { try { localStorage.setItem('diamond_used_avatars_v9', JSON.stringify(arr)); } catch(e) {} }
-    function loadNameAvatarMap() { try { var raw = localStorage.getItem('diamond_name_avatar_map_v9'); if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') return parsed; } } catch(e) {} return {}; }
-    function saveNameAvatarMap(map) { try { localStorage.setItem('diamond_name_avatar_map_v9', JSON.stringify(map)); } catch(e) {} }
+    function loadUsedAvatars() { try { var raw = localStorage.getItem('diamond_used_avatars_v10'); if (raw) { var parsed = JSON.parse(raw); if (Array.isArray(parsed)) return parsed; } } catch(e) {} return []; }
+    function saveUsedAvatars(arr) { try { localStorage.setItem('diamond_used_avatars_v10', JSON.stringify(arr)); } catch(e) {} }
+    function loadNameAvatarMap() { try { var raw = localStorage.getItem('diamond_name_avatar_map_v10'); if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') return parsed; } } catch(e) {} return {}; }
+    function saveNameAvatarMap(map) { try { localStorage.setItem('diamond_name_avatar_map_v10', JSON.stringify(map)); } catch(e) {} }
     function assignAvatarToName(name) {
       if (!avatarCache.list || avatarCache.list.length === 0) return null;
       var key = String(name || 'anonymous').trim(); var map = loadNameAvatarMap();
@@ -910,14 +886,14 @@
       saveNameAvatarMap(map); return chosen;
     }
     function fetchAvatarsFromGitHub(callback) {
-      try { var cached = localStorage.getItem('diamond_avatars_list_v9'); var cachedTime = localStorage.getItem('diamond_avatars_time_v9'); if (cached && cachedTime && (Date.now() - parseInt(cachedTime)) < 604800000) { var parsed = JSON.parse(cached); if (Array.isArray(parsed) && parsed.length > 0) { avatarCache.list = parsed; avatarCache.loaded = true; if (callback) callback(parsed); return; } } } catch(e) {}
+      try { var cached = localStorage.getItem('diamond_avatars_list_v10'); var cachedTime = localStorage.getItem('diamond_avatars_time_v10'); if (cached && cachedTime && (Date.now() - parseInt(cachedTime)) < 604800000) { var parsed = JSON.parse(cached); if (Array.isArray(parsed) && parsed.length > 0) { avatarCache.list = parsed; avatarCache.loaded = true; if (callback) callback(parsed); return; } } } catch(e) {}
       fetch('https://api.github.com/repos/forviews1st-hub/Diamond-Top-up-/contents/avatars')
         .then(function(r) { return r.json(); })
         .then(function(data) {
           if (!Array.isArray(data)) throw new Error('Invalid response');
           var images = data.filter(function(item) { return item.type === 'file' && /\.(jpg|jpeg|png|webp)$/i.test(item.name); }).map(function(item) { return 'https://raw.githubusercontent.com/forviews1st-hub/Diamond-Top-up-/main/avatars/' + item.name; });
           avatarCache.list = images; avatarCache.loaded = true;
-          try { localStorage.setItem('diamond_avatars_list_v9', JSON.stringify(images)); localStorage.setItem('diamond_avatars_time_v9', Date.now().toString()); } catch(e) {}
+          try { localStorage.setItem('diamond_avatars_list_v10', JSON.stringify(images)); localStorage.setItem('diamond_avatars_time_v10', Date.now().toString()); } catch(e) {}
           if (callback) callback(images);
         })
         .catch(function(err) { console.warn('Avatar fetch failed:', err); avatarCache.loaded = true; if (callback) callback([]); });
@@ -1009,9 +985,11 @@
       toast.innerHTML = '<span class="toast-icon">' + icon + '</span><span>' + escapeHtml(message) + '</span>';
       container.appendChild(toast); setTimeout(function() { toast.remove(); }, 3000);
     }
-    function diamondShowcaseHTML(design, extraClass) {
+    function diamondShowcaseHTML(design, extraClass, bgOverride) {
       var chestSrc = 'chests/chest-' + design.qty + '.png';
-      return '<div class="diamond-showcase ' + (extraClass || '') + '" style="--accent:' + design.accent + '">' +
+      var style = '--accent:' + design.accent + ';';
+      if (bgOverride) style += 'background:' + bgOverride + ';';
+      return '<div class="diamond-showcase ' + (extraClass || '') + '" style="' + style + '">' +
         '<div class="diamond-glow" style="background: radial-gradient(circle at 50% 50%, ' + design.accent + '99, transparent 65%)"></div>' +
         '<div class="diamond-sparkle sparkle-1">✦</div>' +
         '<div class="diamond-sparkle sparkle-2">✦</div>' +
@@ -1093,15 +1071,24 @@
         var viewerBase = viewerState[design.id] ? viewerState[design.id].current : 50;
         var card = document.createElement('div'); card.className = 'grid-card'; card.setAttribute('data-id', design.id);
         var badgeHTML = (design.id === trendingId) ? '<div class="trending-badge">🔥 Trending</div>' : '';
-        var bonusBadgeHTML = design.bonus > 0
-          ? '<div class="cc-balance-badge"><span class="cc-balance-emoji">🎁</span><span class="cc-balance-label">Bonus</span><span class="cc-balance-value">+' + design.bonus + '</span></div>'
-          : '<div class="cc-balance-badge"><span class="cc-balance-emoji">⚡</span><span class="cc-balance-label">Instant</span></div>';
+        var bonusTag = design.bonus > 0 ? '<span class="bonus-tag">🎁 +' + design.bonus + '</span>' : '';
+        var showcaseBg = 'linear-gradient(160deg, #FFFFFF 0%, ' + design.accent + '30 100%)';
         card.innerHTML =
-          '<div class="countdown-strip" data-design-id="' + design.id + '"><span class="cd-icon">🔥</span><span class="cd-time">--:--:--</span></div>' +
-          diamondShowcaseHTML(design) +
-          '<div class="card-bottom-row"><div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="live-pulse-dot"></span><span class="eye">👁</span><span class="vcount">' + viewerBase + '</span><span class="viewing-text">viewing</span></div>' + bonusBadgeHTML + '</div>' +
-          '<div class="gc-info">' + badgeHTML + '<div class="gc-name">' + design.name + '</div><div class="gc-tagline">' + design.tagline + '</div><div class="gc-material">' + design.material + '</div><div class="gc-meta"><span class="gc-price">' + design.price + '</span></div>' +
-          '<div class="gc-actions"><button class="gc-buy-btn" data-action="buy">Buy Now</button></div></div>';
+          '<div class="diamond-showcase" style="--accent:' + design.accent + '; background:' + showcaseBg + '">' +
+            '<div class="diamond-glow" style="background: radial-gradient(circle at 50% 50%, ' + design.accent + '99, transparent 65%)"></div>' +
+            '<div class="diamond-sparkle sparkle-1">✦</div>' +
+            '<div class="diamond-sparkle sparkle-2">✦</div>' +
+            '<div class="diamond-sparkle sparkle-3">✦</div>' +
+            '<div class="diamond-sparkle sparkle-4">✦</div>' +
+            '<img class="chest-image" src="chests/chest-' + design.qty + '.png" alt="' + design.qty + ' Diamonds" loading="eager" onerror="this.style.display=\'none\'">' +
+            bonusTag +
+          '</div>' +
+          '<div class="gc-info">' + badgeHTML + '<div class="gc-name">' + design.name + '</div></div>' +
+          '<div class="card-bottom-row">' +
+            '<div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="live-pulse-dot"></span><span class="eye">👁</span><span class="vcount">' + viewerBase + '</span></div>' +
+            '<div class="gc-price-chip">' + design.price + '</div>' +
+          '</div>' +
+          '<div class="gc-actions"><button class="gc-buy-btn" data-action="buy">Buy Now</button></div>';
         grid.appendChild(card);
       });
       attachGridEvents();
@@ -1144,7 +1131,9 @@
     }
     function openProductModal(design) {
       currentDesign = design; currentQty = 1;
-      var wrap = document.getElementById('modalCardWrap'); wrap.innerHTML = diamondShowcaseHTML(design, 'modal-diamond');
+      var wrap = document.getElementById('modalCardWrap');
+      var showcaseBg = 'linear-gradient(160deg, #FFFFFF 0%, ' + design.accent + '30 100%)';
+      wrap.innerHTML = diamondShowcaseHTML(design, 'modal-diamond', showcaseBg);
       document.getElementById('modalName').textContent = design.name; document.getElementById('modalTagline').textContent = design.tagline; document.getElementById('modalPrice').textContent = design.price;
       document.getElementById('qtyValue').textContent = '1'; document.getElementById('productOverlay').style.display = 'flex'; document.body.classList.add('modal-open');
     }
