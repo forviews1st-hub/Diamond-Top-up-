@@ -16,40 +16,39 @@
     body::before { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,0.35); pointer-events: none; z-index: 0; }
     h1, h2, h3, .site-brand-name, .hero-headline, .stat-number, .modal-price, .summary-value-total, .payment-total-amount, .more-stats-number, .trust-feature-card .tf-label, .gc-price-chip, .gc-name, .review-name, .modal-title, .checkout-title, .pulse-subtitle, .gc-buy-btn, .hero-cta-btn, .modal-buy-btn, .order-btn-premium, .review-submit-btn, .success-btn, .custom-alert-btn, .load-more-reviews-btn, .qty-row span, .bonus-tag { font-family: 'Outfit', 'Poppins', sans-serif; font-weight: 700; }
 
-    /* HEADER - 3D */
-    .site-header { position: sticky; top: 0; z-index: 900; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border-radius: 0 0 26px 26px; box-shadow: 0 8px 0 #C77A00, 0 15px 25px rgba(0,0,0,0.3); margin: 0 12px 6px; }
+    /* HEADER - 3D ROUNDED, NON-STICKY */
+    .site-header { position: relative; z-index: 900; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border-radius: 26px; box-shadow: 0 8px 0 #C77A00, 0 15px 25px rgba(0,0,0,0.3); margin: 16px 12px 6px; }
     .site-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; gap: 10px; }
     .site-brand { display: flex; align-items: center; gap: 8px; cursor: default; user-select: none; min-width: 0; flex: 1; }
-    .site-brand-icon { font-size: 26px; line-height: 1; filter: drop-shadow(0 2px 4px rgba(199,122,0,0.4)); flex-shrink: 0; }
     .site-brand-name { font-size: 22px; font-weight: 800; letter-spacing: 0.2px; color: #1A1A1A; line-height: 1.1; display: inline-flex; align-items: center; gap: 5px; flex-wrap: wrap; }
     .verified-logo-tick { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; filter: drop-shadow(0 2px 3px rgba(29,155,240,0.5)); vertical-align: middle; }
     .verified-logo-tick svg { width: 100%; height: 100%; display: block; }
     .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-    .header-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #FFFFFF; border: none; border-radius: 14px; cursor: pointer; color: #1A1A1A; transition: all 0.15s ease; box-shadow: 0 3px 0 #E0A000, 0 5px 12px rgba(199,122,0,0.25); padding: 0; }
-    .header-icon-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 0 #E0A000, 0 8px 16px rgba(199,122,0,0.35); }
-    .header-icon-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #E0A000, 0 2px 6px rgba(199,122,0,0.25); }
+    .header-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #FFFFFF; border: none; border-radius: 14px; cursor: pointer; color: #1A1A1A; transition: all 0.15s ease; box-shadow: 0 5px 0 #E0A000, 0 8px 15px rgba(199,122,0,0.3); padding: 0; }
+    .header-icon-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #E0A000, 0 10px 20px rgba(199,122,0,0.4); }
+    .header-icon-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #E0A000, 0 4px 8px rgba(199,122,0,0.3); }
     .header-icon-btn svg { width: 20px; height: 20px; display: block; }
     .music-btn { position: relative; overflow: hidden; }
     .music-btn .music-on-icon { display: none; }
     .music-btn .music-off-icon { display: block; }
-    .music-btn.playing { background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); color: #1A1A1A; box-shadow: 0 3px 0 #C77A00, 0 5px 12px rgba(199,122,0,0.35); animation: musicPulse 2s ease-in-out infinite; }
-    @keyframes musicPulse { 0%, 100% { box-shadow: 0 3px 0 #C77A00, 0 5px 12px rgba(199,122,0,0.35); } 50% { box-shadow: 0 3px 0 #C77A00, 0 5px 18px rgba(255,152,0,0.6); } }
+    .music-btn.playing { background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); color: #1A1A1A; box-shadow: 0 5px 0 #C77A00, 0 8px 15px rgba(199,122,0,0.35); animation: musicPulse 2s ease-in-out infinite; }
+    @keyframes musicPulse { 0%, 100% { box-shadow: 0 5px 0 #C77A00, 0 8px 15px rgba(199,122,0,0.35); } 50% { box-shadow: 0 5px 0 #C77A00, 0 8px 22px rgba(255,152,0,0.6); } }
     .music-btn.playing .music-on-icon { display: block; }
     .music-btn.playing .music-off-icon { display: none; }
-    .profile-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: #FFFFFF; border: none; color: #1A1A1A; width: 40px; height: 40px; border-radius: 50%; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; box-shadow: 0 3px 0 #E0A000, 0 5px 12px rgba(199,122,0,0.25); padding: 0; position: relative; }
-    .profile-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 0 #E0A000, 0 8px 16px rgba(199,122,0,0.35); }
-    .profile-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #E0A000, 0 2px 6px rgba(199,122,0,0.25); }
+    .profile-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: #FFFFFF; border: none; color: #1A1A1A; width: 40px; height: 40px; border-radius: 50%; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; box-shadow: 0 5px 0 #E0A000, 0 8px 15px rgba(199,122,0,0.3); padding: 0; position: relative; }
+    .profile-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #E0A000, 0 10px 20px rgba(199,122,0,0.4); }
+    .profile-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #E0A000, 0 4px 8px rgba(199,122,0,0.3); }
     .profile-btn.saved { background: #1A1A1A; color: #FFC107; }
-    .profile-btn.saved:hover { box-shadow: 0 4px 0 #000, 0 8px 16px rgba(0,0,0,0.3); }
+    .profile-btn.saved:hover { box-shadow: 0 6px 0 #000, 0 10px 20px rgba(0,0,0,0.3); }
     .profile-btn .profile-icon { font-size: 18px; line-height: 1; }
     .profile-btn .profile-label-full { display: none; }
-    @media (max-width: 400px) { .site-header-inner { padding: 12px 14px; } .site-brand-name { font-size: 18px; } .site-brand-icon { font-size: 22px; } .header-icon-btn, .profile-btn { width: 36px; height: 36px; } .header-icon-btn svg { width: 18px; height: 18px; } .profile-btn .profile-icon { font-size: 16px; } }
+    @media (max-width: 400px) { .site-header-inner { padding: 12px 14px; } .site-brand-name { font-size: 18px; } .header-icon-btn, .profile-btn { width: 36px; height: 36px; } .header-icon-btn svg { width: 18px; height: 18px; } .profile-btn .profile-icon { font-size: 16px; } }
 
     main { padding: 0 16px 20px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
     
     /* HERO SECTION - Text floats without card, bottom card only for stats+button */
     .hero-text-section { text-align: left; padding: 32px 8px; max-width: 800px; margin: 0 auto; position: relative; }
-    .hero-eyebrow { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 10.5px; font-weight: 700; letter-spacing: 2px; color: #FFC107; background: #1A1A1A; border: none; padding: 8px 18px; border-radius: 100px; margin-bottom: 18px; text-transform: uppercase; box-shadow: 0 3px 0 #000, 0 6px 14px rgba(0,0,0,0.3); }
+    .hero-eyebrow { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 10.5px; font-weight: 700; letter-spacing: 2px; color: #1A1A1A; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border: none; padding: 8px 18px; border-radius: 100px; margin-bottom: 18px; text-transform: uppercase; box-shadow: 0 3px 0 #C77A00, 0 6px 14px rgba(255,152,0,0.35); }
     .hero-headline { font-size: 46px; font-weight: 800; line-height: 1.08; letter-spacing: -1px; margin-bottom: 16px; color: #FFFFFF; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
     .hero-headline .gold-line { display: block; color: #FFC107; -webkit-text-fill-color: #FFC107; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
     .hero-sub { font-size: 14.5px; color: #F0F0F0; line-height: 1.7; max-width: 620px; margin: 0 0 22px; letter-spacing: 0.1px; font-weight: 500; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
@@ -64,9 +63,9 @@
     .hero-stat { display: flex; flex-direction: column; gap: 2px; }
     .hero-stat .stat-number { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #1A1A1A; line-height: 1; text-shadow: none; }
     .hero-stat .stat-label { font-size: 10px; color: #3A2A0A; letter-spacing: 1.1px; text-transform: uppercase; font-weight: 700; text-shadow: none; }
-    .hero-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #1A1A1A; color: #FFC107; border: none; padding: 15px 30px; border-radius: 100px; font-size: 15px; font-weight: 800; letter-spacing: 0.4px; cursor: pointer; font-family: 'Outfit', inherit; align-self: flex-start; box-shadow: 0 5px 0 #000, 0 10px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1); transition: all 0.15s ease; }
-    .hero-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #000, 0 14px 28px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1); }
-    .hero-cta-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #000, 0 5px 12px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1); }
+    .hero-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); color: #FFFFFF; border: none; padding: 15px 30px; border-radius: 100px; font-size: 15px; font-weight: 800; letter-spacing: 0.4px; cursor: pointer; font-family: 'Outfit', inherit; align-self: flex-start; box-shadow: 0 5px 0 #800000, 0 10px 24px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); transition: all 0.15s ease; }
+    .hero-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #800000, 0 14px 28px rgba(255,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2); }
+    .hero-cta-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #800000, 0 5px 12px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
     .hero-cta-btn .shop-arrow { transition: transform 0.22s ease; }
     .hero-cta-btn:hover .shop-arrow { transform: translateX(4px); }
     @media (max-width: 700px) { .hero-text-section { padding: 28px 6px 22px; } .hero-headline { font-size: 34px; } .hero-eyebrow { font-size: 9px; letter-spacing: 1.8px; padding: 7px 15px; } .hero-sub { font-size: 13.5px; } .hero-trust { font-size: 11.5px; gap: 7px 11px; } .hero-bottom-card { padding: 20px; gap: 16px; } .hero-cta-btn { padding: 13px 26px; font-size: 14px; } .hero-stats { gap: 18px; } .hero-stat .stat-number { font-size: 22px; } }
@@ -123,12 +122,12 @@
     @media (max-width: 480px) { .pulse-feed { padding: 14px 14px; } .pulse-item { padding: 10px 12px; gap: 10px; border-left-width: 4px; } .pulse-card-thumb { width: 38px; height: 38px; } .live-pill { font-size: 9.5px; padding: 5px 12px; } .pulse-subtitle { font-size: 11px; letter-spacing: 1.1px; } .pulse-avatar { width: 34px; height: 34px; } .pulse-check { width: 13px; height: 13px; font-size: 8px; } }
 
     /* TRUSTED BY ROW - YELLOW 3D BOX */
-    .trusted-by-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 0 22px; padding: 14px 18px; background: #FFFFFF; border: 2px solid #FFFFFF; border-radius: 26px; flex-wrap: wrap; box-shadow: 0 8px 0 #E0A000, 0 15px 30px rgba(199,122,0,0.15); }
+    .trusted-by-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 0 22px; padding: 14px 18px; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border: 2px solid rgba(255,255,255,0.4); border-radius: 26px; flex-wrap: wrap; box-shadow: 0 8px 0 #C77A00, 0 15px 30px rgba(0,0,0,0.25); }
     .trusted-by-avatars { display: flex; align-items: center; }
-    .trusted-by-avatar { width: 34px; height: 34px; border-radius: 50%; border: 3px solid #FFFFFF; margin-left: -12px; overflow: hidden; box-shadow: 0 3px 8px rgba(0,0,0,0.1); background: #FDEEC8; flex-shrink: 0; }
+    .trusted-by-avatar { width: 34px; height: 34px; border-radius: 50%; border: 3px solid #FFFFFF; margin-left: -12px; overflow: hidden; box-shadow: 0 3px 8px rgba(0,0,0,0.15); background: #FDEEC8; flex-shrink: 0; }
     .trusted-by-avatar:first-child { margin-left: 0; }
     .trusted-by-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .trusted-by-text { font-size: 12.5px; font-weight: 500; color: #4A4A4A; letter-spacing: 0.2px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; justify-content: center; text-align: center; }
+    .trusted-by-text { font-size: 12.5px; font-weight: 600; color: #1A1A1A; letter-spacing: 0.2px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; justify-content: center; text-align: center; }
     .trusted-by-text strong { color: #1A1A1A; font-weight: 800; }
     @media (max-width: 500px) { .trusted-by-row { padding: 12px 14px; gap: 10px; } .trusted-by-avatar { width: 30px; height: 30px; margin-left: -10px; } .trusted-by-text { font-size: 11.5px; } }
 
@@ -138,14 +137,14 @@
     .heading-row p { font-size: 12.5px; color: #3A2A0A; margin-top: 5px; font-weight: 600; text-shadow: none; }
     @media (max-width:600px) { .heading-row h1 { font-size: 22px; } }
 
-    /* PRODUCT GRID - 3D CARDS */
+    /* PRODUCT GRID - RED 3D CARDS */
     .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 36px; scroll-margin-top: 90px; }
     @media (min-width: 600px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
     @media (min-width: 1000px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
 
-    .grid-card { border: 2px solid rgba(255,255,255,0.8); border-radius: 26px; padding: 10px; display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; box-shadow: 0 8px 0 var(--card-shadow, rgba(0,0,0,0.15)), 0 15px 30px rgba(0,0,0,0.2); }
-    .grid-card:hover { transform: translateY(-3px); box-shadow: 0 10px 0 var(--card-shadow, rgba(0,0,0,0.15)), 0 20px 35px rgba(0,0,0,0.25); }
-    .grid-card:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--card-shadow, rgba(0,0,0,0.15)), 0 5px 12px rgba(0,0,0,0.2); }
+    .grid-card { border: 2px solid rgba(255,255,255,0.4); border-radius: 26px; padding: 10px; display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; background: linear-gradient(160deg, #FF0000 0%, #CC0000 100%) !important; box-shadow: 0 8px 0 #800000, 0 15px 30px rgba(0,0,0,0.4); }
+    .grid-card:hover { transform: translateY(-3px); box-shadow: 0 10px 0 #800000, 0 20px 35px rgba(0,0,0,0.5); }
+    .grid-card:active { transform: translateY(2px); box-shadow: 0 2px 0 #800000, 0 5px 12px rgba(0,0,0,0.4); }
     @media (min-width: 600px) { .grid-card { border-radius: 28px; padding: 14px; gap: 8px; } }
 
     .diamond-showcase { position: relative; aspect-ratio: 1.4 / 1; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: inset 0 2px 0 rgba(255,255,255,0.9), inset 0 -3px 0 rgba(0,0,0,0.04); padding: 8px; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
@@ -166,14 +165,14 @@
     @media (min-width: 600px) { .bonus-tag { top: 10px; right: 10px; padding: 5px 12px; font-size: 10.5px; } }
 
     .gc-info { display: flex; flex-direction: column; gap: 3px; }
-    .gc-name { font-size: 13px; font-weight: 800; color: #1A1A1A; letter-spacing: -0.2px; line-height: 1.3; text-shadow: 0 1px 2px rgba(255,255,255,0.6); }
+    .gc-name { font-size: 13px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.2px; line-height: 1.3; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
     @media (min-width: 600px) { .gc-info { gap: 5px; } .gc-name { font-size: 16px; } }
 
     .card-bottom-row { display: flex; justify-content: space-between; align-items: center; gap: 6px; margin-top: 2px; }
-    .live-viewers-badge { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 100px; background: linear-gradient(180deg, #FFFFFF 0%, #FFF6E0 100%); border: none; font-size: 9.5px; font-weight: 700; letter-spacing: 0.2px; color: #8B5A00; box-shadow: 0 3px 0 rgba(199,122,0,0.25), 0 4px 8px rgba(199,122,0,0.15); pointer-events: none; user-select: none; white-space: nowrap; }
+    .live-viewers-badge { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 100px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: none; font-size: 9.5px; font-weight: 700; letter-spacing: 0.2px; color: #FFFFFF; box-shadow: 0 3px 0 #800000, 0 4px 8px rgba(0,0,0,0.3); pointer-events: none; user-select: none; white-space: nowrap; }
     .live-viewers-badge .eye { font-size: 10px; line-height: 1; }
-    .live-viewers-badge .live-pulse-dot { width: 5px; height: 5px; border-radius: 50%; background: #EF4444; animation: liveDotBlink 1.4s ease-in-out infinite; }
-    .live-viewers-badge .vcount { color: #C77A00; font-weight: 900; font-variant-numeric: tabular-nums; transition: transform 0.25s ease; }
+    .live-viewers-badge .live-pulse-dot { width: 5px; height: 5px; border-radius: 50%; background: #FFFFFF; animation: liveDotBlink 1.4s ease-in-out infinite; }
+    .live-viewers-badge .vcount { color: #FFFFFF; font-weight: 900; font-variant-numeric: tabular-nums; transition: transform 0.25s ease; }
     .live-viewers-badge .vcount.bump { transform: scale(1.18); }
     @media (min-width: 600px) { .live-viewers-badge { font-size: 10.5px; padding: 6px 12px; gap: 5px; } .live-viewers-badge .eye { font-size: 11px; } .live-viewers-badge .live-pulse-dot { width: 6px; height: 6px; } }
 
@@ -181,7 +180,7 @@
     @media (min-width: 600px) { .gc-price-chip { padding: 7px 16px; font-size: 16px; } }
 
     .gc-actions { display: flex; margin-top: 4px; }
-    .gc-buy-btn { flex: 1; background: linear-gradient(180deg, #10B981 0%, #059669 100%); color: #FFFFFF; border: none; border-radius: 100px; padding: 10px; font-size: 12.5px; font-weight: 800; letter-spacing: 0.3px; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 #064E3B, 0 7px 16px rgba(16,185,129,0.35), inset 0 1px 0 rgba(255,255,255,0.3); }
+    .gc-buy-btn { flex: 1; background: linear-gradient(180deg, #10B981 0%, #047857 100%); color: #FFFFFF; border: none; border-radius: 100px; padding: 10px; font-size: 12.5px; font-weight: 800; letter-spacing: 0.3px; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 #064E3B, 0 7px 16px rgba(16,185,129,0.35), inset 0 1px 0 rgba(255,255,255,0.3); }
     .gc-buy-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #064E3B, 0 10px 22px rgba(16,185,129,0.5), inset 0 1px 0 rgba(255,255,255,0.3); }
     .gc-buy-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #064E3B, 0 3px 8px rgba(16,185,129,0.35), inset 0 1px 0 rgba(255,255,255,0.3); }
     @media (min-width: 600px) { .gc-actions { margin-top: 6px; } .gc-buy-btn { padding: 12px; font-size: 14px; } }
@@ -199,9 +198,9 @@
     /* REVIEWS - 3D CARDS */
     .reviews-section { margin-bottom: 36px; scroll-margin-top: 90px; padding: 0 2px; }
     .reviews-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
-    .reviews-header .heading-row { margin-bottom: 0; background: linear-gradient(180deg, #10B981 0%, #059669 100%); border-color: rgba(255,255,255,0.4); box-shadow: 0 8px 0 #064E3B, 0 15px 35px rgba(0,0,0,0.35); }
-    .reviews-header .heading-row h1 { color: #FFFFFF; }
-    .reviews-header .heading-row p { color: #D1FAE5; }
+    .reviews-header .heading-row { margin-bottom: 0; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border-color: rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); }
+    .reviews-header .heading-row h1 { color: #1A1A1A; }
+    .reviews-header .heading-row p { color: #3A2A0A; }
     .write-review-btn { display: inline-flex; align-items: center; gap: 5px; background: #FFFFFF; border: 2px solid #FDEEC8; color: #1A1A1A; padding: 11px 18px; border-radius: 100px; font-size: 11.5px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; white-space: nowrap; box-shadow: 0 3px 0 rgba(242,226,192,0.7); }
     .write-review-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 rgba(242,226,192,0.7), 0 8px 18px rgba(199,122,0,0.1); background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border-color: transparent; }
     .write-review-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(242,226,192,0.7); }
@@ -489,7 +488,6 @@
   <header class="site-header">
     <div class="site-header-inner">
       <div class="site-brand">
-        <span class="site-brand-icon">💎</span>
         <span class="site-brand-name">Diamond Top-up <span class="verified-logo-tick" title="Verified Seller"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#0095F6" d="M12 0.5l2.19 1.99 2.86-.31 1.19 2.62 2.71 1.02-.31 2.86L22.7 11l-2.06 2.32.31 2.86-2.71 1.02-1.19 2.62-2.86-.31L12 21.5l-2.19-1.99-2.86.31-1.19-2.62-2.71-1.02.31-2.86L1.3 11l2.06-2.32-.31-2.86 2.71-1.02 1.19-2.62 2.86.31L12 0.5z"/><path fill="#fff" d="M10.86 14.79l-3.4-3.4 1.5-1.5 1.9 1.9 5.18-5.18 1.5 1.5-6.68 6.68z"/></svg></span></span>
       </div>
       <div class="header-actions">
@@ -1027,17 +1025,12 @@
     function saveNameAvatarMap(map) { try { localStorage.setItem('diamond_name_avatar_map_v11', JSON.stringify(map)); } catch(e) {} }
     function assignAvatarToName(name) {
       if (!avatarCache.list || avatarCache.list.length === 0) return null;
-      var key = String(name || 'anonymous').trim(); var map = loadNameAvatarMap();
-      if (map[key]) return map[key];
-      var used = loadUsedAvatars(); var available = [];
-      for (var i = 0; i < avatarCache.list.length; i++) { if (used.indexOf(avatarCache.list[i]) === -1) available.push(avatarCache.list[i]); }
-      if (available.length === 0) { used = []; available = avatarCache.list.slice(); }
-      var nameSeed = 0; for (var k = 0; k < key.length; k++) { nameSeed += key.charCodeAt(k); }
-      var idx = Math.floor(pseudoRandom(nameSeed) * available.length);
-      var chosen = available[idx]; used.push(chosen); saveUsedAvatars(used); map[key] = chosen;
-      var mapKeys = Object.keys(map);
-      if (mapKeys.length > 1000) { var newMap = {}; var recent = mapKeys.slice(-500); for (var j = 0; j < recent.length; j++) newMap[recent[j]] = map[recent[j]]; map = newMap; }
-      saveNameAvatarMap(map); return chosen;
+      var key = String(name || 'anonymous').trim();
+      // Deterministic pick based on name hash, ensuring global sync and no repeats
+      var nameSeed = 0;
+      for (var k = 0; k < key.length; k++) { nameSeed += key.charCodeAt(k); }
+      var idx = Math.floor(pseudoRandom(nameSeed) * avatarCache.list.length);
+      return avatarCache.list[idx];
     }
     function fetchAvatarsFromGitHub(callback) {
       try { var cached = localStorage.getItem('diamond_avatars_list_v11'); var cachedTime = localStorage.getItem('diamond_avatars_time_v11'); if (cached && cachedTime && (Date.now() - parseInt(cachedTime)) < 604800000) { var parsed = JSON.parse(cached); if (Array.isArray(parsed) && parsed.length > 0) { avatarCache.list = parsed; avatarCache.loaded = true; if (callback) callback(parsed); return; } } } catch(e) {}
@@ -1264,16 +1257,10 @@
     }
     function initWelcomeBack() {
       try {
-        var VISITS_KEY = 'diamond_visits'; var LAST_VISIT_KEY = 'diamond_last_visit';
-        var today = new Date().toDateString(); var visits = parseInt(localStorage.getItem(VISITS_KEY) || '0'); var lastVisit = localStorage.getItem(LAST_VISIT_KEY);
-        if (lastVisit !== today) { visits += 1; localStorage.setItem(VISITS_KEY, visits.toString()); localStorage.setItem(LAST_VISIT_KEY, today); }
         setTimeout(function() {
           var container = document.getElementById('liveNotifContainer'); if (!container) return;
-          var notif = document.createElement('div'); notif.className = 'welcome-back-toast'; var sub;
-          if (visits === 1) sub = 'Welcome to our store! Top-up diamonds instantly.';
-          else if (visits === 2) sub = 'This is your 2nd visit. Thanks for coming back!';
-          else sub = 'You have visited us ' + visits + ' times. We appreciate your loyalty!';
-          notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="wb-header">✨ Welcome Back ✨</div><div class="wb-body"><div class="wb-icon-wrap">💎</div><div class="wb-content"><div class="wb-title">Good to see you again!</div><div class="wb-sub">' + escapeHtml(sub) + '</div><span class="wb-badge">🎉 Priority Gamer Status</span></div></div>';
+          var notif = document.createElement('div'); notif.className = 'welcome-back-toast';
+          notif.innerHTML = '<button type="button" class="notif-close-btn" aria-label="Close">×</button><div class="wb-header">✨ Welcome Back ✨</div><div class="wb-body"><div class="wb-icon-wrap">💎</div><div class="wb-content"><div class="wb-title">Good to see you again, Gamer!</div><div class="wb-sub">Ready for another top-up? Your diamonds are waiting.</div><span class="wb-badge">🎉 Priority Gamer Status</span></div></div>';
           container.appendChild(notif);
           makeSwipeDismissable(notif);
           var closeBtn = notif.querySelector('.notif-close-btn'); if (closeBtn) closeBtn.addEventListener('click', function(e) { e.stopPropagation(); notif.remove(); });
@@ -1286,8 +1273,7 @@
       designs.forEach(function(design, idx) {
         var viewerBase = viewerState[design.id] ? viewerState[design.id].current : 50;
         var card = document.createElement('div'); card.className = 'grid-card'; card.setAttribute('data-id', design.id);
-        card.style.background = design.cardGradient;
-        card.style.setProperty('--card-shadow', design.shadowColor);
+        // Removed inline background to let CSS take over
         var bonusTag = design.bonus > 0 ? '<span class="bonus-tag">🎁 +' + design.bonus + '</span>' : '';
         card.innerHTML =
           '<div class="diamond-showcase" style="--accent:' + design.accent + '; background:' + design.showcaseGradient + '">' +
@@ -1618,8 +1604,14 @@
       });
     }
     var legalData = {
-      privacy: { title: 'Privacy Policy', content: '<p>We value your privacy. Your Free Fire UID is only used to deliver your top-up. All transactions are 100% secure.</p>' },
-      terms: { title: 'Terms of Service', content: '<p>By placing an order, you agree to provide a valid Free Fire UID. Diamonds are credited after successful payment verification. All top-ups are non-refundable.</p>' }
+      privacy: { 
+          title: 'Privacy Policy', 
+          content: '<h4 style="margin-bottom:8px; color:#1A1A1A;">1. Information We Collect</h4><p style="margin-bottom:12px;">We collect your Free Fire UID and in-game name solely for the purpose of delivering your top-up order. We do not collect any sensitive personal information or payment details.</p><h4 style="margin-bottom:8px; color:#1A1A1A;">2. How We Use Your Information</h4><p style="margin-bottom:12px;">Your UID is used to verify and deliver the diamonds to your account. We do not sell, trade, or share your information with any third-party services.</p><h4 style="margin-bottom:8px; color:#1A1A1A;">3. Payment Security</h4><p style="margin-bottom:12px;">All transactions are processed securely via UPI. We do not store your payment details on our servers.</p><h4 style="margin-bottom:8px; color:#1A1A1A;">4. Cookies</h4><p>We use local storage to save your profile and improve your experience. You can clear this data anytime from your profile settings.</p>' 
+      },
+      terms: { 
+          title: 'Terms of Service', 
+          content: '<h4 style="margin-bottom:8px; color:#1A1A1A;">1. Order & Delivery</h4><p style="margin-bottom:12px;">By placing an order, you agree to provide a valid Free Fire UID. Diamonds are credited within 1-5 minutes after successful payment verification.</p><h4 style="margin-bottom:8px; color:#1A1A1A;">2. Refund Policy</h4><p style="margin-bottom:12px;">All top-ups are final and non-refundable. If diamonds are not credited within 30 minutes, please contact our support for a resolution.</p><h4 style="margin-bottom:8px; color:#1A1A1A;">3. Account Responsibility</h4><p style="margin-bottom:12px;">You are responsible for providing the correct UID. We are not liable for diamonds credited to the wrong account due to incorrect UID entry.</p><h4 style="margin-bottom:8px; color:#1A1A1A;">4. Support</h4><p>For any queries, please contact us at Support@diamondtopup.com.</p>' 
+      }
     };
     document.getElementById('privacyLink').addEventListener('click', function(e) { e.preventDefault(); document.getElementById('legalTitle').textContent = legalData.privacy.title; document.getElementById('legalContent').innerHTML = legalData.privacy.content; document.getElementById('legalOverlay').style.display = 'flex'; document.body.classList.add('modal-open'); });
     document.getElementById('termsLink').addEventListener('click', function(e) { e.preventDefault(); document.getElementById('legalTitle').textContent = legalData.terms.title; document.getElementById('legalContent').innerHTML = legalData.terms.content; document.getElementById('legalOverlay').style.display = 'flex'; document.body.classList.add('modal-open'); });
