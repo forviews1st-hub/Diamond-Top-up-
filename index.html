@@ -16,7 +16,7 @@
     body::before { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,0.35); pointer-events: none; z-index: 0; }
     h1, h2, h3, .site-brand-name, .hero-headline, .stat-number, .modal-price, .summary-value-total, .payment-total-amount, .more-stats-number, .trust-feature-card .tf-label, .gc-price-chip, .gc-name, .review-name, .modal-title, .checkout-title, .pulse-subtitle, .gc-buy-btn, .hero-cta-btn, .modal-buy-btn, .order-btn-premium, .review-submit-btn, .success-btn, .custom-alert-btn, .load-more-reviews-btn, .qty-row span, .bonus-tag { font-family: 'Outfit', 'Poppins', sans-serif; font-weight: 700; }
 
-    /* HEADER - 3D ROUNDED, NON-STICKY */
+    /* HEADER - 3D ROUNDED, NON-STICKY, RED ICONS */
     .site-header { position: relative; z-index: 900; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border-radius: 26px; box-shadow: 0 8px 0 #C77A00, 0 15px 25px rgba(0,0,0,0.3); margin: 16px 12px 6px; }
     .site-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; gap: 10px; }
     .site-brand { display: flex; align-items: center; gap: 8px; cursor: default; user-select: none; min-width: 0; flex: 1; }
@@ -24,70 +24,69 @@
     .verified-logo-tick { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; filter: drop-shadow(0 2px 3px rgba(29,155,240,0.5)); vertical-align: middle; }
     .verified-logo-tick svg { width: 100%; height: 100%; display: block; }
     .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-    .header-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #FFFFFF; border: none; border-radius: 14px; cursor: pointer; color: #1A1A1A; transition: all 0.15s ease; box-shadow: 0 5px 0 #E0A000, 0 8px 15px rgba(199,122,0,0.3); padding: 0; }
-    .header-icon-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #E0A000, 0 10px 20px rgba(199,122,0,0.4); }
-    .header-icon-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #E0A000, 0 4px 8px rgba(199,122,0,0.3); }
+    .header-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: none; border-radius: 14px; cursor: pointer; color: #FFFFFF; transition: all 0.15s ease; box-shadow: 0 4px 0 #800000, 0 6px 12px rgba(0,0,0,0.3); padding: 0; }
+    .header-icon-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #800000, 0 8px 16px rgba(0,0,0,0.4); }
+    .header-icon-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #800000, 0 2px 6px rgba(0,0,0,0.3); }
     .header-icon-btn svg { width: 20px; height: 20px; display: block; }
     .music-btn { position: relative; overflow: hidden; }
     .music-btn .music-on-icon { display: none; }
     .music-btn .music-off-icon { display: block; }
-    .music-btn.playing { background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); color: #1A1A1A; box-shadow: 0 5px 0 #C77A00, 0 8px 15px rgba(199,122,0,0.35); animation: musicPulse 2s ease-in-out infinite; }
-    @keyframes musicPulse { 0%, 100% { box-shadow: 0 5px 0 #C77A00, 0 8px 15px rgba(199,122,0,0.35); } 50% { box-shadow: 0 5px 0 #C77A00, 0 8px 22px rgba(255,152,0,0.6); } }
+    .music-btn.playing { background: linear-gradient(180deg, #FFD700 0%, #FFA500 100%); color: #1A1A1A; box-shadow: 0 4px 0 #B36A00, 0 6px 12px rgba(0,0,0,0.3); animation: musicPulse 2s ease-in-out infinite; }
+    @keyframes musicPulse { 0%, 100% { box-shadow: 0 4px 0 #B36A00, 0 6px 12px rgba(0,0,0,0.3); } 50% { box-shadow: 0 4px 0 #B36A00, 0 6px 18px rgba(255,193,7,0.6); } }
     .music-btn.playing .music-on-icon { display: block; }
     .music-btn.playing .music-off-icon { display: none; }
-    .profile-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: #FFFFFF; border: none; color: #1A1A1A; width: 40px; height: 40px; border-radius: 50%; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; box-shadow: 0 5px 0 #E0A000, 0 8px 15px rgba(199,122,0,0.3); padding: 0; position: relative; }
-    .profile-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #E0A000, 0 10px 20px rgba(199,122,0,0.4); }
-    .profile-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #E0A000, 0 4px 8px rgba(199,122,0,0.3); }
+    .profile-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: none; color: #FFFFFF; width: 40px; height: 40px; border-radius: 50%; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 #800000, 0 6px 12px rgba(0,0,0,0.3); padding: 0; position: relative; }
+    .profile-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #800000, 0 8px 16px rgba(0,0,0,0.4); }
+    .profile-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #800000, 0 2px 6px rgba(0,0,0,0.3); }
     .profile-btn.saved { background: #1A1A1A; color: #FFC107; }
-    .profile-btn.saved:hover { box-shadow: 0 6px 0 #000, 0 10px 20px rgba(0,0,0,0.3); }
+    .profile-btn.saved:hover { box-shadow: 0 5px 0 #000, 0 8px 16px rgba(0,0,0,0.3); }
     .profile-btn .profile-icon { font-size: 18px; line-height: 1; }
     .profile-btn .profile-label-full { display: none; }
     @media (max-width: 400px) { .site-header-inner { padding: 12px 14px; } .site-brand-name { font-size: 18px; } .header-icon-btn, .profile-btn { width: 36px; height: 36px; } .header-icon-btn svg { width: 18px; height: 18px; } .profile-btn .profile-icon { font-size: 16px; } }
 
     main { padding: 0 16px 20px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
     
-    /* HERO SECTION - Text floats without card, bottom card only for stats+button */
+    /* HERO SECTION - Text floats without card, bottom card only for button */
     .hero-text-section { text-align: left; padding: 32px 8px; max-width: 800px; margin: 0 auto; position: relative; }
-    .hero-eyebrow { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 10.5px; font-weight: 700; letter-spacing: 2px; color: #1A1A1A; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border: none; padding: 8px 18px; border-radius: 100px; margin-bottom: 18px; text-transform: uppercase; box-shadow: 0 3px 0 #C77A00, 0 6px 14px rgba(255,152,0,0.35); }
-    .hero-headline { font-size: 46px; font-weight: 800; line-height: 1.08; letter-spacing: -1px; margin-bottom: 16px; color: #FFFFFF; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-    .hero-headline .gold-line { display: block; color: #FFC107; -webkit-text-fill-color: #FFC107; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+    .hero-eyebrow { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 10.5px; font-weight: 700; letter-spacing: 2px; color: #FFFFFF; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: none; padding: 8px 18px; border-radius: 100px; margin-bottom: 18px; text-transform: uppercase; box-shadow: 0 3px 0 #800000, 0 6px 14px rgba(255,0,0,0.35); }
+    
+    /* SALE 3D TEXT EFFECT */
+    .hero-headline { font-size: 46px; font-weight: 800; line-height: 1.08; letter-spacing: -1px; margin-bottom: 16px; color: #FFFFFF; -webkit-text-stroke: 3px #FF0000; text-shadow: 4px 4px 0 #800000, 6px 6px 15px rgba(0,0,0,0.8); }
+    .hero-headline .gold-line { display: block; color: #FFFFFF; -webkit-text-stroke: 3px #FF0000; text-shadow: 4px 4px 0 #800000, 6px 6px 15px rgba(0,0,0,0.8); }
+    
     .hero-sub { font-size: 14.5px; color: #F0F0F0; line-height: 1.7; max-width: 620px; margin: 0 0 22px; letter-spacing: 0.1px; font-weight: 500; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
     .hero-trust { display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; gap: 8px 14px; font-size: 12.5px; font-weight: 600; color: #F0F0F0; letter-spacing: 0.2px; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
     .hero-trust span { display: inline-flex; align-items: center; gap: 5px; }
     .hero-trust .trust-emoji { font-size: 14px; }
     .hero-trust .trust-dot { color: #FFC107; font-size: 16px; line-height: 1; }
     
-    /* HERO BOTTOM CARD - Only for Stats + Button */
-    .hero-bottom-card { margin-top: 22px; padding: 24px; background: linear-gradient(180deg, rgba(255,193,7,0.92) 0%, rgba(255,152,0,0.92) 100%); border-radius: 28px; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; gap: 20px; }
-    .hero-stats { display: flex; gap: 22px; flex-wrap: wrap; }
-    .hero-stat { display: flex; flex-direction: column; gap: 2px; }
-    .hero-stat .stat-number { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #1A1A1A; line-height: 1; text-shadow: none; }
-    .hero-stat .stat-label { font-size: 10px; color: #3A2A0A; letter-spacing: 1.1px; text-transform: uppercase; font-weight: 700; text-shadow: none; }
-    .hero-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); color: #FFFFFF; border: none; padding: 15px 30px; border-radius: 100px; font-size: 15px; font-weight: 800; letter-spacing: 0.4px; cursor: pointer; font-family: 'Outfit', inherit; align-self: flex-start; box-shadow: 0 5px 0 #800000, 0 10px 24px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); transition: all 0.15s ease; }
+    /* HERO BOTTOM CARD - Only for Button */
+    .hero-bottom-card { margin-top: 22px; padding: 24px; background: linear-gradient(180deg, rgba(255,193,7,0.92) 0%, rgba(255,152,0,0.92) 100%); border-radius: 28px; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; justify-content: center; }
+    .hero-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); color: #FFFFFF; border: none; padding: 15px 30px; border-radius: 100px; font-size: 15px; font-weight: 800; letter-spacing: 0.4px; cursor: pointer; font-family: 'Outfit', inherit; box-shadow: 0 5px 0 #800000, 0 10px 24px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); transition: all 0.15s ease; }
     .hero-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #800000, 0 14px 28px rgba(255,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2); }
     .hero-cta-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #800000, 0 5px 12px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
     .hero-cta-btn .shop-arrow { transition: transform 0.22s ease; }
     .hero-cta-btn:hover .shop-arrow { transform: translateX(4px); }
-    @media (max-width: 700px) { .hero-text-section { padding: 28px 6px 22px; } .hero-headline { font-size: 34px; } .hero-eyebrow { font-size: 9px; letter-spacing: 1.8px; padding: 7px 15px; } .hero-sub { font-size: 13.5px; } .hero-trust { font-size: 11.5px; gap: 7px 11px; } .hero-bottom-card { padding: 20px; gap: 16px; } .hero-cta-btn { padding: 13px 26px; font-size: 14px; } .hero-stats { gap: 18px; } .hero-stat .stat-number { font-size: 22px; } }
+    @media (max-width: 700px) { .hero-text-section { padding: 28px 6px 22px; } .hero-headline { font-size: 34px; } .hero-eyebrow { font-size: 9px; letter-spacing: 1.8px; padding: 7px 15px; } .hero-sub { font-size: 13.5px; } .hero-trust { font-size: 11.5px; gap: 7px 11px; } .hero-bottom-card { padding: 20px; } .hero-cta-btn { padding: 13px 26px; font-size: 14px; } }
     @media (max-width: 400px) { .hero-headline { font-size: 28px; } .hero-sub { font-size: 13px; } }
 
-    /* WHY TRUST US - YELLOW 3D BOX */
-    .why-trust-section { margin: 18px 0 22px; padding: 26px 16px 22px; background: linear-gradient(160deg, #FFC107 0%, #FF9800 100%); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-    .why-trust-section h2 { font-size: 26px; font-weight: 800; text-align: center; margin-bottom: 5px; color: #1A1A1A; letter-spacing: -0.3px; }
-    .why-trust-section .why-trust-sub { text-align: center; font-size: 12.5px; color: #3A2A0A; margin-bottom: 20px; letter-spacing: 0.2px; font-weight: 600; }
+    /* WHY TRUST US - RED 3D BOX */
+    .why-trust-section { margin: 18px 0 22px; padding: 26px 16px 22px; background: linear-gradient(160deg, #FF0000 0%, #CC0000 100%); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 #800000, 0 15px 35px rgba(0,0,0,0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .why-trust-section h2 { font-size: 26px; font-weight: 800; text-align: center; margin-bottom: 5px; color: #FFFFFF; letter-spacing: -0.3px; }
+    .why-trust-section .why-trust-sub { text-align: center; font-size: 12.5px; color: #FECACA; margin-bottom: 20px; letter-spacing: 0.2px; font-weight: 600; }
     .trust-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
     @media (min-width: 700px) { .trust-features { grid-template-columns: repeat(4, 1fr); gap: 14px; } }
-    .trust-feature-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 18px 10px 16px; background: rgba(255, 255, 255, 0.7); border: 2px solid rgba(255, 255, 255, 0.8); border-radius: 22px; transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); box-shadow: 0 6px 0 rgba(199, 122, 0, 0.5), 0 10px 20px rgba(0,0,0,0.2); }
-    .trust-feature-card:hover { transform: translateY(-3px); border-color: #FFFFFF; background: rgba(255, 255, 255, 0.9); box-shadow: 0 8px 0 rgba(199, 122, 0, 0.5), 0 15px 25px rgba(0,0,0,0.3); }
+    .trust-feature-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 18px 10px 16px; background: #FFFFFF; border: 2px solid #FFFFFF; border-radius: 22px; transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); box-shadow: 0 6px 0 rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.3); }
+    .trust-feature-card:hover { transform: translateY(-3px); box-shadow: 0 8px 0 rgba(0,0,0,0.2), 0 15px 25px rgba(0,0,0,0.4); }
     .trust-feature-card .tf-icon-wrap { width: 54px; height: 54px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 26px; background: linear-gradient(180deg, var(--tf-accent, #FFC107) 0%, var(--tf-accent2, #FF9800) 100%); border: none; box-shadow: 0 4px 0 var(--tf-shadow-dark, #C77A00), 0 6px 12px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.5); transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; }
     .trust-feature-card:hover .tf-icon-wrap { transform: scale(1.06) rotate(-4deg); }
     .trust-feature-card .tf-label { font-size: 20px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.1; color: #1A1A1A; }
-    .trust-feature-card .tf-value { font-size: 9.5px; color: #3A2A0A; letter-spacing: 0.7px; font-weight: 700; text-transform: uppercase; line-height: 1.3; }
+    .trust-feature-card .tf-value { font-size: 9.5px; color: #4A4A4A; letter-spacing: 0.7px; font-weight: 700; text-transform: uppercase; line-height: 1.3; }
     @media (min-width: 500px) { .trust-feature-card .tf-label { font-size: 22px; } }
-    .trust-feature-card:nth-child(1) { --tf-accent: #60C8FF; --tf-accent2: #3B82F6; --tf-shadow-dark: #1E5FBE; --tf-shadow: rgba(79,172,254,0.4); }
-    .trust-feature-card:nth-child(2) { --tf-accent: #4ADE80; --tf-accent2: #22C55E; --tf-shadow-dark: #15803D; --tf-shadow: rgba(34,197,94,0.4); }
-    .trust-feature-card:nth-child(3) { --tf-accent: #FFD966; --tf-accent2: #FF9800; --tf-shadow-dark: #B36A00; --tf-shadow: rgba(255,152,0,0.4); }
-    .trust-feature-card:nth-child(4) { --tf-accent: #FFC107; --tf-accent2: #FF9800; --tf-shadow-dark: #C77A00; --tf-shadow: rgba(255,152,0,0.4); }
+    .trust-feature-card:nth-child(1) { --tf-accent: #1E5FBE; --tf-accent2: #1E40AF; --tf-shadow-dark: #0F2A5E; }
+    .trust-feature-card:nth-child(2) { --tf-accent: #B36A00; --tf-accent2: #92400E; --tf-shadow-dark: #5E3200; }
+    .trust-feature-card:nth-child(3) { --tf-accent: #15803D; --tf-accent2: #166534; --tf-shadow-dark: #0B4A1F; }
+    .trust-feature-card:nth-child(4) { --tf-accent: #C77A00; --tf-accent2: #9A5B00; --tf-shadow-dark: #6B3F00; }
 
     /* RECENT TOP-UPS - RED 3D BOX */
     .pulse-feed { margin: 0 0 20px; padding: 18px 18px; background: linear-gradient(160deg, #FF0000 0%, #CC0000 100%); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 #800000, 0 15px 35px rgba(0,0,0,0.5); position: relative; overflow: hidden; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
@@ -137,17 +136,17 @@
     .heading-row p { font-size: 12.5px; color: #3A2A0A; margin-top: 5px; font-weight: 600; text-shadow: none; }
     @media (max-width:600px) { .heading-row h1 { font-size: 22px; } }
 
-    /* PRODUCT GRID - RED 3D CARDS */
+    /* PRODUCT GRID - WHITE 3D CARDS */
     .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 36px; scroll-margin-top: 90px; }
     @media (min-width: 600px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
     @media (min-width: 1000px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
 
-    .grid-card { border: 2px solid rgba(255,255,255,0.4); border-radius: 26px; padding: 10px; display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; background: linear-gradient(160deg, #FF0000 0%, #CC0000 100%) !important; box-shadow: 0 8px 0 #800000, 0 15px 30px rgba(0,0,0,0.4); }
-    .grid-card:hover { transform: translateY(-3px); box-shadow: 0 10px 0 #800000, 0 20px 35px rgba(0,0,0,0.5); }
-    .grid-card:active { transform: translateY(2px); box-shadow: 0 2px 0 #800000, 0 5px 12px rgba(0,0,0,0.4); }
+    .grid-card { border: 2px solid #FFFFFF; border-radius: 26px; padding: 10px; display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; background: #FFFFFF !important; box-shadow: 0 8px 0 #D1D5DB, 0 15px 30px rgba(0,0,0,0.2); }
+    .grid-card:hover { transform: translateY(-3px); box-shadow: 0 10px 0 #D1D5DB, 0 20px 35px rgba(0,0,0,0.25); }
+    .grid-card:active { transform: translateY(2px); box-shadow: 0 2px 0 #D1D5DB, 0 5px 12px rgba(0,0,0,0.2); }
     @media (min-width: 600px) { .grid-card { border-radius: 28px; padding: 14px; gap: 8px; } }
 
-    .diamond-showcase { position: relative; aspect-ratio: 1.4 / 1; border-radius: 16px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: inset 0 2px 0 rgba(255,255,255,0.9), inset 0 -3px 0 rgba(0,0,0,0.04); padding: 8px; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .diamond-showcase { position: relative; aspect-ratio: 1.4 / 1; border-radius: 16px; background: #F9FAFB; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: inset 0 2px 0 rgba(255,255,255,0.9), inset 0 -3px 0 rgba(0,0,0,0.04); padding: 8px; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
     .grid-card:hover .diamond-showcase { transform: scale(1.02); }
     .diamond-glow { position: absolute; inset: 0; opacity: 0.35; filter: blur(30px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; }
     @keyframes glowPulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.5; } }
@@ -165,7 +164,7 @@
     @media (min-width: 600px) { .bonus-tag { top: 10px; right: 10px; padding: 5px 12px; font-size: 10.5px; } }
 
     .gc-info { display: flex; flex-direction: column; gap: 3px; }
-    .gc-name { font-size: 13px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.2px; line-height: 1.3; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+    .gc-name { font-size: 13px; font-weight: 800; color: #1A1A1A; letter-spacing: -0.2px; line-height: 1.3; text-shadow: none; }
     @media (min-width: 600px) { .gc-info { gap: 5px; } .gc-name { font-size: 16px; } }
 
     .card-bottom-row { display: flex; justify-content: space-between; align-items: center; gap: 6px; margin-top: 2px; }
@@ -185,8 +184,6 @@
     .gc-buy-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #064E3B, 0 3px 8px rgba(16,185,129,0.35), inset 0 1px 0 rgba(255,255,255,0.3); }
     @media (min-width: 600px) { .gc-actions { margin-top: 6px; } .gc-buy-btn { padding: 12px; font-size: 14px; } }
 
-    /* Removed Trending Badge */
-
     .countdown-strip, .gc-material, .gc-tagline, .gc-meta, .gc-price { display: none !important; }
 
     .diamond-showcase.modal-diamond { aspect-ratio: 1.2 / 1; padding: 30px; border-radius: 22px; }
@@ -201,9 +198,9 @@
     .reviews-header .heading-row { margin-bottom: 0; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border-color: rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); }
     .reviews-header .heading-row h1 { color: #1A1A1A; }
     .reviews-header .heading-row p { color: #3A2A0A; }
-    .write-review-btn { display: inline-flex; align-items: center; gap: 5px; background: #FFFFFF; border: 2px solid #FDEEC8; color: #1A1A1A; padding: 11px 18px; border-radius: 100px; font-size: 11.5px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; white-space: nowrap; box-shadow: 0 3px 0 rgba(242,226,192,0.7); }
-    .write-review-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 rgba(242,226,192,0.7), 0 8px 18px rgba(199,122,0,0.1); background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border-color: transparent; }
-    .write-review-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 rgba(242,226,192,0.7); }
+    .write-review-btn { display: inline-flex; align-items: center; gap: 5px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: 2px solid #FFFFFF; color: #FFFFFF; padding: 11px 18px; border-radius: 100px; font-size: 11.5px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; white-space: nowrap; box-shadow: 0 4px 0 #800000, 0 6px 12px rgba(0,0,0,0.3); }
+    .write-review-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #800000, 0 8px 18px rgba(255,0,0,0.3); background: linear-gradient(180deg, #FF3333 0%, #CC0000 100%); }
+    .write-review-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 #800000; }
 
     .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
     @media (min-width: 700px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -516,12 +513,8 @@
         <span class="trust-dot">•</span>
         <span><span class="trust-emoji">🔥</span> Best Rates</span>
       </div>
-      <!-- Hero Bottom Card: Only for Stats + Button -->
+      <!-- Hero Bottom Card: Only for Button -->
       <div class="hero-bottom-card">
-        <div class="hero-stats">
-          <div class="hero-stat"><span class="stat-number" id="heroSoldCount">0</span><span class="stat-label">Top-Ups Done</span></div>
-          <div class="hero-stat"><span class="stat-number" id="heroBuyersCount">0</span><span class="stat-label">Happy Gamers</span></div>
-        </div>
         <button class="hero-cta-btn" id="heroCtaBtn">Buy Diamonds <span class="shop-arrow">→</span></button>
       </div>
     </section>
@@ -531,8 +524,8 @@
       <p class="why-trust-sub">Thousands of gamers top-up here every day</p>
       <div class="trust-features">
         <div class="trust-feature-card"><div class="tf-icon-wrap">🎮</div><div class="tf-label" id="whyTrustBuyers">10,000+</div><div class="tf-value">Happy Gamers</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap">🏆</div><div class="tf-label" id="heroSoldCount">0</div><div class="tf-value">Top-Ups Done</div></div>
         <div class="trust-feature-card"><div class="tf-icon-wrap">✅</div><div class="tf-label">100%</div><div class="tf-value">Verified Top-Ups</div></div>
-        <div class="trust-feature-card"><div class="tf-icon-wrap">⚡</div><div class="tf-label">60 Sec</div><div class="tf-value">Instant Delivery</div></div>
         <div class="trust-feature-card"><div class="tf-icon-wrap">🔒</div><div class="tf-label">100%</div><div class="tf-value">Secure Payment</div></div>
       </div>
     </section>
@@ -782,7 +775,6 @@
 
   <script>
     var REFERENCE_TIME = new Date('2026-06-01T00:00:00Z').getTime();
-    // FIXED: Absolute global timestamp for synchronized stream across all users
     var GLOBAL_STREAM_REFERENCE_TIME = new Date('2026-01-01T00:00:00Z').getTime();
     
     function pseudoRandom(seed) { var x = Math.sin(seed) * 10000; return x - Math.floor(x); }
@@ -901,7 +893,6 @@
       if (targetMinute <= stream.lastMinute) return stream;
       var totalWeight = 0; designs.forEach(function(d) { totalWeight += d.viewerWeight; });
       for (var m = stream.lastMinute + 1; m <= targetMinute; m++) {
-        // Uses global fixed reference time so all users calculate the exact same events
         var minuteTime = GLOBAL_STREAM_REFERENCE_TIME + m * 60000;
         var hourOfDay = new Date(minuteTime).getHours();
         var mult = getTimeMultiplierForHour(hourOfDay);
@@ -1026,7 +1017,6 @@
     function assignAvatarToName(name) {
       if (!avatarCache.list || avatarCache.list.length === 0) return null;
       var key = String(name || 'anonymous').trim();
-      // Deterministic pick based on name hash, ensuring global sync and no repeats
       var nameSeed = 0;
       for (var k = 0; k < key.length; k++) { nameSeed += key.charCodeAt(k); }
       var idx = Math.floor(pseudoRandom(nameSeed) * avatarCache.list.length);
@@ -1083,12 +1073,12 @@
       };
     })();
     var designs = [
-      { id: 'd100', name: '100 Diamonds', qty: 100, bonus: 0, price: '₹80', tagline: 'Perfect starter pack', accent: '#4facfe', shadowColor: '#1E5FBE', cardGradient: 'linear-gradient(160deg, #E0F2FE 0%, #FFFFFF 100%)', showcaseGradient: 'linear-gradient(160deg, #FFFFFF 0%, #BAE6FD 100%)', gradient: 'linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #4facfe 100%)', material: 'Starter Pack', stockPercent: 92, viewerWeight: 0.7 },
-      { id: 'd310', name: '310 Diamonds', qty: 310, bonus: 0, price: '₹240', tagline: 'Great value for regulars', accent: '#a855f7', shadowColor: '#3d1a6e', cardGradient: 'linear-gradient(160deg, #EDE9FE 0%, #FFFFFF 100%)', showcaseGradient: 'linear-gradient(160deg, #FFFFFF 0%, #DDD6FE 100%)', gradient: 'linear-gradient(135deg, #1a0a2e 0%, #3d1a6e 50%, #a855f7 100%)', material: 'Popular Pack', stockPercent: 85, viewerWeight: 1.2 },
-      { id: 'd520', name: '520 Diamonds', qty: 520, bonus: 50, price: '₹400', tagline: 'Best seller with bonus', accent: '#f59e0b', shadowColor: '#B36A00', cardGradient: 'linear-gradient(160deg, #FEF3C7 0%, #FFFFFF 100%)', showcaseGradient: 'linear-gradient(160deg, #FFFFFF 0%, #FDE68A 100%)', gradient: 'linear-gradient(135deg, #2d0a0a 0%, #7c2d12 50%, #f59e0b 100%)', material: 'Value Pack', stockPercent: 78, viewerWeight: 1.6 },
-      { id: 'd1060', name: '1060 Diamonds', qty: 1060, bonus: 100, price: '₹800', tagline: 'For serious gamers', accent: '#10b981', shadowColor: '#15803D', cardGradient: 'linear-gradient(160deg, #D1FAE5 0%, #FFFFFF 100%)', showcaseGradient: 'linear-gradient(160deg, #FFFFFF 0%, #A7F3D0 100%)', gradient: 'linear-gradient(135deg, #0a2e1a 0%, #064e3b 50%, #10b981 100%)', material: 'Pro Pack', stockPercent: 71, viewerWeight: 1.0 },
-      { id: 'd2180', name: '2180 Diamonds', qty: 2180, bonus: 250, price: '₹1600', tagline: 'Ultimate value pack', accent: '#ec4899', shadowColor: '#6b1d6b', cardGradient: 'linear-gradient(160deg, #FCE7F3 0%, #FFFFFF 100%)', showcaseGradient: 'linear-gradient(160deg, #FFFFFF 0%, #FBCFE8 100%)', gradient: 'linear-gradient(135deg, #2e0a2e 0%, #6b1d6b 50%, #ec4899 100%)', material: 'Elite Pack', stockPercent: 88, viewerWeight: 1.3 },
-      { id: 'd5600', name: '5600 Diamonds', qty: 5600, bonus: 0, price: '₹2100', tagline: 'Mega pack for pros', accent: '#3b82f6', shadowColor: '#1e40af', cardGradient: 'linear-gradient(160deg, #DBEAFE 0%, #FFFFFF 100%)', showcaseGradient: 'linear-gradient(160deg, #FFFFFF 0%, #BFDBFE 100%)', gradient: 'linear-gradient(135deg, #0a1f3d 0%, #1e40af 50%, #3b82f6 100%)', material: 'Mega Pack', stockPercent: 75, viewerWeight: 1.4 }
+      { id: 'd100', name: '100 Diamonds', qty: 100, bonus: 0, price: '₹80', tagline: 'Perfect starter pack', accent: '#4facfe', shadowColor: '#1E5FBE', cardGradient: 'linear-gradient(160deg, #E0F2FE 0%, #FFFFFF 100%)', showcaseGradient: '#F0F8FF', gradient: 'linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #4facfe 100%)', material: 'Starter Pack', stockPercent: 92, viewerWeight: 0.7 },
+      { id: 'd310', name: '310 Diamonds', qty: 310, bonus: 0, price: '₹240', tagline: 'Great value for regulars', accent: '#a855f7', shadowColor: '#3d1a6e', cardGradient: 'linear-gradient(160deg, #EDE9FE 0%, #FFFFFF 100%)', showcaseGradient: '#F3E8FF', gradient: 'linear-gradient(135deg, #1a0a2e 0%, #3d1a6e 50%, #a855f7 100%)', material: 'Popular Pack', stockPercent: 85, viewerWeight: 1.2 },
+      { id: 'd520', name: '520 Diamonds', qty: 520, bonus: 50, price: '₹400', tagline: 'Best seller with bonus', accent: '#f59e0b', shadowColor: '#B36A00', cardGradient: 'linear-gradient(160deg, #FEF3C7 0%, #FFFFFF 100%)', showcaseGradient: '#FFFBEB', gradient: 'linear-gradient(135deg, #2d0a0a 0%, #7c2d12 50%, #f59e0b 100%)', material: 'Value Pack', stockPercent: 78, viewerWeight: 1.6 },
+      { id: 'd1060', name: '1060 Diamonds', qty: 1060, bonus: 100, price: '₹800', tagline: 'For serious gamers', accent: '#10b981', shadowColor: '#15803D', cardGradient: 'linear-gradient(160deg, #D1FAE5 0%, #FFFFFF 100%)', showcaseGradient: '#ECFDF5', gradient: 'linear-gradient(135deg, #0a2e1a 0%, #064e3b 50%, #10b981 100%)', material: 'Pro Pack', stockPercent: 71, viewerWeight: 1.0 },
+      { id: 'd2180', name: '2180 Diamonds', qty: 2180, bonus: 250, price: '₹1600', tagline: 'Ultimate value pack', accent: '#ec4899', shadowColor: '#6b1d6b', cardGradient: 'linear-gradient(160deg, #FCE7F3 0%, #FFFFFF 100%)', showcaseGradient: '#FDF2F8', gradient: 'linear-gradient(135deg, #2e0a2e 0%, #6b1d6b 50%, #ec4899 100%)', material: 'Elite Pack', stockPercent: 88, viewerWeight: 1.3 },
+      { id: 'd5600', name: '5600 Diamonds', qty: 5600, bonus: 0, price: '₹2100', tagline: 'Mega pack for pros', accent: '#3b82f6', shadowColor: '#1e40af', cardGradient: 'linear-gradient(160deg, #DBEAFE 0%, #FFFFFF 100%)', showcaseGradient: '#EFF6FF', gradient: 'linear-gradient(135deg, #0a1f3d 0%, #1e40af 50%, #3b82f6 100%)', material: 'Mega Pack', stockPercent: 75, viewerWeight: 1.4 }
     ];
     var reviewsData = [
       { name: 'Total Gaming', avatar: 'reviews/youtuber1.png', location: 'Gujarat', time: '9 days ago', purchased: 'All Packages', comment: 'Hello Gamers! Ajju Bhai here. Maine is seller se diamonds liye hain, aur sach batau toh diamonds ekdum wahi mile jo bola gaya tha. Maine usi se apna Free Fire ka Elite Pass aur top-up kiya. Agar aap log bhi high diamonds dhundh rahe ho, toh bina tension ke try karo. Trust me, genuine hai! 🔥', helpful: 1247, moreCount: 8932, isYouTuber: true },
@@ -1115,8 +1105,6 @@
       var currentSold = initialSold + (initialStock - currentStock);
       return { stock: currentStock, sold: currentSold, total: totalInventory };
     }
-    
-    // Removed updateTrendingBadge function completely
 
     var currentDesign = null; var currentQty = 1; var currentOrderDesign = null; var currentPendingOrder = null;
     var selectedPhotoDataURL = null;
@@ -1177,7 +1165,6 @@
     }
     setInterval(updateCountdowns, 1000);
     
-    // FIXED: Animated counting logic
     var isFirstRender = true;
     function animateValue(obj, start, end, duration) {
         if (start === end) return;
@@ -1185,7 +1172,7 @@
         var current = start;
         var increment = end > start ? 1 : -1;
         var stepTime = Math.abs(Math.floor(duration / range));
-        if (stepTime < 15) stepTime = 15; // Minimum 15ms per frame
+        if (stepTime < 15) stepTime = 15;
         var timer = setInterval(function() {
             current += increment;
             obj.textContent = current.toLocaleString('en-IN') + '+';
@@ -1212,7 +1199,7 @@
           }
       }
 
-      var buyersEl = document.getElementById('heroBuyersCount');
+      var buyersEl = document.getElementById('whyTrustBuyers');
       if (buyersEl) {
           if (isFirstRender) {
               buyersEl.textContent = buyers.toLocaleString('en-IN') + '+';
@@ -1232,18 +1219,6 @@
               var currentTb = parseInt(tbEl.textContent.replace(/[^0-9]/g, '')) || 9935;
               if (currentTb !== buyers) {
                   tbEl.textContent = '+' + buyers.toLocaleString('en-IN') + ' buyers';
-              }
-          }
-      }
-
-      var whyEl = document.getElementById('whyTrustBuyers');
-      if (whyEl) {
-          if (isFirstRender) {
-              whyEl.textContent = buyers.toLocaleString('en-IN') + '+';
-          } else {
-              var currentWhy = parseInt(whyEl.textContent.replace(/[^0-9]/g, '')) || 9935;
-              if (currentWhy !== buyers) {
-                  animateValue(whyEl, currentWhy, buyers, 1200);
               }
           }
       }
@@ -1273,7 +1248,6 @@
       designs.forEach(function(design, idx) {
         var viewerBase = viewerState[design.id] ? viewerState[design.id].current : 50;
         var card = document.createElement('div'); card.className = 'grid-card'; card.setAttribute('data-id', design.id);
-        // Removed inline background to let CSS take over
         var bonusTag = design.bonus > 0 ? '<span class="bonus-tag">🎁 +' + design.bonus + '</span>' : '';
         card.innerHTML =
           '<div class="diamond-showcase" style="--accent:' + design.accent + '; background:' + design.showcaseGradient + '">' +
@@ -1517,7 +1491,7 @@
       _lastNotifiedMinute = currentMinute;
       if (shownAny) { renderHeroCounters(); }
     }
-    setInterval(purchaseTick, 5000); // Check every 5 seconds for tighter synchronization
+    setInterval(purchaseTick, 5000);
     function updateNotificationTimes() {
       var items = document.querySelectorAll('.pulse-item');
       items.forEach(function(item) { var ts = parseInt(item.getAttribute('data-timestamp')); if (!ts) return; var timeSpan = item.querySelector('.pulse-time-text'); if (timeSpan) timeSpan.textContent = formatTimeAgo(ts); });
