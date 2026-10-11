@@ -455,12 +455,14 @@
     #orderOverlay .order-btn-premium:active { transform: translateY(3px); box-shadow: 0 3px 0 #C77A00, 0 6px 12px rgba(255,152,0,0.4); }
     #orderOverlay .field-group input { border-color: #FFF6E0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); padding: 13px 16px; border-radius: 14px; }
     #orderOverlay .field-group label { color: #4A2A0A; font-size: 11px; margin-bottom: 6px; }
+    #orderOverlay .checkout-eyebrow { display: inline-block; font-size: 10px; font-weight: 900; letter-spacing: 2.4px; color: #FFFFFF; background: #FF0000; padding: 7px 18px; border-radius: 100px; margin-bottom: 10px; box-shadow: 0 3px 0 #800000, inset 0 2px 4px rgba(255,255,255,0.2); text-shadow: none; }
+    #orderOverlay .checkout-title { font-size: 22px; font-weight: 900; color: #1A1A1A; margin-bottom: 3px; letter-spacing: -0.5px; }
+    #orderOverlay .checkout-subtitle { font-size: 11px; color: #4A2A0A; line-height: 1.4; font-weight: 600; font-style: italic; }
 
     /* VERIFY MODAL - GAME STYLE (HOME BACKGROUND) */
     #verifyOverlay .modal {
-        background: rgba(0, 0, 0, 0.85) url('images/bg.png') no-repeat center center;
+        background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/bg.png') no-repeat center center;
         background-size: cover;
-        background-blend-mode: multiply;
         border: 2px solid #FFC107;
         border-radius: 24px;
         box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 8px 0 #C77A00;
@@ -473,7 +475,7 @@
         background: #FF0000; color: #FFF; box-shadow: 0 3px 0 #800000; outline: none; border: none;
     }
     #verifyOverlay .verify-header {
-        background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+        background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 100%);
         border-bottom: 2px solid #FFC107;
         border-radius: 22px 22px 0 0;
         padding: 24px 20px 18px;
@@ -483,7 +485,7 @@
     #verifyOverlay .verify-avatar {
         width: 80px; height: 80px; border-radius: 50%; border: 3px solid #FFC107;
         box-shadow: 0 0 20px rgba(255,193,7,0.6); margin: 0 auto 12px;
-        background: rgba(26,42,58,0.8); display: flex; align-items: center; justify-content: center;
+        background: rgba(26,42,58,0.6); display: flex; align-items: center; justify-content: center;
         font-size: 40px; color: #FFC107; overflow: hidden; backdrop-filter: blur(4px);
     }
     #verifyOverlay .verify-avatar img { width: 100%; height: 100%; object-fit: cover; }
@@ -493,7 +495,7 @@
     }
     #verifyOverlay .verify-body { padding: 20px; }
     #verifyOverlay .verify-name { font-size: 26px; font-weight: 900; color: #FFFFFF; text-align: center; margin-bottom: 4px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
-    #verifyOverlay .verify-congrats { font-size: 12px; color: #B0C4DE; text-align: center; margin-bottom: 18px; text-shadow: 0 1px 2px rgba(0,0,0,0.8); }
+    #verifyOverlay .verify-congrats { font-size: 12px; color: #F0F0F0; text-align: center; margin-bottom: 18px; text-shadow: 0 1px 2px rgba(0,0,0,0.8); }
     #verifyOverlay .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 18px; }
     #verifyOverlay .stat-box {
         background: #FFFFFF; border-radius: 12px; padding: 12px 6px; text-align: center;
@@ -520,10 +522,11 @@
     #verifyOverlay .verify-proceed-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 0 #800000, 0 14px 28px rgba(255,0,0,0.5); }
     #verifyOverlay .verify-proceed-btn:active { transform: translateY(3px); box-shadow: 0 3px 0 #800000, 0 6px 12px rgba(255,0,0,0.4); }
     #verifyOverlay .verify-reset-btn {
-        display: block; text-align: center; font-size: 12px; color: #B0C4DE; font-weight: 700;
+        display: block; text-align: center; font-size: 12px; color: #F0F0F0; font-weight: 700;
         text-decoration: underline; cursor: pointer; transition: color 0.2s; text-shadow: 0 1px 2px rgba(0,0,0,0.8);
     }
     #verifyOverlay .verify-reset-btn:hover { color: #FFC107; }
+    #verifyOverlay .stat-box .stat-icon { font-size: 18px; margin-bottom: 2px; }
 
     /* PAYMENT MODAL - COMPACT & PREMIUM */
     #paymentOverlay .modal {
@@ -553,8 +556,11 @@
     #paymentOverlay .qr-hint strong { color: #FF0000; }
     #paymentOverlay .section-divider span { color: #4A2A0A; font-size: 9px; letter-spacing: 1.2px; }
     #paymentOverlay .section-divider::before, #paymentOverlay .section-divider::after { background: linear-gradient(90deg, transparent, #FF0000, transparent); }
-    #paymentOverlay .payment-method-icons { gap: 8px; margin-top: 12px; padding-top: 12px; }
-    #paymentOverlay .upi-logo { padding: 6px 12px; height: 38px; min-width: 80px; box-shadow: 0 4px 0 #E0A000, 0 6px 10px rgba(0,0,0,0.15); background: #FFFFFF; }
+    #paymentOverlay .payment-method-icons { gap: 8px; margin-top: 12px; padding-top: 12px; position: relative; }
+    #paymentOverlay .payment-method-icons::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, transparent 0%, #FFFFFF 20%, #FFD700 50%, #FFFFFF 80%, transparent 100%); border-radius: 100px; box-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 18px rgba(255,215,0,0.7); animation: shimmerLine 2.5s ease-in-out infinite; }
+    #paymentOverlay .payment-method-icons::after { content: '✦'; position: absolute; top: -5px; left: 50%; transform: translateX(-50%); font-size: 10px; color: #FFFFFF; text-shadow: 0 0 8px rgba(255,215,0,1), 0 0 14px rgba(255,215,0,0.8); animation: sparkleRotate 3s linear infinite; }
+    #paymentOverlay .upi-logo { padding: 6px 12px; height: 38px; min-width: 80px; box-shadow: 0 4px 0 #E0A000, 0 6px 10px rgba(0,0,0,0.15); background: #FFFFFF; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; transition: transform 0.2s ease; position: relative; overflow: hidden; }
+    #paymentOverlay .upi-logo:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #E0A000, 0 10px 18px rgba(199,122,0,0.25); }
     #paymentOverlay .upi-logo svg { height: 20px; }
     #paymentOverlay .field-group label { color: #4A2A0A; font-size: 9.5px; }
     #paymentOverlay .field-group input { padding: 11px 14px; font-size: 13px; border-color: #FFF6E0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); border-radius: 12px; }
@@ -811,21 +817,24 @@
         <div class="verify-badge" id="verifyBadge">VERIFIED ACCOUNT</div>
       </div>
       <div class="verify-body" id="verifyBody">
-        <!-- Data State (Loading state removed) -->
+        <!-- Data State -->
         <div id="verifyDataState">
           <h3 class="verify-name" id="verifyPlayerName">Player Name</h3>
           <p class="verify-congrats">Congratulations! Your account is verified.</p>
           
           <div class="stats-grid">
             <div class="stat-box">
+              <div class="stat-icon">🏆</div>
               <div class="stat-label">Level</div>
               <div class="stat-value" id="verifyLevel">-</div>
             </div>
             <div class="stat-box">
+              <div class="stat-icon">🌍</div>
               <div class="stat-label">Region</div>
               <div class="stat-value" id="verifyRegion">-</div>
             </div>
             <div class="stat-box">
+              <div class="stat-icon">❤️</div>
               <div class="stat-label">Likes</div>
               <div class="stat-value" id="verifyLikes">-</div>
             </div>
@@ -872,13 +881,13 @@
         <button type="button" class="regenerate-qr-btn" id="regenerateQrBtn"><span>🔄</span> Generate New QR</button>
         <p class="qr-hint">Scan with any <strong>UPI app</strong> to pay</p>
         <div class="payment-method-icons">
-          <span class="upi-logo" title="PhonePe">
+          <span class="upi-logo shimmer-gold" title="PhonePe">
             <svg viewBox="0 0 110 30" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="2" width="26" height="26" rx="7" fill="#5f259f"/><text x="13" y="21" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="900" fill="#ffffff">Pe</text><text x="32" y="21" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800" fill="#5f259f">PhonePe</text></svg>
           </span>
-          <span class="upi-logo" title="Google Pay">
+          <span class="upi-logo shimmer-gold" title="Google Pay">
             <svg viewBox="0 0 110 30" xmlns="http://www.w3.org/2000/svg"><text x="2" y="21" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#4285F4">G</text><text x="14" y="21" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#EA4335">o</text><text x="26" y="21" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#FBBC04">o</text><text x="38" y="21" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#4285F4">g</text><text x="50" y="21" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#34A853">l</text><text x="55" y="21" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="#EA4335">e</text><text x="70" y="21" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#5f6368">Pay</text></svg>
           </span>
-          <span class="upi-logo" title="Paytm">
+          <span class="upi-logo shimmer-gold" title="Paytm">
             <svg viewBox="0 0 110 30" xmlns="http://www.w3.org/2000/svg"><text x="4" y="22" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#002970">Pay</text><text x="42" y="22" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#00baf2">tm</text></svg>
           </span>
         </div>
@@ -1579,7 +1588,6 @@
       submitBtn.innerHTML = '<span>⏳</span> Verifying...';
       submitBtn.disabled = true;
 
-      // Show Verify Modal (No loading screen, just open it)
       document.getElementById('orderOverlay').style.display = 'none';
       document.getElementById('verifyOverlay').style.display = 'flex';
       document.body.classList.add('modal-open');
@@ -1597,7 +1605,6 @@
                   document.getElementById('verifyUid').textContent = data.player.uid;
                   document.getElementById('verifyClan').textContent = data.player.clan;
                   
-                  // Avatar handling (API se avatar nahi aata, fallback use karenge)
                   var avatarImg = document.getElementById('verifyAvatar').querySelector('img');
                   if (avatarImg) {
                       avatarImg.src = 'images/ff-icon.png';
@@ -1606,7 +1613,6 @@
 
                   currentPendingOrder = { id: Date.now().toString(), designName: currentOrderDesign.name, price: currentOrderDesign.price, qty: currentOrderDesign.qty, material: currentOrderDesign.material, designId: currentOrderDesign.id, uid: uid, timestamp: Date.now() };
                   
-                  // Ensure Data State is visible
                   document.getElementById('verifyDataState').style.display = 'block';
               } else {
                   document.getElementById('verifyOverlay').style.display = 'none';
