@@ -40,22 +40,29 @@
     .verified-logo-tick { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; filter: drop-shadow(0 2px 3px rgba(29,155,240,0.5)); vertical-align: middle; }
     .verified-logo-tick svg { width: 100%; height: 100%; display: block; }
     .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-    .header-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border: 2px solid rgba(255,255,255,0.6); border-radius: 14px; cursor: pointer; color: #1A1A1A; transition: all 0.15s ease; box-shadow: 0 4px 0 #C77A00, inset 0 2px 4px rgba(255,255,255,0.6), 0 6px 12px rgba(0,0,0,0.4); padding: 0; }
-    .header-icon-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #C77A00, inset 0 2px 4px rgba(255,255,255,0.7), 0 8px 16px rgba(0,0,0,0.5); }
-    .header-icon-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #C77A00, inset 0 1px 2px rgba(255,255,255,0.4), 0 2px 6px rgba(0,0,0,0.4); }
+    
+    /* Update 9: Red by default (off state) */
+    .header-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: 2px solid #FF0000; border-radius: 14px; cursor: pointer; color: #FFFFFF; transition: all 0.15s ease; box-shadow: 0 4px 0 #800000, inset 0 2px 4px rgba(255,255,255,0.2), 0 6px 12px rgba(0,0,0,0.4); padding: 0; }
+    .header-icon-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #800000, inset 0 2px 4px rgba(255,255,255,0.3), 0 8px 16px rgba(0,0,0,0.5); }
+    .header-icon-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #800000, inset 0 1px 2px rgba(255,255,255,0.2), 0 2px 6px rgba(0,0,0,0.4); }
     .header-icon-btn svg { width: 22px; height: 22px; display: block; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
+    
     .music-btn { position: relative; overflow: hidden; }
     .music-btn .music-on-icon { display: none; }
     .music-btn .music-off-icon { display: block; }
-    .music-btn.playing { background: linear-gradient(180deg, #FFD700 0%, #FFA500 100%); color: #1A1A1A; box-shadow: 0 4px 0 #B36A00, inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.3); animation: musicPulse 2s ease-in-out infinite; }
-    @keyframes musicPulse { 0%, 100% { box-shadow: 0 4px 0 #B36A00, inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.3); } 50% { box-shadow: 0 4px 0 #B36A00, inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 18px rgba(255,193,7,0.6); } }
+    /* Update 9: Green when playing */
+    .music-btn.playing { background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%); border-color: #0CFF00; color: #1A1A1A; box-shadow: 0 4px 0 #076B00, inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.3); animation: musicPulse 2s ease-in-out infinite; }
+    @keyframes musicPulse { 0%, 100% { box-shadow: 0 4px 0 #076B00, inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.3); } 50% { box-shadow: 0 4px 0 #076B00, inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 18px rgba(12,255,0,0.6); } }
     .music-btn.playing .music-on-icon { display: block; }
     .music-btn.playing .music-off-icon { display: none; }
-    .profile-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border: 2px solid rgba(255,255,255,0.6); color: #1A1A1A; width: 40px; height: 40px; border-radius: 50%; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 #C77A00, inset 0 2px 4px rgba(255,255,255,0.6), 0 6px 12px rgba(0,0,0,0.4); padding: 0; position: relative; }
-    .profile-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #C77A00, inset 0 2px 4px rgba(255,255,255,0.7), 0 8px 16px rgba(0,0,0,0.5); }
-    .profile-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #C77A00, inset 0 1px 2px rgba(255,255,255,0.4), 0 2px 6px rgba(0,0,0,0.4); }
-    .profile-btn.saved { background: #1A1A1A; color: #FFC107; border-color: #FFC107; }
-    .profile-btn.saved:hover { box-shadow: 0 5px 0 #000, inset 0 2px 4px rgba(255,255,255,0.2), 0 8px 16px rgba(0,0,0,0.3); }
+    
+    /* Update 9: Red by default */
+    .profile-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: 2px solid #FF0000; color: #FFFFFF; width: 40px; height: 40px; border-radius: 50%; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 #800000, inset 0 2px 4px rgba(255,255,255,0.2), 0 6px 12px rgba(0,0,0,0.4); padding: 0; position: relative; }
+    .profile-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #800000, inset 0 2px 4px rgba(255,255,255,0.3), 0 8px 16px rgba(0,0,0,0.5); }
+    .profile-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #800000, inset 0 1px 2px rgba(255,255,255,0.2), 0 2px 6px rgba(0,0,0,0.4); }
+    /* Update 9: Green when saved */
+    .profile-btn.saved { background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%); color: #1A1A1A; border-color: #0CFF00; }
+    .profile-btn.saved:hover { box-shadow: 0 5px 0 #076B00, inset 0 2px 4px rgba(255,255,255,0.2), 0 8px 16px rgba(0,0,0,0.3); }
     .profile-btn .profile-icon { font-size: 18px; line-height: 1; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
     .profile-btn .profile-label-full { display: none; }
     @media (max-width: 400px) { .site-header-inner { padding: 12px 14px; } .site-brand-name { font-size: 18px; } .header-icon-btn, .profile-btn { width: 36px; height: 36px; } .header-icon-btn svg { width: 18px; height: 18px; } .profile-btn .profile-icon { font-size: 16px; } }
@@ -85,14 +92,13 @@
     @media (max-width: 400px) { .hero-headline { font-size: 28px; } .hero-sub { font-size: 13px; } .hero-eyebrow { font-size: 9.5px; padding: 9px 18px; letter-spacing: 1.6px; } }
 
     /* TRUSTED BY ROW */
-    .trusted-by-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 60px 0 12px; padding: 8px 14px; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border: 2px solid rgba(255,255,255,0.4); border-radius: 26px; flex-wrap: wrap; box-shadow: 0 8px 0 #C77A00, 0 15px 30px rgba(0,0,0,0.25); }
+    .trusted-by-row { display: none; }
     .trusted-by-avatars { display: flex; align-items: center; }
     .trusted-by-avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #FFF6E0; margin-left: -10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.5); background: #FFF6E0; flex-shrink: 0; }
     .trusted-by-avatar:first-child { margin-left: 0; }
     .trusted-by-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
     .trusted-by-text { font-size: 11px; font-weight: 700; color: #1A1A1A; letter-spacing: 0.2px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; justify-content: center; text-align: center; }
     .trusted-by-text strong { color: #1A1A1A; font-weight: 900; }
-    @media (max-width: 500px) { .trusted-by-row { padding: 8px 14px; gap: 8px; margin: 50px 0 12px; } .trusted-by-avatar { width: 32px; height: 32px; margin-left: -10px; border-width: 2px; } .trusted-by-text { font-size: 11px; } }
 
     /* WHY TRUST US */
     .why-trust-section { margin: 18px 0 22px; padding: 20px 12px 18px; background: linear-gradient(160deg, #FFC107 0%, #FF9800 100%); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; overflow: hidden; }
@@ -695,7 +701,7 @@
 
   <main>
     <section class="hero-text-section">
-      <div class="hero-eyebrow"><span class="shine-star">✨</span> Free Fire Diamond Top-up <span class="shine-star">✨</span></div>
+      <div class="hero-eyebrow"><span class="shine-star">✨</span> <span id="heroTrustText">+9,935 buyers trust us</span> <span class="shine-star">✨</span></div>
       <h1 class="hero-headline">Power Up Fast.<span class="gold-line">Dominate The Game.</span></h1>
       <p class="hero-sub">Get your Free Fire diamonds instantly at the best rates. 100% safe, lightning-fast delivery, and trusted by thousands of gamers across India.</p>
       <div class="hero-trust">
@@ -1056,7 +1062,7 @@
       });
     }
 
-    /* MUSIC AUTOPLAY FIX */
+    /* Update 1: MUSIC AUTOPLAY - More robust, retries until success */
     var bgMusic = document.getElementById('bgMusic');
     var musicBtn = document.getElementById('musicBtn');
     var musicPlaying = false;
@@ -1107,30 +1113,28 @@
       }
     });
 
+    /* Update 1: Retry on every interaction until success */
     function activateMusicOnFirstTouch(e) {
-      if (userInteracted) return;
-      userInteracted = true;
-      if (!musicPlaying) {
-        bgMusic.muted = false;
-        var p = bgMusic.play();
-        if (p !== undefined) {
-          p.then(function() {
-            musicPlaying = true;
-            updateMusicBtnUI();
-          }).catch(function(err) {
-            console.log("Autoplay blocked:", err);
-            userInteracted = false;
-          });
-        } else {
+      if (musicPlaying) return;
+      bgMusic.muted = false;
+      var p = bgMusic.play();
+      if (p !== undefined && p.then) {
+        p.then(function() {
           musicPlaying = true;
           updateMusicBtnUI();
-        }
+        }).catch(function(err) {
+          console.log("Autoplay blocked, will retry on next interaction:", err);
+          bgMusic.muted = true;
+        });
+      } else {
+        musicPlaying = true;
+        updateMusicBtnUI();
       }
     }
-    document.addEventListener('click', activateMusicOnFirstTouch, { once: true, capture: true });
-    document.addEventListener('touchstart', activateMusicOnFirstTouch, { once: true, capture: true });
-    document.addEventListener('scroll', activateMusicOnFirstTouch, { once: true, capture: true });
-    document.addEventListener('keydown', activateMusicOnFirstTouch, { once: true, capture: true });
+    document.addEventListener('click', activateMusicOnFirstTouch, { capture: true });
+    document.addEventListener('touchstart', activateMusicOnFirstTouch, { capture: true });
+    document.addEventListener('scroll', activateMusicOnFirstTouch, { capture: true, passive: true });
+    document.addEventListener('keydown', activateMusicOnFirstTouch, { capture: true });
     updateMusicBtnUI();
 
     function makeSwipeDismissable(el) {
@@ -1498,6 +1502,12 @@
                   tbEl.textContent = '+' + buyers.toLocaleString('en-IN') + ' buyers';
               }
           }
+      }
+
+      /* Update 6: Hero eyebrow text update */
+      var htEl = document.getElementById('heroTrustText');
+      if (htEl) {
+          htEl.textContent = '+' + buyers.toLocaleString('en-IN') + ' buyers trust us';
       }
 
       isFirstRender = false;
