@@ -1560,20 +1560,20 @@
 
     function renderTrustedByRow() {
       var avatarsEl = document.getElementById('trustedByAvatars'); if (!avatarsEl) return; avatarsEl.innerHTML = '';
-      if (!avatarCache.list || avatarCache.list.length === 0) return;
       var list = avatarCache.list;
+      if (!list || list.length === 0) { list = []; }
       var usedIndices = [];
       for (var i = 0; i < 5; i++) {
-        var idx;
-        var attempts = 0;
-        do {
-          idx = Math.floor(Math.random() * list.length);
-          attempts++;
-        } while (usedIndices.indexOf(idx) !== -1 && attempts < 50);
-        usedIndices.push(idx);
-        var avatar = list[idx];
+        var avatarUrl = null;
+        if (list.length > 0) {
+          var idx;
+          var attempts = 0;
+          do { idx = Math.floor(Math.random() * list.length); attempts++; } while (usedIndices.indexOf(idx) !== -1 && attempts < 50);
+          usedIndices.push(idx);
+          avatarUrl = list[idx];
+        }
         var div = document.createElement('div'); div.className = 'trusted-by-avatar';
-        div.innerHTML = buildAvatarImg(avatar, String.fromCharCode(65 + i), false);
+        div.innerHTML = buildAvatarImg(avatarUrl, String.fromCharCode(65 + i), false);
         avatarsEl.appendChild(div);
       }
     }
@@ -2038,14 +2038,24 @@
     document.addEventListener('mousemove', resetIdleTimer); document.addEventListener('keydown', resetIdleTimer); document.addEventListener('scroll', resetIdleTimer); resetIdleTimer();
     document.addEventListener('mouseleave', function(e) { if (e.clientY < 0) { showToast('Wait! 🔥 Don\'t miss out on our diamond deals!', 'error'); } });
     loadProfileFromStorage(); updateProfileButtonUI();
+    
+    // Initialize everything immediately, do not wait for API
+    initViewerCounts();
+    var initMinute = Math.floor((Date.now() - GLOBAL_STREAM_REFERENCE_TIME) / 60000);
+    extendStreamTo(initMinute);
+    renderGrid();
+    initCountdowns();
+    updateCountdowns();
+    renderTrustedByRow();
+    renderReviews();
+    renderHeroCounters();
+    populateInitialPulse();
+    var lmt = document.getElementById('loadMoreText'); if (lmt) lmt.textContent = 'More + ' + getReviewsCount().toLocaleString('en-IN') + ' Reviews';
+    applyImageBlur();
+
+    // Try to fetch avatars in the background, if it succeeds, re-render trusted by and pulse if needed
     fetchAvatarsFromGitHub(function() {
-      preloadAllAvatars(); initViewerCounts();
-      var initMinute = Math.floor((Date.now() - GLOBAL_STREAM_REFERENCE_TIME) / 60000);
-      extendStreamTo(initMinute);
-      renderGrid(); initCountdowns(); updateCountdowns(); renderTrustedByRow(); renderReviews(); renderHeroCounters();
-      populateInitialPulse();
-      var lmt = document.getElementById('loadMoreText'); if (lmt) lmt.textContent = 'More + ' + getReviewsCount().toLocaleString('en-IN') + ' Reviews';
-      applyImageBlur();
+      renderTrustedByRow();
     });
   </script>
 </body>
