@@ -41,7 +41,6 @@
     .verified-logo-tick svg { width: 100%; height: 100%; display: block; }
     .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
     
-    /* Update 9: Red by default (off state) */
     .header-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: 2px solid #FF0000; border-radius: 14px; cursor: pointer; color: #FFFFFF; transition: all 0.15s ease; box-shadow: 0 4px 0 #800000, inset 0 2px 4px rgba(255,255,255,0.2), 0 6px 12px rgba(0,0,0,0.4); padding: 0; }
     .header-icon-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #800000, inset 0 2px 4px rgba(255,255,255,0.3), 0 8px 16px rgba(0,0,0,0.5); }
     .header-icon-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #800000, inset 0 1px 2px rgba(255,255,255,0.2), 0 2px 6px rgba(0,0,0,0.4); }
@@ -50,17 +49,14 @@
     .music-btn { position: relative; overflow: hidden; }
     .music-btn .music-on-icon { display: none; }
     .music-btn .music-off-icon { display: block; }
-    /* Update 9: Green when playing */
     .music-btn.playing { background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%); border-color: #0CFF00; color: #1A1A1A; box-shadow: 0 4px 0 #076B00, inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.3); animation: musicPulse 2s ease-in-out infinite; }
     @keyframes musicPulse { 0%, 100% { box-shadow: 0 4px 0 #076B00, inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.3); } 50% { box-shadow: 0 4px 0 #076B00, inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 18px rgba(12,255,0,0.6); } }
     .music-btn.playing .music-on-icon { display: block; }
     .music-btn.playing .music-off-icon { display: none; }
     
-    /* Update 9: Red by default */
     .profile-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: 2px solid #FF0000; color: #FFFFFF; width: 40px; height: 40px; border-radius: 50%; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 #800000, inset 0 2px 4px rgba(255,255,255,0.2), 0 6px 12px rgba(0,0,0,0.4); padding: 0; position: relative; }
     .profile-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #800000, inset 0 2px 4px rgba(255,255,255,0.3), 0 8px 16px rgba(0,0,0,0.5); }
     .profile-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #800000, inset 0 1px 2px rgba(255,255,255,0.2), 0 2px 6px rgba(0,0,0,0.4); }
-    /* Update 9: Green when saved */
     .profile-btn.saved { background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%); color: #1A1A1A; border-color: #0CFF00; }
     .profile-btn.saved:hover { box-shadow: 0 5px 0 #076B00, inset 0 2px 4px rgba(255,255,255,0.2), 0 8px 16px rgba(0,0,0,0.3); }
     .profile-btn .profile-icon { font-size: 18px; line-height: 1; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
@@ -684,6 +680,258 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* ========================================= */
+    /* Update 7: PROFILE MODAL CLEAN UI */
+    /* ========================================= */
+    #profileOverlay .modal.profile-modal { max-width: 420px; }
+    #profileOverlay .modal-body { padding: 26px 22px; }
+    #profileOverlay .checkout-header { margin-bottom: 20px; text-align: center; }
+
+    .profile-hint-box {
+      background: linear-gradient(135deg, #FFF9E6 0%, #FFF3D0 100%);
+      border: 2px solid #FFE082;
+      border-left: 4px solid #FFC107;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: #6B5A3E;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      font-weight: 500;
+      box-shadow: 0 3px 0 #E0A000, 0 6px 14px rgba(199,122,0,0.08);
+    }
+    .profile-hint-box strong { color: #8B5A00; font-weight: 800; }
+
+    .profile-saved-card {
+      background: linear-gradient(160deg, #FFFFFF 0%, #FFFBF2 100%);
+      border: 2px solid #FDEEC8;
+      border-radius: 22px;
+      padding: 22px 20px 18px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 6px 0 #E0A000, 0 12px 24px rgba(199,122,0,0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .profile-saved-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%);
+      color: #1A1A1A;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 6px 14px;
+      border-radius: 100px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 3px 0 #076B00, 0 5px 12px rgba(12,255,0,0.25);
+      font-family: 'Outfit', inherit;
+    }
+    .profile-saved-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      box-shadow: 0 5px 0 #C77A00, 0 10px 20px rgba(255,152,0,0.3), inset 0 2px 4px rgba(255,255,255,0.4);
+      margin: 4px 0;
+    }
+    .profile-saved-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1A1A1A;
+      letter-spacing: -0.3px;
+      font-family: 'Outfit', inherit;
+    }
+    .profile-saved-info { width: 100%; margin-top: 4px; }
+    .profile-info-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #FFF8E7;
+      border: 2px solid #FDEEC8;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1A1A1A;
+    }
+    .profile-info-row .info-icon { font-size: 16px; }
+    .profile-info-row .info-text {
+      letter-spacing: 1px;
+      font-family: 'Outfit', monospace;
+      font-weight: 800;
+    }
+
+    .profile-edit-btn {
+      width: 100%;
+      background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%);
+      color: #1A1A1A;
+      border: none;
+      border-radius: 100px;
+      padding: 13px 20px;
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: 'Outfit', inherit;
+      margin-top: 6px;
+      transition: all 0.15s ease;
+      box-shadow: 0 4px 0 #C77A00, 0 8px 16px rgba(255,152,0,0.3);
+      letter-spacing: 0.3px;
+    }
+    .profile-edit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #C77A00, 0 12px 22px rgba(255,152,0,0.4);
+    }
+    .profile-edit-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 #C77A00, 0 4px 10px rgba(255,152,0,0.3);
+    }
+
+    .profile-clear-btn {
+      width: 100%;
+      background: transparent;
+      color: #DC2626;
+      border: 2px solid #FECACA;
+      border-radius: 100px;
+      padding: 11px 20px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Poppins', inherit;
+      margin-top: 4px;
+      transition: all 0.15s ease;
+    }
+    .profile-clear-btn:hover {
+      background: #FEF2F2;
+      border-color: #DC2626;
+      color: #B91C1C;
+    }
+
+    #profileOverlay .review-form-group { margin-bottom: 14px; }
+    #profileOverlay .review-form-group label { font-size: 10px; letter-spacing: 1.2px; margin-bottom: 6px; }
+    #profileOverlay .review-form-group input { padding: 13px 16px; font-size: 13.5px; border-radius: 14px; }
+    #profileOverlay .order-btn-premium { margin-top: 8px; }
+
+    /* ========================================= */
+    /* Update 8: PROFILE SAVED GAME-STYLE */
+    /* ========================================= */
+    .game-style-profile .profile-saved-card {
+      background: linear-gradient(160deg, #0a0e1a 0%, #121826 50%, #0a0e1a 100%);
+      border: 2px solid #00E5FF;
+      box-shadow: 
+        0 0 0 1px rgba(0, 229, 255, 0.3),
+        0 0 20px rgba(0, 229, 255, 0.4),
+        0 0 40px rgba(0, 229, 255, 0.2),
+        0 8px 0 #007A8A,
+        0 15px 35px rgba(0,0,0,0.6);
+      animation: gameStyleGlow 2.5s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+    .game-style-profile .profile-saved-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 10%, rgba(0, 229, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 90%, rgba(255, 107, 0, 0.12) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .game-style-profile .profile-saved-card > * { position: relative; z-index: 1; }
+    @keyframes gameStyleGlow {
+      0%, 100% {
+        box-shadow: 
+          0 0 0 1px rgba(0, 229, 255, 0.3),
+          0 0 20px rgba(0, 229, 255, 0.4),
+          0 0 40px rgba(0, 229, 255, 0.2),
+          0 8px 0 #007A8A,
+          0 15px 35px rgba(0,0,0,0.6);
+      }
+      50% {
+        box-shadow: 
+          0 0 0 1px rgba(0, 229, 255, 0.5),
+          0 0 28px rgba(0, 229, 255, 0.6),
+          0 0 55px rgba(0, 229, 255, 0.35),
+          0 8px 0 #007A8A,
+          0 15px 35px rgba(0,0,0,0.6);
+      }
+    }
+    .game-style-profile .profile-saved-badge {
+      background: linear-gradient(180deg, #FFD700 0%, #FFA500 100%);
+      color: #1A1A1A;
+      box-shadow: 0 3px 0 #B36A00, 0 0 20px rgba(255, 215, 0, 0.6), 0 5px 14px rgba(0,0,0,0.4);
+      text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+      animation: badgePulse 2s ease-in-out infinite;
+    }
+    @keyframes badgePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+    .game-style-profile .profile-saved-avatar {
+      background: linear-gradient(180deg, #00E5FF 0%, #007A8A 100%);
+      box-shadow: 
+        0 5px 0 #004A55,
+        0 0 25px rgba(0, 229, 255, 0.7),
+        0 0 45px rgba(0, 229, 255, 0.4),
+        inset 0 2px 4px rgba(255,255,255,0.3);
+      animation: avatarFloat 3s ease-in-out infinite;
+    }
+    @keyframes avatarFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .game-style-profile .profile-saved-name {
+      color: #FFFFFF;
+      text-shadow: 0 0 10px rgba(0, 229, 255, 0.8), 0 0 20px rgba(0, 229, 255, 0.4);
+      font-size: 22px;
+      letter-spacing: 0.5px;
+    }
+    .game-style-profile .profile-info-row {
+      background: linear-gradient(180deg, rgba(0, 229, 255, 0.08) 0%, rgba(0, 229, 255, 0.15) 100%);
+      border: 2px solid rgba(0, 229, 255, 0.5);
+      box-shadow: 
+        0 0 15px rgba(0, 229, 255, 0.3),
+        inset 0 0 15px rgba(0, 229, 255, 0.1);
+      color: #00E5FF;
+    }
+    .game-style-profile .profile-info-row .info-text {
+      color: #00E5FF;
+      text-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
+      font-family: 'Courier New', monospace;
+      letter-spacing: 2px;
+    }
+    .game-style-profile .profile-edit-btn {
+      background: linear-gradient(180deg, #00E5FF 0%, #007A8A 100%);
+      color: #0a0e1a;
+      box-shadow: 0 4px 0 #004A55, 0 0 20px rgba(0, 229, 255, 0.4), 0 8px 16px rgba(0,0,0,0.4);
+      font-weight: 900;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+    }
+    .game-style-profile .profile-edit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #004A55, 0 0 30px rgba(0, 229, 255, 0.6), 0 12px 22px rgba(0,0,0,0.5);
+    }
+    .game-style-profile .profile-clear-btn {
+      background: transparent;
+      border: 2px solid rgba(255, 107, 107, 0.5);
+      color: #FF6B6B;
+    }
+    .game-style-profile .profile-clear-btn:hover {
+      background: rgba(255, 107, 107, 0.1);
+      border-color: #FF6B6B;
+      color: #FF8A8A;
+      box-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
+    }
   </style>
 </head>
 <body>
@@ -1267,12 +1515,16 @@
       document.getElementById('profileModalTitle').textContent = 'Your Profile'; document.getElementById('profileModalSubtitle').textContent = 'Order faster with saved UID';
       document.getElementById('profileSavedName').textContent = profileData.name || 'Free Fire Player';
       var uidRow = document.getElementById('profileSavedUidRow'); if (profileData.uid) { uidRow.style.display = 'flex'; document.getElementById('profileSavedUid').textContent = profileData.uid; } else uidRow.style.display = 'none';
+      /* Update 8: Add game-style class */
+      document.getElementById('profileSavedView').classList.add('game-style-profile');
     }
     function showProfileFormView() {
       document.getElementById('profileSavedView').style.display = 'none'; document.getElementById('profileFormView').style.display = 'block';
       document.getElementById('profileModalTitle').textContent = 'Save Your UID'; document.getElementById('profileModalSubtitle').textContent = 'Save once, top-up faster next time';
       document.getElementById('profileName').value = profileData.name || ''; document.getElementById('profileUid').value = profileData.uid || '';
       document.getElementById('profileClearBtn').style.display = hasProfile() ? 'block' : 'none';
+      /* Update 8: Remove game-style class */
+      document.getElementById('profileSavedView').classList.remove('game-style-profile');
     }
     function openProfileModal() { var overlay = document.getElementById('profileOverlay'); if (hasProfile()) showProfileSavedView(); else showProfileFormView(); overlay.style.display = 'flex'; document.body.classList.add('modal-open'); }
     function closeProfileModal() { document.getElementById('profileOverlay').style.display = 'none'; document.body.classList.remove('modal-open'); }
@@ -1301,6 +1553,8 @@
         document.getElementById('profileClearBtn').style.display = 'none'; updateProfileButtonUI(); overlay.remove();
         document.getElementById('profileSavedView').style.display = 'none'; document.getElementById('profileFormView').style.display = 'block';
         document.getElementById('profileModalTitle').textContent = 'Save Your UID'; document.getElementById('profileModalSubtitle').textContent = 'Save once, top-up faster next time';
+        /* Update 8: Remove game-style class on clear */
+        document.getElementById('profileSavedView').classList.remove('game-style-profile');
         showToast('Profile cleared', 'info');
       });
       overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
