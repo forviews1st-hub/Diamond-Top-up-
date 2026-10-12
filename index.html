@@ -17,7 +17,7 @@
     body::before { content: ''; position: fixed; inset: 0; background: #FDF6E3 url('images/bg.png') no-repeat center center; background-size: cover; z-index: -2; }
     body::after { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,0.35); pointer-events: none; z-index: -1; }
 
-    h1, h2, h3, .site-brand-name, .hero-headline, .stat-number, .modal-price, .summary-value-total, .payment-total-amount, .more-stats-number, .trust-feature-card .tf-label, .gc-price-chip, .gc-name, .review-name, .modal-title, .checkout-title, .pulse-subtitle, .gc-buy-btn, .hero-cta-btn, .modal-buy-btn, .order-btn-premium, .review-submit-btn, .success-btn, .custom-alert-btn, .load-more-reviews-btn, .qty-row span, .bonus-tag { font-family: 'Outfit', 'Poppins', sans-serif; font-weight: 700; }
+    h1, h2, h3, .site-brand-name, .hero-headline, .stat-number, .modal-price, .summary-value-total, .payment-total-amount, .more-stats-number, .trust-feature-card .tf-label, .gc-price-chip, .gc-name, .review-name, .modal-title, .checkout-title, .pulse-subtitle, .gc-buy-btn, .hero-cta-btn, .modal-buy-btn, .order-btn-premium, .review-submit-btn, .success-btn, .custom-alert-btn, .load-more-reviews-btn, .qty-row span, .bonus-tag, .trusted-by-text { font-family: 'Outfit', 'Poppins', sans-serif; font-weight: 700; }
 
     .img-blur { filter: blur(12px); transition: filter 0.4s ease; }
     img:not(.img-blur) { filter: blur(0); transition: filter 0.4s ease; }
@@ -67,8 +67,6 @@
     
     /* HERO SECTION */
     .hero-text-section { text-align: left; padding: 32px 8px 60px; max-width: 800px; margin: 0 auto; position: relative; }
-    .hero-eyebrow { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; font-weight: 900; letter-spacing: 2px; color: #1A1A1A; background: linear-gradient(180deg, #FFD54F 0%, #FFC107 100%); border: 2px solid rgba(255,255,255,0.6); padding: 11px 24px; border-radius: 26px; margin-bottom: 22px; text-transform: uppercase; box-shadow: 0 4px 0 #C77A00, 0 8px 20px rgba(255,152,0,0.3); position: relative; text-shadow: 0 1px 0 rgba(255,255,255,0.5); }
-    .hero-eyebrow .shine-star { font-size: 13px; }
     
     .hero-headline { font-size: 46px; font-weight: 800; line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 16px; color: #FFFFFF; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
     .hero-headline .gold-line { display: block; }
@@ -78,23 +76,39 @@
     .hero-trust .trust-emoji { font-size: 14px; }
     .hero-trust .trust-dot { color: #FFC107; font-size: 16px; line-height: 1; }
     
+    /* NEW TRUSTED BY CARD */
+    .trusted-by-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 22px;
+      padding: 14px 24px;
+      background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%);
+      border-radius: 28px;
+      box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35);
+      border: 2px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .trusted-by-avatars { display: flex; align-items: center; }
+    .trusted-by-avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #FFF6E0; margin-left: -10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.5); background: #FFF6E0; flex-shrink: 0; }
+    .trusted-by-avatar:first-child { margin-left: 0; }
+    .trusted-by-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
+    .trusted-by-text { font-size: 14px; font-weight: 800; color: #1A1A1A; letter-spacing: 0.2px; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
+    .trusted-by-text strong { color: #1A1A1A; font-weight: 900; }
+    
     .hero-bottom-card { margin-top: 22px; padding: 20px 24px; background: linear-gradient(180deg, rgba(255,193,7,0.92) 0%, rgba(255,152,0,0.92) 100%); border-radius: 28px; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: inline-block; max-width: 280px; margin-right: auto; }
     .hero-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); color: #FFFFFF; border: none; padding: 15px 30px; border-radius: 100px; font-size: 15px; font-weight: 800; letter-spacing: 0.4px; cursor: pointer; font-family: 'Outfit', inherit; box-shadow: 0 5px 0 #800000, 0 10px 24px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); transition: all 0.15s ease; }
     .hero-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #800000, 0 14px 28px rgba(255,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2); }
     .hero-cta-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #800000, 0 5px 12px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
     .hero-cta-btn .shop-arrow { transition: transform 0.22s ease; }
     .hero-cta-btn:hover .shop-arrow { transform: translateX(4px); }
-    @media (max-width: 700px) { .hero-text-section { padding: 28px 6px 50px; } .hero-headline { font-size: 34px; } .hero-eyebrow { font-size: 10.5px; letter-spacing: 1.8px; padding: 10px 20px; } .hero-sub { font-size: 13.5px; } .hero-trust { font-size: 11.5px; gap: 7px 11px; } .hero-bottom-card { padding: 16px 20px; max-width: 240px; } .hero-cta-btn { padding: 13px 26px; font-size: 14px; } }
-    @media (max-width: 400px) { .hero-headline { font-size: 28px; } .hero-sub { font-size: 13px; } .hero-eyebrow { font-size: 9.5px; padding: 9px 18px; letter-spacing: 1.6px; } }
-
-    /* TRUSTED BY ROW */
-    .trusted-by-row { display: none; }
-    .trusted-by-avatars { display: flex; align-items: center; }
-    .trusted-by-avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #FFF6E0; margin-left: -10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.5); background: #FFF6E0; flex-shrink: 0; }
-    .trusted-by-avatar:first-child { margin-left: 0; }
-    .trusted-by-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
-    .trusted-by-text { font-size: 11px; font-weight: 700; color: #1A1A1A; letter-spacing: 0.2px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; justify-content: center; text-align: center; }
-    .trusted-by-text strong { color: #1A1A1A; font-weight: 900; }
+    @media (max-width: 700px) { .hero-text-section { padding: 28px 6px 50px; } .hero-headline { font-size: 34px; } .hero-sub { font-size: 13.5px; } .hero-trust { font-size: 11.5px; gap: 7px 11px; } .hero-bottom-card { padding: 16px 20px; max-width: 240px; } .hero-cta-btn { padding: 13px 26px; font-size: 14px; } }
+    @media (max-width: 400px) { .hero-headline { font-size: 28px; } .hero-sub { font-size: 13px; } }
 
     /* WHY TRUST US */
     .why-trust-section { margin: 18px 0 22px; padding: 20px 12px 18px; background: linear-gradient(160deg, #FFC107 0%, #FF9800 100%); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; overflow: hidden; }
@@ -961,7 +975,6 @@
 
   <main>
     <section class="hero-text-section">
-      <div class="hero-eyebrow"><span class="shine-star">✨</span> <span id="heroTrustText">+9,935 buyers trust us</span> <span class="shine-star">✨</span></div>
       <h1 class="hero-headline">Power Up Fast.<span class="gold-line">Dominate The Game.</span></h1>
       <p class="hero-sub">Get your Free Fire diamonds instantly at the best rates. 100% safe, lightning-fast delivery, and trusted by thousands of gamers across India.</p>
       <div class="hero-trust">
@@ -972,7 +985,7 @@
         <span><span class="trust-emoji">🔥</span> Best Rates</span>
       </div>
       
-      <div class="trusted-by-row" id="trustedByRow">
+      <div class="trusted-by-card">
         <div class="trusted-by-avatars" id="trustedByAvatars"></div>
         <div class="trusted-by-text"><strong id="trustedByCount">+9,935 buyers</strong> trust us</div>
       </div>
