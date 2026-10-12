@@ -12,7 +12,7 @@
     * { -webkit-tap-highlight-color: transparent; }
     :focus { outline: none; }
     :focus-visible { outline: none; }
-    
+
     :root {
       --yellow-gradient: linear-gradient(180deg, #FFC107 0%, #FF9800 100%);
       --yellow-shadow: #C77A00;
@@ -42,7 +42,11 @@
     .shimmer-gold::after { background: linear-gradient(to right, transparent, rgba(255,215,0,0.8), transparent); }
     @keyframes shimmerSweep { 0% { left: -150%; } 100% { left: 150%; } }
 
-    /* HEADER */
+    /* SCROLL REVEAL ANIMATION */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* HEADER - Update 9: Red off, Green on */
     .site-header { position: relative; z-index: 900; background: var(--yellow-gradient); border-radius: 28px; box-shadow: 0 8px 0 var(--yellow-shadow), 0 15px 35px rgba(0,0,0,0.35); margin: 16px 12px 6px; border: 2px solid rgba(255,255,255,0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
     .site-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; gap: 10px; }
     .site-brand { display: flex; align-items: center; gap: 8px; cursor: default; user-select: none; min-width: 0; flex: 1; }
@@ -51,6 +55,7 @@
     .verified-logo-tick svg { width: 100%; height: 100%; display: block; }
     .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
     
+    /* Update 9: Red by default (off state) */
     .header-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--red-gradient); border: 2px solid #FF0000; border-radius: 14px; cursor: pointer; color: #FFFFFF; transition: all 0.15s ease; box-shadow: 0 4px 0 var(--red-shadow), inset 0 2px 4px rgba(255,255,255,0.2), 0 6px 12px rgba(0,0,0,0.4); padding: 0; }
     .header-icon-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--red-shadow), inset 0 2px 4px rgba(255,255,255,0.3), 0 8px 16px rgba(0,0,0,0.5); }
     .header-icon-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--red-shadow), inset 0 1px 2px rgba(255,255,255,0.2), 0 2px 6px rgba(0,0,0,0.4); }
@@ -59,15 +64,18 @@
     .music-btn { position: relative; overflow: hidden; }
     .music-btn .music-on-icon { display: none; }
     .music-btn .music-off-icon { display: block; }
-    .music-btn.playing { background: var(--green-gradient); border-color: #0CFF00; color: #1A1A1A; box-shadow: 0 4px 0 var(--green-shadow), inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.3); animation: musicPulse 2s ease-in-out infinite; }
+    /* Update 9: Green when playing */
+    .music-btn.playing { background: var(--green-gradient); border-color: var(--green-color); color: #1A1A1A; box-shadow: 0 4px 0 var(--green-shadow), inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.3); animation: musicPulse 2s ease-in-out infinite; }
     @keyframes musicPulse { 0%, 100% { box-shadow: 0 4px 0 var(--green-shadow), inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.3); } 50% { box-shadow: 0 4px 0 var(--green-shadow), inset 0 2px 4px rgba(255,255,255,0.8), 0 6px 18px rgba(12,255,0,0.6); } }
     .music-btn.playing .music-on-icon { display: block; }
     .music-btn.playing .music-off-icon { display: none; }
     
+    /* Update 9: Profile btn red by default */
     .profile-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: var(--red-gradient); border: 2px solid #FF0000; color: #FFFFFF; width: 40px; height: 40px; border-radius: 50%; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 var(--red-shadow), inset 0 2px 4px rgba(255,255,255,0.2), 0 6px 12px rgba(0,0,0,0.4); padding: 0; position: relative; }
     .profile-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--red-shadow), inset 0 2px 4px rgba(255,255,255,0.3), 0 8px 16px rgba(0,0,0,0.5); }
     .profile-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--red-shadow), inset 0 1px 2px rgba(255,255,255,0.2), 0 2px 6px rgba(0,0,0,0.4); }
-    .profile-btn.saved { background: var(--green-gradient); color: #1A1A1A; border-color: #0CFF00; }
+    /* Update 9: Green when saved */
+    .profile-btn.saved { background: var(--green-gradient); color: #1A1A1A; border-color: var(--green-color); }
     .profile-btn.saved:hover { box-shadow: 0 5px 0 var(--green-shadow), inset 0 2px 4px rgba(255,255,255,0.2), 0 8px 16px rgba(0,0,0,0.3); }
     .profile-btn .profile-icon { font-size: 18px; line-height: 1; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
     .profile-btn .profile-label-full { display: none; }
@@ -75,9 +83,8 @@
 
     main { padding: 0 16px 20px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
     
-    /* HERO SECTION */
+    /* HERO SECTION - Update 6: Replaced eyebrow content */
     .hero-text-section { text-align: left; padding: 32px 8px 60px; max-width: 800px; margin: 0 auto; position: relative; }
-    
     .hero-eyebrow { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; font-weight: 900; letter-spacing: 2px; color: #1A1A1A; background: var(--yellow-gradient); border: 2px solid rgba(255,255,255,0.6); padding: 11px 24px; border-radius: 26px; margin-bottom: 22px; text-transform: uppercase; box-shadow: 0 4px 0 var(--yellow-shadow), 0 8px 20px rgba(255,152,0,0.3); position: relative; text-shadow: 0 1px 0 rgba(255,255,255,0.5); }
     .hero-eyebrow .shine-star { font-size: 13px; }
     
@@ -97,6 +104,15 @@
     .hero-cta-btn:hover .shop-arrow { transform: translateX(4px); }
     @media (max-width: 700px) { .hero-text-section { padding: 28px 6px 50px; } .hero-headline { font-size: 34px; } .hero-eyebrow { font-size: 10.5px; letter-spacing: 1.8px; padding: 10px 20px; } .hero-sub { font-size: 13.5px; } .hero-trust { font-size: 11.5px; gap: 7px 11px; } .hero-bottom-card { padding: 16px 20px; max-width: 240px; } .hero-cta-btn { padding: 13px 26px; font-size: 14px; } }
     @media (max-width: 400px) { .hero-headline { font-size: 28px; } .hero-sub { font-size: 13px; } .hero-eyebrow { font-size: 9.5px; padding: 9px 18px; letter-spacing: 1.6px; } }
+
+    /* TRUSTED BY ROW */
+    .trusted-by-row { display: none; } /* Hidden, replaced by hero-eyebrow */
+    .trusted-by-avatars { display: flex; align-items: center; }
+    .trusted-by-avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #FFF6E0; margin-left: -10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.5); background: #FFF6E0; flex-shrink: 0; }
+    .trusted-by-avatar:first-child { margin-left: 0; }
+    .trusted-by-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
+    .trusted-by-text { font-size: 11px; font-weight: 700; color: #1A1A1A; letter-spacing: 0.2px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; justify-content: center; text-align: center; }
+    .trusted-by-text strong { color: #1A1A1A; font-weight: 900; }
 
     /* WHY TRUST US */
     .why-trust-section { margin: 18px 0 22px; padding: 20px 12px 18px; background: var(--yellow-gradient); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 var(--yellow-shadow), 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; overflow: hidden; }
@@ -141,6 +157,7 @@
     .pulse-avatar-wrap { position: relative; flex-shrink: 0; }
     .pulse-avatar { width: 38px; height: 38px; border-radius: 50%; overflow: hidden; border: 2px solid #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,0.15); background: #FDEEC8; }
     .pulse-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* Update 4: Green color #0CFF00 */
     .pulse-check { position: absolute; bottom: -2px; right: -2px; width: 15px; height: 15px; border-radius: 50%; background: var(--green-color); color: #fff; font-size: 9px; font-weight: 900; display: flex; align-items: center; justify-content: center; border: 2.5px solid #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
     .pulse-content { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
     .pulse-header-row { font-size: 13px; color: #1A1A1A; font-weight: 800; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
@@ -148,6 +165,7 @@
     .pulse-action-row { font-size: 12px; color: #4A4A4A; font-weight: 500; }
     .pulse-action-row .card-name { color: #FF0000; font-weight: 700; }
     .pulse-meta-row { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #8B7D65; font-weight: 500; margin-top: 2px; }
+    /* Update 4: Green price */
     .pulse-price { color: var(--green-color); font-weight: 800; font-size: 12px; }
     .pulse-meta-row .dot { color: #D4B888; font-size: 10px; }
     .pulse-card-thumb { width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg, #FFF6E0 0%, #FDE7C0 100%); border: none; padding: 3px; overflow: hidden; box-shadow: 0 3px 8px rgba(255,152,0,0.2), inset 0 1px 0 rgba(255,255,255,0.6); }
@@ -173,7 +191,8 @@
     .diamond-showcase { position: relative; aspect-ratio: 1.4 / 1; border-radius: 14px; background: #F9FAFB; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); padding: 8px; transition: transform 0.3s ease; }
     .grid-card:hover .diamond-showcase { transform: scale(1.02); }
     
-    .diamond-light { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(255, 193, 7, 0.6) 0%, transparent 70%); opacity: 0.8; z-index: 1; pointer-events: none; }
+    /* Update 3: Product Light Effect */
+    .diamond-light { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(255, 193, 7, 0.55) 0%, transparent 70%); z-index: 1; pointer-events: none; }
     
     .diamond-glow { position: absolute; inset: 0; opacity: 0.35; filter: blur(30px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; z-index: 0; }
     @keyframes glowPulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.5; } }
@@ -187,6 +206,7 @@
     .diamond-sparkle.sparkle-4 { bottom: 30%; right: 22%; font-size: 6px; animation-delay: 1.5s; }
     @keyframes sparkleAnim { 0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); } 50% { opacity: 1; transform: scale(1.2) rotate(180deg); } }
 
+    /* Update 4: Green bonus tag */
     .bonus-tag { position: absolute; top: 8px; right: 8px; display: inline-flex; align-items: center; gap: 3px; padding: 4px 10px; border-radius: 100px; background: var(--green-gradient); color: #1A1A1A; font-size: 9.5px; font-weight: 800; letter-spacing: 0.3px; box-shadow: 0 2px 4px rgba(12,255,0,0.4); z-index: 5; font-family: 'Outfit', inherit; text-shadow: 0 1px 2px rgba(255,255,255,0.3); }
     @media (min-width: 600px) { .bonus-tag { top: 10px; right: 10px; padding: 5px 12px; font-size: 10.5px; } }
 
@@ -202,10 +222,12 @@
     .live-viewers-badge .vcount.bump { transform: scale(1.18); }
     @media (min-width: 600px) { .live-viewers-badge { font-size: 10.5px; padding: 6px 12px; gap: 5px; } .live-viewers-badge .eye { font-size: 11px; } .live-viewers-badge .live-pulse-dot { width: 6px; height: 6px; } }
 
+    /* Update 4: Green price chip */
     .gc-price-chip { display: inline-flex; align-items: center; justify-content: center; padding: 5px 12px; border-radius: 100px; background: var(--green-gradient); color: #1A1A1A; font-size: 13px; font-weight: 800; letter-spacing: -0.3px; box-shadow: 0 3px 0 var(--green-shadow), inset 0 1px 0 rgba(255,255,255,0.2); font-family: 'Outfit', inherit; line-height: 1; white-space: nowrap; }
     @media (min-width: 600px) { .gc-price-chip { padding: 7px 16px; font-size: 16px; } }
 
     .gc-actions { display: flex; margin-top: 4px; }
+    /* Update 4: Green buy button */
     .gc-buy-btn { flex: 1; background: var(--green-gradient); color: #1A1A1A; border: none; border-radius: 100px; padding: 10px; font-size: 12.5px; font-weight: 800; letter-spacing: 0.3px; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 3px 0 var(--green-shadow), inset 0 1px 0 rgba(255,255,255,0.3); position: relative; overflow: hidden; }
     .gc-buy-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 0 var(--green-shadow), inset 0 1px 0 rgba(255,255,255,0.3); }
     .gc-buy-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 var(--green-shadow), inset 0 1px 0 rgba(255,255,255,0.3); }
@@ -309,6 +331,7 @@
     .live-notif .notif-body { font-size: 11.5px; color: #4A4A4A; font-weight: 500; }
     .live-notif .notif-body .notif-card-name { color: #FF0000; font-weight: 700; }
     .live-notif .notif-meta { display: flex; align-items: center; gap: 5px; font-size: 10.5px; color: #8B7D65; font-weight: 500; margin-top: 1px; }
+    /* Update 4: Green notif price */
     .live-notif .notif-meta .notif-price { color: var(--green-color); font-weight: 800; font-size: 11.5px; }
     .live-notif .notif-meta .dot { color: #D4B888; font-size: 10px; }
     .live-notif .notif-time { color: #8B7D65; font-size: 10px; }
@@ -379,6 +402,7 @@
     .modal-title { font-size: 24px; font-weight: 900; color: #1A1A1A; letter-spacing: -0.5px; margin-bottom: 4px; text-align: center; }
     .modal-tagline { font-size: 12px; color: #8B5A00; text-align: center; margin-bottom: 14px; font-weight: 600; font-style: italic; }
     .modal-price-block { text-align: center; margin-bottom: 16px; padding: 12px 0; border-top: 1px solid #FDEEC8; border-bottom: 1px solid #FDEEC8; }
+    /* Update 4: Green modal price */
     .modal-price { font-size: 44px; font-weight: 900; letter-spacing: -2px; color: var(--green-color); line-height: 1; text-shadow: 0 3px 0 var(--green-shadow), 0 6px 12px rgba(12,255,0,0.3); }
     .qty-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 16px; }
     .qty-row button { background: var(--yellow-gradient); border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; font-weight: 800; cursor: pointer; color: #1A1A1A; display: flex; align-items: center; justify-content: center; transition: all 0.2s; box-shadow: 0 4px 0 var(--yellow-shadow), inset 0 2px 4px rgba(255,255,255,0.5), 0 6px 12px rgba(0,0,0,0.15); outline: none; }
@@ -440,6 +464,7 @@
     #orderOverlay .summary-value { font-size: 14px; color: #1A1A1A; font-weight: 800; }
     #orderOverlay .total-row { border-top: 1px solid #FDEEC8; padding-top: 8px; margin-top: 4px; }
     #orderOverlay .summary-label-total { font-size: 12px; font-weight: 900; letter-spacing: 1.5px; color: #1A1A1A; }
+    /* Update 4: Green total */
     #orderOverlay .summary-value-total { font-size: 22px; font-weight: 900; letter-spacing: -0.5px; color: var(--green-color); text-shadow: 0 2px 0 var(--green-shadow), 0 4px 8px rgba(12,255,0,0.3); }
     
     #orderOverlay .order-btn-premium {
@@ -583,15 +608,16 @@
     #paymentOverlay .checkout-title { font-size: 22px; font-weight: 900; color: #1A1A1A; margin-bottom: 3px; letter-spacing: -0.5px; }
     #paymentOverlay .checkout-subtitle { font-size: 11px; color: #6B5A3E; line-height: 1.4; font-weight: 600; font-style: italic; }
     
+    /* Update 4: Green payment total (already green, using var) */
     #paymentOverlay .payment-total-card {
-        background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        background: linear-gradient(135deg, #0CFF00 0%, #09B300 100%);
         border-radius: 12px; padding: 10px 16px; text-align: center; margin-bottom: 12px;
-        box-shadow: 0 6px 0 #047857, 0 10px 15px rgba(0,0,0,0.3);
+        box-shadow: 0 6px 0 #076B00, 0 10px 15px rgba(0,0,0,0.3);
         border-left: 4px solid #FFC107;
     }
-    #paymentOverlay .payment-total-label { font-size: 9px; color: #A7F3D0; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+    #paymentOverlay .payment-total-label { font-size: 9px; color: #043B00; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
     #paymentOverlay .payment-total-amount { font-size: 26px; font-weight: 900; color: #FFFFFF; line-height: 1; margin-bottom: 2px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-    #paymentOverlay .payment-total-design { font-size: 10px; color: #A7F3D0; font-weight: 600; }
+    #paymentOverlay .payment-total-design { font-size: 10px; color: #043B00; font-weight: 600; }
     
     #paymentOverlay .qr-timer-wrap { display: flex; justify-content: center; align-items: center; gap: 5px; font-size: 11px; font-weight: 800; color: #1A1A1A; background: var(--yellow-gradient); padding: 6px 14px; border-radius: 100px; width: fit-content; margin: 0 auto 10px; box-shadow: 0 3px 0 var(--yellow-shadow), inset 0 1px 0 rgba(255,255,255,0.6); font-variant-numeric: tabular-nums; }
     #paymentOverlay .qr-timer-wrap .timer-clock { font-size: 12px; font-weight: 900; }
@@ -629,6 +655,7 @@
     .field-group input:focus, .field-group textarea:focus { border-color: #FFC107; box-shadow: 0 0 0 4px rgba(255,193,7,0.18), inset 0 1px 2px rgba(199,122,0,0.1); outline: none; }
     .field-group input::placeholder, .field-group textarea::placeholder { color: #B0A692; font-weight: 500; }
     
+    /* Update 4: Green valid state */
     .field-group input.uid-valid { border-color: var(--green-color) !important; box-shadow: 0 0 0 4px rgba(12,255,0,0.18) !important; background: #F7FFE5 !important; }
     .field-group input.uid-invalid { border-color: #EF4444 !important; box-shadow: 0 0 0 4px rgba(239,68,68,0.15) !important; background: #FEF2F2 !important; }
     .uid-hint { font-size: 10px; font-weight: 700; margin-top: 4px; display: none; letter-spacing: 0.3px; }
@@ -673,13 +700,14 @@
     .custom-alert-btn.secondary { background: #FFFBF2; color: #1A1A1A; margin-left: 10px; border: 2px solid #FDEEC8; box-shadow: 0 3px 0 #E0A000; }
     .custom-alert-btn.secondary:hover { background: #FFF6E0; }
 
-    /* PROFILE MODAL */
+    /* PROFILE MODAL - Update 7 & 8 */
     .profile-modal .modal { max-width: 380px; }
     .profile-modal .checkout-header { text-align: center; margin-bottom: 16px; }
     .profile-modal .checkout-eyebrow { display: inline-block; font-size: 10px; font-weight: 900; letter-spacing: 2.4px; color: #1A1A1A; background: var(--yellow-gradient); padding: 6px 16px; border-radius: 100px; margin-bottom: 8px; box-shadow: 0 3px 0 var(--yellow-shadow); }
     .profile-modal .checkout-title { font-size: 20px; font-weight: 900; color: #1A1A1A; margin-bottom: 2px; }
     .profile-modal .checkout-subtitle { font-size: 11px; color: #6B5A3E; font-weight: 600; }
     
+    /* Update 8: Game-style saved card */
     .profile-saved-card {
         background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/bg.png') no-repeat center center;
         background-size: cover;
@@ -719,7 +747,7 @@
     .profile-clear-btn { width: 100%; background: transparent; border: 2px solid #FECACA; color: #DC2626; padding: 10px; border-radius: 100px; font-size: 13px; font-weight: 700; cursor: pointer; }
     .profile-clear-btn:hover { background: #FEE2E2; }
 
-    /* Profile Form (Unsaved State) */
+    /* Update 7: Simplified form */
     .profile-form-group { margin-bottom: 12px; text-align: left; }
     .profile-form-group label { display: block; font-size: 10px; font-weight: 800; color: #8B5A00; margin-bottom: 5px; letter-spacing: 1.1px; text-transform: uppercase; }
     .profile-form-group input { width: 100%; padding: 12px 14px; border: 2px solid #FDEEC8; border-radius: 12px; font-size: 13px; background: #FFFFFF; color: #1A1A1A; font-family: inherit; }
@@ -753,9 +781,8 @@
 
   <main>
     <section class="hero-text-section">
-      <div class="hero-eyebrow" id="heroTrustBadge">
-        <span class="shine-star">✨</span> <span id="heroTrustText">+9,935 buyers trust us</span> <span class="shine-star">✨</span>
-      </div>
+      <!-- Update 6: Replaced eyebrow -->
+      <div class="hero-eyebrow"><span class="shine-star">✨</span> <span id="heroTrustText">+9,935 buyers trust us</span> <span class="shine-star">✨</span></div>
       <h1 class="hero-headline">Power Up Fast.<span class="gold-line">Dominate The Game.</span></h1>
       <p class="hero-sub">Get your Free Fire diamonds instantly at the best rates. 100% safe, lightning-fast delivery, and trusted by thousands of gamers across India.</p>
       <div class="hero-trust">
@@ -766,23 +793,28 @@
         <span><span class="trust-emoji">🔥</span> Best Rates</span>
       </div>
       
+      <div class="trusted-by-row" id="trustedByRow">
+        <div class="trusted-by-avatars" id="trustedByAvatars"></div>
+        <div class="trusted-by-text"><strong id="trustedByCount">+9,935 buyers</strong> trust us</div>
+      </div>
+
       <div class="hero-bottom-card">
         <button class="hero-cta-btn shimmer-gold" id="heroCtaBtn">Buy Diamonds <span class="shop-arrow">→</span></button>
       </div>
     </section>
 
-    <section class="why-trust-section">
+    <section class="why-trust-section reveal">
       <h2>Why Trust Us?</h2>
       <p class="why-trust-sub">Thousands of gamers top-up here every day</p>
       <div class="trust-features">
-        <div class="trust-feature-card"><div class="tf-icon-wrap">🎮</div><div class="tf-label" id="whyTrustBuyers">10,000+</div><div class="tf-value">Happy Gamers</div></div>
-        <div class="trust-feature-card"><div class="tf-icon-wrap">🏆</div><div class="tf-label" id="heroSoldCount">0</div><div class="tf-value">Top-Ups Done</div></div>
-        <div class="trust-feature-card"><div class="tf-icon-wrap">✅</div><div class="tf-label">100%</div><div class="tf-value">Verified Top-Ups</div></div>
-        <div class="trust-feature-card"><div class="tf-icon-wrap">🔒</div><div class="tf-label">100%</div><div class="tf-value">Secure Payment</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap shimmer-white">🎮</div><div class="tf-label" id="whyTrustBuyers">10,000+</div><div class="tf-value">Happy Gamers</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap shimmer-white">🏆</div><div class="tf-label" id="heroSoldCount">0</div><div class="tf-value">Top-Ups Done</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap shimmer-white">✅</div><div class="tf-label">100%</div><div class="tf-value">Verified Top-Ups</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap shimmer-white">🔒</div><div class="tf-label">100%</div><div class="tf-value">Secure Payment</div></div>
       </div>
     </section>
 
-    <div class="pulse-feed">
+    <div class="pulse-feed reveal">
       <div class="pulse-header">
         <div class="pulse-title">
           <span class="live-pill"><span class="live-pill-dot"></span>LIVE</span>
@@ -792,11 +824,11 @@
       <div class="pulse-list" id="pulseList"></div>
     </div>
 
-    <div class="heading-row"><h1>Buy Diamonds</h1><p>Choose your package and top-up instantly</p></div>
+    <div class="heading-row reveal"><h1>Buy Diamonds</h1><p>Choose your package and top-up instantly</p></div>
 
-    <div class="product-grid" id="productGrid"></div>
+    <div class="product-grid reveal" id="productGrid"></div>
 
-    <section class="reviews-section">
+    <section class="reviews-section reveal">
       <div class="reviews-header">
         <div class="heading-row"><h1>Trusted by Thousands</h1><p>What our customers say after top-up</p></div>
         <button class="write-review-btn shimmer-gold" id="writeReviewBtn">✍️ Write a Review</button>
@@ -823,7 +855,7 @@
     <div class="copyright">© 2026 Diamond Top-up. All rights reserved.</div>
   </footer>
 
-  <!-- PROFILE MODAL -->
+  <!-- PROFILE MODAL - Update 7 & 8 -->
   <div class="modal-overlay" id="profileOverlay">
     <div class="modal profile-modal">
       <button class="modal-close" id="profileClose">&times;</button>
@@ -834,6 +866,7 @@
           <p class="checkout-subtitle" id="profileModalSubtitle">Save once, top-up faster next time</p>
         </div>
         
+        <!-- Update 8: Game-style saved view -->
         <div id="profileSavedView" style="display:none;">
           <div class="profile-saved-card">
             <div class="profile-saved-avatar">🎮</div>
@@ -848,6 +881,7 @@
           </div>
         </div>
         
+        <!-- Update 7: Simplified form (only UID) -->
         <div id="profileFormView">
           <form id="profileForm">
             <div class="profile-form-group">
@@ -875,6 +909,7 @@
     </div>
   </div>
 
+  <!-- CHECKOUT MODAL -->
   <div class="modal-overlay" id="orderOverlay">
     <div class="modal order-modal">
       <button class="modal-close" id="orderClose">&times;</button>
@@ -905,6 +940,7 @@
     </div>
   </div>
 
+  <!-- VERIFY MODAL -->
   <div class="modal-overlay" id="verifyOverlay">
     <div class="modal">
       <button class="modal-close" id="verifyClose">&times;</button>
@@ -958,6 +994,7 @@
     </div>
   </div>
 
+  <!-- PAYMENT MODAL -->
   <div class="modal-overlay" id="paymentOverlay">
     <div class="modal order-modal">
       <button class="modal-close" id="paymentClose">&times;</button>
@@ -1112,7 +1149,7 @@
       });
     }
 
-    /* MUSIC AUTOPLAY FIX */
+    /* MUSIC AUTOPLAY FIX (Update 1) */
     var bgMusic = document.getElementById('bgMusic');
     var musicBtn = document.getElementById('musicBtn');
     var musicPlaying = false;
@@ -1543,16 +1580,22 @@
           }
       }
 
-      var heroTrustText = document.getElementById('heroTrustText');
-      if (heroTrustText) {
+      var tbEl = document.getElementById('trustedByCount');
+      if (tbEl) {
           if (isFirstRender) {
-              heroTrustText.textContent = '+' + buyers.toLocaleString('en-IN') + ' buyers trust us';
+              tbEl.textContent = '+' + buyers.toLocaleString('en-IN') + ' buyers';
           } else {
-              var currentTrust = parseInt(heroTrustText.textContent.replace(/[^0-9]/g, '')) || 9935;
-              if (currentTrust !== buyers) {
-                  heroTrustText.textContent = '+' + buyers.toLocaleString('en-IN') + ' buyers trust us';
+              var currentTb = parseInt(tbEl.textContent.replace(/[^0-9]/g, '')) || 9935;
+              if (currentTb !== buyers) {
+                  tbEl.textContent = '+' + buyers.toLocaleString('en-IN') + ' buyers';
               }
           }
+      }
+
+      // Update 6: Hero trust text
+      var heroTrustText = document.getElementById('heroTrustText');
+      if (heroTrustText) {
+          heroTrustText.textContent = '+' + buyers.toLocaleString('en-IN') + ' buyers trust us';
       }
 
       isFirstRender = false;
@@ -2039,6 +2082,25 @@
     document.addEventListener('mouseleave', function(e) { if (e.clientY < 0) { showToast('Wait! 🔥 Don\'t miss out on our diamond deals!', 'error'); } });
     loadProfileFromStorage(); updateProfileButtonUI();
     
+    // Update 2: Scroll Reveal Animation
+    function initScrollReveal() {
+      var reveals = document.querySelectorAll('.reveal');
+      if (!reveals.length) return;
+      if (!('IntersectionObserver' in window)) {
+        reveals.forEach(function(el) { el.classList.add('active'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function(el) { observer.observe(el); });
+    }
+    
     // Initialize everything immediately, do not wait for API
     initViewerCounts();
     var initMinute = Math.floor((Date.now() - GLOBAL_STREAM_REFERENCE_TIME) / 60000);
@@ -2052,8 +2114,9 @@
     populateInitialPulse();
     var lmt = document.getElementById('loadMoreText'); if (lmt) lmt.textContent = 'More + ' + getReviewsCount().toLocaleString('en-IN') + ' Reviews';
     applyImageBlur();
+    initScrollReveal();
 
-    // Try to fetch avatars in the background, if it succeeds, re-render trusted by and pulse if needed
+    // Try to fetch avatars in the background
     fetchAvatarsFromGitHub(function() {
       renderTrustedByRow();
     });
