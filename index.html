@@ -14,7 +14,6 @@
     :focus-visible { outline: none; }
     
     :root {
-      /* Fixed Color Variables */
       --yellow-gradient: linear-gradient(180deg, #FFC107 0%, #FF9800 100%);
       --yellow-shadow: #C77A00;
       --red-gradient: linear-gradient(180deg, #FF0000 0%, #CC0000 100%);
@@ -43,11 +42,7 @@
     .shimmer-gold::after { background: linear-gradient(to right, transparent, rgba(255,215,0,0.8), transparent); }
     @keyframes shimmerSweep { 0% { left: -150%; } 100% { left: 150%; } }
 
-    /* SCROLL REVEAL ANIMATION */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-
-    /* HEADER (Problem 9: Icons Red/Green) */
+    /* HEADER */
     .site-header { position: relative; z-index: 900; background: var(--yellow-gradient); border-radius: 28px; box-shadow: 0 8px 0 var(--yellow-shadow), 0 15px 35px rgba(0,0,0,0.35); margin: 16px 12px 6px; border: 2px solid rgba(255,255,255,0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
     .site-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; gap: 10px; }
     .site-brand { display: flex; align-items: center; gap: 8px; cursor: default; user-select: none; min-width: 0; flex: 1; }
@@ -56,13 +51,11 @@
     .verified-logo-tick svg { width: 100%; height: 100%; display: block; }
     .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
     
-    /* Header Icon Base Style (Red for Off) */
     .header-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--red-gradient); border: 2px solid #FF0000; border-radius: 14px; cursor: pointer; color: #FFFFFF; transition: all 0.15s ease; box-shadow: 0 4px 0 var(--red-shadow), inset 0 2px 4px rgba(255,255,255,0.2), 0 6px 12px rgba(0,0,0,0.4); padding: 0; }
     .header-icon-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--red-shadow), inset 0 2px 4px rgba(255,255,255,0.3), 0 8px 16px rgba(0,0,0,0.5); }
     .header-icon-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--red-shadow), inset 0 1px 2px rgba(255,255,255,0.2), 0 2px 6px rgba(0,0,0,0.4); }
     .header-icon-btn svg { width: 22px; height: 22px; display: block; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
     
-    /* Music Button States */
     .music-btn { position: relative; overflow: hidden; }
     .music-btn .music-on-icon { display: none; }
     .music-btn .music-off-icon { display: block; }
@@ -71,7 +64,6 @@
     .music-btn.playing .music-on-icon { display: block; }
     .music-btn.playing .music-off-icon { display: none; }
     
-    /* Profile Button States */
     .profile-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: var(--red-gradient); border: 2px solid #FF0000; color: #FFFFFF; width: 40px; height: 40px; border-radius: 50%; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 var(--red-shadow), inset 0 2px 4px rgba(255,255,255,0.2), 0 6px 12px rgba(0,0,0,0.4); padding: 0; position: relative; }
     .profile-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--red-shadow), inset 0 2px 4px rgba(255,255,255,0.3), 0 8px 16px rgba(0,0,0,0.5); }
     .profile-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--red-shadow), inset 0 1px 2px rgba(255,255,255,0.2), 0 2px 6px rgba(0,0,0,0.4); }
@@ -86,7 +78,6 @@
     /* HERO SECTION */
     .hero-text-section { text-align: left; padding: 32px 8px 60px; max-width: 800px; margin: 0 auto; position: relative; }
     
-    /* Problem 6: Replaced "✨ Free Fire Diamond Top-up ✨" with "Buyers Trust Us" */
     .hero-eyebrow { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; font-weight: 900; letter-spacing: 2px; color: #1A1A1A; background: var(--yellow-gradient); border: 2px solid rgba(255,255,255,0.6); padding: 11px 24px; border-radius: 26px; margin-bottom: 22px; text-transform: uppercase; box-shadow: 0 4px 0 var(--yellow-shadow), 0 8px 20px rgba(255,152,0,0.3); position: relative; text-shadow: 0 1px 0 rgba(255,255,255,0.5); }
     .hero-eyebrow .shine-star { font-size: 13px; }
     
@@ -106,16 +97,6 @@
     .hero-cta-btn:hover .shop-arrow { transform: translateX(4px); }
     @media (max-width: 700px) { .hero-text-section { padding: 28px 6px 50px; } .hero-headline { font-size: 34px; } .hero-eyebrow { font-size: 10.5px; letter-spacing: 1.8px; padding: 10px 20px; } .hero-sub { font-size: 13.5px; } .hero-trust { font-size: 11.5px; gap: 7px 11px; } .hero-bottom-card { padding: 16px 20px; max-width: 240px; } .hero-cta-btn { padding: 13px 26px; font-size: 14px; } }
     @media (max-width: 400px) { .hero-headline { font-size: 28px; } .hero-sub { font-size: 13px; } .hero-eyebrow { font-size: 9.5px; padding: 9px 18px; letter-spacing: 1.6px; } }
-
-    /* TRUSTED BY ROW (Kept for below hero, but main trust badge is above) */
-    .trusted-by-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 60px 0 12px; padding: 8px 14px; background: var(--yellow-gradient); border: 2px solid rgba(255,255,255,0.4); border-radius: 26px; flex-wrap: wrap; box-shadow: 0 8px 0 var(--yellow-shadow), 0 15px 30px rgba(0,0,0,0.25); }
-    .trusted-by-avatars { display: flex; align-items: center; }
-    .trusted-by-avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #FFF6E0; margin-left: -10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.5); background: #FFF6E0; flex-shrink: 0; }
-    .trusted-by-avatar:first-child { margin-left: 0; }
-    .trusted-by-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
-    .trusted-by-text { font-size: 11px; font-weight: 700; color: #1A1A1A; letter-spacing: 0.2px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; justify-content: center; text-align: center; }
-    .trusted-by-text strong { color: #1A1A1A; font-weight: 900; }
-    @media (max-width: 500px) { .trusted-by-row { padding: 8px 14px; gap: 8px; margin: 50px 0 12px; } .trusted-by-avatar { width: 32px; height: 32px; margin-left: -10px; border-width: 2px; } .trusted-by-text { font-size: 11px; } }
 
     /* WHY TRUST US */
     .why-trust-section { margin: 18px 0 22px; padding: 20px 12px 18px; background: var(--yellow-gradient); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 var(--yellow-shadow), 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; overflow: hidden; }
@@ -192,7 +173,6 @@
     .diamond-showcase { position: relative; aspect-ratio: 1.4 / 1; border-radius: 14px; background: #F9FAFB; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); padding: 8px; transition: transform 0.3s ease; }
     .grid-card:hover .diamond-showcase { transform: scale(1.02); }
     
-    /* Problem 3: Light Effect behind Diamonds */
     .diamond-light { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(255, 193, 7, 0.6) 0%, transparent 70%); opacity: 0.8; z-index: 1; pointer-events: none; }
     
     .diamond-glow { position: absolute; inset: 0; opacity: 0.35; filter: blur(30px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; z-index: 0; }
@@ -496,7 +476,7 @@
     #orderOverlay .mini-card-preview { position: relative; width: 100%; margin-bottom: 10px; }
     #orderOverlay .mini-card-preview.compact { max-width: 200px; margin: 15px auto 10px; }
 
-    /* VERIFY MODAL (Problem 8: Profile Saved state uses this styling) */
+    /* VERIFY MODAL */
     #verifyOverlay .modal {
         background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/bg.png') no-repeat center center;
         background-size: cover;
@@ -693,7 +673,7 @@
     .custom-alert-btn.secondary { background: #FFFBF2; color: #1A1A1A; margin-left: 10px; border: 2px solid #FDEEC8; box-shadow: 0 3px 0 #E0A000; }
     .custom-alert-btn.secondary:hover { background: #FFF6E0; }
 
-    /* PROFILE MODAL (Problem 7 & 8: Clean UI, Game Style Saved State) */
+    /* PROFILE MODAL */
     .profile-modal .modal { max-width: 380px; }
     .profile-modal .checkout-header { text-align: center; margin-bottom: 16px; }
     .profile-modal .checkout-eyebrow { display: inline-block; font-size: 10px; font-weight: 900; letter-spacing: 2.4px; color: #1A1A1A; background: var(--yellow-gradient); padding: 6px 16px; border-radius: 100px; margin-bottom: 8px; box-shadow: 0 3px 0 var(--yellow-shadow); }
@@ -786,17 +766,12 @@
         <span><span class="trust-emoji">🔥</span> Best Rates</span>
       </div>
       
-      <div class="trusted-by-row" id="trustedByRow" style="display:none;"> <!-- Hidden, replaced by hero-eyebrow -->
-        <div class="trusted-by-avatars" id="trustedByAvatars"></div>
-        <div class="trusted-by-text"><strong id="trustedByCount">+9,935 buyers</strong> trust us</div>
-      </div>
-
       <div class="hero-bottom-card">
         <button class="hero-cta-btn shimmer-gold" id="heroCtaBtn">Buy Diamonds <span class="shop-arrow">→</span></button>
       </div>
     </section>
 
-    <section class="why-trust-section reveal">
+    <section class="why-trust-section">
       <h2>Why Trust Us?</h2>
       <p class="why-trust-sub">Thousands of gamers top-up here every day</p>
       <div class="trust-features">
@@ -807,7 +782,7 @@
       </div>
     </section>
 
-    <div class="pulse-feed reveal">
+    <div class="pulse-feed">
       <div class="pulse-header">
         <div class="pulse-title">
           <span class="live-pill"><span class="live-pill-dot"></span>LIVE</span>
@@ -817,11 +792,11 @@
       <div class="pulse-list" id="pulseList"></div>
     </div>
 
-    <div class="heading-row reveal"><h1>Buy Diamonds</h1><p>Choose your package and top-up instantly</p></div>
+    <div class="heading-row"><h1>Buy Diamonds</h1><p>Choose your package and top-up instantly</p></div>
 
-    <div class="product-grid reveal" id="productGrid"></div>
+    <div class="product-grid" id="productGrid"></div>
 
-    <section class="reviews-section reveal">
+    <section class="reviews-section">
       <div class="reviews-header">
         <div class="heading-row"><h1>Trusted by Thousands</h1><p>What our customers say after top-up</p></div>
         <button class="write-review-btn shimmer-gold" id="writeReviewBtn">✍️ Write a Review</button>
@@ -848,7 +823,7 @@
     <div class="copyright">© 2026 Diamond Top-up. All rights reserved.</div>
   </footer>
 
-  <!-- PROFILE MODAL (Problem 7 & 8: Clean UI, Game Style Saved State) -->
+  <!-- PROFILE MODAL -->
   <div class="modal-overlay" id="profileOverlay">
     <div class="modal profile-modal">
       <button class="modal-close" id="profileClose">&times;</button>
@@ -859,7 +834,6 @@
           <p class="checkout-subtitle" id="profileModalSubtitle">Save once, top-up faster next time</p>
         </div>
         
-        <!-- Saved View (Game Style) -->
         <div id="profileSavedView" style="display:none;">
           <div class="profile-saved-card">
             <div class="profile-saved-avatar">🎮</div>
@@ -874,7 +848,6 @@
           </div>
         </div>
         
-        <!-- Form View (Unsaved State) -->
         <div id="profileFormView">
           <form id="profileForm">
             <div class="profile-form-group">
@@ -1139,20 +1112,6 @@
       });
     }
 
-    /* SCROLL REVEAL ANIMATION */
-    function initScrollReveal() {
-        var reveals = document.querySelectorAll('.reveal');
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-        reveals.forEach(function(el) { observer.observe(el); });
-    }
-
     /* MUSIC AUTOPLAY FIX */
     var bgMusic = document.getElementById('bgMusic');
     var musicBtn = document.getElementById('musicBtn');
@@ -1216,7 +1175,7 @@
             updateMusicBtnUI();
           }).catch(function(err) {
             console.log("Autoplay blocked:", err);
-            userInteracted = false; // Reset if blocked
+            userInteracted = false;
           });
         } else {
           musicPlaying = true;
@@ -2087,7 +2046,6 @@
       populateInitialPulse();
       var lmt = document.getElementById('loadMoreText'); if (lmt) lmt.textContent = 'More + ' + getReviewsCount().toLocaleString('en-IN') + ' Reviews';
       applyImageBlur();
-      initScrollReveal(); // Initialize Scroll Reveal
     });
   </script>
 </body>
