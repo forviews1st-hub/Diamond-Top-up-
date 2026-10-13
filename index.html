@@ -7,14 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/bg.png">
   <style>
+    :root {
+      --deep-yellow-grad: linear-gradient(180deg, #FFC107 0%, #FF9800 100%);
+    }
     * { margin:0; padding:0; box-sizing:border-box; }
     * { -webkit-tap-highlight-color: transparent; }
     :focus { outline: none; }
     :focus-visible { outline: none; }
     
     body { font-family: 'Poppins', sans-serif; background: #000; min-height: 100vh; color: #1A1A1A; overflow-x: hidden; -webkit-font-smoothing: antialiased; position: relative; }
-    body::before { content: ''; position: fixed; inset: 0; background: #FDF6E3 url('images/bg.png') no-repeat center center; background-size: cover; z-index: -2; }
+    body::before { content: ''; position: fixed; inset: 0; background: url('images/bg.png') no-repeat center center; background-size: cover; z-index: -2; }
     body::after { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,0.35); pointer-events: none; z-index: -1; }
 
     h1, h2, h3, .site-brand-name, .hero-headline, .stat-number, .modal-price, .summary-value-total, .payment-total-amount, .more-stats-number, .trust-feature-card .tf-label, .gc-price-chip, .gc-name, .review-name, .modal-title, .checkout-title, .pulse-subtitle, .gc-buy-btn, .hero-cta-btn, .modal-buy-btn, .order-btn-premium, .review-submit-btn, .success-btn, .custom-alert-btn, .load-more-reviews-btn, .qty-row span, .bonus-tag, .trusted-by-text { font-family: 'Outfit', 'Poppins', sans-serif; font-weight: 700; }
@@ -33,7 +37,7 @@
     @keyframes shimmerSweep { 0% { left: -150%; } 100% { left: 150%; } }
 
     /* HEADER */
-    .site-header { position: relative; z-index: 900; background: linear-gradient(180deg, rgba(255,193,7,0.92) 0%, rgba(255,152,0,0.92) 100%); border-radius: 28px; box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); margin: 16px 12px 6px; border: 2px solid rgba(255,255,255,0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .site-header { position: relative; z-index: 900; background: var(--deep-yellow-grad); border-radius: 28px; box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); margin: 16px 12px 6px; border: 2px solid rgba(255,255,255,0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
     .site-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; gap: 10px; }
     .site-brand { display: flex; align-items: center; gap: 8px; cursor: default; user-select: none; min-width: 0; flex: 1; }
     .site-brand-name { font-size: 22px; font-weight: 800; letter-spacing: 0.2px; color: #1A1A1A; line-height: 1.1; display: inline-flex; align-items: center; gap: 5px; flex-wrap: wrap; }
@@ -54,14 +58,7 @@
     .music-btn.playing .music-on-icon { display: block; }
     .music-btn.playing .music-off-icon { display: none; }
     
-    .profile-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: 2px solid #FF0000; color: #FFFFFF; width: 40px; height: 40px; border-radius: 50%; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 #800000, inset 0 2px 4px rgba(255,255,255,0.2), 0 6px 12px rgba(0,0,0,0.4); padding: 0; position: relative; }
-    .profile-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #800000, inset 0 2px 4px rgba(255,255,255,0.3), 0 8px 16px rgba(0,0,0,0.5); }
-    .profile-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #800000, inset 0 1px 2px rgba(255,255,255,0.2), 0 2px 6px rgba(0,0,0,0.4); }
-    .profile-btn.saved { background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%); color: #1A1A1A; border-color: #0CFF00; }
-    .profile-btn.saved:hover { box-shadow: 0 5px 0 #076B00, inset 0 2px 4px rgba(255,255,255,0.2), 0 8px 16px rgba(0,0,0,0.3); }
-    .profile-btn .profile-icon { font-size: 18px; line-height: 1; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
-    .profile-btn .profile-label-full { display: none; }
-    @media (max-width: 400px) { .site-header-inner { padding: 12px 14px; } .site-brand-name { font-size: 18px; } .header-icon-btn, .profile-btn { width: 36px; height: 36px; } .header-icon-btn svg { width: 18px; height: 18px; } .profile-btn .profile-icon { font-size: 16px; } }
+    @media (max-width: 400px) { .site-header-inner { padding: 12px 14px; } .site-brand-name { font-size: 18px; } .header-icon-btn { width: 36px; height: 36px; } .header-icon-btn svg { width: 18px; height: 18px; } }
 
     main { padding: 0 16px 20px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
     
@@ -82,15 +79,16 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      margin-top: 22px;
-      padding: 14px 24px;
-      background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%);
+      margin-top: 80px;
+      padding: 14px 14px 14px 24px;
+      background: var(--deep-yellow-grad);
       border-radius: 28px;
       box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35);
       border: 2px solid rgba(255,255,255,0.4);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      width: fit-content;
+      max-width: 340px;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
     }
@@ -101,7 +99,7 @@
     .trusted-by-text { font-size: 14px; font-weight: 800; color: #1A1A1A; letter-spacing: 0.2px; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
     .trusted-by-text strong { color: #1A1A1A; font-weight: 900; }
     
-    .hero-bottom-card { margin-top: 22px; padding: 20px 24px; background: linear-gradient(180deg, rgba(255,193,7,0.92) 0%, rgba(255,152,0,0.92) 100%); border-radius: 28px; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: inline-block; max-width: 280px; margin-right: auto; }
+    .hero-bottom-card { margin-top: 80px; padding: 20px 24px; background: var(--deep-yellow-grad); border-radius: 28px; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: inline-block; max-width: 280px; margin-right: auto; }
     .hero-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); color: #FFFFFF; border: none; padding: 15px 30px; border-radius: 100px; font-size: 15px; font-weight: 800; letter-spacing: 0.4px; cursor: pointer; font-family: 'Outfit', inherit; box-shadow: 0 5px 0 #800000, 0 10px 24px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); transition: all 0.15s ease; }
     .hero-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #800000, 0 14px 28px rgba(255,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2); }
     .hero-cta-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #800000, 0 5px 12px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
@@ -111,7 +109,7 @@
     @media (max-width: 400px) { .hero-headline { font-size: 28px; } .hero-sub { font-size: 13px; } }
 
     /* WHY TRUST US */
-    .why-trust-section { margin: 18px 0 22px; padding: 20px 12px 18px; background: linear-gradient(160deg, #FFC107 0%, #FF9800 100%); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; overflow: hidden; }
+    .why-trust-section { margin: 18px 0 22px; padding: 20px 12px 18px; background: var(--deep-yellow-grad); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; overflow: hidden; }
     .why-trust-section h2 { font-size: 24px; font-weight: 800; text-align: center; margin-bottom: 4px; color: #1A1A1A; letter-spacing: -0.3px; }
     .why-trust-section .why-trust-sub { text-align: center; font-size: 12px; color: #3A2A0A; margin-bottom: 18px; letter-spacing: 0.2px; font-weight: 600; }
     
@@ -124,15 +122,15 @@
     @media (min-width: 700px) { .trust-features { grid-template-columns: repeat(4, 1fr); gap: 12px; } }
     .trust-feature-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 16px 8px 14px; background: #FFFFFF; border: 2px solid #E5E7EB; border-radius: 22px; transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); box-shadow: 0 4px 0 #D1D5DB, 0 8px 16px rgba(0,0,0,0.15); }
     .trust-feature-card:hover { transform: translateY(-3px); border-color: #D1D5DB; box-shadow: 0 6px 0 #D1D5DB, 0 12px 24px rgba(0,0,0,0.2); }
-    .trust-feature-card .tf-icon-wrap { width: 50px; height: 50px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; background: linear-gradient(180deg, var(--tf-accent, #FFC107) 0%, var(--tf-accent2, #FF9800) 100%); border: none; box-shadow: 0 4px 0 var(--tf-shadow-dark, #C77A00), inset 0 2px 4px rgba(255,255,255,0.4), 0 6px 12px rgba(0,0,0,0.3); transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; }
+    .trust-feature-card .tf-icon-wrap { width: 50px; height: 50px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; background: var(--deep-yellow-grad); border: none; box-shadow: 0 4px 0 var(--tf-shadow-dark, #C77A00), inset 0 2px 4px rgba(255,255,255,0.4), 0 6px 12px rgba(0,0,0,0.3); transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; }
     .trust-feature-card:hover .tf-icon-wrap { transform: scale(1.06) rotate(-4deg); }
     .trust-feature-card .tf-label { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.1; color: #1A1A1A; }
     .trust-feature-card .tf-value { font-size: 9px; color: #4A4A4A; letter-spacing: 0.7px; font-weight: 700; text-transform: uppercase; line-height: 1.3; }
     @media (min-width: 500px) { .trust-feature-card .tf-label { font-size: 20px; } }
-    .trust-feature-card:nth-child(1) { --tf-accent: #0CFF00; --tf-accent2: #09B300; --tf-shadow-dark: #076B00; }
-    .trust-feature-card:nth-child(2) { --tf-accent: #FFD700; --tf-accent2: #FFA500; --tf-shadow-dark: #B36A00; }
-    .trust-feature-card:nth-child(3) { --tf-accent: #0CFF00; --tf-accent2: #09B300; --tf-shadow-dark: #076B00; }
-    .trust-feature-card:nth-child(4) { --tf-accent: #FFD700; --tf-accent2: #FFA500; --tf-shadow-dark: #B36A00; }
+    .trust-feature-card:nth-child(1) { --tf-shadow-dark: #076B00; }
+    .trust-feature-card:nth-child(2) { --tf-shadow-dark: #B36A00; }
+    .trust-feature-card:nth-child(3) { --tf-shadow-dark: #076B00; }
+    .trust-feature-card:nth-child(4) { --tf-shadow-dark: #B36A00; }
 
     /* RECENT TOP-UPS */
     .pulse-feed { margin: 0 0 20px; padding: 18px 18px; background: linear-gradient(160deg, #FF0000 0%, #CC0000 100%); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 #800000, 0 15px 35px rgba(0,0,0,0.5); position: relative; overflow: hidden; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
@@ -167,7 +165,7 @@
     @media (max-width: 480px) { .pulse-feed { padding: 14px 14px; } .pulse-item { padding: 10px 12px; gap: 10px; border-left-width: 4px; } .pulse-card-thumb { width: 38px; height: 38px; } .live-pill { font-size: 9.5px; padding: 5px 12px; } .pulse-subtitle { font-size: 11px; letter-spacing: 1.1px; } .pulse-avatar { width: 34px; height: 34px; } .pulse-check { width: 13px; height: 13px; font-size: 8px; } }
 
     /* HEADING ROW */
-    .heading-row { margin-bottom: 18px; padding: 20px 24px; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border-radius: 26px; box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); border: 2px solid rgba(255,255,255,0.4); }
+    .heading-row { margin-bottom: 18px; padding: 20px 24px; background: var(--deep-yellow-grad); border-radius: 26px; box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); border: 2px solid rgba(255,255,255,0.4); }
     .heading-row h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; color: #1A1A1A; text-shadow: none; }
     .heading-row p { font-size: 12.5px; color: #3A2A0A; margin-top: 5px; font-weight: 600; text-shadow: none; }
     @media (max-width:600px) { .heading-row h1 { font-size: 22px; } }
@@ -232,7 +230,7 @@
     /* REVIEWS */
     .reviews-section { margin-bottom: 36px; scroll-margin-top: 90px; padding: 0 2px; }
     .reviews-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
-    .reviews-header .heading-row { margin-bottom: 0; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border-color: rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); }
+    .reviews-header .heading-row { margin-bottom: 0; background: var(--deep-yellow-grad); border-color: rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); }
     .reviews-header .heading-row h1 { color: #1A1A1A; }
     .reviews-header .heading-row p { color: #3A2A0A; }
     .write-review-btn { display: inline-flex; align-items: center; gap: 5px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: 2px solid #FFFFFF; color: #FFFFFF; padding: 11px 18px; border-radius: 100px; font-size: 11.5px; font-weight: 700; cursor: pointer; font-family: 'Poppins', inherit; transition: all 0.15s ease; white-space: nowrap; box-shadow: 0 4px 0 #800000, 0 6px 12px rgba(0,0,0,0.3); position: relative; overflow: hidden; }
@@ -276,7 +274,7 @@
 
     .load-more-reviews-wrapper { display: flex; justify-content: center; margin-top: 22px; padding: 4px 0 8px; }
     .load-more-reviews-btn { display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 2px solid #FFFFFF; color: #1A1A1A; padding: 14px 24px; border-radius: 100px; font-size: 12.5px; font-weight: 800; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 6px 0 #E0A000, 0 10px 20px rgba(199,122,0,0.1); }
-    .load-more-reviews-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 0 #E0A000, 0 15px 28px rgba(255,152,0,0.2); background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); border-color: transparent; }
+    .load-more-reviews-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 0 #E0A000, 0 15px 28px rgba(255,152,0,0.2); background: var(--deep-yellow-grad); border-color: transparent; }
     .load-more-reviews-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #E0A000; }
     .load-more-reviews-btn .lm-icon { font-size: 15px; }
     .load-more-reviews-btn .lm-arrow { font-size: 13px; transition: transform 0.3s ease; }
@@ -297,7 +295,7 @@
     .network-error-details { display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 10.5px; color: #8B7D65; background: #FFFBF2; padding: 8px 14px; border-radius: 100px; margin-bottom: 18px; width: fit-content; margin-left: auto; margin-right: auto; }
     .network-error-details .dot-pulse { width: 7px; height: 7px; border-radius: 50%; background: #EF4444; animation: dotPulse 1.5s ease-in-out infinite; }
     @keyframes dotPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-    .network-retry-btn { width: 100%; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); color: #1A1A1A; border: none; border-radius: 100px; padding: 14px; font-size: 14px; font-weight: 800; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 #C77A00, 0 8px 20px rgba(255,152,0,0.4); display: flex; align-items: center; justify-content: center; gap: 7px; }
+    .network-retry-btn { width: 100%; background: var(--deep-yellow-grad); color: #1A1A1A; border: none; border-radius: 100px; padding: 14px; font-size: 14px; font-weight: 800; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 4px 0 #C77A00, 0 8px 20px rgba(255,152,0,0.4); display: flex; align-items: center; justify-content: center; gap: 7px; }
     .network-retry-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #C77A00, 0 12px 26px rgba(255,152,0,0.55); }
     .network-retry-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #C77A00, 0 4px 10px rgba(255,152,0,0.4); }
 
@@ -309,7 +307,7 @@
     @keyframes notifOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(110%); opacity: 0; } }
     .live-notif.swiping { animation: none; transition: none; }
     .live-notif.dismissed { animation: none; transition: transform 0.3s ease, opacity 0.3s ease; transform: translateX(120%) !important; opacity: 0 !important; }
-    .live-notif .notif-card-badge { display: flex; align-items: center; justify-content: center; gap: 5px; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); color: #1A1A1A; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; padding: 8px 12px; text-transform: uppercase; border: none !important; }
+    .live-notif .notif-card-badge { display: flex; align-items: center; justify-content: center; gap: 5px; background: var(--deep-yellow-grad); color: #1A1A1A; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; padding: 8px 12px; text-transform: uppercase; border: none !important; }
     .live-notif .notif-row { display: flex; align-items: flex-start; gap: 10px; padding: 11px 13px; border: none !important; }
     .live-notif .notif-avatar { width: 38px; height: 38px; border-radius: 12px; overflow: hidden; flex-shrink: 0; border: none; box-shadow: 0 3px 8px rgba(0,0,0,0.1); background: #FDEEC8; margin-top: 2px; }
     .live-notif .notif-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -362,7 +360,7 @@
     .photo-upload-hint { display: flex; flex-direction: column; gap: 3px; }
     .photo-upload-hint .primary { font-size: 12px; font-weight: 700; color: #1A1A1A; }
     .photo-upload-hint .secondary { font-size: 10.5px; color: #8B7D65; }
-    .review-submit-btn { width: 100%; background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); color: #1A1A1A; border: none; border-radius: 100px; padding: 15px; font-size: 14.5px; font-weight: 800; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 5px 0 #C77A00, 0 10px 24px rgba(255,152,0,0.4), inset 0 1px 0 rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: 6px; }
+    .review-submit-btn { width: 100%; background: var(--deep-yellow-grad); color: #1A1A1A; border: none; border-radius: 100px; padding: 15px; font-size: 14.5px; font-weight: 800; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 5px 0 #C77A00, 0 10px 24px rgba(255,152,0,0.4), inset 0 1px 0 rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: 6px; }
     .review-submit-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #C77A00, 0 14px 30px rgba(255,152,0,0.55), inset 0 1px 0 rgba(255,255,255,0.4); }
     .review-submit-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #C77A00, 0 5px 12px rgba(255,152,0,0.4); }
 
@@ -395,7 +393,7 @@
     .qty-row button:hover { transform: translateY(-1px); box-shadow: 0 5px 0 #C77A00, inset 0 2px 4px rgba(255,255,255,0.6), 0 8px 16px rgba(0,0,0,0.2); }
     .qty-row button:active { transform: translateY(1px); box-shadow: 0 2px 0 #C77A00; }
     .qty-row span { font-size: 22px; font-weight: 900; min-width: 36px; text-align: center; color: #1A1A1A; }
-    .modal-buy-btn { width: 100%; background: linear-gradient(180deg, #FFD700 0%, #FF9800 100%); color: #1A1A1A; border: none; border-radius: 100px; padding: 15px; font-size: 15.5px; font-weight: 900; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 6px 0 #C77A00, 0 12px 26px rgba(255,152,0,0.45), inset 0 2px 0 rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; gap: 8px; letter-spacing: 0.3px; outline: none; }
+    .modal-buy-btn { width: 100%; background: var(--deep-yellow-grad); color: #1A1A1A; border: none; border-radius: 100px; padding: 15px; font-size: 15.5px; font-weight: 900; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 6px 0 #C77A00, 0 12px 26px rgba(255,152,0,0.45), inset 0 2px 0 rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; gap: 8px; letter-spacing: 0.3px; outline: none; }
     .modal-buy-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 0 #C77A00, 0 16px 32px rgba(255,152,0,0.6), inset 0 2px 0 rgba(255,255,255,0.7); }
     .modal-buy-btn:active { transform: translateY(3px); box-shadow: 0 3px 0 #C77A00, 0 6px 12px rgba(255,152,0,0.5); }
 
@@ -453,7 +451,7 @@
     #orderOverlay .summary-value-total { font-size: 22px; font-weight: 900; letter-spacing: -0.5px; color: #0CFF00; text-shadow: 0 2px 0 #076B00, 0 4px 8px rgba(12,255,0,0.3); }
     
     #orderOverlay .order-btn-premium {
-        background: linear-gradient(180deg, #FFD700 0%, #FF9800 100%);
+        background: var(--deep-yellow-grad);
         color: #1A1A1A;
         box-shadow: 0 5px 0 #C77A00, inset 0 1px 0 rgba(255,255,255,0.6);
         outline: none !important;
@@ -621,7 +619,7 @@
     #paymentOverlay .field-group label { color: #8B5A00; font-size: 9.5px; font-weight: 800; letter-spacing: 1.1px; }
     #paymentOverlay .field-group input { padding: 13px 16px; font-size: 13px; border: 2px solid #FFC107; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); border-radius: 14px; background: #FFFFFF; }
     #paymentOverlay .order-btn-premium {
-        background: linear-gradient(180deg, #FFD700 0%, #FF9800 100%);
+        background: var(--deep-yellow-grad);
         color: #1A1A1A; box-shadow: 0 5px 0 #C77A00, inset 0 1px 0 rgba(255,255,255,0.6);
         padding: 14px; font-size: 15px; margin-top: 10px; outline: none !important; border: none !important;
         border-radius: 100px; font-family: 'Outfit', inherit; font-weight: 900;
@@ -659,7 +657,7 @@
     .success-tracking .st-dot { width: 7px; height: 7px; border-radius: 50%; background: #0CFF00; animation: liveDotBlink 1.5s ease-in-out infinite; }
     .success-order-details { background: #FFFBF2; border-radius: 16px; padding: 16px; margin-bottom: 20px; text-align: left; font-size: 12.5px; color: #4A4A4A; box-shadow: 0 5px 0 #E0A000; }
     .success-order-details span { display: block; margin-bottom: 6px; }
-    .success-btn { background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); color: #1A1A1A; border: none; border-radius: 100px; padding: 16px 24px; font-size: 15px; font-weight: 800; cursor: pointer; width: 100%; transition: all 0.15s ease; font-family: 'Outfit', inherit; box-shadow: 0 5px 0 #C77A00, 0 10px 24px rgba(255,152,0,0.4), inset 0 1px 0 rgba(255,255,255,0.4); }
+    .success-btn { background: var(--deep-yellow-grad); color: #1A1A1A; border: none; border-radius: 100px; padding: 16px 24px; font-size: 15px; font-weight: 800; cursor: pointer; width: 100%; transition: all 0.15s ease; font-family: 'Outfit', inherit; box-shadow: 0 5px 0 #C77A00, 0 10px 24px rgba(255,152,0,0.4), inset 0 1px 0 rgba(255,255,255,0.4); }
     .success-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #C77A00, 0 14px 30px rgba(255,152,0,0.55), inset 0 1px 0 rgba(255,255,255,0.4); }
     .success-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #C77A00, 0 6px 12px rgba(255,152,0,0.4); }
     #toastContainer { position: fixed; bottom: 24px; right: 16px; z-index: 3000; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
@@ -677,7 +675,7 @@
     .custom-alert-icon { font-size: 46px; margin-bottom: 12px; }
     .custom-alert-title { font-size: 20px; font-weight: 800; color: #1A1A1A; margin-bottom: 8px; }
     .custom-alert-message { font-size: 13.5px; color: #6B5A3E; margin-bottom: 20px; line-height: 1.55; }
-    .custom-alert-btn { background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%); color: #1A1A1A; border: none; border-radius: 100px; padding: 13px 26px; font-size: 14px; font-weight: 800; cursor: pointer; min-width: 120px; transition: all 0.15s ease; font-family: 'Outfit', inherit; box-shadow: 0 4px 0 #C77A00, 0 8px 18px rgba(255,152,0,0.35); }
+    .custom-alert-btn { background: var(--deep-yellow-grad); color: #1A1A1A; border: none; border-radius: 100px; padding: 13px 26px; font-size: 14px; font-weight: 800; cursor: pointer; min-width: 120px; transition: all 0.15s ease; font-family: 'Outfit', inherit; box-shadow: 0 4px 0 #C77A00, 0 8px 18px rgba(255,152,0,0.35); }
     .custom-alert-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #C77A00, 0 12px 24px rgba(255,152,0,0.5); }
     .custom-alert-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #C77A00, 0 4px 10px rgba(255,152,0,0.4); }
     .custom-alert-btn.secondary { background: #FFFBF2; color: #1A1A1A; margin-left: 10px; border: 2px solid #FDEEC8; box-shadow: 0 3px 0 #E0A000; }
@@ -693,258 +691,6 @@
     .scroll-reveal.is-visible {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    /* ========================================= */
-    /* Update 7: PROFILE MODAL CLEAN UI */
-    /* ========================================= */
-    #profileOverlay .modal.profile-modal { max-width: 420px; }
-    #profileOverlay .modal-body { padding: 26px 22px; }
-    #profileOverlay .checkout-header { margin-bottom: 20px; text-align: center; }
-
-    .profile-hint-box {
-      background: linear-gradient(135deg, #FFF9E6 0%, #FFF3D0 100%);
-      border: 2px solid #FFE082;
-      border-left: 4px solid #FFC107;
-      border-radius: 14px;
-      padding: 12px 16px;
-      font-size: 12px;
-      color: #6B5A3E;
-      line-height: 1.6;
-      margin-bottom: 18px;
-      font-weight: 500;
-      box-shadow: 0 3px 0 #E0A000, 0 6px 14px rgba(199,122,0,0.08);
-    }
-    .profile-hint-box strong { color: #8B5A00; font-weight: 800; }
-
-    .profile-saved-card {
-      background: linear-gradient(160deg, #FFFFFF 0%, #FFFBF2 100%);
-      border: 2px solid #FDEEC8;
-      border-radius: 22px;
-      padding: 22px 20px 18px;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 6px 0 #E0A000, 0 12px 24px rgba(199,122,0,0.12);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-    .profile-saved-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%);
-      color: #1A1A1A;
-      font-size: 10px;
-      font-weight: 900;
-      padding: 6px 14px;
-      border-radius: 100px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      box-shadow: 0 3px 0 #076B00, 0 5px 12px rgba(12,255,0,0.25);
-      font-family: 'Outfit', inherit;
-    }
-    .profile-saved-avatar {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 34px;
-      box-shadow: 0 5px 0 #C77A00, 0 10px 20px rgba(255,152,0,0.3), inset 0 2px 4px rgba(255,255,255,0.4);
-      margin: 4px 0;
-    }
-    .profile-saved-name {
-      font-size: 20px;
-      font-weight: 800;
-      color: #1A1A1A;
-      letter-spacing: -0.3px;
-      font-family: 'Outfit', inherit;
-    }
-    .profile-saved-info { width: 100%; margin-top: 4px; }
-    .profile-info-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: #FFF8E7;
-      border: 2px solid #FDEEC8;
-      border-radius: 14px;
-      padding: 12px 16px;
-      font-size: 15px;
-      font-weight: 700;
-      color: #1A1A1A;
-    }
-    .profile-info-row .info-icon { font-size: 16px; }
-    .profile-info-row .info-text {
-      letter-spacing: 1px;
-      font-family: 'Outfit', monospace;
-      font-weight: 800;
-    }
-
-    .profile-edit-btn {
-      width: 100%;
-      background: linear-gradient(180deg, #FFC107 0%, #FF9800 100%);
-      color: #1A1A1A;
-      border: none;
-      border-radius: 100px;
-      padding: 13px 20px;
-      font-size: 13.5px;
-      font-weight: 800;
-      cursor: pointer;
-      font-family: 'Outfit', inherit;
-      margin-top: 6px;
-      transition: all 0.15s ease;
-      box-shadow: 0 4px 0 #C77A00, 0 8px 16px rgba(255,152,0,0.3);
-      letter-spacing: 0.3px;
-    }
-    .profile-edit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 0 #C77A00, 0 12px 22px rgba(255,152,0,0.4);
-    }
-    .profile-edit-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 1px 0 #C77A00, 0 4px 10px rgba(255,152,0,0.3);
-    }
-
-    .profile-clear-btn {
-      width: 100%;
-      background: transparent;
-      color: #DC2626;
-      border: 2px solid #FECACA;
-      border-radius: 100px;
-      padding: 11px 20px;
-      font-size: 12.5px;
-      font-weight: 700;
-      cursor: pointer;
-      font-family: 'Poppins', inherit;
-      margin-top: 4px;
-      transition: all 0.15s ease;
-    }
-    .profile-clear-btn:hover {
-      background: #FEF2F2;
-      border-color: #DC2626;
-      color: #B91C1C;
-    }
-
-    #profileOverlay .review-form-group { margin-bottom: 14px; }
-    #profileOverlay .review-form-group label { font-size: 10px; letter-spacing: 1.2px; margin-bottom: 6px; }
-    #profileOverlay .review-form-group input { padding: 13px 16px; font-size: 13.5px; border-radius: 14px; }
-    #profileOverlay .order-btn-premium { margin-top: 8px; }
-
-    /* ========================================= */
-    /* Update 8: PROFILE SAVED GAME-STYLE */
-    /* ========================================= */
-    .game-style-profile .profile-saved-card {
-      background: linear-gradient(160deg, #0a0e1a 0%, #121826 50%, #0a0e1a 100%);
-      border: 2px solid #00E5FF;
-      box-shadow: 
-        0 0 0 1px rgba(0, 229, 255, 0.3),
-        0 0 20px rgba(0, 229, 255, 0.4),
-        0 0 40px rgba(0, 229, 255, 0.2),
-        0 8px 0 #007A8A,
-        0 15px 35px rgba(0,0,0,0.6);
-      animation: gameStyleGlow 2.5s ease-in-out infinite;
-      position: relative;
-      overflow: hidden;
-    }
-    .game-style-profile .profile-saved-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(circle at 20% 10%, rgba(0, 229, 255, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 90%, rgba(255, 107, 0, 0.12) 0%, transparent 40%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .game-style-profile .profile-saved-card > * { position: relative; z-index: 1; }
-    @keyframes gameStyleGlow {
-      0%, 100% {
-        box-shadow: 
-          0 0 0 1px rgba(0, 229, 255, 0.3),
-          0 0 20px rgba(0, 229, 255, 0.4),
-          0 0 40px rgba(0, 229, 255, 0.2),
-          0 8px 0 #007A8A,
-          0 15px 35px rgba(0,0,0,0.6);
-      }
-      50% {
-        box-shadow: 
-          0 0 0 1px rgba(0, 229, 255, 0.5),
-          0 0 28px rgba(0, 229, 255, 0.6),
-          0 0 55px rgba(0, 229, 255, 0.35),
-          0 8px 0 #007A8A,
-          0 15px 35px rgba(0,0,0,0.6);
-      }
-    }
-    .game-style-profile .profile-saved-badge {
-      background: linear-gradient(180deg, #FFD700 0%, #FFA500 100%);
-      color: #1A1A1A;
-      box-shadow: 0 3px 0 #B36A00, 0 0 20px rgba(255, 215, 0, 0.6), 0 5px 14px rgba(0,0,0,0.4);
-      text-shadow: 0 1px 0 rgba(255,255,255,0.4);
-      animation: badgePulse 2s ease-in-out infinite;
-    }
-    @keyframes badgePulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.04); }
-    }
-    .game-style-profile .profile-saved-avatar {
-      background: linear-gradient(180deg, #00E5FF 0%, #007A8A 100%);
-      box-shadow: 
-        0 5px 0 #004A55,
-        0 0 25px rgba(0, 229, 255, 0.7),
-        0 0 45px rgba(0, 229, 255, 0.4),
-        inset 0 2px 4px rgba(255,255,255,0.3);
-      animation: avatarFloat 3s ease-in-out infinite;
-    }
-    @keyframes avatarFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
-    .game-style-profile .profile-saved-name {
-      color: #FFFFFF;
-      text-shadow: 0 0 10px rgba(0, 229, 255, 0.8), 0 0 20px rgba(0, 229, 255, 0.4);
-      font-size: 22px;
-      letter-spacing: 0.5px;
-    }
-    .game-style-profile .profile-info-row {
-      background: linear-gradient(180deg, rgba(0, 229, 255, 0.08) 0%, rgba(0, 229, 255, 0.15) 100%);
-      border: 2px solid rgba(0, 229, 255, 0.5);
-      box-shadow: 
-        0 0 15px rgba(0, 229, 255, 0.3),
-        inset 0 0 15px rgba(0, 229, 255, 0.1);
-      color: #00E5FF;
-    }
-    .game-style-profile .profile-info-row .info-text {
-      color: #00E5FF;
-      text-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
-      font-family: 'Courier New', monospace;
-      letter-spacing: 2px;
-    }
-    .game-style-profile .profile-edit-btn {
-      background: linear-gradient(180deg, #00E5FF 0%, #007A8A 100%);
-      color: #0a0e1a;
-      box-shadow: 0 4px 0 #004A55, 0 0 20px rgba(0, 229, 255, 0.4), 0 8px 16px rgba(0,0,0,0.4);
-      font-weight: 900;
-      text-shadow: 0 1px 0 rgba(255,255,255,0.3);
-    }
-    .game-style-profile .profile-edit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 0 #004A55, 0 0 30px rgba(0, 229, 255, 0.6), 0 12px 22px rgba(0,0,0,0.5);
-    }
-    .game-style-profile .profile-clear-btn {
-      background: transparent;
-      border: 2px solid rgba(255, 107, 107, 0.5);
-      color: #FF6B6B;
-    }
-    .game-style-profile .profile-clear-btn:hover {
-      background: rgba(255, 107, 107, 0.1);
-      border-color: #FF6B6B;
-      color: #FF8A8A;
-      box-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
     }
   </style>
 </head>
@@ -964,10 +710,6 @@
         <button class="header-icon-btn music-btn" id="musicBtn" type="button" aria-label="Music">
           <svg class="music-on-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
           <svg class="music-off-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-        </button>
-        <button class="profile-btn" id="profileBtn" type="button">
-          <span class="profile-icon">👤</span>
-          <span class="profile-label-full" id="profileBtnLabel">Profile</span>
         </button>
       </div>
     </div>
@@ -1046,40 +788,6 @@
     </div>
     <div class="copyright">© 2026 Diamond Top-up. All rights reserved.</div>
   </footer>
-
-  <div class="modal-overlay" id="profileOverlay">
-    <div class="modal profile-modal">
-      <button class="modal-close" id="profileClose">&times;</button>
-      <div class="modal-body">
-        <div class="checkout-header">
-          <span class="checkout-eyebrow">YOUR PROFILE</span>
-          <h3 class="checkout-title" id="profileModalTitle">Save Your UID</h3>
-          <p class="checkout-subtitle" id="profileModalSubtitle">Save once, top-up faster next time</p>
-        </div>
-        <div id="profileSavedView" style="display:none;">
-          <div class="profile-saved-card">
-            <span class="profile-saved-badge">✅ Profile Saved</span>
-            <div class="profile-saved-avatar">🎮</div>
-            <div class="profile-saved-name" id="profileSavedName">—</div>
-            <div class="profile-saved-info">
-              <div class="profile-info-row" id="profileSavedUidRow"><span class="info-icon">🎮</span><span class="info-text" id="profileSavedUid">—</span></div>
-            </div>
-            <button type="button" class="profile-edit-btn" id="profileEditBtn">✏️ Edit UID</button>
-            <button type="button" class="profile-clear-btn" id="profileClearBtn2">Clear Saved UID</button>
-          </div>
-        </div>
-        <div id="profileFormView">
-          <div class="profile-hint-box"><strong>💡 Tip:</strong> Save your Free Fire UID here to auto-fill the order form when you top-up. Optional — you can also fill manually.</div>
-          <form id="profileForm">
-            <div class="review-form-group"><label>In-Game Name (Optional)</label><input type="text" id="profileName" placeholder="e.g. ProGamer99" maxlength="20" /></div>
-            <div class="review-form-group"><label>Free Fire UID</label><input type="text" id="profileUid" placeholder="e.g. 1234567890" required maxlength="15" inputmode="numeric" /></div>
-            <button type="submit" class="order-btn-premium"><span>💾</span> Save UID</button>
-            <button type="button" class="profile-clear-btn" id="profileClearBtn" style="display:none;">Clear Saved UID</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="modal-overlay" id="productOverlay">
     <div class="modal">
@@ -1513,66 +1221,7 @@
       img.onerror = function() { callback(dataURL); }; img.src = dataURL;
     }
     function formatReviewTime(review) { if (review.isUserSubmitted && review.submittedAt) return formatTimeAgo(review.submittedAt); return review.time || 'Just now'; }
-    var PROFILE_KEY = 'diamond_profile';
-    var profileData = { name: '', uid: '' };
-    function loadProfileFromStorage() { try { var raw = localStorage.getItem(PROFILE_KEY); if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') { profileData = { name: parsed.name || '', uid: parsed.uid || '' }; return true; } } } catch(e) {} return false; }
-    function saveProfileToStorage() { try { localStorage.setItem(PROFILE_KEY, JSON.stringify(profileData)); } catch(e) {} }
-    function hasProfile() { return !!(profileData.uid); }
-    function updateProfileButtonUI() {
-      var btn = document.getElementById('profileBtn'); var label = document.getElementById('profileBtnLabel'); if (!btn) return;
-      if (hasProfile()) { btn.classList.add('saved'); if (label) label.textContent = profileData.name ? profileData.name.trim().split(/\s+/)[0] : 'Saved'; }
-      else { btn.classList.remove('saved'); if (label) label.textContent = 'Profile'; }
-    }
-    function showProfileSavedView() {
-      document.getElementById('profileSavedView').style.display = 'block'; document.getElementById('profileFormView').style.display = 'none';
-      document.getElementById('profileModalTitle').textContent = 'Your Profile'; document.getElementById('profileModalSubtitle').textContent = 'Order faster with saved UID';
-      document.getElementById('profileSavedName').textContent = profileData.name || 'Free Fire Player';
-      var uidRow = document.getElementById('profileSavedUidRow'); if (profileData.uid) { uidRow.style.display = 'flex'; document.getElementById('profileSavedUid').textContent = profileData.uid; } else uidRow.style.display = 'none';
-      /* Update 8: Add game-style class */
-      document.getElementById('profileSavedView').classList.add('game-style-profile');
-    }
-    function showProfileFormView() {
-      document.getElementById('profileSavedView').style.display = 'none'; document.getElementById('profileFormView').style.display = 'block';
-      document.getElementById('profileModalTitle').textContent = 'Save Your UID'; document.getElementById('profileModalSubtitle').textContent = 'Save once, top-up faster next time';
-      document.getElementById('profileName').value = profileData.name || ''; document.getElementById('profileUid').value = profileData.uid || '';
-      document.getElementById('profileClearBtn').style.display = hasProfile() ? 'block' : 'none';
-      /* Update 8: Remove game-style class */
-      document.getElementById('profileSavedView').classList.remove('game-style-profile');
-    }
-    function openProfileModal() { var overlay = document.getElementById('profileOverlay'); if (hasProfile()) showProfileSavedView(); else showProfileFormView(); overlay.style.display = 'flex'; document.body.classList.add('modal-open'); }
-    function closeProfileModal() { document.getElementById('profileOverlay').style.display = 'none'; document.body.classList.remove('modal-open'); }
-    document.getElementById('profileBtn').addEventListener('click', openProfileModal);
-    document.getElementById('profileClose').addEventListener('click', closeProfileModal);
-    document.getElementById('profileOverlay').addEventListener('click', function(e) { if (e.target === this) closeProfileModal(); });
-    document.getElementById('profileEditBtn').addEventListener('click', showProfileFormView);
-    document.getElementById('profileClearBtn2').addEventListener('click', function() { document.getElementById('profileClearBtn').click(); });
-    document.getElementById('profileForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var name = document.getElementById('profileName').value.trim(); var uid = document.getElementById('profileUid').value.trim();
-      if (!isValidUID(uid)) { alert('Please enter a valid Free Fire UID (8-12 digits).', {title: 'Invalid UID', icon: '🎮'}); return; }
-      profileData.name = name; profileData.uid = uid;
-      saveProfileToStorage(); updateProfileButtonUI(); showProfileSavedView(); showToast('Profile saved!', 'success');
-    });
-    document.getElementById('profileClearBtn').addEventListener('click', function() {
-      var overlay = document.createElement('div'); overlay.className = 'custom-alert-overlay';
-      var box = document.createElement('div'); box.className = 'custom-alert-box';
-      box.innerHTML = '<div class="custom-alert-icon">🗑️</div><div class="custom-alert-title">Clear Profile?</div><div class="custom-alert-message">Your saved UID will be removed.</div><button class="custom-alert-btn secondary" id="clearCancel">Cancel</button><button class="custom-alert-btn" id="clearConfirm">Clear</button>';
-      overlay.appendChild(box); document.body.appendChild(overlay);
-      document.getElementById('clearCancel').addEventListener('click', function() { overlay.remove(); });
-      document.getElementById('clearConfirm').addEventListener('click', function() {
-        profileData = { name: '', uid: '' };
-        try { localStorage.removeItem(PROFILE_KEY); } catch(e) {}
-        document.getElementById('profileName').value = ''; document.getElementById('profileUid').value = '';
-        document.getElementById('profileClearBtn').style.display = 'none'; updateProfileButtonUI(); overlay.remove();
-        document.getElementById('profileSavedView').style.display = 'none'; document.getElementById('profileFormView').style.display = 'block';
-        document.getElementById('profileModalTitle').textContent = 'Save Your UID'; document.getElementById('profileModalSubtitle').textContent = 'Save once, top-up faster next time';
-        /* Update 8: Remove game-style class on clear */
-        document.getElementById('profileSavedView').classList.remove('game-style-profile');
-        showToast('Profile cleared', 'info');
-      });
-      overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
-    });
-    document.getElementById('profileUid').addEventListener('input', function() { this.value = this.value.replace(/\D/g, ''); });
+    
     function isValidUID(uid) { var digits = String(uid || '').replace(/\D/g, ''); return /^\d{8,12}$/.test(digits); }
     function getInitialsAvatarSVG(name, isYouTuber) {
       var initials = String(name || 'U').split(' ').map(function(n){return (n[0]||'');}).join('').substring(0,2).toUpperCase();
@@ -1897,7 +1546,7 @@
       var priceNum = parseFloat(currentDesign.price.replace(/[^0-9.]/g, '')) || 0; var total = Math.round(priceNum * currentQty);
       var summaryTotalEl = document.getElementById('summaryTotal'); if (summaryTotalEl) summaryTotalEl.textContent = '₹' + total;
       var uidInput = document.getElementById('orderUid');
-      if (hasProfile()) { uidInput.value = profileData.uid || ''; } else { uidInput.value = ''; }
+      uidInput.value = '';
       validateOrderUidState();
       document.getElementById('productOverlay').style.display = 'none'; document.getElementById('orderOverlay').style.display = 'flex'; document.body.classList.add('modal-open'); startReservedTimer();
       applyImageBlur();
@@ -2271,7 +1920,7 @@
     function resetIdleTimer() { clearTimeout(idleTimer); idleTimer = setTimeout(function() { showToast('Wait! 🔥 Diamonds are selling fast today. Don\'t miss out!', 'info'); }, 120000); }
     document.addEventListener('mousemove', resetIdleTimer); document.addEventListener('keydown', resetIdleTimer); document.addEventListener('scroll', resetIdleTimer); resetIdleTimer();
     document.addEventListener('mouseleave', function(e) { if (e.clientY < 0) { showToast('Wait! 🔥 Don\'t miss out on our diamond deals!', 'error'); } });
-    loadProfileFromStorage(); updateProfileButtonUI();
+    
     fetchAvatarsFromGitHub(function() {
       preloadAllAvatars(); initViewerCounts();
       var initMinute = Math.floor((Date.now() - GLOBAL_STREAM_REFERENCE_TIME) / 60000);
