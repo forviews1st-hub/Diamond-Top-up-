@@ -22,7 +22,7 @@
     body::before { content: ''; position: fixed; inset: 0; background: url('images/bg.png') no-repeat center center; background-size: cover; z-index: -2; }
     body::after { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,0.35); pointer-events: none; z-index: -1; }
 
-    h1, h2, h3, .site-brand-name, .hero-headline, .stat-number, .modal-price, .summary-value-total, .payment-total-amount, .more-stats-number, .trust-feature-card .tf-label, .gc-price-chip, .gc-name, .review-name, .modal-title, .checkout-title, .pulse-subtitle, .gc-buy-btn, .hero-cta-btn, .modal-buy-btn, .order-btn-premium, .review-submit-btn, .success-btn, .custom-alert-btn, .load-more-reviews-btn, .qty-row span, .bonus-tag, .trusted-by-text, .game-card-title { font-family: 'Outfit', 'Poppins', sans-serif; font-weight: 700; }
+    h1, h2, h3, .site-brand-name, .hero-headline, .stat-number, .modal-price, .summary-value-total, .payment-total-amount, .more-stats-number, .trust-feature-card .tf-label, .gc-price-chip, .gc-name, .review-name, .modal-title, .checkout-title, .pulse-subtitle, .gc-buy-btn, .hero-cta-btn, .modal-buy-btn, .order-btn-premium, .review-submit-btn, .success-btn, .custom-alert-btn, .load-more-reviews-btn, .qty-row span, .bonus-tag, .trusted-by-text { font-family: 'Outfit', 'Poppins', sans-serif; font-weight: 700; }
 
     .img-blur { filter: blur(12px); transition: filter 0.4s ease; }
     img:not(.img-blur) { filter: blur(0); transition: filter 0.4s ease; }
@@ -79,13 +79,13 @@
     .hero-trust .trust-emoji { font-size: 14px; }
     .hero-trust .trust-dot { color: #FFC107; font-size: 16px; line-height: 1; }
     
-    /* TRUSTED BY CARD — pushed down more */
+    /* TRUSTED BY CARD */
     .trusted-by-card {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      margin-top: 110px;
+      margin-top: 60px;
       padding: 14px 14px 14px 24px;
       background: var(--deep-yellow-grad);
       border-radius: 28px;
@@ -105,7 +105,8 @@
     .trusted-by-text { font-size: 14px; font-weight: 800; color: #1A1A1A; letter-spacing: 0.2px; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
     .trusted-by-text strong { color: #1A1A1A; font-weight: 900; }
     
-    .hero-bottom-card { margin-top: 80px; padding: 20px 24px; background: var(--deep-yellow-grad); border-radius: 28px; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: inline-block; max-width: 280px; margin-right: auto; }
+    /* Buy Diamonds card now sits close below trusted-by card */
+    .hero-bottom-card { margin-top: 12px; padding: 20px 24px; background: var(--deep-yellow-grad); border-radius: 28px; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: inline-block; max-width: 280px; margin-right: auto; }
     .hero-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); color: #FFFFFF; border: none; padding: 15px 30px; border-radius: 100px; font-size: 15px; font-weight: 800; letter-spacing: 0.4px; cursor: pointer; font-family: 'Outfit', inherit; box-shadow: 0 5px 0 #800000, 0 10px 24px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); transition: all 0.15s ease; }
     .hero-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #800000, 0 14px 28px rgba(255,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2); }
     .hero-cta-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #800000, 0 5px 12px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
@@ -133,7 +134,6 @@
     .trust-feature-card .tf-label { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.1; color: #1A1A1A; }
     .trust-feature-card .tf-value { font-size: 9px; color: #4A4A4A; letter-spacing: 0.7px; font-weight: 700; text-transform: uppercase; line-height: 1.3; }
     @media (min-width: 500px) { .trust-feature-card .tf-label { font-size: 20px; } }
-    /* Cards 1 & 3 = GREEN (restored) */
     .trust-feature-card:nth-child(1) { --tf-shadow-dark: #076B00; }
     .trust-feature-card:nth-child(1) .tf-icon-wrap { background: var(--green-grad); }
     .trust-feature-card:nth-child(2) { --tf-shadow-dark: #B36A00; }
@@ -141,7 +141,7 @@
     .trust-feature-card:nth-child(3) .tf-icon-wrap { background: var(--green-grad); }
     .trust-feature-card:nth-child(4) { --tf-shadow-dark: #B36A00; }
 
-    /* RECENT TOP-UPS (LIVE) */
+    /* RECENT TOP-UPS */
     .pulse-feed { margin: 0 0 20px; padding: 18px 18px; background: linear-gradient(160deg, #FF0000 0%, #CC0000 100%); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 #800000, 0 15px 35px rgba(0,0,0,0.5); position: relative; overflow: hidden; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
     .pulse-feed::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #FFFFFF, transparent); opacity: 0.6; animation: liveTopLine 3s ease-in-out infinite; }
     @keyframes liveTopLine { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
@@ -180,280 +180,63 @@
     @media (max-width:600px) { .heading-row h1 { font-size: 22px; } }
 
     /* ========================================= */
-    /* PRODUCT GRID — WHITE 3D CARD (REFERENCE STYLE) */
+    /* PRODUCT GRID — ORIGINAL WHITE CLEAN STYLE */
     /* ========================================= */
     .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 36px; scroll-margin-top: 90px; }
-    @media (min-width: 600px) { .product-grid { gap: 14px; } }
-    @media (min-width: 1000px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+    @media (min-width: 600px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+    @media (min-width: 1000px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
 
-    .grid-card {
-      position: relative;
-      border-radius: 22px;
-      padding: 8px;
-      cursor: pointer;
-      background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
-      box-shadow:
-        0 1px 0 rgba(255,255,255,0.9) inset,
-        0 -1px 0 rgba(0,0,0,0.04) inset,
-        0 6px 0 #D8DCE3,
-        0 10px 20px rgba(0,0,0,0.18),
-        0 20px 40px rgba(0,0,0,0.12);
-      border: 1px solid rgba(255,255,255,0.9);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
-      overflow: hidden;
-    }
-    .grid-card:hover {
-      transform: translateY(-4px);
-      box-shadow:
-        0 1px 0 rgba(255,255,255,0.9) inset,
-        0 -1px 0 rgba(0,0,0,0.04) inset,
-        0 10px 0 #D8DCE3,
-        0 16px 28px rgba(0,0,0,0.22),
-        0 28px 50px rgba(0,0,0,0.15);
-    }
-    .grid-card:active {
-      transform: translateY(1px);
-      box-shadow:
-        0 1px 0 rgba(255,255,255,0.9) inset,
-        0 -1px 0 rgba(0,0,0,0.04) inset,
-        0 3px 0 #D8DCE3,
-        0 6px 14px rgba(0,0,0,0.18);
-    }
+    .grid-card { border: 1px solid #E5E7EB; border-radius: 20px; padding: 10px; display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: all 0.2s ease; position: relative; overflow: hidden; background: #FFFFFF !important; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+    .grid-card:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.12); }
+    .grid-card:active { transform: translateY(0); box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    @media (min-width: 600px) { .grid-card { border-radius: 24px; padding: 14px; gap: 8px; } }
 
-    .game-card-inner {
-      position: relative;
-      border-radius: 16px;
-      padding: 6px 2px 4px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      z-index: 1;
-    }
+    .diamond-showcase { position: relative; aspect-ratio: 1.4 / 1; border-radius: 14px; background: #F9FAFB; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); padding: 8px; transition: transform 0.3s ease; }
+    .grid-card:hover .diamond-showcase { transform: scale(1.02); }
+    .diamond-light { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(255, 193, 7, 0.55) 0%, transparent 70%); z-index: 1; pointer-events: none; }
+    .diamond-glow { position: absolute; inset: 0; opacity: 0.35; filter: blur(30px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; z-index: 0; }
+    @keyframes glowPulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.5; } }
+    .chest-image { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; z-index: 3; position: relative; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); animation: chestFloat 3.5s ease-in-out infinite; }
+    @keyframes chestFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-3px) scale(1.02); } }
+    @media (min-width: 600px) { .diamond-showcase { aspect-ratio: 1.45 / 1; padding: 10px; border-radius: 16px; } .chest-image { max-width: 92%; max-height: 92%; } }
+    .diamond-sparkle { position: absolute; color: #FF9800; opacity: 0; z-index: 4; animation: sparkleAnim 3s ease-in-out infinite; pointer-events: none; text-shadow: 0 0 6px rgba(255,255,255,0.9); }
+    .diamond-sparkle.sparkle-1 { top: 18%; left: 14%; font-size: 10px; animation-delay: 0s; }
+    .diamond-sparkle.sparkle-2 { top: 28%; right: 16%; font-size: 8px; animation-delay: 1s; }
+    .diamond-sparkle.sparkle-3 { bottom: 22%; left: 20%; font-size: 9px; animation-delay: 2s; }
+    .diamond-sparkle.sparkle-4 { bottom: 30%; right: 22%; font-size: 6px; animation-delay: 1.5s; }
+    @keyframes sparkleAnim { 0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); } 50% { opacity: 1; transform: scale(1.2) rotate(180deg); } }
 
-    /* BONUS TAG */
-    .bonus-tag {
-      position: absolute;
-      top: 6px;
-      right: 6px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      padding: 4px 8px 3px;
-      border-radius: 8px;
-      background: linear-gradient(180deg, #00E676 0%, #00B248 100%);
-      color: #FFFFFF;
-      font-family: 'Outfit', inherit;
-      z-index: 5;
-      line-height: 1;
-      text-align: center;
-      box-shadow:
-        0 2px 0 #006B2E,
-        0 4px 10px rgba(0,200,83,0.7),
-        inset 0 1px 0 rgba(255,255,255,0.4);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.35);
-    }
-    .bonus-tag .bt-line1 {
-      display: inline-flex;
-      align-items: center;
-      gap: 2px;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.2px;
-    }
-    .bonus-tag .bt-line1 .bt-diamond { font-size: 10px; }
-    .bonus-tag .bt-line2 {
-      display: block;
-      font-size: 7.5px;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      margin-top: 1px;
-      opacity: 0.95;
-    }
-    @media (min-width: 600px) {
-      .bonus-tag { top: 8px; right: 8px; padding: 5px 11px 4px; border-radius: 9px; }
-      .bonus-tag .bt-line1 { font-size: 12.5px; gap: 3px; }
-      .bonus-tag .bt-line1 .bt-diamond { font-size: 11px; }
-      .bonus-tag .bt-line2 { font-size: 8.5px; }
-    }
+    .bonus-tag { position: absolute; top: 8px; right: 8px; display: inline-flex; align-items: center; gap: 3px; padding: 4px 10px; border-radius: 100px; background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%); color: #1A1A1A; font-size: 9.5px; font-weight: 800; letter-spacing: 0.3px; box-shadow: 0 2px 4px rgba(12,255,0,0.4); z-index: 5; font-family: 'Outfit', inherit; text-shadow: 0 1px 2px rgba(255,255,255,0.3); }
+    @media (min-width: 600px) { .bonus-tag { top: 10px; right: 10px; padding: 5px 12px; font-size: 10.5px; } }
 
-    /* CHEST AREA */
-    .chest-area {
-      position: relative;
-      aspect-ratio: 1.12 / 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2px;
-      overflow: hidden;
-    }
-    .chest-glow {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 125%;
-      height: 125%;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(circle at 50% 55%, rgba(0,190,255,0.85) 0%, rgba(0,120,220,0.45) 28%, rgba(0,80,180,0.15) 50%, transparent 70%);
-      animation: chestGlowPulse 3s ease-in-out infinite;
-      pointer-events: none;
-      z-index: 1;
-    }
-    @keyframes chestGlowPulse {
-      0%, 100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
-      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-    }
-    .chest-image {
-      max-width: 96%;
-      max-height: 96%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      z-index: 3;
-      position: relative;
-      filter: drop-shadow(0 8px 14px rgba(0,0,0,0.55)) drop-shadow(0 0 16px rgba(0,200,255,0.55));
-      animation: chestFloat 3.5s ease-in-out infinite;
-    }
-    @keyframes chestFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-5px) scale(1.03); } }
-    @media (min-width: 600px) {
-      .chest-area { aspect-ratio: 1.15 / 1; padding: 3px; }
-      .chest-image { max-width: 98%; max-height: 98%; }
-    }
+    .gc-info { display: flex; flex-direction: column; gap: 3px; }
+    .gc-name { font-size: 13px; font-weight: 800; color: #1A1A1A; letter-spacing: -0.2px; line-height: 1.3; text-shadow: none; }
+    @media (min-width: 600px) { .gc-info { gap: 5px; } .gc-name { font-size: 16px; } }
 
-    /* TITLE — number black, text dark grey for white card */
-    .game-card-title {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 4px;
-      padding: 1px 0;
-      font-family: 'Outfit', sans-serif;
-    }
-    .game-card-title .gc-qty {
-      color: #1A1A1A;
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      text-shadow: 0 1px 2px rgba(255,255,255,0.8);
-      font-family: 'Outfit', inherit;
-      line-height: 1;
-    }
-    .game-card-title .gc-label {
-      color: #4B5563;
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: -0.2px;
-      text-shadow: 0 1px 2px rgba(255,255,255,0.8);
-      font-family: 'Outfit', inherit;
-      line-height: 1;
-    }
-    @media (min-width: 600px) {
-      .game-card-title { gap: 5px; padding: 2px 0; }
-      .game-card-title .gc-qty { font-size: 24px; }
-      .game-card-title .gc-label { font-size: 18px; }
-    }
-
-    /* PILLS ROW */
-    .game-pills-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-      padding: 0 1px;
-    }
-
-    /* VIEWERS PILL — RED GRADIENT (like LIVE top-up) */
-    .live-viewers-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 5px 11px;
-      border-radius: 100px;
-      background: linear-gradient(180deg, #FF3D3D 0%, #D80000 100%);
-      border: none;
-      font-size: 11.5px;
-      font-weight: 900;
-      letter-spacing: 0.2px;
-      color: #FFFFFF;
-      box-shadow: 0 3px 0 #7A0000, inset 0 1px 0 rgba(255,255,255,0.35), 0 5px 10px rgba(255,0,0,0.35);
-      pointer-events: none;
-      user-select: none;
-      white-space: nowrap;
-      font-family: 'Outfit', inherit;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.35);
-    }
-    .live-viewers-badge .eye { font-size: 11.5px; line-height: 1; filter: drop-shadow(0 1px 1px rgba(0,0,0,0.25)); }
+    .card-bottom-row { display: flex; justify-content: space-between; align-items: center; gap: 6px; margin-top: 2px; }
+    .live-viewers-badge { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 100px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); border: none; font-size: 9.5px; font-weight: 700; letter-spacing: 0.2px; color: #FFFFFF; box-shadow: 0 3px 0 #800000, inset 0 1px 0 rgba(255,255,255,0.2); pointer-events: none; user-select: none; white-space: nowrap; }
+    .live-viewers-badge .eye { font-size: 10px; line-height: 1; }
+    .live-viewers-badge .live-pulse-dot { width: 5px; height: 5px; border-radius: 50%; background: #FFFFFF; animation: liveDotBlink 1.4s ease-in-out infinite; }
     .live-viewers-badge .vcount { color: #FFFFFF; font-weight: 900; font-variant-numeric: tabular-nums; transition: transform 0.25s ease; }
     .live-viewers-badge .vcount.bump { transform: scale(1.18); }
-    @media (min-width: 600px) { .live-viewers-badge { font-size: 12.5px; padding: 6px 13px; gap: 5px; } .live-viewers-badge .eye { font-size: 12.5px; } }
+    @media (min-width: 600px) { .live-viewers-badge { font-size: 10.5px; padding: 6px 12px; gap: 5px; } .live-viewers-badge .eye { font-size: 11px; } .live-viewers-badge .live-pulse-dot { width: 6px; height: 6px; } }
 
-    /* PRICE PILL — GREEN */
-    .gc-price-chip {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 5px 12px;
-      border-radius: 100px;
-      background: linear-gradient(180deg, #00E676 0%, #00B248 100%);
-      color: #FFFFFF;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: -0.3px;
-      box-shadow: 0 3px 0 #006B2E, inset 0 1px 0 rgba(255,255,255,0.4), 0 5px 10px rgba(0,200,83,0.4);
-      font-family: 'Outfit', inherit;
-      line-height: 1;
-      white-space: nowrap;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.35);
-    }
-    @media (min-width: 600px) { .gc-price-chip { padding: 7px 16px; font-size: 15px; } }
+    .gc-price-chip { display: inline-flex; align-items: center; justify-content: center; padding: 5px 12px; border-radius: 100px; background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%); color: #1A1A1A; font-size: 13px; font-weight: 800; letter-spacing: -0.3px; box-shadow: 0 3px 0 #076B00, inset 0 1px 0 rgba(255,255,255,0.2); font-family: 'Outfit', inherit; line-height: 1; white-space: nowrap; }
+    @media (min-width: 600px) { .gc-price-chip { padding: 7px 16px; font-size: 16px; } }
 
-    /* BUY BUTTON — GREEN */
-    .gc-actions { display: flex; margin-top: 2px; }
-    .gc-buy-btn {
-      flex: 1;
-      background: linear-gradient(180deg, #00E676 0%, #00B248 100%);
-      color: #FFFFFF;
-      border: none;
-      border-radius: 100px;
-      padding: 10px 12px;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 0.4px;
-      cursor: pointer;
-      font-family: 'Outfit', inherit;
-      transition: all 0.15s ease;
-      box-shadow: 0 4px 0 #006B2E, inset 0 1px 0 rgba(255,255,255,0.4), 0 6px 12px rgba(0,200,83,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.35);
-    }
-    .gc-buy-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #006B2E, inset 0 1px 0 rgba(255,255,255,0.4), 0 10px 18px rgba(0,200,83,0.55); }
-    .gc-buy-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #006B2E, inset 0 1px 0 rgba(255,255,255,0.3); }
-    .gc-buy-btn .cart-icon { font-size: 14px; line-height: 1; }
-    @media (min-width: 600px) { .gc-actions { margin-top: 3px; } .gc-buy-btn { padding: 12px 14px; font-size: 14.5px; gap: 7px; } .gc-buy-btn .cart-icon { font-size: 15px; } }
+    .gc-actions { display: flex; margin-top: 4px; }
+    .gc-buy-btn { flex: 1; background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%); color: #1A1A1A; border: none; border-radius: 100px; padding: 10px; font-size: 12.5px; font-weight: 800; letter-spacing: 0.3px; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 3px 0 #076B00, inset 0 1px 0 rgba(255,255,255,0.3); position: relative; overflow: hidden; }
+    .gc-buy-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 0 #076B00, inset 0 1px 0 rgba(255,255,255,0.3); }
+    .gc-buy-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 #076B00, inset 0 1px 0 rgba(255,255,255,0.3); }
+    @media (min-width: 600px) { .gc-actions { margin-top: 6px; } .gc-buy-btn { padding: 12px; font-size: 14px; } }
 
-    /* HIDE legacy elements */
-    .countdown-strip, .gc-material, .gc-tagline, .gc-meta, .gc-price, .diamond-light, .diamond-glow, .diamond-sparkle, .gc-info, .gc-name, .chest-glow-wrap { display: none !important; }
-    .diamond-showcase { display: none !important; }
+    .countdown-strip, .gc-material, .gc-tagline, .gc-meta, .gc-price { display: none !important; }
 
-    /* MODAL / MINI still use diamond-showcase markup */
-    .diamond-showcase.modal-diamond { display: flex !important; position: relative; aspect-ratio: 1.2 / 1; padding: 20px; border-radius: 22px; background: linear-gradient(160deg, #FFFFFF 0%, #FFF3D0 100%); align-items: center; justify-content: center; overflow: hidden; }
-    .diamond-showcase.modal-diamond .chest-image { max-width: 92%; max-height: 92%; display: block; }
-    .diamond-showcase.mini-diamond { display: flex !important; position: relative; aspect-ratio: 1.4 / 1; padding: 10px; border-radius: 18px; background: linear-gradient(160deg, #FFFFFF 0%, #FFF3D0 100%); align-items: center; justify-content: center; overflow: hidden; }
-    .diamond-showcase.mini-diamond .chest-image { max-width: 82%; max-height: 82%; display: block; }
+    .diamond-showcase.modal-diamond { aspect-ratio: 1.2 / 1; padding: 20px; border-radius: 22px; background: linear-gradient(160deg, #FFFFFF 0%, #FFF3D0 100%); }
+    .diamond-showcase.modal-diamond .chest-image { max-width: 92%; max-height: 92%; }
+    .diamond-showcase.mini-diamond { aspect-ratio: 1.4 / 1; padding: 10px; border-radius: 18px; background: linear-gradient(160deg, #FFFFFF 0%, #FFF3D0 100%); }
+    .diamond-showcase.mini-diamond .chest-image { max-width: 82%; max-height: 82%; }
     .diamond-showcase.mini-diamond .diamond-sparkle { display: none; }
-    .diamond-showcase .diamond-light { display: block !important; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(255, 193, 7, 0.55) 0%, transparent 70%); z-index: 1; pointer-events: none; }
-    .diamond-showcase .diamond-glow { display: block !important; position: absolute; inset: 0; opacity: 0.35; filter: blur(30px); pointer-events: none; animation: glowPulse 3s ease-in-out infinite; z-index: 0; }
-    @keyframes glowPulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.5; } }
-    .diamond-showcase .diamond-sparkle { display: block !important; position: absolute; color: #FF9800; opacity: 0; z-index: 4; animation: sparkleAnim 3s ease-in-out infinite; pointer-events: none; text-shadow: 0 0 6px rgba(255,255,255,0.9); }
-    .diamond-showcase .diamond-sparkle.sparkle-1 { top: 18%; left: 14%; font-size: 10px; animation-delay: 0s; }
-    .diamond-showcase .diamond-sparkle.sparkle-2 { top: 28%; right: 16%; font-size: 8px; animation-delay: 1s; }
-    .diamond-showcase .diamond-sparkle.sparkle-3 { bottom: 22%; left: 20%; font-size: 9px; animation-delay: 2s; }
-    .diamond-showcase .diamond-sparkle.sparkle-4 { bottom: 30%; right: 22%; font-size: 6px; animation-delay: 1.5s; }
-    @keyframes sparkleAnim { 0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); } 50% { opacity: 1; transform: scale(1.2) rotate(180deg); } }
 
     /* REVIEWS */
     .reviews-section { margin-bottom: 36px; scroll-margin-top: 90px; padding: 0 2px; }
@@ -475,8 +258,9 @@
     .review-card.youtuber-card:hover { box-shadow: 0 10px 0 #0A7BC7, 0 20px 35px rgba(29,155,240,0.25); }
     .review-card.youtuber-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #1D9BF0, #0A7BC7, #1D9BF0); border-radius: 22px 22px 0 0; }
     .review-header { display: flex; align-items: center; gap: 10px; }
-    .review-avatar { width: 46px; height: 46px; border-radius: 16px; border: none; overflow: hidden; flex-shrink: 0; background: #FDEEC8; box-shadow: 0 3px 10px rgba(0,0,0,0.08); position: relative; }
-    .review-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* ROUND AVATAR */
+    .review-avatar { width: 46px; height: 46px; border-radius: 50%; border: none; overflow: hidden; flex-shrink: 0; background: #FDEEC8; box-shadow: 0 3px 10px rgba(0,0,0,0.08); position: relative; }
+    .review-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
     .review-card.youtuber-card .review-avatar { box-shadow: 0 3px 12px rgba(29,155,240,0.3); }
     .review-info { display: flex; flex-direction: column; flex: 1; min-width: 0; }
     .review-name-row { display: inline-flex; align-items: center; gap: 5px; flex-wrap: wrap; }
@@ -537,8 +321,9 @@
     .live-notif.dismissed { animation: none; transition: transform 0.3s ease, opacity 0.3s ease; transform: translateX(120%) !important; opacity: 0 !important; }
     .live-notif .notif-card-badge { display: flex; align-items: center; justify-content: center; gap: 5px; background: var(--deep-yellow-grad); color: #1A1A1A; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; padding: 8px 12px; text-transform: uppercase; border: none !important; }
     .live-notif .notif-row { display: flex; align-items: flex-start; gap: 10px; padding: 11px 13px; border: none !important; }
-    .live-notif .notif-avatar { width: 38px; height: 38px; border-radius: 12px; overflow: hidden; flex-shrink: 0; border: none; box-shadow: 0 3px 8px rgba(0,0,0,0.1); background: #FDEEC8; margin-top: 2px; }
-    .live-notif .notif-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* ROUND NOTIF AVATAR */
+    .live-notif .notif-avatar { width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: none; box-shadow: 0 3px 8px rgba(0,0,0,0.1); background: #FDEEC8; margin-top: 2px; }
+    .live-notif .notif-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
     .live-notif .notif-content { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
     .live-notif .notif-header { font-size: 12.5px; color: #1A1A1A; font-weight: 800; }
     .live-notif .notif-header .notif-city { font-size: 10.5px; color: #8B7D65; font-weight: 500; }
@@ -554,6 +339,8 @@
 
     .review-notif { display: flex; flex-direction: column; gap: 0; background: #FFFFFF; border: none !important; border-radius: 20px; box-shadow: 0 10px 28px rgba(29,155,240,0.2), 0 4px 0 rgba(242,226,192,0.6); animation: notifIn 0.4s ease, notifOut 0.4s ease 10.4s forwards; pointer-events: auto; overflow: hidden; touch-action: pan-y; will-change: transform, opacity; }
     .review-notif .notif-card-badge { background: linear-gradient(180deg, #1D9BF0 0%, #0A7BC7 100%); color: #fff; }
+    .review-notif .notif-avatar { border-radius: 50%; }
+    .review-notif .notif-avatar img { border-radius: 50%; }
 
     .notif-close-btn { position: absolute; top: 8px; right: 8px; width: 22px; height: 22px; border-radius: 50%; background: transparent !important; border: none !important; outline: none !important; box-shadow: none !important; color: #FFFFFF !important; font-size: 16px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1; padding: 0; z-index: 10; opacity: 0.85; transition: opacity 0.2s; text-shadow: 0 1px 2px rgba(0,0,0,0.4); }
     .notif-close-btn:hover { opacity: 1; }
@@ -701,7 +488,7 @@
       overflow: hidden;
       border: 3px solid #FFFFFF;
     }
-    .profile-saved-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .profile-saved-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
     .profile-saved-name {
       font-size: 20px;
       font-weight: 800;
@@ -1458,11 +1245,12 @@
       });
     }
 
-    /* MUSIC AUTOPLAY */
+    /* MUSIC AUTOPLAY — with userManuallyPaused flag */
     var bgMusic = document.getElementById('bgMusic');
     var musicBtn = document.getElementById('musicBtn');
     var musicPlaying = false;
     var userInteracted = false;
+    var userManuallyPaused = false; // NEW: prevents re-autoplay after user manually pauses
 
     bgMusic.volume = 0.35;
     bgMusic.muted = true;
@@ -1504,13 +1292,16 @@
       userInteracted = true;
       if (musicPlaying) {
         pauseMusic();
+        userManuallyPaused = true; // User deliberately turned it off
       } else {
         playMusic();
+        userManuallyPaused = false; // User deliberately turned it back on
       }
     });
 
     function activateMusicOnFirstTouch(e) {
       if (musicPlaying) return;
+      if (userManuallyPaused) return; // Don't auto-play after user manually paused
       bgMusic.muted = false;
       var p = bgMusic.play();
       if (p !== undefined && p.then) {
@@ -1869,12 +1660,12 @@
       };
     })();
     var designs = [
-      { id: 'd100', name: '100 Diamonds', qty: 100, bonus: 50, price: '₹80', tagline: 'Perfect starter pack', accent: '#4facfe', shadowColor: '#1E5FBE', cardGradient: 'linear-gradient(160deg, #E0F2FE 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #4facfe 100%)', material: 'Starter Pack', stockPercent: 92, viewerWeight: 0.7 },
-      { id: 'd310', name: '310 Diamonds', qty: 310, bonus: 50, price: '₹240', tagline: 'Great value for regulars', accent: '#a855f7', shadowColor: '#3d1a6e', cardGradient: 'linear-gradient(160deg, #EDE9FE 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #1a0a2e 0%, #3d1a6e 50%, #a855f7 100%)', material: 'Popular Pack', stockPercent: 85, viewerWeight: 1.2 },
-      { id: 'd520', name: '520 Diamonds', qty: 520, bonus: 100, price: '₹400', tagline: 'Best seller with bonus', accent: '#f59e0b', shadowColor: '#B36A00', cardGradient: 'linear-gradient(160deg, #FEF3C7 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #2d0a0a 0%, #7c2d12 50%, #f59e0b 100%)', material: 'Value Pack', stockPercent: 78, viewerWeight: 1.6 },
-      { id: 'd1060', name: '1060 Diamonds', qty: 1060, bonus: 250, price: '₹800', tagline: 'For serious gamers', accent: '#10b981', shadowColor: '#15803D', cardGradient: 'linear-gradient(160deg, #D1FAE5 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #0a2e1a 0%, #064e3b 50%, #10b981 100%)', material: 'Pro Pack', stockPercent: 71, viewerWeight: 1.0 },
-      { id: 'd2180', name: '2180 Diamonds', qty: 2180, bonus: 500, price: '₹1600', tagline: 'Ultimate value pack', accent: '#ec4899', shadowColor: '#6b1d6b', cardGradient: 'linear-gradient(160deg, #FCE7F3 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #2e0a2e 0%, #6b1d6b 50%, #ec4899 100%)', material: 'Elite Pack', stockPercent: 88, viewerWeight: 1.3 },
-      { id: 'd5600', name: '5600 Diamonds', qty: 5600, bonus: 600, price: '₹2100', tagline: 'Mega pack for pros', accent: '#3b82f6', shadowColor: '#1e40af', cardGradient: 'linear-gradient(160deg, #DBEAFE 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #0a1f3d 0%, #1e40af 50%, #3b82f6 100%)', material: 'Mega Pack', stockPercent: 75, viewerWeight: 1.4 }
+      { id: 'd100', name: '100 Diamonds', qty: 100, bonus: 0, price: '₹80', tagline: 'Perfect starter pack', accent: '#4facfe', shadowColor: '#1E5FBE', cardGradient: 'linear-gradient(160deg, #E0F2FE 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #0a1929 0%, #1e3a5f 50%, #4facfe 100%)', material: 'Starter Pack', stockPercent: 92, viewerWeight: 0.7 },
+      { id: 'd310', name: '310 Diamonds', qty: 310, bonus: 0, price: '₹240', tagline: 'Great value for regulars', accent: '#a855f7', shadowColor: '#3d1a6e', cardGradient: 'linear-gradient(160deg, #EDE9FE 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #1a0a2e 0%, #3d1a6e 50%, #a855f7 100%)', material: 'Popular Pack', stockPercent: 85, viewerWeight: 1.2 },
+      { id: 'd520', name: '520 Diamonds', qty: 520, bonus: 50, price: '₹400', tagline: 'Best seller with bonus', accent: '#f59e0b', shadowColor: '#B36A00', cardGradient: 'linear-gradient(160deg, #FEF3C7 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #2d0a0a 0%, #7c2d12 50%, #f59e0b 100%)', material: 'Value Pack', stockPercent: 78, viewerWeight: 1.6 },
+      { id: 'd1060', name: '1060 Diamonds', qty: 1060, bonus: 100, price: '₹800', tagline: 'For serious gamers', accent: '#10b981', shadowColor: '#15803D', cardGradient: 'linear-gradient(160deg, #D1FAE5 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #0a2e1a 0%, #064e3b 50%, #10b981 100%)', material: 'Pro Pack', stockPercent: 71, viewerWeight: 1.0 },
+      { id: 'd2180', name: '2180 Diamonds', qty: 2180, bonus: 250, price: '₹1600', tagline: 'Ultimate value pack', accent: '#ec4899', shadowColor: '#6b1d6b', cardGradient: 'linear-gradient(160deg, #FCE7F3 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #2e0a2e 0%, #6b1d6b 50%, #ec4899 100%)', material: 'Elite Pack', stockPercent: 88, viewerWeight: 1.3 },
+      { id: 'd5600', name: '5600 Diamonds', qty: 5600, bonus: 0, price: '₹2100', tagline: 'Mega pack for pros', accent: '#3b82f6', shadowColor: '#1e40af', cardGradient: 'linear-gradient(160deg, #DBEAFE 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #0a1f3d 0%, #1e40af 50%, #3b82f6 100%)', material: 'Mega Pack', stockPercent: 75, viewerWeight: 1.4 }
     ];
     var reviewsData = [
       { name: 'Total Gaming', avatar: 'reviews/youtuber1.png', location: 'Gujarat', time: '9 days ago', purchased: 'All Packages', comment: 'Hello Gamers! Ajju Bhai here. Maine is seller se diamonds liye hain, aur sach batau toh diamonds ekdum wahi mile jo bola gaya tha. Maine usi se apna Free Fire ka Elite Pass aur top-up kiya. Agar aap log bhi high diamonds dhundh rahe ho, toh bina tension ke try karo. Trust me, genuine hai! 🔥', helpful: 1247, moreCount: 8932, isYouTuber: true },
@@ -2042,29 +1833,30 @@
         avatarsEl.appendChild(div);
       }
     }
+    /* ORIGINAL grid HTML structure */
     function renderGrid() {
       var grid = document.getElementById('productGrid'); grid.innerHTML = '';
       designs.forEach(function(design, idx) {
         var viewerBase = viewerState[design.id] ? viewerState[design.id].current : 50;
         var card = document.createElement('div'); card.className = 'grid-card'; card.setAttribute('data-id', design.id);
-        var bonusTag = '<span class="bonus-tag"><span class="bt-line1"><span class="bt-diamond">💎</span> +' + design.bonus + '</span><span class="bt-line2">BONUS</span></span>';
+        var bonusTag = design.bonus > 0 ? '<span class="bonus-tag">🎁 +' + design.bonus + '</span>' : '';
         card.innerHTML =
-          '<div class="game-card-inner">' +
+          '<div class="diamond-showcase" style="--accent:' + design.accent + '; background:' + design.showcaseGradient + '">' +
+            '<div class="diamond-light"></div>' +
+            '<div class="diamond-glow" style="background: radial-gradient(circle at 50% 50%, ' + design.accent + '99, transparent 65%)"></div>' +
+            '<div class="diamond-sparkle sparkle-1">✦</div>' +
+            '<div class="diamond-sparkle sparkle-2">✦</div>' +
+            '<div class="diamond-sparkle sparkle-3">✦</div>' +
+            '<div class="diamond-sparkle sparkle-4">✦</div>' +
+            '<img class="chest-image img-blur" src="chests/chest-' + design.qty + '.png" alt="' + design.qty + ' Diamonds" loading="eager" onerror="this.style.display=\'none\'">' +
             bonusTag +
-            '<div class="chest-area">' +
-              '<div class="chest-glow"></div>' +
-              '<img class="chest-image img-blur" src="chests/chest-' + design.qty + '.png" alt="' + design.qty + ' Diamonds" loading="eager" onerror="this.style.display=\'none\'">' +
-            '</div>' +
-            '<div class="game-card-title">' +
-              '<span class="gc-qty">' + design.qty + '</span>' +
-              '<span class="gc-label">Diamonds</span>' +
-            '</div>' +
-            '<div class="game-pills-row">' +
-              '<div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="eye">👁</span><span class="vcount">' + viewerBase + '</span></div>' +
-              '<div class="gc-price-chip">' + design.price + '</div>' +
-            '</div>' +
-            '<div class="gc-actions"><button class="gc-buy-btn" data-action="buy"><span class="cart-icon">🛒</span> Buy Now</button></div>' +
-          '</div>';
+          '</div>' +
+          '<div class="gc-info"><div class="gc-name">' + design.name + '</div></div>' +
+          '<div class="card-bottom-row">' +
+            '<div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="live-pulse-dot"></span><span class="eye">👁</span><span class="vcount">' + viewerBase + '</span></div>' +
+            '<div class="gc-price-chip">' + design.price + '</div>' +
+          '</div>' +
+          '<div class="gc-actions"><button class="gc-buy-btn shimmer-white" data-action="buy">Buy Now</button></div>';
         grid.appendChild(card);
       });
       attachGridEvents();
