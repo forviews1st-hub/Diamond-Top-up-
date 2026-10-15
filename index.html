@@ -27,6 +27,18 @@
     .img-blur { filter: blur(12px); transition: filter 0.4s ease; }
     img:not(.img-blur) { filter: blur(0); transition: filter 0.4s ease; }
 
+    /* 3D SVG ICONS */
+    .icon-3d { width: 1.1em; height: 1.1em; vertical-align: -0.18em; display: inline-block; filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15)); }
+    .trust-feature-card .tf-icon-wrap .icon-3d { width: 1.6em; height: 1.6em; }
+    .trust-emoji .icon-3d { width: 1.05em; height: 1.05em; }
+    .bonus-tag .icon-3d { width: 1.15em; height: 1.15em; vertical-align: -0.22em; }
+    .gc-buy-btn .icon-3d { width: 1.15em; height: 1.15em; vertical-align: -0.22em; }
+    .live-viewers-badge .icon-3d { width: 1.1em; height: 1.1em; vertical-align: -0.22em; }
+    .review-meta .icon-3d { width: 1.05em; height: 1.05em; vertical-align: -0.18em; }
+    .review-purchased .icon-3d { width: 1.1em; height: 1.1em; vertical-align: -0.2em; }
+    .review-helpful .icon-3d, .review-more-btn .icon-3d { width: 1.15em; height: 1.15em; vertical-align: -0.24em; }
+    .modal-buy-btn .icon-3d, .order-btn-premium .icon-3d, .review-submit-btn .icon-3d { width: 1.15em; height: 1.15em; vertical-align: -0.22em; }
+
     /* SHIMMER EFFECT */
     .shimmer-white, .shimmer-gold { position: relative; overflow: hidden; }
     .shimmer-white::after, .shimmer-gold::after {
@@ -105,7 +117,6 @@
     .trusted-by-text { font-size: 14px; font-weight: 800; color: #1A1A1A; letter-spacing: 0.2px; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
     .trusted-by-text strong { color: #1A1A1A; font-weight: 900; }
     
-    /* Buy Diamonds card now sits close below trusted-by card */
     .hero-bottom-card { margin-top: 12px; padding: 20px 24px; background: var(--deep-yellow-grad); border-radius: 28px; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 0 #C77A00, 0 15px 35px rgba(0,0,0,0.35); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: inline-block; max-width: 280px; margin-right: auto; }
     .hero-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #FF0000 0%, #CC0000 100%); color: #FFFFFF; border: none; padding: 15px 30px; border-radius: 100px; font-size: 15px; font-weight: 800; letter-spacing: 0.4px; cursor: pointer; font-family: 'Outfit', inherit; box-shadow: 0 5px 0 #800000, 0 10px 24px rgba(255,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2); transition: all 0.15s ease; }
     .hero-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #800000, 0 14px 28px rgba(255,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2); }
@@ -179,9 +190,7 @@
     .heading-row p { font-size: 12.5px; color: #3A2A0A; margin-top: 5px; font-weight: 600; text-shadow: none; }
     @media (max-width:600px) { .heading-row h1 { font-size: 22px; } }
 
-    /* ========================================= */
-    /* PRODUCT GRID — ORIGINAL WHITE CLEAN STYLE */
-    /* ========================================= */
+    /* PRODUCT GRID */
     .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 36px; scroll-margin-top: 90px; }
     @media (min-width: 600px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
     @media (min-width: 1000px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
@@ -225,7 +234,7 @@
     @media (min-width: 600px) { .gc-price-chip { padding: 7px 16px; font-size: 16px; } }
 
     .gc-actions { display: flex; margin-top: 4px; }
-    .gc-buy-btn { flex: 1; background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%); color: #1A1A1A; border: none; border-radius: 100px; padding: 10px; font-size: 12.5px; font-weight: 800; letter-spacing: 0.3px; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 3px 0 #076B00, inset 0 1px 0 rgba(255,255,255,0.3); position: relative; overflow: hidden; }
+    .gc-buy-btn { flex: 1; background: linear-gradient(180deg, #0CFF00 0%, #09B300 100%); color: #1A1A1A; border: none; border-radius: 100px; padding: 10px; font-size: 12.5px; font-weight: 800; letter-spacing: 0.3px; cursor: pointer; font-family: 'Outfit', inherit; transition: all 0.15s ease; box-shadow: 0 3px 0 #076B00, inset 0 1px 0 rgba(255,255,255,0.3); position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 5px; }
     .gc-buy-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 0 #076B00, inset 0 1px 0 rgba(255,255,255,0.3); }
     .gc-buy-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 #076B00, inset 0 1px 0 rgba(255,255,255,0.3); }
     @media (min-width: 600px) { .gc-actions { margin-top: 6px; } .gc-buy-btn { padding: 12px; font-size: 14px; } }
@@ -258,7 +267,6 @@
     .review-card.youtuber-card:hover { box-shadow: 0 10px 0 #0A7BC7, 0 20px 35px rgba(29,155,240,0.25); }
     .review-card.youtuber-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #1D9BF0, #0A7BC7, #1D9BF0); border-radius: 22px 22px 0 0; }
     .review-header { display: flex; align-items: center; gap: 10px; }
-    /* ROUND AVATAR */
     .review-avatar { width: 46px; height: 46px; border-radius: 50%; border: none; overflow: hidden; flex-shrink: 0; background: #FDEEC8; box-shadow: 0 3px 10px rgba(0,0,0,0.08); position: relative; }
     .review-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
     .review-card.youtuber-card .review-avatar { box-shadow: 0 3px 12px rgba(29,155,240,0.3); }
@@ -270,6 +278,7 @@
     .sponsor-badge { display: inline-flex; align-items: center; gap: 4px; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #1A1A1A; font-size: 9px; font-weight: 800; padding: 4px 8px; border-radius: 100px; margin-left: 6px; letter-spacing: 0.5px; text-transform: uppercase; box-shadow: 0 2px 4px rgba(0,0,0,0.2); vertical-align: middle; }
     .review-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; font-size: 10.5px; color: #8B7D65; margin-top: -2px; font-weight: 500; }
     .review-meta .dot { color: #D4B888; font-size: 11px; }
+    .review-meta span { display: inline-flex; align-items: center; gap: 4px; }
     .review-purchased { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: #8B5A00; background: #FFF6E0; border: none; padding: 7px 12px; border-radius: 100px; width: fit-content; font-weight: 600; }
     .review-purchased strong { color: #C77A00; font-weight: 800; margin-left: 2px; }
     .review-text { font-size: 12.5px; color: #4A4A4A; line-height: 1.6; position: relative; padding-top: 4px; font-weight: 400; }
@@ -280,7 +289,7 @@
     .review-helpful.active .helpful-icon { animation: helpfulPop 0.4s ease; display: inline-block; }
     @keyframes helpfulPop { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
     .review-helpful .helpful-count, .review-more-btn .more-count { color: #1A1A1A; font-weight: 800; margin-left: 1px; }
-    .review-helpful .helpful-icon { font-size: 10px; line-height: 1; }
+    .review-helpful .helpful-icon { font-size: 10px; line-height: 1; display: inline-flex; align-items: center; }
     .review-seller-reply { background: #FFFBF2; border-left: 3px solid #FFC107; padding: 10px 13px; border-radius: 12px; font-size: 12px; color: #4A4A4A; margin-top: 5px; line-height: 1.55; }
     .review-seller-reply strong { color: #8B5A00; font-weight: 800; font-size: 9.5px; display: block; margin-bottom: 3px; letter-spacing: 0.7px; text-transform: uppercase; }
 
@@ -321,7 +330,6 @@
     .live-notif.dismissed { animation: none; transition: transform 0.3s ease, opacity 0.3s ease; transform: translateX(120%) !important; opacity: 0 !important; }
     .live-notif .notif-card-badge { display: flex; align-items: center; justify-content: center; gap: 5px; background: var(--deep-yellow-grad); color: #1A1A1A; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; padding: 8px 12px; text-transform: uppercase; border: none !important; }
     .live-notif .notif-row { display: flex; align-items: flex-start; gap: 10px; padding: 11px 13px; border: none !important; }
-    /* ROUND NOTIF AVATAR */
     .live-notif .notif-avatar { width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: none; box-shadow: 0 3px 8px rgba(0,0,0,0.1); background: #FDEEC8; margin-top: 2px; }
     .live-notif .notif-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
     .live-notif .notif-content { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
@@ -782,8 +790,9 @@
     #paymentOverlay .order-btn-premium:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #C77A00, 0 12px 24px rgba(255,152,0,0.5); }
     #paymentOverlay .order-btn-premium:active { transform: translateY(3px); box-shadow: 0 2px 0 #C77A00, 0 5px 12px rgba(255,152,0,0.4); }
     
-    #paymentOverlay .trust-badges { color: #6B5A3E; font-size: 9.5px; margin-top: 6px; }
+    #paymentOverlay .trust-badges { color: #6B5A3E; font-size: 9.5px; margin-top: 6px; display: flex; justify-content: center; align-items: center; gap: 7px; }
     #paymentOverlay .trust-badges .dot { color: #FFC107; }
+    #paymentOverlay .trust-badges .icon-3d { width: 1.1em; height: 1.1em; vertical-align: -0.22em; }
 
     .field-group { margin-bottom: 10px; text-align: left; }
     .field-group label { display: block; font-size: 10px; font-weight: 800; color: #8B5A00; margin-bottom: 5px; letter-spacing: 1.2px; text-transform: uppercase; }
@@ -875,11 +884,11 @@
       <h1 class="hero-headline">Power Up Fast.<span class="gold-line">Dominate The Game.</span></h1>
       <p class="hero-sub">Get your Free Fire diamonds instantly at the best rates. 100% safe, lightning-fast delivery, and trusted by thousands of gamers across India.</p>
       <div class="hero-trust">
-        <span><span class="trust-emoji">💎</span> Free Fire Diamonds</span>
+        <span><span class="trust-emoji trust-emoji-diamond"></span> Free Fire Diamonds</span>
         <span class="trust-dot">•</span>
-        <span><span class="trust-emoji">⚡</span> Instant Delivery</span>
+        <span><span class="trust-emoji trust-emoji-lightning"></span> Instant Delivery</span>
         <span class="trust-dot">•</span>
-        <span><span class="trust-emoji">🔥</span> Best Rates</span>
+        <span><span class="trust-emoji trust-emoji-fire"></span> Best Rates</span>
       </div>
       
       <div class="trusted-by-card">
@@ -896,10 +905,10 @@
       <h2>Why Trust Us?</h2>
       <p class="why-trust-sub">Thousands of gamers top-up here every day</p>
       <div class="trust-features">
-        <div class="trust-feature-card"><div class="tf-icon-wrap shimmer-white">🎮</div><div class="tf-label" id="whyTrustBuyers">10,000+</div><div class="tf-value">Happy Gamers</div></div>
-        <div class="trust-feature-card"><div class="tf-icon-wrap shimmer-white">🏆</div><div class="tf-label" id="heroSoldCount">0</div><div class="tf-value">Top-Ups Done</div></div>
-        <div class="trust-feature-card"><div class="tf-icon-wrap shimmer-white">✅</div><div class="tf-label">100%</div><div class="tf-value">Verified Top-Ups</div></div>
-        <div class="trust-feature-card"><div class="tf-icon-wrap shimmer-white">🔒</div><div class="tf-label">100%</div><div class="tf-value">Secure Payment</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap" id="tfIcon1"></div><div class="tf-label" id="whyTrustBuyers">10,000+</div><div class="tf-value">Happy Gamers</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap" id="tfIcon2"></div><div class="tf-label" id="heroSoldCount">0</div><div class="tf-value">Top-Ups Done</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap" id="tfIcon3"></div><div class="tf-label">100%</div><div class="tf-value">Verified Top-Ups</div></div>
+        <div class="trust-feature-card"><div class="tf-icon-wrap" id="tfIcon4"></div><div class="tf-label">100%</div><div class="tf-value">Secure Payment</div></div>
       </div>
     </section>
 
@@ -984,7 +993,7 @@
             <div class="review-form-group"><label>In-Game Name (Optional)</label><input type="text" id="profileName" placeholder="e.g. ProGamer99" maxlength="20" /></div>
             <div class="review-form-group"><label>Your City (Optional)</label><input type="text" id="profileCity" placeholder="e.g. Mumbai" maxlength="20" /></div>
             <div class="review-form-group"><label>Free Fire UID (Optional)</label><input type="text" id="profileUid" placeholder="e.g. 1234567890" maxlength="15" inputmode="numeric" /></div>
-            <button type="submit" class="order-btn-premium"><span>💾</span> Save Profile</button>
+            <button type="submit" class="order-btn-premium" id="profileSaveBtn"></button>
           </form>
         </div>
       </div>
@@ -1000,7 +1009,7 @@
         <p class="modal-tagline" id="modalTagline">Tagline</p>
         <div class="modal-price-block"><div class="modal-price" id="modalPrice">₹0</div></div>
         <div class="qty-row"><button id="qtyMinus">−</button><span id="qtyValue">1</span><button id="qtyPlus">+</button></div>
-        <button class="modal-buy-btn shimmer-gold" id="modalBuyBtn">⚡ Buy Now</button>
+        <button class="modal-buy-btn shimmer-gold" id="modalBuyBtn"></button>
       </div>
     </div>
   </div>
@@ -1029,8 +1038,8 @@
             <input type="text" id="orderUid" placeholder="Enter your Free Fire UID" required maxlength="15" inputmode="numeric" autocomplete="off" />
             <div class="uid-hint" id="orderUidHint"></div>
           </div>
-          <button type="submit" class="order-btn-premium" id="orderSubmitBtn" disabled><span>💎</span> Proceed to Payment</button>
-          <div class="trust-badges"><span>🔒 Secure</span><span class="dot">·</span><span>⚡ Fast</span><span class="dot">·</span><span>✓ Genuine</span></div>
+          <button type="submit" class="order-btn-premium" id="orderSubmitBtn" disabled></button>
+          <div class="trust-badges"><span id="trustSecureBadge"></span><span class="dot">·</span><span id="trustFastBadge"></span><span class="dot">·</span><span>✓ Genuine</span></div>
         </form>
       </div>
     </div>
@@ -1125,7 +1134,8 @@
         </div>
         <div class="section-divider"><span>ENTER TRANSACTION ID</span></div>
         <div class="field-group"><label>Transaction ID</label><input type="text" id="transactionId" placeholder="Enter Transaction ID" maxlength="22" autocomplete="off" /></div>
-        <button class="order-btn-premium shimmer-gold" id="confirmPaymentBtn"><span>🔒</span> Confirm Payment</button>
+        <button class="order-btn-premium shimmer-gold" id="confirmPaymentBtn"></button>
+        <div class="trust-badges"><span id="paySecureBadge"></span><span class="dot">·</span><span id="payFastBadge"></span><span class="dot">·</span><span>✓ Genuine</span></div>
       </div>
     </div>
   </div>
@@ -1161,7 +1171,7 @@
             </select>
           </div>
           <div class="review-form-group"><label>Your Review</label><textarea id="reviewText" placeholder="Share your experience..." required maxlength="250"></textarea></div>
-          <button type="submit" class="review-submit-btn shimmer-gold"><span>✨</span> Submit Review</button>
+          <button type="submit" class="review-submit-btn shimmer-gold" id="reviewSubmitBtn"></button>
         </form>
       </div>
     </div>
@@ -1231,6 +1241,24 @@
     function escapeHtml(str) { if (str === null || str === undefined) return ''; return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
     var BASE_PURCHASES_PER_HOUR = 60;
 
+    /* 3D SVG ICONS */
+    var ICONS = {
+      eye: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icEye" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF5555"/><stop offset="1" stop-color="#AA0000"/></linearGradient></defs><path d="M12 5C7 5 3 9 2 12C3 15 7 19 12 19C17 19 21 15 22 12C21 9 17 5 12 5Z" fill="url(#icEye)"/><circle cx="12" cy="12" r="4.2" fill="#FFFFFF"/><circle cx="12" cy="12" r="2.3" fill="#AA0000"/><circle cx="11" cy="11" r="0.8" fill="#FFFFFF"/></svg>',
+      gift: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icGiftA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4DFF9E"/><stop offset="1" stop-color="#00B248"/></linearGradient><linearGradient id="icGiftB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00E676"/><stop offset="1" stop-color="#006B2E"/></linearGradient></defs><rect x="4" y="10" width="16" height="11" rx="1.5" fill="url(#icGiftB)"/><rect x="2.5" y="6.5" width="19" height="4.2" rx="1.2" fill="url(#icGiftA)"/><rect x="11" y="6.5" width="2" height="14.5" fill="#FFFFFF" opacity="0.95"/><path d="M12 6.5C10 4.5 7.5 4.5 7.5 6C7.5 7 9 7.5 12 6.5Z" fill="#FFFFFF"/><path d="M12 6.5C14 4.5 16.5 4.5 16.5 6C16.5 7 15 7.5 12 6.5Z" fill="#FFFFFF"/></svg>',
+      cart: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icCart" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4DFF9E"/><stop offset="1" stop-color="#00B248"/></linearGradient></defs><path d="M3 3.5H5L7 14.5H18L21 6H6" stroke="url(#icCart)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8.5" cy="19.5" r="2" fill="url(#icCart)"/><circle cx="17" cy="19.5" r="2" fill="url(#icCart)"/><circle cx="8" cy="19" r="0.7" fill="#FFFFFF" opacity="0.8"/><circle cx="16.5" cy="19" r="0.7" fill="#FFFFFF" opacity="0.8"/></svg>',
+      controller: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icCtrlA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4DFF9E"/><stop offset="1" stop-color="#00B248"/></linearGradient></defs><path d="M6 8C3 8 1.5 10 1.5 13C1.5 16 3 18 5 18C6.5 18 7.5 17 8.5 16H15.5C16.5 17 17.5 18 19 18C21 18 22.5 16 22.5 13C22.5 10 21 8 18 8Z" fill="url(#icCtrlA)"/><rect x="5" y="11.5" width="4" height="1.3" rx="0.6" fill="#FFFFFF"/><rect x="6.35" y="10.2" width="1.3" height="4" rx="0.6" fill="#FFFFFF"/><circle cx="17" cy="12" r="1" fill="#FFFFFF"/><circle cx="18.8" cy="13.8" r="1" fill="#FFFFFF"/></svg>',
+      trophy: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icTrophyA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE066"/><stop offset="1" stop-color="#E6A100"/></linearGradient></defs><path d="M6 3H18V6C18 10 15.5 13 12 13C8.5 13 6 10 6 6Z" fill="url(#icTrophyA)"/><path d="M6 5H3V7C3 8.5 4 9.5 6 9.5" stroke="#E6A100" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M18 5H21V7C21 8.5 20 9.5 18 9.5" stroke="#E6A100" stroke-width="1.8" fill="none" stroke-linecap="round"/><rect x="10.5" y="13" width="3" height="4" fill="#E6A100"/><rect x="8" y="17" width="8" height="2.5" rx="0.8" fill="url(#icTrophyA)"/><rect x="7" y="19.5" width="10" height="1.8" rx="0.9" fill="#B36A00"/><ellipse cx="10" cy="5.5" rx="1.2" ry="0.8" fill="#FFFFFF" opacity="0.6"/></svg>',
+      check: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icCheck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4DFF9E"/><stop offset="1" stop-color="#00B248"/></linearGradient></defs><circle cx="12" cy="12" r="10" fill="url(#icCheck)"/><path d="M7 12.2L10.5 15.5L17 9" stroke="#FFFFFF" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="9" r="2.5" fill="#FFFFFF" opacity="0.25"/></svg>',
+      lock: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icLockA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE066"/><stop offset="1" stop-color="#E6A100"/></linearGradient></defs><path d="M7 10V7C7 4.5 9 3 12 3C15 3 17 4.5 17 7V10" stroke="#B36A00" stroke-width="2.2" fill="none" stroke-linecap="round"/><rect x="4.5" y="10" width="15" height="11" rx="2" fill="url(#icLockA)"/><circle cx="12" cy="15" r="1.7" fill="#8B5A00"/><rect x="11.2" y="15" width="1.6" height="3.5" rx="0.8" fill="#8B5A00"/><ellipse cx="9" cy="12.5" rx="2" ry="1" fill="#FFFFFF" opacity="0.4"/></svg>',
+      diamond: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icDia" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5FD8FF"/><stop offset="1" stop-color="#0066CC"/></linearGradient></defs><path d="M12 2L4 9L12 22L20 9L12 2Z" fill="url(#icDia)"/><path d="M12 2L8 9L12 22" fill="#FFFFFF" opacity="0.35"/><path d="M4 9H20" stroke="#FFFFFF" stroke-width="0.8" opacity="0.6"/><path d="M8 9L12 2L16 9" fill="none" stroke="#FFFFFF" stroke-width="0.8" opacity="0.7"/><path d="M9 5L10.5 7.5" stroke="#FFFFFF" stroke-width="0.7" opacity="0.8"/></svg>',
+      lightning: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icBolt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF176"/><stop offset="1" stop-color="#F9A825"/></linearGradient></defs><path d="M13 2L4 13H11L10 22L20 10H13L13 2Z" fill="url(#icBolt)" stroke="#E6A100" stroke-width="0.6"/><path d="M13 2L4 13H11" fill="#FFFFFF" opacity="0.4"/></svg>',
+      fire: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icFireA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB74D"/><stop offset="1" stop-color="#E64A19"/></linearGradient><linearGradient id="icFireB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF176"/><stop offset="1" stop-color="#FF9800"/></linearGradient></defs><path d="M12 2C12 2 6 8 6 14C6 18 9 21 12 21C15 21 18 18 18 14C18 11 16 9 15 7C15 9 14 10 13 10C13 7 12 4 12 2Z" fill="url(#icFireA)"/><path d="M12 10C12 10 9.5 12.5 9.5 15C9.5 17 10.7 18.5 12 18.5C13.3 18.5 14.5 17 14.5 15C14.5 13 13 11.5 12 10Z" fill="url(#icFireB)"/></svg>',
+      thumbUp: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icThumb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE066"/><stop offset="1" stop-color="#E6A100"/></linearGradient></defs><path d="M3 21H6V10H3V21ZM21 11C21 9.9 20.1 9 19 9H14L15.5 3.5C15.5 3.3 15.5 3.1 15.4 2.9L14.4 2L8.4 8C8.1 8.3 8 8.6 8 9V19C8 20.1 8.9 21 10 21H18C18.8 21 19.5 20.5 19.8 19.8L22 12.8C22 12.5 22 12.3 22 12V11H21Z" fill="url(#icThumb)"/><ellipse cx="11" cy="6" rx="2" ry="1.2" fill="#FFFFFF" opacity="0.4"/></svg>',
+      pin: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icPin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF5555"/><stop offset="1" stop-color="#AA0000"/></linearGradient></defs><path d="M12 2C7.6 2 4 5.6 4 10C4 16 12 22 12 22C12 22 20 16 20 10C20 5.6 16.4 2 12 2Z" fill="url(#icPin)"/><circle cx="12" cy="10" r="3.2" fill="#FFFFFF"/><circle cx="11" cy="9" r="1" fill="#AA0000" opacity="0.5"/></svg>',
+      clock: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icClock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5FD8FF"/><stop offset="1" stop-color="#0066CC"/></linearGradient></defs><circle cx="12" cy="12" r="10" fill="url(#icClock)"/><circle cx="12" cy="12" r="8.5" fill="#FFFFFF" opacity="0.15"/><path d="M12 6V12L16 14" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="1" fill="#FFFFFF"/></svg>',
+      save: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icSave" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4DFF9E"/><stop offset="1" stop-color="#00B248"/></linearGradient></defs><path d="M4 4H17L20 7V20C20 20.5 19.5 21 19 21H5C4.5 21 4 20.5 4 20V5C4 4.5 4.5 4 5 4Z" fill="url(#icSave)"/><rect x="8" y="4" width="8" height="6" fill="#FFFFFF" opacity="0.9"/><rect x="7" y="14" width="10" height="7" fill="#FFFFFF" opacity="0.85"/><circle cx="16" cy="6" r="0.8" fill="#006B2E" opacity="0.6"/></svg>'
+    };
+
     function applyImageBlur() {
       document.querySelectorAll('img').forEach(function(img) {
         if (!img.classList.contains('img-blur')) {
@@ -1245,12 +1273,28 @@
       });
     }
 
+    /* Inject dynamic button labels */
+    function injectButtonLabels() {
+      var modalBuyBtn = document.getElementById('modalBuyBtn'); if (modalBuyBtn) modalBuyBtn.innerHTML = ICONS.lightning + ' Buy Now';
+      var confirmPaymentBtn = document.getElementById('confirmPaymentBtn'); if (confirmPaymentBtn) confirmPaymentBtn.innerHTML = ICONS.lock + ' Confirm Payment';
+      var orderSubmitBtn = document.getElementById('orderSubmitBtn');
+      if (orderSubmitBtn && !orderSubmitBtn.dataset.injected) { orderSubmitBtn.innerHTML = ICONS.diamond + ' Proceed to Payment'; orderSubmitBtn.dataset.injected = '1'; }
+      var profileSaveBtn = document.getElementById('profileSaveBtn'); if (profileSaveBtn) profileSaveBtn.innerHTML = ICONS.save + ' Save Profile';
+      var reviewSubmitBtn = document.getElementById('reviewSubmitBtn'); if (reviewSubmitBtn) reviewSubmitBtn.innerHTML = ICONS.check + ' Submit Review';
+      var trustSecure = document.getElementById('trustSecureBadge'); if (trustSecure) trustSecure.innerHTML = ICONS.lock + ' Secure';
+      var trustFast = document.getElementById('trustFastBadge'); if (trustFast) trustFast.innerHTML = ICONS.lightning + ' Fast';
+      var paySecure = document.getElementById('paySecureBadge'); if (paySecure) paySecure.innerHTML = ICONS.lock + ' Secure';
+      var payFast = document.getElementById('payFastBadge'); if (payFast) payFast.innerHTML = ICONS.lightning + ' Fast';
+      /* Profile saved view icons */
+      var psBadge = document.querySelector('.profile-saved-badge'); if (psBadge) psBadge.innerHTML = ICONS.check + ' Profile Saved';
+    }
+
     /* MUSIC AUTOPLAY — with userManuallyPaused flag */
     var bgMusic = document.getElementById('bgMusic');
     var musicBtn = document.getElementById('musicBtn');
     var musicPlaying = false;
     var userInteracted = false;
-    var userManuallyPaused = false; // NEW: prevents re-autoplay after user manually pauses
+    var userManuallyPaused = false;
 
     bgMusic.volume = 0.35;
     bgMusic.muted = true;
@@ -1292,16 +1336,16 @@
       userInteracted = true;
       if (musicPlaying) {
         pauseMusic();
-        userManuallyPaused = true; // User deliberately turned it off
+        userManuallyPaused = true;
       } else {
         playMusic();
-        userManuallyPaused = false; // User deliberately turned it back on
+        userManuallyPaused = false;
       }
     });
 
     function activateMusicOnFirstTouch(e) {
       if (musicPlaying) return;
-      if (userManuallyPaused) return; // Don't auto-play after user manually paused
+      if (userManuallyPaused) return;
       bgMusic.muted = false;
       var p = bgMusic.play();
       if (p !== undefined && p.then) {
@@ -1833,13 +1877,12 @@
         avatarsEl.appendChild(div);
       }
     }
-    /* ORIGINAL grid HTML structure */
     function renderGrid() {
       var grid = document.getElementById('productGrid'); grid.innerHTML = '';
       designs.forEach(function(design, idx) {
         var viewerBase = viewerState[design.id] ? viewerState[design.id].current : 50;
         var card = document.createElement('div'); card.className = 'grid-card'; card.setAttribute('data-id', design.id);
-        var bonusTag = design.bonus > 0 ? '<span class="bonus-tag">🎁 +' + design.bonus + '</span>' : '';
+        var bonusTag = design.bonus > 0 ? '<span class="bonus-tag">' + ICONS.gift + ' +' + design.bonus + '</span>' : '';
         card.innerHTML =
           '<div class="diamond-showcase" style="--accent:' + design.accent + '; background:' + design.showcaseGradient + '">' +
             '<div class="diamond-light"></div>' +
@@ -1853,10 +1896,10 @@
           '</div>' +
           '<div class="gc-info"><div class="gc-name">' + design.name + '</div></div>' +
           '<div class="card-bottom-row">' +
-            '<div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="live-pulse-dot"></span><span class="eye">👁</span><span class="vcount">' + viewerBase + '</span></div>' +
+            '<div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="live-pulse-dot"></span><span class="eye">' + ICONS.eye + '</span><span class="vcount">' + viewerBase + '</span></div>' +
             '<div class="gc-price-chip">' + design.price + '</div>' +
           '</div>' +
-          '<div class="gc-actions"><button class="gc-buy-btn shimmer-white" data-action="buy">Buy Now</button></div>';
+          '<div class="gc-actions"><button class="gc-buy-btn shimmer-white" data-action="buy">' + ICONS.cart + ' Buy Now</button></div>';
         grid.appendChild(card);
       });
       attachGridEvents();
@@ -1878,11 +1921,11 @@
       var helpfulDisplay = getReviewHelpful(review, index); var moreDisplay = getReviewMore(review, index); var timeDisplay = formatReviewTime(review);
       var html =
         '<div class="review-header"><div class="review-avatar">' + avatarHTML + '</div><div class="review-info"><div class="review-name-row">' + nameInner + '</div></div></div>' +
-        '<div class="review-meta"><span>📍 ' + escapeHtml(review.location) + '</span><span class="dot">·</span><span>🕐 ' + escapeHtml(timeDisplay) + '</span></div>' +
-        '<div class="review-purchased">💎 Bought <strong>' + escapeHtml(review.purchased) + '</strong></div>' +
+        '<div class="review-meta"><span>' + ICONS.pin + ' ' + escapeHtml(review.location) + '</span><span class="dot">·</span><span>' + ICONS.clock + ' ' + escapeHtml(timeDisplay) + '</span></div>' +
+        '<div class="review-purchased">' + ICONS.diamond + ' Bought <strong>' + escapeHtml(review.purchased) + '</strong></div>' +
         '<div class="review-text">' + escapeHtml(review.comment) + '</div>' +
         '<div class="review-actions">' +
-          '<button class="review-helpful" type="button" data-review-key="' + escapeHtml(getReviewKey(review)) + '"><span class="helpful-icon">👍</span> Helpful <span class="helpful-count">' + helpfulDisplay.toLocaleString('en-IN') + '</span></button>' +
+          '<button class="review-helpful" type="button" data-review-key="' + escapeHtml(getReviewKey(review)) + '"><span class="helpful-icon">' + ICONS.thumbUp + '</span> Helpful <span class="helpful-count">' + helpfulDisplay.toLocaleString('en-IN') + '</span></button>' +
           '<button class="review-more-btn" type="button" data-more="' + moreDisplay + '"><span>More</span> <span class="more-count">+' + moreDisplay.toLocaleString('en-IN') + '</span></button>' +
         '</div>';
       if (review.sellerReply) html += '<div class="review-seller-reply"><strong>SELLER REPLY</strong>' + escapeHtml(review.sellerReply) + '</div>';
@@ -2344,6 +2387,18 @@
     function resetIdleTimer() { clearTimeout(idleTimer); idleTimer = setTimeout(function() { showToast('Wait! 🔥 Diamonds are selling fast today. Don\'t miss out!', 'info'); }, 120000); }
     document.addEventListener('mousemove', resetIdleTimer); document.addEventListener('keydown', resetIdleTimer); document.addEventListener('scroll', resetIdleTimer); resetIdleTimer();
     document.addEventListener('mouseleave', function(e) { if (e.clientY < 0) { showToast('Wait! 🔥 Don\'t miss out on our diamond deals!', 'error'); } });
+    
+    /* Inject 3D SVG icons into static spots */
+    (function injectIcons() {
+      var heroDia = document.querySelector('.trust-emoji-diamond'); if (heroDia) heroDia.innerHTML = ICONS.diamond;
+      var heroLig = document.querySelector('.trust-emoji-lightning'); if (heroLig) heroLig.innerHTML = ICONS.lightning;
+      var heroFir = document.querySelector('.trust-emoji-fire'); if (heroFir) heroFir.innerHTML = ICONS.fire;
+      var tf1 = document.getElementById('tfIcon1'); if (tf1) tf1.innerHTML = ICONS.controller;
+      var tf2 = document.getElementById('tfIcon2'); if (tf2) tf2.innerHTML = ICONS.trophy;
+      var tf3 = document.getElementById('tfIcon3'); if (tf3) tf3.innerHTML = ICONS.check;
+      var tf4 = document.getElementById('tfIcon4'); if (tf4) tf4.innerHTML = ICONS.lock;
+    })();
+    injectButtonLabels();
     
     loadProfileFromStorage(); 
     updateProfileButtonUI();
