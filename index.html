@@ -38,6 +38,9 @@
     .review-purchased .icon-3d { width: 1.1em; height: 1.1em; vertical-align: -0.2em; }
     .review-helpful .icon-3d, .review-more-btn .icon-3d { width: 1.15em; height: 1.15em; vertical-align: -0.24em; }
     .modal-buy-btn .icon-3d, .order-btn-premium .icon-3d, .review-submit-btn .icon-3d { width: 1.15em; height: 1.15em; vertical-align: -0.22em; }
+    
+    /* White icons for colored backgrounds */
+    .icon-white { filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3)) brightness(0) invert(1) !important; }
 
     /* SHIMMER EFFECT */
     .shimmer-white, .shimmer-gold { position: relative; overflow: hidden; }
@@ -140,17 +143,21 @@
     @media (min-width: 700px) { .trust-features { grid-template-columns: repeat(4, 1fr); gap: 12px; } }
     .trust-feature-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 16px 8px 14px; background: #FFFFFF; border: 2px solid #E5E7EB; border-radius: 22px; transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); box-shadow: 0 4px 0 #D1D5DB, 0 8px 16px rgba(0,0,0,0.15); }
     .trust-feature-card:hover { transform: translateY(-3px); border-color: #D1D5DB; box-shadow: 0 6px 0 #D1D5DB, 0 12px 24px rgba(0,0,0,0.2); }
-    .trust-feature-card .tf-icon-wrap { width: 50px; height: 50px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; background: var(--deep-yellow-grad); border: none; box-shadow: 0 4px 0 var(--tf-shadow-dark, #C77A00), inset 0 2px 4px rgba(255,255,255,0.4), 0 6px 12px rgba(0,0,0,0.3); transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; }
+    .trust-feature-card .tf-icon-wrap { width: 50px; height: 50px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; border: none; box-shadow: 0 4px 0 var(--tf-shadow-dark, #C77A00), inset 0 2px 4px rgba(255,255,255,0.4), 0 6px 12px rgba(0,0,0,0.3); transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; }
     .trust-feature-card:hover .tf-icon-wrap { transform: scale(1.06) rotate(-4deg); }
     .trust-feature-card .tf-label { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.1; color: #1A1A1A; }
     .trust-feature-card .tf-value { font-size: 9px; color: #4A4A4A; letter-spacing: 0.7px; font-weight: 700; text-transform: uppercase; line-height: 1.3; }
     @media (min-width: 500px) { .trust-feature-card .tf-label { font-size: 20px; } }
-    .trust-feature-card:nth-child(1) { --tf-shadow-dark: #076B00; }
-    .trust-feature-card:nth-child(1) .tf-icon-wrap { background: var(--green-grad); }
-    .trust-feature-card:nth-child(2) { --tf-shadow-dark: #B36A00; }
-    .trust-feature-card:nth-child(3) { --tf-shadow-dark: #076B00; }
-    .trust-feature-card:nth-child(3) .tf-icon-wrap { background: var(--green-grad); }
-    .trust-feature-card:nth-child(4) { --tf-shadow-dark: #B36A00; }
+    
+    /* Swapped backgrounds for contrast */
+    .trust-feature-card:nth-child(1) { --tf-shadow-dark: #C77A00; }
+    .trust-feature-card:nth-child(1) .tf-icon-wrap { background: var(--deep-yellow-grad); }
+    .trust-feature-card:nth-child(2) { --tf-shadow-dark: #076B00; }
+    .trust-feature-card:nth-child(2) .tf-icon-wrap { background: var(--green-grad); }
+    .trust-feature-card:nth-child(3) { --tf-shadow-dark: #C77A00; }
+    .trust-feature-card:nth-child(3) .tf-icon-wrap { background: var(--deep-yellow-grad); }
+    .trust-feature-card:nth-child(4) { --tf-shadow-dark: #076B00; }
+    .trust-feature-card:nth-child(4) .tf-icon-wrap { background: var(--green-grad); }
 
     /* RECENT TOP-UPS */
     .pulse-feed { margin: 0 0 20px; padding: 18px 18px; background: linear-gradient(160deg, #FF0000 0%, #CC0000 100%); border: 2px solid rgba(255,255,255,0.4); border-radius: 28px; box-shadow: 0 8px 0 #800000, 0 15px 35px rgba(0,0,0,0.5); position: relative; overflow: hidden; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
@@ -874,7 +881,7 @@
           <svg class="music-on-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
           <svg class="music-off-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
         </button>
-        <button class="profile-btn" id="profileBtn" type="button" aria-label="Profile">👤</button>
+        <button class="profile-btn" id="profileBtn" type="button" aria-label="Profile"></button>
       </div>
     </div>
   </header>
@@ -929,7 +936,7 @@
     <section class="reviews-section">
       <div class="reviews-header">
         <div class="heading-row"><h1>Trusted by Thousands</h1><p>What our customers say after top-up</p></div>
-        <button class="write-review-btn shimmer-gold" id="writeReviewBtn">✍️ Write a Review</button>
+        <button class="write-review-btn shimmer-gold" id="writeReviewBtn"></button>
       </div>
       <div class="reviews-grid" id="reviewsGrid"></div>
       <div class="load-more-reviews-wrapper">
@@ -1119,7 +1126,7 @@
         <div class="section-divider"><span>SCAN QR CODE</span></div>
         <div class="qr-timer-wrap"><span>⏳ QR expires in:</span><span class="timer-clock" id="qrTimer">05:00</span></div>
         <div class="qr-container" id="qrContainer"><img id="qrCodeImage" src="qr-code.png" alt="Payment QR Code" /></div>
-        <button type="button" class="regenerate-qr-btn" id="regenerateQrBtn"><span>🔄</span> Generate New QR</button>
+        <button type="button" class="regenerate-qr-btn" id="regenerateQrBtn"></button>
         <p class="qr-hint">Scan with any <strong>UPI app</strong> to pay</p>
         <div class="payment-method-icons">
           <span class="upi-logo" title="PhonePe">
@@ -1244,19 +1251,31 @@
     /* 3D SVG ICONS */
     var ICONS = {
       eye: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icEye" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF5555"/><stop offset="1" stop-color="#AA0000"/></linearGradient></defs><path d="M12 5C7 5 3 9 2 12C3 15 7 19 12 19C17 19 21 15 22 12C21 9 17 5 12 5Z" fill="url(#icEye)"/><circle cx="12" cy="12" r="4.2" fill="#FFFFFF"/><circle cx="12" cy="12" r="2.3" fill="#AA0000"/><circle cx="11" cy="11" r="0.8" fill="#FFFFFF"/></svg>',
+      eyeWhite: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5C7 5 3 9 2 12C3 15 7 19 12 19C17 19 21 15 22 12C21 9 17 5 12 5Z" fill="#FFFFFF"/><circle cx="12" cy="12" r="4.2" fill="#FFAAAA"/><circle cx="12" cy="12" r="2.3" fill="#FFFFFF"/><circle cx="11" cy="11" r="0.8" fill="#FFFFFF"/></svg>',
       gift: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icGiftA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4DFF9E"/><stop offset="1" stop-color="#00B248"/></linearGradient><linearGradient id="icGiftB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00E676"/><stop offset="1" stop-color="#006B2E"/></linearGradient></defs><rect x="4" y="10" width="16" height="11" rx="1.5" fill="url(#icGiftB)"/><rect x="2.5" y="6.5" width="19" height="4.2" rx="1.2" fill="url(#icGiftA)"/><rect x="11" y="6.5" width="2" height="14.5" fill="#FFFFFF" opacity="0.95"/><path d="M12 6.5C10 4.5 7.5 4.5 7.5 6C7.5 7 9 7.5 12 6.5Z" fill="#FFFFFF"/><path d="M12 6.5C14 4.5 16.5 4.5 16.5 6C16.5 7 15 7.5 12 6.5Z" fill="#FFFFFF"/></svg>',
+      giftWhite: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="10" width="16" height="11" rx="1.5" fill="#FFFFFF" opacity="0.9"/><rect x="2.5" y="6.5" width="19" height="4.2" rx="1.2" fill="#FFFFFF"/><rect x="11" y="6.5" width="2" height="14.5" fill="#FFFFFF" opacity="0.95"/><path d="M12 6.5C10 4.5 7.5 4.5 7.5 6C7.5 7 9 7.5 12 6.5Z" fill="#FFFFFF"/><path d="M12 6.5C14 4.5 16.5 4.5 16.5 6C16.5 7 15 7.5 12 6.5Z" fill="#FFFFFF"/></svg>',
       cart: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icCart" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4DFF9E"/><stop offset="1" stop-color="#00B248"/></linearGradient></defs><path d="M3 3.5H5L7 14.5H18L21 6H6" stroke="url(#icCart)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8.5" cy="19.5" r="2" fill="url(#icCart)"/><circle cx="17" cy="19.5" r="2" fill="url(#icCart)"/><circle cx="8" cy="19" r="0.7" fill="#FFFFFF" opacity="0.8"/><circle cx="16.5" cy="19" r="0.7" fill="#FFFFFF" opacity="0.8"/></svg>',
+      cartWhite: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3.5H5L7 14.5H18L21 6H6" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8.5" cy="19.5" r="2" fill="#FFFFFF"/><circle cx="17" cy="19.5" r="2" fill="#FFFFFF"/><circle cx="8" cy="19" r="0.7" fill="#FFFFFF" opacity="0.8"/><circle cx="16.5" cy="19" r="0.7" fill="#FFFFFF" opacity="0.8"/></svg>',
       controller: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icCtrlA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4DFF9E"/><stop offset="1" stop-color="#00B248"/></linearGradient></defs><path d="M6 8C3 8 1.5 10 1.5 13C1.5 16 3 18 5 18C6.5 18 7.5 17 8.5 16H15.5C16.5 17 17.5 18 19 18C21 18 22.5 16 22.5 13C22.5 10 21 8 18 8Z" fill="url(#icCtrlA)"/><rect x="5" y="11.5" width="4" height="1.3" rx="0.6" fill="#FFFFFF"/><rect x="6.35" y="10.2" width="1.3" height="4" rx="0.6" fill="#FFFFFF"/><circle cx="17" cy="12" r="1" fill="#FFFFFF"/><circle cx="18.8" cy="13.8" r="1" fill="#FFFFFF"/></svg>',
       trophy: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icTrophyA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE066"/><stop offset="1" stop-color="#E6A100"/></linearGradient></defs><path d="M6 3H18V6C18 10 15.5 13 12 13C8.5 13 6 10 6 6Z" fill="url(#icTrophyA)"/><path d="M6 5H3V7C3 8.5 4 9.5 6 9.5" stroke="#E6A100" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M18 5H21V7C21 8.5 20 9.5 18 9.5" stroke="#E6A100" stroke-width="1.8" fill="none" stroke-linecap="round"/><rect x="10.5" y="13" width="3" height="4" fill="#E6A100"/><rect x="8" y="17" width="8" height="2.5" rx="0.8" fill="url(#icTrophyA)"/><rect x="7" y="19.5" width="10" height="1.8" rx="0.9" fill="#B36A00"/><ellipse cx="10" cy="5.5" rx="1.2" ry="0.8" fill="#FFFFFF" opacity="0.6"/></svg>',
       check: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icCheck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4DFF9E"/><stop offset="1" stop-color="#00B248"/></linearGradient></defs><circle cx="12" cy="12" r="10" fill="url(#icCheck)"/><path d="M7 12.2L10.5 15.5L17 9" stroke="#FFFFFF" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="9" r="2.5" fill="#FFFFFF" opacity="0.25"/></svg>',
+      checkWhite: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#FFFFFF"/><path d="M7 12.2L10.5 15.5L17 9" stroke="#076B00" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
       lock: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icLockA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE066"/><stop offset="1" stop-color="#E6A100"/></linearGradient></defs><path d="M7 10V7C7 4.5 9 3 12 3C15 3 17 4.5 17 7V10" stroke="#B36A00" stroke-width="2.2" fill="none" stroke-linecap="round"/><rect x="4.5" y="10" width="15" height="11" rx="2" fill="url(#icLockA)"/><circle cx="12" cy="15" r="1.7" fill="#8B5A00"/><rect x="11.2" y="15" width="1.6" height="3.5" rx="0.8" fill="#8B5A00"/><ellipse cx="9" cy="12.5" rx="2" ry="1" fill="#FFFFFF" opacity="0.4"/></svg>',
+      lockWhite: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10V7C7 4.5 9 3 12 3C15 3 17 4.5 17 7V10" stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="round"/><rect x="4.5" y="10" width="15" height="11" rx="2" fill="#FFFFFF"/><circle cx="12" cy="15" r="1.7" fill="#B36A00"/><rect x="11.2" y="15" width="1.6" height="3.5" rx="0.8" fill="#B36A00"/></svg>',
       diamond: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icDia" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5FD8FF"/><stop offset="1" stop-color="#0066CC"/></linearGradient></defs><path d="M12 2L4 9L12 22L20 9L12 2Z" fill="url(#icDia)"/><path d="M12 2L8 9L12 22" fill="#FFFFFF" opacity="0.35"/><path d="M4 9H20" stroke="#FFFFFF" stroke-width="0.8" opacity="0.6"/><path d="M8 9L12 2L16 9" fill="none" stroke="#FFFFFF" stroke-width="0.8" opacity="0.7"/><path d="M9 5L10.5 7.5" stroke="#FFFFFF" stroke-width="0.7" opacity="0.8"/></svg>',
+      diamondWhite: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L4 9L12 22L20 9L12 2Z" fill="#FFFFFF"/><path d="M12 2L8 9L12 22" fill="#FFFFFF" opacity="0.4"/><path d="M4 9H20" stroke="#FFFFFF" stroke-width="0.8" opacity="0.6"/><path d="M8 9L12 2L16 9" fill="none" stroke="#FFFFFF" stroke-width="0.8" opacity="0.7"/><path d="M9 5L10.5 7.5" stroke="#FFFFFF" stroke-width="0.7" opacity="0.8"/></svg>',
       lightning: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icBolt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF176"/><stop offset="1" stop-color="#F9A825"/></linearGradient></defs><path d="M13 2L4 13H11L10 22L20 10H13L13 2Z" fill="url(#icBolt)" stroke="#E6A100" stroke-width="0.6"/><path d="M13 2L4 13H11" fill="#FFFFFF" opacity="0.4"/></svg>',
+      lightningWhite: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4 13H11L10 22L20 10H13L13 2Z" fill="#FFFFFF"/><path d="M13 2L4 13H11" fill="#FFFFFF" opacity="0.6"/></svg>',
       fire: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icFireA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB74D"/><stop offset="1" stop-color="#E64A19"/></linearGradient><linearGradient id="icFireB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF176"/><stop offset="1" stop-color="#FF9800"/></linearGradient></defs><path d="M12 2C12 2 6 8 6 14C6 18 9 21 12 21C15 21 18 18 18 14C18 11 16 9 15 7C15 9 14 10 13 10C13 7 12 4 12 2Z" fill="url(#icFireA)"/><path d="M12 10C12 10 9.5 12.5 9.5 15C9.5 17 10.7 18.5 12 18.5C13.3 18.5 14.5 17 14.5 15C14.5 13 13 11.5 12 10Z" fill="url(#icFireB)"/></svg>',
       thumbUp: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icThumb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE066"/><stop offset="1" stop-color="#E6A100"/></linearGradient></defs><path d="M3 21H6V10H3V21ZM21 11C21 9.9 20.1 9 19 9H14L15.5 3.5C15.5 3.3 15.5 3.1 15.4 2.9L14.4 2L8.4 8C8.1 8.3 8 8.6 8 9V19C8 20.1 8.9 21 10 21H18C18.8 21 19.5 20.5 19.8 19.8L22 12.8C22 12.5 22 12.3 22 12V11H21Z" fill="url(#icThumb)"/><ellipse cx="11" cy="6" rx="2" ry="1.2" fill="#FFFFFF" opacity="0.4"/></svg>',
       pin: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icPin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF5555"/><stop offset="1" stop-color="#AA0000"/></linearGradient></defs><path d="M12 2C7.6 2 4 5.6 4 10C4 16 12 22 12 22C12 22 20 16 20 10C20 5.6 16.4 2 12 2Z" fill="url(#icPin)"/><circle cx="12" cy="10" r="3.2" fill="#FFFFFF"/><circle cx="11" cy="9" r="1" fill="#AA0000" opacity="0.5"/></svg>',
       clock: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icClock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5FD8FF"/><stop offset="1" stop-color="#0066CC"/></linearGradient></defs><circle cx="12" cy="12" r="10" fill="url(#icClock)"/><circle cx="12" cy="12" r="8.5" fill="#FFFFFF" opacity="0.15"/><path d="M12 6V12L16 14" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="1" fill="#FFFFFF"/></svg>',
-      save: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icSave" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4DFF9E"/><stop offset="1" stop-color="#00B248"/></linearGradient></defs><path d="M4 4H17L20 7V20C20 20.5 19.5 21 19 21H5C4.5 21 4 20.5 4 20V5C4 4.5 4.5 4 5 4Z" fill="url(#icSave)"/><rect x="8" y="4" width="8" height="6" fill="#FFFFFF" opacity="0.9"/><rect x="7" y="14" width="10" height="7" fill="#FFFFFF" opacity="0.85"/><circle cx="16" cy="6" r="0.8" fill="#006B2E" opacity="0.6"/></svg>'
+      save: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icSave" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4DFF9E"/><stop offset="1" stop-color="#00B248"/></linearGradient></defs><path d="M4 4H17L20 7V20C20 20.5 19.5 21 19 21H5C4.5 21 4 20.5 4 20V5C4 4.5 4.5 4 5 4Z" fill="url(#icSave)"/><rect x="8" y="4" width="8" height="6" fill="#FFFFFF" opacity="0.9"/><rect x="7" y="14" width="10" height="7" fill="#FFFFFF" opacity="0.85"/><circle cx="16" cy="6" r="0.8" fill="#006B2E" opacity="0.6"/></svg>',
+      saveWhite: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H17L20 7V20C20 20.5 19.5 21 19 21H5C4.5 21 4 20.5 4 20V5C4 4.5 4.5 4 5 4Z" fill="#FFFFFF"/><rect x="8" y="4" width="8" height="6" fill="#FFFFFF" opacity="0.9"/><rect x="7" y="14" width="10" height="7" fill="#FFFFFF" opacity="0.85"/><circle cx="16" cy="6" r="0.8" fill="#FFFFFF" opacity="0.6"/></svg>',
+      pencil: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icPencilA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE066"/><stop offset="1" stop-color="#E6A100"/></linearGradient></defs><path d="M14.16 4.48L19.52 9.84L7.92 21.44H2.56V16.08L14.16 4.48ZM16.4 2.24C16.79 1.85 17.42 1.85 17.81 2.24L21.76 6.19C22.15 6.58 22.15 7.21 21.76 7.6L19.52 9.84L14.16 4.48L16.4 2.24Z" fill="url(#icPencilA)"/><path d="M14.16 4.48L19.52 9.84L7.92 21.44H2.56V16.08L14.16 4.48Z" fill="#FFFFFF" opacity="0.3"/><rect x="15" y="4" width="4" height="1.5" fill="#FFFFFF" opacity="0.5" transform="rotate(45 15 4)"/></svg>',
+      refresh: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icRefresh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5FD8FF"/><stop offset="1" stop-color="#0066CC"/></linearGradient></defs><path d="M12 4V1L8 5L12 9V6C15.31 6 18 8.69 18 12C18 13.01 17.75 13.96 17.31 14.8L18.76 16.25C19.54 15.02 20 13.57 20 12C20 7.58 16.42 4 12 4ZM6 12C6 10.99 6.25 10.04 6.69 9.2L5.24 7.75C4.46 8.98 4 10.43 4 12C4 16.42 7.58 20 12 20V23L16 19L12 15V18C8.69 18 6 15.31 6 12Z" fill="url(#icRefresh)"/><path d="M12 4V1L8 5L12 9V6C15.31 6 18 8.69 18 12" fill="#FFFFFF" opacity="0.3"/></svg>',
+      user: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icUser" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5FD8FF"/><stop offset="1" stop-color="#0066CC"/></linearGradient></defs><circle cx="12" cy="8" r="4" fill="url(#icUser)"/><path d="M4 20C4 16 8 14 12 14C16 14 20 16 20 20V21H4V20Z" fill="url(#icUser)"/><circle cx="12" cy="8" r="4" fill="#FFFFFF" opacity="0.3"/><ellipse cx="10" cy="6" rx="1.5" ry="1" fill="#FFFFFF" opacity="0.5"/></svg>',
+      userWhite: '<svg class="icon-3d" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" fill="#FFFFFF"/><path d="M4 20C4 16 8 14 12 14C16 14 20 16 20 20V21H4V20Z" fill="#FFFFFF"/><circle cx="12" cy="8" r="4" fill="#FFFFFF" opacity="0.3"/><ellipse cx="10" cy="6" rx="1.5" ry="1" fill="#FFFFFF" opacity="0.5"/></svg>'
     };
 
     function applyImageBlur() {
@@ -1275,18 +1294,18 @@
 
     /* Inject dynamic button labels */
     function injectButtonLabels() {
-      var modalBuyBtn = document.getElementById('modalBuyBtn'); if (modalBuyBtn) modalBuyBtn.innerHTML = ICONS.lightning + ' Buy Now';
-      var confirmPaymentBtn = document.getElementById('confirmPaymentBtn'); if (confirmPaymentBtn) confirmPaymentBtn.innerHTML = ICONS.lock + ' Confirm Payment';
+      var modalBuyBtn = document.getElementById('modalBuyBtn'); if (modalBuyBtn) modalBuyBtn.innerHTML = ICONS.lightningWhite + ' Buy Now';
+      var confirmPaymentBtn = document.getElementById('confirmPaymentBtn'); if (confirmPaymentBtn) confirmPaymentBtn.innerHTML = ICONS.lockWhite + ' Confirm Payment';
       var orderSubmitBtn = document.getElementById('orderSubmitBtn');
-      if (orderSubmitBtn && !orderSubmitBtn.dataset.injected) { orderSubmitBtn.innerHTML = ICONS.diamond + ' Proceed to Payment'; orderSubmitBtn.dataset.injected = '1'; }
-      var profileSaveBtn = document.getElementById('profileSaveBtn'); if (profileSaveBtn) profileSaveBtn.innerHTML = ICONS.save + ' Save Profile';
-      var reviewSubmitBtn = document.getElementById('reviewSubmitBtn'); if (reviewSubmitBtn) reviewSubmitBtn.innerHTML = ICONS.check + ' Submit Review';
-      var trustSecure = document.getElementById('trustSecureBadge'); if (trustSecure) trustSecure.innerHTML = ICONS.lock + ' Secure';
-      var trustFast = document.getElementById('trustFastBadge'); if (trustFast) trustFast.innerHTML = ICONS.lightning + ' Fast';
-      var paySecure = document.getElementById('paySecureBadge'); if (paySecure) paySecure.innerHTML = ICONS.lock + ' Secure';
-      var payFast = document.getElementById('payFastBadge'); if (payFast) payFast.innerHTML = ICONS.lightning + ' Fast';
+      if (orderSubmitBtn && !orderSubmitBtn.dataset.injected) { orderSubmitBtn.innerHTML = ICONS.diamondWhite + ' Proceed to Payment'; orderSubmitBtn.dataset.injected = '1'; }
+      var profileSaveBtn = document.getElementById('profileSaveBtn'); if (profileSaveBtn) profileSaveBtn.innerHTML = ICONS.saveWhite + ' Save Profile';
+      var reviewSubmitBtn = document.getElementById('reviewSubmitBtn'); if (reviewSubmitBtn) reviewSubmitBtn.innerHTML = ICONS.checkWhite + ' Submit Review';
+      var trustSecure = document.getElementById('trustSecureBadge'); if (trustSecure) trustSecure.innerHTML = ICONS.lockWhite + ' Secure';
+      var trustFast = document.getElementById('trustFastBadge'); if (trustFast) trustFast.innerHTML = ICONS.lightningWhite + ' Fast';
+      var paySecure = document.getElementById('paySecureBadge'); if (paySecure) paySecure.innerHTML = ICONS.lockWhite + ' Secure';
+      var payFast = document.getElementById('payFastBadge'); if (payFast) payFast.innerHTML = ICONS.lightningWhite + ' Fast';
       /* Profile saved view icons */
-      var psBadge = document.querySelector('.profile-saved-badge'); if (psBadge) psBadge.innerHTML = ICONS.check + ' Profile Saved';
+      var psBadge = document.querySelector('.profile-saved-badge'); if (psBadge) psBadge.innerHTML = ICONS.checkWhite + ' Profile Saved';
     }
 
     /* MUSIC AUTOPLAY — with userManuallyPaused flag */
@@ -1504,8 +1523,8 @@
     function updateProfileButtonUI() {
       var btn = document.getElementById('profileBtn');
       if (!btn) return;
-      if (hasProfile()) { btn.classList.add('saved'); btn.innerHTML = '✓'; }
-      else { btn.classList.remove('saved'); btn.innerHTML = '👤'; }
+      if (hasProfile()) { btn.classList.add('saved'); btn.innerHTML = ICONS.checkWhite; }
+      else { btn.classList.remove('saved'); btn.innerHTML = ICONS.user; }
     }
     function showProfileSavedView() {
       document.getElementById('profileSavedView').style.display = 'block';
@@ -1882,7 +1901,7 @@
       designs.forEach(function(design, idx) {
         var viewerBase = viewerState[design.id] ? viewerState[design.id].current : 50;
         var card = document.createElement('div'); card.className = 'grid-card'; card.setAttribute('data-id', design.id);
-        var bonusTag = design.bonus > 0 ? '<span class="bonus-tag">' + ICONS.gift + ' +' + design.bonus + '</span>' : '';
+        var bonusTag = design.bonus > 0 ? '<span class="bonus-tag">' + ICONS.giftWhite + ' +' + design.bonus + '</span>' : '';
         card.innerHTML =
           '<div class="diamond-showcase" style="--accent:' + design.accent + '; background:' + design.showcaseGradient + '">' +
             '<div class="diamond-light"></div>' +
@@ -1896,10 +1915,10 @@
           '</div>' +
           '<div class="gc-info"><div class="gc-name">' + design.name + '</div></div>' +
           '<div class="card-bottom-row">' +
-            '<div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="live-pulse-dot"></span><span class="eye">' + ICONS.eye + '</span><span class="vcount">' + viewerBase + '</span></div>' +
+            '<div class="live-viewers-badge" data-design-id="' + design.id + '"><span class="live-pulse-dot"></span><span class="eye">' + ICONS.eyeWhite + '</span><span class="vcount">' + viewerBase + '</span></div>' +
             '<div class="gc-price-chip">' + design.price + '</div>' +
           '</div>' +
-          '<div class="gc-actions"><button class="gc-buy-btn shimmer-white" data-action="buy">' + ICONS.cart + ' Buy Now</button></div>';
+          '<div class="gc-actions"><button class="gc-buy-btn shimmer-white" data-action="buy">' + ICONS.cartWhite + ' Buy Now</button></div>';
         grid.appendChild(card);
       });
       attachGridEvents();
@@ -2397,6 +2416,9 @@
       var tf2 = document.getElementById('tfIcon2'); if (tf2) tf2.innerHTML = ICONS.trophy;
       var tf3 = document.getElementById('tfIcon3'); if (tf3) tf3.innerHTML = ICONS.check;
       var tf4 = document.getElementById('tfIcon4'); if (tf4) tf4.innerHTML = ICONS.lock;
+      
+      var writeReviewBtn = document.getElementById('writeReviewBtn'); if (writeReviewBtn) writeReviewBtn.innerHTML = ICONS.pencil + ' Write a Review';
+      var regenerateQrBtn = document.getElementById('regenerateQrBtn'); if (regenerateQrBtn) regenerateQrBtn.innerHTML = '<span>' + ICONS.refresh + '</span> Generate New QR';
     })();
     injectButtonLabels();
     
