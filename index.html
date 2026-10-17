@@ -7,7 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="images/bg.png">
+  <!-- Preload CDN Image -->
+  <link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/forviews1st-hub/Diamond-Top-up-@main/images/bg.png">
   <style>
     :root {
       --deep-yellow-grad: linear-gradient(180deg, #FFC107 0%, #FF9800 100%);
@@ -19,7 +20,8 @@
     :focus-visible { outline: none; }
     
     body { font-family: 'Poppins', sans-serif; background: #000; min-height: 100vh; color: #1A1A1A; overflow-x: hidden; -webkit-font-smoothing: antialiased; position: relative; }
-    body::before { content: ''; position: fixed; inset: 0; background: url('images/bg.png') no-repeat center center; background-size: cover; z-index: -2; }
+    /* CDN Background */
+    body::before { content: ''; position: fixed; inset: 0; background: url('https://cdn.jsdelivr.net/gh/forviews1st-hub/Diamond-Top-up-@main/images/bg.png') no-repeat center center; background-size: cover; z-index: -2; }
     body::after { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,0.35); pointer-events: none; z-index: -1; }
 
     h1, h2, h3, .site-brand-name, .hero-headline, .stat-number, .modal-price, .summary-value-total, .payment-total-amount, .more-stats-number, .trust-feature-card .tf-label, .gc-price-chip, .gc-name, .review-name, .modal-title, .checkout-title, .pulse-subtitle, .gc-buy-btn, .hero-cta-btn, .modal-buy-btn, .order-btn-premium, .review-submit-btn, .success-btn, .custom-alert-btn, .load-more-reviews-btn, .qty-row span, .bonus-tag, .trusted-by-text { font-family: 'Outfit', 'Poppins', sans-serif; font-weight: 700; }
@@ -38,9 +40,6 @@
     .review-purchased .icon-3d { width: 1.1em; height: 1.1em; vertical-align: -0.2em; }
     .review-helpful .icon-3d, .review-more-btn .icon-3d { width: 1.15em; height: 1.15em; vertical-align: -0.24em; }
     .modal-buy-btn .icon-3d, .order-btn-premium .icon-3d, .review-submit-btn .icon-3d { width: 1.15em; height: 1.15em; vertical-align: -0.22em; }
-    
-    /* White icons for colored backgrounds */
-    .icon-white { filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3)) brightness(0) invert(1) !important; }
 
     /* SHIMMER EFFECT */
     .shimmer-white, .shimmer-gold { position: relative; overflow: hidden; }
@@ -655,7 +654,7 @@
 
     /* VERIFY MODAL */
     #verifyOverlay .modal {
-        background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/bg.png') no-repeat center center;
+        background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://cdn.jsdelivr.net/gh/forviews1st-hub/Diamond-Top-up-@main/images/bg.png') no-repeat center center;
         background-size: cover;
         border: 2px solid #FFC107;
         border-radius: 24px;
@@ -866,8 +865,9 @@
 </head>
 <body>
 
+  <!-- Audio from CDN -->
   <audio id="bgMusic" loop preload="auto" muted playsinline>
-    <source src="audio/bg-music.mp3" type="audio/mpeg">
+    <source src="https://cdn.jsdelivr.net/gh/forviews1st-hub/Diamond-Top-up-@main/audio/bg-music.mp3" type="audio/mpeg">
   </audio>
 
   <header class="site-header">
@@ -1058,7 +1058,8 @@
       <button class="modal-close" id="verifyClose">&times;</button>
       <div class="verify-header">
         <div class="verify-avatar" id="verifyAvatar">
-          <img src="images/ff-icon.png" alt="FF" onerror="this.style.display='none'; this.parentNode.innerHTML='🎮';">
+          <!-- CDN Image -->
+          <img src="https://cdn.jsdelivr.net/gh/forviews1st-hub/Diamond-Top-up-@main/images/ff-icon.png" alt="FF" onerror="this.style.display='none'; this.parentNode.innerHTML='🎮';">
         </div>
         <div class="verify-badge" id="verifyBadge">VERIFIED ACCOUNT</div>
       </div>
@@ -1125,7 +1126,10 @@
         
         <div class="section-divider"><span>SCAN QR CODE</span></div>
         <div class="qr-timer-wrap"><span>⏳ QR expires in:</span><span class="timer-clock" id="qrTimer">05:00</span></div>
-        <div class="qr-container" id="qrContainer"><img id="qrCodeImage" src="qr-code.png" alt="Payment QR Code" /></div>
+        <div class="qr-container" id="qrContainer">
+          <!-- CDN QR Code -->
+          <img id="qrCodeImage" src="https://cdn.jsdelivr.net/gh/forviews1st-hub/Diamond-Top-up-@main/qr-code.png" alt="Payment QR Code" />
+        </div>
         <button type="button" class="regenerate-qr-btn" id="regenerateQrBtn"></button>
         <p class="qr-hint">Scan with any <strong>UPI app</strong> to pay</p>
         <div class="payment-method-icons">
@@ -1242,6 +1246,9 @@
     var REFERENCE_TIME = new Date('2026-06-01T00:00:00Z').getTime();
     var GLOBAL_STREAM_REFERENCE_TIME = new Date('2026-01-01T00:00:00Z').getTime();
     
+    // CDN Base URL for assets
+    var CDN_BASE = 'https://cdn.jsdelivr.net/gh/forviews1st-hub/Diamond-Top-up-@main/';
+
     function pseudoRandom(seed) { var x = Math.sin(seed) * 10000; return x - Math.floor(x); }
     function getHoursSinceReference() { return Math.max(0, Math.floor((Date.now() - REFERENCE_TIME) / 3600000)); }
     function getTimeMultiplierForHour(hourOfDay) { if (hourOfDay < 6) return 0.2; if (hourOfDay < 12) return 0.6; if (hourOfDay < 17) return 0.9; if (hourOfDay < 23) return 1.3; return 0.5; }
@@ -1674,11 +1681,12 @@
     var avatarCache = { list: [], loaded: false };
     function fetchAvatarsFromGitHub(callback) {
       try { var cached = localStorage.getItem('diamond_avatars_list_v11'); var cachedTime = localStorage.getItem('diamond_avatars_time_v11'); if (cached && cachedTime && (Date.now() - parseInt(cachedTime)) < 604800000) { var parsed = JSON.parse(cached); if (Array.isArray(parsed) && parsed.length > 0) { avatarCache.list = parsed; avatarCache.loaded = true; if (callback) callback(parsed); return; } } } catch(e) {}
+      // Using jsDelivr to serve avatars directly from GitHub repo
       fetch('https://api.github.com/repos/forviews1st-hub/Diamond-Top-up-/contents/avatars')
         .then(function(r) { return r.json(); })
         .then(function(data) {
           if (!Array.isArray(data)) throw new Error('Invalid response');
-          var images = data.filter(function(item) { return item.type === 'file' && /\.(jpg|jpeg|png|webp)$/i.test(item.name); }).map(function(item) { return 'https://raw.githubusercontent.com/forviews1st-hub/Diamond-Top-up-/main/avatars/' + item.name; });
+          var images = data.filter(function(item) { return item.type === 'file' && /\.(jpg|jpeg|png|webp)$/i.test(item.name); }).map(function(item) { return CDN_BASE + 'avatars/' + item.name; });
           avatarCache.list = images; avatarCache.loaded = true;
           try { localStorage.setItem('diamond_avatars_list_v11', JSON.stringify(images)); localStorage.setItem('diamond_avatars_time_v11', Date.now().toString()); } catch(e) {}
           if (callback) callback(images);
@@ -1730,18 +1738,19 @@
       { id: 'd2180', name: '2180 Diamonds', qty: 2180, bonus: 250, price: '₹1600', tagline: 'Ultimate value pack', accent: '#ec4899', shadowColor: '#6b1d6b', cardGradient: 'linear-gradient(160deg, #FCE7F3 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #2e0a2e 0%, #6b1d6b 50%, #ec4899 100%)', material: 'Elite Pack', stockPercent: 88, viewerWeight: 1.3 },
       { id: 'd5600', name: '5600 Diamonds', qty: 5600, bonus: 0, price: '₹2100', tagline: 'Mega pack for pros', accent: '#3b82f6', shadowColor: '#1e40af', cardGradient: 'linear-gradient(160deg, #DBEAFE 0%, #FFFFFF 100%)', showcaseGradient: '#FFFFFF', gradient: 'linear-gradient(135deg, #0a1f3d 0%, #1e40af 50%, #3b82f6 100%)', material: 'Mega Pack', stockPercent: 75, viewerWeight: 1.4 }
     ];
+    // Reviews with CDN URLs
     var reviewsData = [
-      { name: 'Total Gaming', avatar: 'reviews/youtuber1.png', location: 'Gujarat', time: '9 days ago', purchased: 'All Packages', comment: 'Hello Gamers! Ajju Bhai here. Maine is seller se diamonds liye hain, aur sach batau toh diamonds ekdum wahi mile jo bola gaya tha. Maine usi se apna Free Fire ka Elite Pass aur top-up kiya. Agar aap log bhi high diamonds dhundh rahe ho, toh bina tension ke try karo. Trust me, genuine hai! 🔥', helpful: 1247, moreCount: 8932, isYouTuber: true },
-      { name: 'Tonde Gamer', avatar: 'reviews/youtuber2.png', location: 'Nepal', time: '17 days ago', purchased: 'All Packages', comment: 'Tonde Bhai here! Yaar, maine pehle socha tha ki online diamonds lena risky hoga, lekin is seller ka top-up ekdum genuine nikla. Diamonds bhi sahi mile aur maine turant apne account mein use kar liye. Ab main apne saare subscribers ko bhi bata raha hoon. Try karo, maza aayega! 😎', helpful: 2156, moreCount: 12480, isYouTuber: true },
-      { name: 'Gyan Gaming', avatar: 'reviews/youtuber3.png', location: 'Kolkata', time: '28 days ago', purchased: 'All Packages', comment: 'GyanSujan here. Maine is seller se top-up karne se pehle thoda research kiya tha. Payment ke baad diamonds turant mil gaye, aur jo quantity unhone boli thi, woh bilkul sahi nikli. Maine usi se apne in-game purchases kiye, sab kuch smoothly ho gaya. Overall, main isko recommend karunga. Agar aap bhi diamonds dhundh rahe ho, toh yeh ek genuine option hai. 👍', helpful: 876, moreCount: 5432, isYouTuber: true },
-      { name: 'Lokesh Gamer', avatar: 'reviews/youtuber4.png', location: 'Hyderabad', time: '7 days ago', purchased: 'All Packages', comment: 'Hello Guys! Lokesh Gamer here. Maine bhi is seller se diamonds liye hain. Diamonds ekdum sahi mile, aur maine usi se apne account mein top-up kiya. Sab kuch instantly ho gaya. Agar aap ek trustworthy seller dhundh rahe ho jahan se aap diamonds le sako, toh yeh sahi jagah hai. Highly recommended! ✅', helpful: 1876, moreCount: 9543, isYouTuber: true },
-      { name: 'Sooneeta', avatar: 'reviews/youtuber5.png', location: 'Nepal', time: '21 days ago', purchased: 'All Packages', comment: 'Hi Guys! Sooneeta here. Maine aur mere bhai ne dono ne is seller se diamonds order kiye. Dono baar diamonds bilkul sahi mile, aur humne usse apne accounts mein top-up kar liya. Price bhi reasonable hai. Delivery mein thoda time laga, lekin overall experience achha raha. Thank you! 😊', helpful: 654, moreCount: 3421, isYouTuber: true },
-      { name: 'Anjali Desai', avatar: 'reviews/review1.png', location: 'Delhi', time: '3 days ago', purchased: '520 Diamonds', comment: 'Payment karte hi turant diamonds mil gaye. Bilkul real service hai 🔥', helpful: 47, moreCount: 1247 },
-      { name: 'Rohit Yadav', avatar: 'reviews/review2.png', location: 'Mumbai', time: '1 week ago', purchased: '1060 Diamonds', comment: 'Diamonds buy kiye, sahi mile aur usi se Free Fire mein Elite Pass le liya. Sab kuch instantly ho gaya! Bhai yeh toh mast hai 💯', helpful: 89, moreCount: 3891 },
-      { name: 'Rahul Sharma', avatar: 'reviews/review3.png', location: 'Bangalore', time: '2 weeks ago', purchased: '310 Diamonds', comment: 'Payment ke 1 minute ke andar diamonds mil gaye. Genuine aur fast seller hai. Highly recommended ✅', helpful: 156, moreCount: 5788 },
-      { name: 'Pilu Tonde', avatar: 'reviews/review4.png', location: 'Pune', time: '1 month ago', purchased: '100 Diamonds', comment: 'Diamonds se Free Fire mein weekly membership li. Achha hai par delivery mein thoda time laga. Baaki sab badhiya 👍', helpful: 23, moreCount: 654, sellerReply: 'Thanks Pilu bhai! Next order mein fast delivery ka promise 🙏' },
-      { name: 'Ramu Gamer', avatar: 'reviews/review5.png', location: 'Hyderabad', time: '2 months ago', purchased: '2180 Diamonds', comment: 'Mene diamonds se Free Fire mein top-up kiya aur successful bhi ho gaya. Sab kuch easily ho gaya. Paisa vasool 🔥🔥', helpful: 67, moreCount: 2135 },
-      { name: 'Karan Mehta', avatar: 'reviews/review6.png', location: 'Jaipur', time: '3 months ago', purchased: '520 Diamonds', comment: 'Diamonds buy karne ke baad Free Fire mein Elite Pass aur top-up kiya, sab kuch bina kisi problem ke ho gaya! Best seller 💯', helpful: 112, moreCount: 4230, sellerReply: 'Thanks Karan! Aapka support humesha 🙏' }
+      { name: 'Total Gaming', avatar: CDN_BASE + 'reviews/youtuber1.png', location: 'Gujarat', time: '9 days ago', purchased: 'All Packages', comment: 'Hello Gamers! Ajju Bhai here. Maine is seller se diamonds liye hain, aur sach batau toh diamonds ekdum wahi mile jo bola gaya tha. Maine usi se apna Free Fire ka Elite Pass aur top-up kiya. Agar aap log bhi high diamonds dhundh rahe ho, toh bina tension ke try karo. Trust me, genuine hai! 🔥', helpful: 1247, moreCount: 8932, isYouTuber: true },
+      { name: 'Tonde Gamer', avatar: CDN_BASE + 'reviews/youtuber2.png', location: 'Nepal', time: '17 days ago', purchased: 'All Packages', comment: 'Tonde Bhai here! Yaar, maine pehle socha tha ki online diamonds lena risky hoga, lekin is seller ka top-up ekdum genuine nikla. Diamonds bhi sahi mile aur maine turant apne account mein use kar liye. Ab main apne saare subscribers ko bhi bata raha hoon. Try karo, maza aayega! 😎', helpful: 2156, moreCount: 12480, isYouTuber: true },
+      { name: 'Gyan Gaming', avatar: CDN_BASE + 'reviews/youtuber3.png', location: 'Kolkata', time: '28 days ago', purchased: 'All Packages', comment: 'GyanSujan here. Maine is seller se top-up karne se pehle thoda research kiya tha. Payment ke baad diamonds turant mil gaye, aur jo quantity unhone boli thi, woh bilkul sahi nikli. Maine usi se apne in-game purchases kiye, sab kuch smoothly ho gaya. Overall, main isko recommend karunga. Agar aap bhi diamonds dhundh rahe ho, toh yeh ek genuine option hai. 👍', helpful: 876, moreCount: 5432, isYouTuber: true },
+      { name: 'Lokesh Gamer', avatar: CDN_BASE + 'reviews/youtuber4.png', location: 'Hyderabad', time: '7 days ago', purchased: 'All Packages', comment: 'Hello Guys! Lokesh Gamer here. Maine bhi is seller se diamonds liye hain. Diamonds ekdum sahi mile, aur maine usi se apne account mein top-up kiya. Sab kuch instantly ho gaya. Agar aap ek trustworthy seller dhundh rahe ho jahan se aap diamonds le sako, toh yeh sahi jagah hai. Highly recommended! ✅', helpful: 1876, moreCount: 9543, isYouTuber: true },
+      { name: 'Sooneeta', avatar: CDN_BASE + 'reviews/youtuber5.png', location: 'Nepal', time: '21 days ago', purchased: 'All Packages', comment: 'Hi Guys! Sooneeta here. Maine aur mere bhai ne dono ne is seller se diamonds order kiye. Dono baar diamonds bilkul sahi mile, aur humne usse apne accounts mein top-up kar liya. Price bhi reasonable hai. Delivery mein thoda time laga, lekin overall experience achha raha. Thank you! 😊', helpful: 654, moreCount: 3421, isYouTuber: true },
+      { name: 'Anjali Desai', avatar: CDN_BASE + 'reviews/review1.png', location: 'Delhi', time: '3 days ago', purchased: '520 Diamonds', comment: 'Payment karte hi turant diamonds mil gaye. Bilkul real service hai 🔥', helpful: 47, moreCount: 1247 },
+      { name: 'Rohit Yadav', avatar: CDN_BASE + 'reviews/review2.png', location: 'Mumbai', time: '1 week ago', purchased: '1060 Diamonds', comment: 'Diamonds buy kiye, sahi mile aur usi se Free Fire mein Elite Pass le liya. Sab kuch instantly ho gaya! Bhai yeh toh mast hai 💯', helpful: 89, moreCount: 3891 },
+      { name: 'Rahul Sharma', avatar: CDN_BASE + 'reviews/review3.png', location: 'Bangalore', time: '2 weeks ago', purchased: '310 Diamonds', comment: 'Payment ke 1 minute ke andar diamonds mil gaye. Genuine aur fast seller hai. Highly recommended ✅', helpful: 156, moreCount: 5788 },
+      { name: 'Pilu Tonde', avatar: CDN_BASE + 'reviews/review4.png', location: 'Pune', time: '1 month ago', purchased: '100 Diamonds', comment: 'Diamonds se Free Fire mein weekly membership li. Achha hai par delivery mein thoda time laga. Baaki sab badhiya 👍', helpful: 23, moreCount: 654, sellerReply: 'Thanks Pilu bhai! Next order mein fast delivery ka promise 🙏' },
+      { name: 'Ramu Gamer', avatar: CDN_BASE + 'reviews/review5.png', location: 'Hyderabad', time: '2 months ago', purchased: '2180 Diamonds', comment: 'Mene diamonds se Free Fire mein top-up kiya aur successful bhi ho gaya. Sab kuch easily ho gaya. Paisa vasool 🔥🔥', helpful: 67, moreCount: 2135 },
+      { name: 'Karan Mehta', avatar: CDN_BASE + 'reviews/review6.png', location: 'Jaipur', time: '3 months ago', purchased: '520 Diamonds', comment: 'Diamonds buy karne ke baad Free Fire mein Elite Pass aur top-up kiya, sab kuch bina kisi problem ke ho gaya! Best seller 💯', helpful: 112, moreCount: 4230, sellerReply: 'Thanks Karan! Aapka support humesha 🙏' }
     ];
     (function loadUserReviews() { var saved = loadUserReviewsFromStorage(); saved.forEach(function(r) { if (r && r.isUserSubmitted) reviewsData.push(r); }); })();
     function getCardState(design, idx) {
@@ -1766,7 +1775,7 @@
       container.appendChild(toast); setTimeout(function() { toast.remove(); }, 3000);
     }
     function diamondShowcaseHTML(design, extraClass, bgOverride) {
-      var chestSrc = 'chests/chest-' + design.qty + '.png';
+      var chestSrc = CDN_BASE + 'chests/chest-' + design.qty + '.png';
       var style = '--accent:' + design.accent + ';';
       if (bgOverride) style += 'background:' + bgOverride + ';';
       return '<div class="diamond-showcase ' + (extraClass || '') + '" style="' + style + '">' +
@@ -1910,7 +1919,7 @@
             '<div class="diamond-sparkle sparkle-2">✦</div>' +
             '<div class="diamond-sparkle sparkle-3">✦</div>' +
             '<div class="diamond-sparkle sparkle-4">✦</div>' +
-            '<img class="chest-image img-blur" src="chests/chest-' + design.qty + '.png" alt="' + design.qty + ' Diamonds" loading="eager" onerror="this.style.display=\'none\'">' +
+            '<img class="chest-image img-blur" src="' + CDN_BASE + 'chests/chest-' + design.qty + '.png" alt="' + design.qty + ' Diamonds" loading="eager" onerror="this.style.display=\'none\'">' +
             bonusTag +
           '</div>' +
           '<div class="gc-info"><div class="gc-name">' + design.name + '</div></div>' +
@@ -2028,6 +2037,7 @@
       document.getElementById('verifyOverlay').style.display = 'flex';
       document.body.classList.add('modal-open');
 
+      // API stays on Vercel
       fetch('/api/verify?uid=' + encodeURIComponent(uid))
           .then(response => response.json())
           .then(data => {
@@ -2043,7 +2053,8 @@
                   
                   var avatarImg = document.getElementById('verifyAvatar').querySelector('img');
                   if (avatarImg) {
-                      avatarImg.src = 'images/ff-icon.png';
+                      // CDN FF Icon
+                      avatarImg.src = CDN_BASE + 'images/ff-icon.png';
                       avatarImg.style.display = 'block';
                   }
 
@@ -2195,7 +2206,7 @@
       var timeStr = formatTimeAgo(timestamp); 
       var cityText = buyer.city ? ('from ' + escapeHtml(buyer.city)) : ''; 
       var priceShown = buyer.price || design.price;
-      var chestSrc = 'chests/chest-' + design.qty + '.png';
+      var chestSrc = CDN_BASE + 'chests/chest-' + design.qty + '.png';
       
       var avatarHTML = '';
       if (buyer.avatar) {
@@ -2226,7 +2237,7 @@
       var timeStr = formatTimeAgo(timestamp); 
       var cityText = buyer.city ? ('from ' + escapeHtml(buyer.city)) : ''; 
       var priceShown = buyer.price || design.price;
-      var chestSrc = 'chests/chest-' + design.qty + '.png';
+      var chestSrc = CDN_BASE + 'chests/chest-' + design.qty + '.png';
       
       var avatarHTML = '';
       if (buyer.avatar) {
